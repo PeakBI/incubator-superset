@@ -2202,7 +2202,6 @@ class Superset(BaseSupersetView):
             "common": self.common_bootstrap_payload(),
             "editMode": edit_mode,
         }
-        print (dashboard_data)
         if request.args.get("json") == "true":
             return json_success(json.dumps(bootstrap_data))
 
