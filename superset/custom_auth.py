@@ -1,4 +1,4 @@
-from flask import redirect, g, flash, request, app
+from flask import redirect, g, flash, request
 from flask_appbuilder.security.views import UserDBModelView, AuthDBView
 from superset.security import SupersetSecurityManager
 from flask_appbuilder.security.views import expose
