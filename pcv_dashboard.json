@@ -218,8 +218,7 @@
                         }
                     }
                 ],
-                "slug": "pcv",
-                "owners": ["admin"]
+                "slug": "pcv"
             }
         }
     ],
