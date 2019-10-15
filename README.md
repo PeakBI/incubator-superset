@@ -16,8 +16,51 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-Superset
-=========
+
+Installation & Configuration
+----------------------------
+
+Start with Docker
+-----------------
+ * Clone the repo
+ * cd incubator-superset/contrib/docker (prefix with SUPERSET_LOAD_EXAMPLES=yes to load examples)
+ * docker-compose run --rm superset ./docker-init.sh (you can run this command everytime you need to start superset now)
+ * docker-compose up
+
+Start with python virtual Env
+-----------------------------
+ * Clone the repo
+ * python3 -m venv venv
+ * source venv/bin/activate
+ * pip install -r requirements.txt
+ * pip install -r requirements-dev.txt
+ * pip install -e .
+ * fabmanager create-admin --app superset
+ * superset db upgrade
+ * superset init (It creates default roles and permissions)
+ * superset load_examples (It is used to load examples)
+ * FLASK_ENV=development superset run -p 8088 --with-threads --reload --debugger
+ * cd superset/assets
+ * npm install
+ * npm run dev-server
+
+Login 
+-----
+ * Login into AIS
+ * Fetch API Key from local storage
+ * Append it into your dashboard URL (For example: http://localhost:9000/login/?authToken: <API KEY>)
+
+Roles
+-----
+  Admin
+  -----
+  Admins have all possible rights, including granting or revoking rights from other users and altering other people’s slices and dashboards.
+
+  Gamma
+  -----
+  Gamma users have limited access. They can only consume data coming from data sources they have been given access to through another complementary role. They only have access to view the slices and dashboards made from data sources that they have access to. Currently Gamma users are not able to alter or add data sources.
+<details> 
+<summary>Superset</summary>
 
 [![Build Status](https://travis-ci.org/apache/incubator-superset.svg?branch=master)](https://travis-ci.org/apache/incubator-superset)
 [![PyPI version](https://badge.fury.io/py/superset.svg)](https://badge.fury.io/py/superset)
@@ -116,10 +159,6 @@ and fast data aggregation. Existing Druid deployments have scaled to
 trillions of events and petabytes of data. Druid is best used to
 power analytic dashboards and applications.*
 
-
-Installation & Configuration
-----------------------------
-
 [See in the documentation](https://superset.incubator.apache.org/installation.html)
 
 
@@ -212,3 +251,4 @@ the world know they are using Superset. Join our growing community!
  1. [Zaihang](http://www.zaih.com/)
  1. [Zalando](https://www.zalando.com)
  1. [Zalora](https://www.zalora.com)
+ </details>
