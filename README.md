@@ -23,22 +23,23 @@ Installation & Configuration
 Start with Docker
 -----------------
  * Clone the repo
- * cd incubator-superset/contrib/docker (prefix with SUPERSET_LOAD_EXAMPLES=yes to load examples)
- * docker-compose run --rm superset ./docker-init.sh (you can run this command everytime you need to start superset now)
+ * Create .env and fill all the required variable present .env.sample file
+ * docker-compose build
  * docker-compose up
 
 Start with python virtual Env
 -----------------------------
  * Clone the repo
+ * Export all env variables present in .env.sample file
  * python3 -m venv venv
  * source venv/bin/activate
  * pip install -r requirements.txt
  * pip install -r requirements-dev.txt
  * pip install -e .
  * fabmanager create-admin --app superset
- * superset db upgrade
- * superset init (It creates default roles and permissions)
- * superset load_examples (It is used to load examples)
+ * superset db upgrade (It will initialize the database. It needs not to be run everytime )
+ * superset init (It creates default roles and permissions. It needs not to be run everytime)
+ * superset load_examples (It is used to load examples. It needs not to be run everytime)
  * FLASK_ENV=development superset run -p 8088 --with-threads --reload --debugger
  * cd superset/assets
  * npm install
