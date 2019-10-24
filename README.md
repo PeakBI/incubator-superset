@@ -30,40 +30,46 @@ under the License.
   width="500"
 />
 
+**Apache Superset** (incubating) is a modern, enterprise-ready
+business intelligence web application
+
+[this project used to be named **Caravel**, and **Panoramix** in the past]
+
 
 # Installation & Configuration
 
 <details>
-<summary>**Start with Docker**</summary>
-
+  <summary><b>Start with python virtual environment</b></summary>
+  <li>Clone the repo
+  <li>Export all env variables present in .env.sample file
+  <li>python3 -m venv venv
+  <li>source venv/bin/activate
+  <li>pip install -r requirements.txt
+  <li>pip install -r requirements-dev.txt
+  <li>pip install -e .
+  <li>fabmanager create-admin --app superset
+  <li>superset db upgrade (It will initialize the database. It needs not to be run everytime )
+  <li>superset init (It creates default roles and permissions. It needs not to be run everytime)
+  <li>superset load_examples (It is used to load examples. It needs not to be run everytime)
+  <li>FLASK_ENV=development superset run -p 8088 --with-threads --reload --debugger
+  <li>cd superset/assets
+  <li>npm install
+  <li>npm run dev-server
+</details>
+  OR
+<details>
+  <summary> <b>Start with Docker</b> </summary>
 <li>Clone the repo</li>
 <li>Create `.env` and fill all the required variable present `.env.sample` file</li>
 <li>docker-compose build</li>
 <li>docker-compose up</li>
 </details>
 
-## Start with python virtual Env
- * Clone the repo
- * Export all env variables present in .env.sample file
- * python3 -m venv venv
- * source venv/bin/activate
- * pip install -r requirements.txt
- * pip install -r requirements-dev.txt
- * pip install -e .
- * fabmanager create-admin --app superset
- * superset db upgrade (It will initialize the database. It needs not to be run everytime )
- * superset init (It creates default roles and permissions. It needs not to be run everytime)
- * superset load_examples (It is used to load examples. It needs not to be run everytime)
- * FLASK_ENV=development superset run -p 8088 --with-threads --reload --debugger
- * cd superset/assets
- * npm install
- * npm run dev-server
-
 Login
 -----
  * Login into AIS
- * Fetch API Key from local storage
- * Append it into your dashboard URL (For example: http://localhost:9000/login/?authToken: <API KEY>)
+ * Fetch `API_KEY` from local storage
+ * Append it into your dashboard URL (For example: http://localhost:9000/login/?authToken=<API_KEY>)
 
 Roles
 -----
@@ -76,12 +82,6 @@ Roles
   Gamma users have limited access. They can only consume data coming from data sources they have been given access to through another complementary role. They only have access to view the slices and dashboards made from data sources that they have access to. Currently Gamma users are not able to alter or add data sources.
 <details>
 <summary>Superset</summary>
-
-**Apache Superset** (incubating) is a modern, enterprise-ready
-business intelligence web application
-
-[this project used to be named **Caravel**, and **Panoramix** in the past]
-
 
 Screenshots & Gifs
 ------------------
