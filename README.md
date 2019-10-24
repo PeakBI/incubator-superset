@@ -47,14 +47,14 @@ business intelligence web application
   <li>pip install -r requirements.txt
   <li>pip install -r requirements-dev.txt
   <li>pip install -e .
-  <li>fabmanager create-admin --app superset
-  <li>superset db upgrade (It will initialize the database. It needs not to be run everytime )
-  <li>superset init (It creates default roles and permissions. It needs not to be run everytime)
-  <li>superset load_examples (It is used to load examples. It needs not to be run everytime)
+  <li>fabmanager create-admin --app superset (Required only once per db)
+  <li>superset db upgrade (It will initialize the database. It needs not to be run everytime)
+  <li>superset init (It creates/fixes default roles and permissions. It needs not to be run everytime)
+  <li>superset load_examples (Optional. Run only to load sample dashboards)
   <li>FLASK_ENV=development superset run -p 8088 --with-threads --reload --debugger
   <li>cd superset/assets
   <li>npm install
-  <li>npm run dev-server
+  <li>npm run dev-server --watch
 </details>
   OR
 <details>
@@ -80,8 +80,7 @@ Roles
   Gamma
   -----
   Gamma users have limited access. They can only consume data coming from data sources they have been given access to through another complementary role. They only have access to view the slices and dashboards made from data sources that they have access to. Currently Gamma users are not able to alter or add data sources.
-<details>
-<summary>Superset</summary>
+
 
 Screenshots & Gifs
 ------------------
@@ -252,4 +251,3 @@ the world know they are using Superset. Join our growing community!
  1. [Zaihang](http://www.zaih.com/)
  1. [Zalando](https://www.zalando.com)
  1. [Zalora](https://www.zalora.com)
- </details>
