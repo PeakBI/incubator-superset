@@ -16,19 +16,33 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+[![Build Status](https://travis-ci.org/apache/incubator-superset.svg?branch=master)](https://travis-ci.org/apache/incubator-superset)
+[![PyPI version](https://badge.fury.io/py/superset.svg)](https://badge.fury.io/py/superset)
+[![Coverage Status](https://codecov.io/github/apache/incubator-superset/coverage.svg?branch=master)](https://codecov.io/github/apache/incubator-superset)
+[![PyPI](https://img.shields.io/pypi/pyversions/superset.svg?maxAge=2592000)](https://pypi.python.org/pypi/superset)
+[![Join the chat at https://gitter.im/airbnb/superset](https://badges.gitter.im/apache/incubator-superset.svg)](https://gitter.im/airbnb/superset?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Documentation](https://img.shields.io/badge/docs-apache.org-blue.svg)](https://superset.incubator.apache.org)
+[![dependencies Status](https://david-dm.org/apache/incubator-superset/status.svg?path=superset/assets)](https://david-dm.org/apache/incubator-superset?path=superset/assets)
 
-Installation & Configuration
-----------------------------
+<img
+  src="https://cloud.githubusercontent.com/assets/130878/20946612/49a8a25c-bbc0-11e6-8314-10bef902af51.png"
+  alt="Superset"
+  width="500"
+/>
 
-Start with Docker
------------------
- * Clone the repo
- * Create .env and fill all the required variable present .env.sample file
- * docker-compose build
- * docker-compose up
 
-Start with python virtual Env
------------------------------
+# Installation & Configuration
+
+<details>
+<summary>**Start with Docker**</summary>
+
+<li>Clone the repo</li>
+<li>Create `.env` and fill all the required variable present `.env.sample` file</li>
+<li>docker-compose build</li>
+<li>docker-compose up</li>
+</details>
+
+## Start with python virtual Env
  * Clone the repo
  * Export all env variables present in .env.sample file
  * python3 -m venv venv
@@ -45,7 +59,7 @@ Start with python virtual Env
  * npm install
  * npm run dev-server
 
-Login 
+Login
 -----
  * Login into AIS
  * Fetch API Key from local storage
@@ -60,22 +74,8 @@ Roles
   Gamma
   -----
   Gamma users have limited access. They can only consume data coming from data sources they have been given access to through another complementary role. They only have access to view the slices and dashboards made from data sources that they have access to. Currently Gamma users are not able to alter or add data sources.
-<details> 
+<details>
 <summary>Superset</summary>
-
-[![Build Status](https://travis-ci.org/apache/incubator-superset.svg?branch=master)](https://travis-ci.org/apache/incubator-superset)
-[![PyPI version](https://badge.fury.io/py/superset.svg)](https://badge.fury.io/py/superset)
-[![Coverage Status](https://codecov.io/github/apache/incubator-superset/coverage.svg?branch=master)](https://codecov.io/github/apache/incubator-superset)
-[![PyPI](https://img.shields.io/pypi/pyversions/superset.svg?maxAge=2592000)](https://pypi.python.org/pypi/superset)
-[![Join the chat at https://gitter.im/airbnb/superset](https://badges.gitter.im/apache/incubator-superset.svg)](https://gitter.im/airbnb/superset?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Documentation](https://img.shields.io/badge/docs-apache.org-blue.svg)](https://superset.incubator.apache.org)
-[![dependencies Status](https://david-dm.org/apache/incubator-superset/status.svg?path=superset/assets)](https://david-dm.org/apache/incubator-superset?path=superset/assets)
-
-<img
-  src="https://cloud.githubusercontent.com/assets/130878/20946612/49a8a25c-bbc0-11e6-8314-10bef902af51.png"
-  alt="Superset"
-  width="500"
-/>
 
 **Apache Superset** (incubating) is a modern, enterprise-ready
 business intelligence web application
