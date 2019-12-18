@@ -14,7 +14,7 @@
                             "datasource_name": "customerai.Total Customer",
                             "datasource_type": "table",
                             "id": 82,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"34__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"totalcustomercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 462, \"is_dttm\": false, \"optionName\": \"_col_totalcustomercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(totalcustomercnt)\", \"optionName\": \"metric_mrx864ykdd_exy5xqlolr\", \"sqlExpression\": null}, \"show_trend_line\": false, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 82, \"datasource_name\": \"Total Customer\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1570101575}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"34__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"totalcustomercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 462, \"is_dttm\": false, \"optionName\": \"_col_totalcustomercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(totalcustomercnt)\", \"optionName\": \"metric_mrx864ykdd_exy5xqlolr\", \"sqlExpression\": null}, \"show_trend_line\": false, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 82, \"datasource_name\": \"Total Customer\", \"schema\": \"customerai\", \"database_name\": \"examples\", \"import_time\": 1570101575}",
                             "slice_name": "Total Customers",
                             "viz_type": "big_number"
                         }
@@ -25,7 +25,7 @@
                             "datasource_name": "customerai.Active Customers",
                             "datasource_type": "table",
                             "id": 83,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 229, \"g\": 95, \"r\": 38}, \"compare_lag\": 7, \"datasource\": \"43__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"activecnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 468, \"is_dttm\": false, \"optionName\": \"_col_activecnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(activecnt)\", \"optionName\": \"metric_ydcpati057_cav4b7z3dfe\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 83, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 83, \"datasource_name\": \"Active Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 229, \"g\": 95, \"r\": 38}, \"compare_lag\": 7, \"datasource\": \"43__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"activecnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 468, \"is_dttm\": false, \"optionName\": \"_col_activecnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(activecnt)\", \"optionName\": \"metric_ydcpati057_cav4b7z3dfe\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 83, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 83, \"datasource_name\": \"Active Customers\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Active Customers",
                             "viz_type": "big_number"
                         }
@@ -36,7 +36,7 @@
                             "datasource_name": "customerai.Lapsed Customers",
                             "datasource_type": "table",
                             "id": 84,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 0, \"g\": 150, \"r\": 242}, \"compare_lag\": 7, \"datasource\": \"33__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"lapsedcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 470, \"is_dttm\": false, \"optionName\": \"_col_lapsedcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(lapsedcnt)\", \"optionName\": \"metric_4qxpfryxex3_uk29hf6gyf\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 84, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 84, \"datasource_name\": \"Lapsed Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 0, \"g\": 150, \"r\": 242}, \"compare_lag\": 7, \"datasource\": \"33__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"lapsedcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 470, \"is_dttm\": false, \"optionName\": \"_col_lapsedcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(lapsedcnt)\", \"optionName\": \"metric_4qxpfryxex3_uk29hf6gyf\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 84, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 84, \"datasource_name\": \"Lapsed Customers\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Lapsed Customers",
                             "viz_type": "big_number"
                         }
@@ -47,7 +47,7 @@
                             "datasource_name": "customerai.Avg Predictive LTV",
                             "datasource_type": "table",
                             "id": 85,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"44__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgeltv\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 472, \"is_dttm\": false, \"optionName\": \"_col_avgeltv\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgeltv)\", \"optionName\": \"metric_arqcptjmb7j_j0yi8fjwba\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 85, \"start_y_axis_at_zero\": false, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 85, \"datasource_name\": \"Avg Predictive LTV\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"44__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgeltv\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 472, \"is_dttm\": false, \"optionName\": \"_col_avgeltv\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgeltv)\", \"optionName\": \"metric_arqcptjmb7j_j0yi8fjwba\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 85, \"start_y_axis_at_zero\": false, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 85, \"datasource_name\": \"Avg Predictive LTV\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Predictive LTV (per customer)",
                             "viz_type": "big_number"
                         }
@@ -58,7 +58,7 @@
                             "datasource_name": "customerai.In Market Customers",
                             "datasource_type": "table",
                             "id": 86,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 5, \"g\": 117, \"r\": 65}, \"compare_lag\": 7, \"datasource\": \"32__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"inmarkethighcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 474, \"is_dttm\": false, \"optionName\": \"_col_inmarkethighcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(inmarkethighcnt)\", \"optionName\": \"metric_s3mljepvza_vgq45du8zsg\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 86, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 86, \"datasource_name\": \"In Market Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 5, \"g\": 117, \"r\": 65}, \"compare_lag\": 7, \"datasource\": \"32__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"inmarkethighcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 474, \"is_dttm\": false, \"optionName\": \"_col_inmarkethighcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(inmarkethighcnt)\", \"optionName\": \"metric_s3mljepvza_vgq45du8zsg\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 86, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 86, \"datasource_name\": \"In Market Customers\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "In Market Customers",
                             "viz_type": "big_number"
                         }
@@ -69,7 +69,7 @@
                             "datasource_name": "customerai.High Risk Customers",
                             "datasource_type": "table",
                             "id": 87,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 27, \"g\": 2, \"r\": 208}, \"compare_lag\": 7, \"datasource\": \"37__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"highriskcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 476, \"is_dttm\": false, \"optionName\": \"_col_highriskcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(highriskcnt)\", \"optionName\": \"metric_97tx3d4j2ab_me33kxuxqxd\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 87, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 87, \"datasource_name\": \"High Risk Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 27, \"g\": 2, \"r\": 208}, \"compare_lag\": 7, \"datasource\": \"37__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"highriskcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 476, \"is_dttm\": false, \"optionName\": \"_col_highriskcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(highriskcnt)\", \"optionName\": \"metric_97tx3d4j2ab_me33kxuxqxd\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 87, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 87, \"datasource_name\": \"High Risk Customers\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "High Risk Customers",
                             "viz_type": "big_number"
                         }
@@ -80,7 +80,7 @@
                             "datasource_name": "customerai.In Market Customers Breakdown",
                             "datasource_type": "table",
                             "id": 88,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"41__table\", \"granularity_sqla\": null, \"groupby\": [\"predinmarket\"], \"label_colors\": {\"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"predinmarket\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 477, \"is_dttm\": false, \"optionName\": \"_col_predinmarket\", \"python_date_format\": null, \"type\": \"STRING\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(In Market)\", \"optionName\": \"metric_2o3dxwl6jed_m7twgj1j2ek\", \"sqlExpression\": null}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": 10000, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 88, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 88, \"datasource_name\": \"In Market Customers Breakdown\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"41__table\", \"granularity_sqla\": null, \"groupby\": [\"predinmarket\"], \"label_colors\": {\"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"predinmarket\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 477, \"is_dttm\": false, \"optionName\": \"_col_predinmarket\", \"python_date_format\": null, \"type\": \"STRING\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(In Market)\", \"optionName\": \"metric_2o3dxwl6jed_m7twgj1j2ek\", \"sqlExpression\": null}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": 10000, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 88, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 88, \"datasource_name\": \"In Market Customers Breakdown\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "In Market Customers",
                             "viz_type": "dist_bar"
                         }
@@ -91,7 +91,7 @@
                             "datasource_name": "customerai.At Risk Customers Breakdown",
                             "datasource_type": "table",
                             "id": 89,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"39__table\", \"granularity_sqla\": null, \"groupby\": [\"predchurnrisk\"], \"label_colors\": {\"#Customers(In Market)\": \"#417505\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(At Risk)\", \"optionName\": \"metric_clapdl1o6gp_3ggp4twhr1x\", \"sqlExpression\": \"COUNT(atrisk)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 89, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 89, \"datasource_name\": \"At Risk Customers Breakdown\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"39__table\", \"granularity_sqla\": null, \"groupby\": [\"predchurnrisk\"], \"label_colors\": {\"#Customers(In Market)\": \"#417505\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(At Risk)\", \"optionName\": \"metric_clapdl1o6gp_3ggp4twhr1x\", \"sqlExpression\": \"COUNT(atrisk)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 89, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 89, \"datasource_name\": \"At Risk Customers Breakdown\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "At Risk Customers",
                             "viz_type": "dist_bar"
                         }
@@ -102,7 +102,7 @@
                             "datasource_name": "customerai.Next Transaction Window",
                             "datasource_type": "table",
                             "id": 90,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"49__table\", \"granularity_sqla\": null, \"groupby\": [\"prednexttranswindow\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Next Transaction)\", \"optionName\": \"metric_bejh7q9ndpp_jb4lsjwfv6\", \"sqlExpression\": \"COUNT(transaction)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": 10, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 90, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Time Cap\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 90, \"datasource_name\": \"Next Transaction Window\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"49__table\", \"granularity_sqla\": null, \"groupby\": [\"prednexttranswindow\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Next Transaction)\", \"optionName\": \"metric_bejh7q9ndpp_jb4lsjwfv6\", \"sqlExpression\": \"COUNT(transaction)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": 10, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 90, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Time Cap\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 90, \"datasource_name\": \"Next Transaction Window\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Next Transaction Window",
                             "viz_type": "dist_bar"
                         }
@@ -113,7 +113,7 @@
                             "datasource_name": "customerai.Predictive Engagement",
                             "datasource_type": "table",
                             "id": 91,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"50__table\", \"granularity_sqla\": null, \"groupby\": [\"predengagement\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(In Market)\": \"#417505\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"engagement\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 484, \"is_dttm\": false, \"optionName\": \"_col_engagement\", \"python_date_format\": null, \"type\": \"STRING\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Engagement)\", \"optionName\": \"metric_8ivr5jbpkss_xdyf5bshoe8\", \"sqlExpression\": null}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 91, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 91, \"datasource_name\": \"Predictive Engagement\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"50__table\", \"granularity_sqla\": null, \"groupby\": [\"predengagement\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(In Market)\": \"#417505\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"engagement\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 484, \"is_dttm\": false, \"optionName\": \"_col_engagement\", \"python_date_format\": null, \"type\": \"STRING\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Engagement)\", \"optionName\": \"metric_8ivr5jbpkss_xdyf5bshoe8\", \"sqlExpression\": null}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 91, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 91, \"datasource_name\": \"Predictive Engagement\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Predictive Engagement",
                             "viz_type": "dist_bar"
                         }
@@ -124,7 +124,7 @@
                             "datasource_name": "customerai.Gender Distribution",
                             "datasource_type": "table",
                             "id": 92,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"35__table\", \"granularity_sqla\": null, \"groupby\": [\"usergender\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Next Transaction)\": \"#265fe5\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Gender)\", \"optionName\": \"metric_jwqkgn74b0r_sas99w2wmk\", \"sqlExpression\": \"COUNT(gender)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 92, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Gender\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 92, \"datasource_name\": \"Gender Distribution\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"35__table\", \"granularity_sqla\": null, \"groupby\": [\"usergender\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Next Transaction)\": \"#265fe5\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Gender)\", \"optionName\": \"metric_jwqkgn74b0r_sas99w2wmk\", \"sqlExpression\": \"COUNT(gender)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 92, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Gender\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 92, \"datasource_name\": \"Gender Distribution\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Gender Distribution",
                             "viz_type": "dist_bar"
                         }
@@ -135,7 +135,7 @@
                             "datasource_name": "customerai.Top Locations",
                             "datasource_type": "table",
                             "id": 93,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"38__table\", \"granularity_sqla\": null, \"groupby\": [\"addrcountry\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Next Transaction)\": \"#265fe5\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Location)\", \"optionName\": \"metric_oz65dp841i_823yd2mgbcp\", \"sqlExpression\": \"COUNT(location)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": 10, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 93, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Location\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 93, \"datasource_name\": \"Top Locations\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"38__table\", \"granularity_sqla\": null, \"groupby\": [\"addrcountry\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Next Transaction)\": \"#265fe5\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Location)\", \"optionName\": \"metric_oz65dp841i_823yd2mgbcp\", \"sqlExpression\": \"COUNT(location)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": 10, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 93, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Location\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 93, \"datasource_name\": \"Top Locations\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Top Locations",
                             "viz_type": "dist_bar"
                         }
@@ -146,7 +146,7 @@
                             "datasource_name": "customerai.Single Order Customers",
                             "datasource_type": "table",
                             "id": 94,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"34__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"singleordercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 503, \"is_dttm\": false, \"optionName\": \"_col_singleordercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(singleordercnt)\", \"optionName\": \"metric_4tffl8tv6e_csgr4vfz5zl\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 94, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 94, \"datasource_name\": \"Single Order Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"34__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"singleordercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 503, \"is_dttm\": false, \"optionName\": \"_col_singleordercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(singleordercnt)\", \"optionName\": \"metric_4tffl8tv6e_csgr4vfz5zl\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 94, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 94, \"datasource_name\": \"Single Order Customers\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Single Order Customers",
                             "viz_type": "big_number"
                         }
@@ -157,7 +157,7 @@
                             "datasource_name": "customerai.Repeat Order Customers",
                             "datasource_type": "table",
                             "id": 95,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"40__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"repeatordercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 505, \"is_dttm\": false, \"optionName\": \"_col_repeatordercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(repeatordercnt)\", \"optionName\": \"metric_iiab6h8ah58_offmowzpndq\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 95, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 95, \"datasource_name\": \"Repeat Order Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"40__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"repeatordercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 505, \"is_dttm\": false, \"optionName\": \"_col_repeatordercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(repeatordercnt)\", \"optionName\": \"metric_iiab6h8ah58_offmowzpndq\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 95, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 95, \"datasource_name\": \"Repeat Order Customers\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Repeat Order Customers",
                             "viz_type": "big_number"
                         }
@@ -168,7 +168,7 @@
                             "datasource_name": "customerai.Average Gap Between Orders",
                             "datasource_type": "table",
                             "id": 96,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"45__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgordergapcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 507, \"is_dttm\": false, \"optionName\": \"_col_avgordergapcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(avgordergapcnt)\", \"optionName\": \"metric_nlirbqzmzsk_bty9qlc8e3g\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 96, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 96, \"datasource_name\": \"Average Gap Between Orders\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"45__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgordergapcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 507, \"is_dttm\": false, \"optionName\": \"_col_avgordergapcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(avgordergapcnt)\", \"optionName\": \"metric_nlirbqzmzsk_bty9qlc8e3g\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 96, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 96, \"datasource_name\": \"Average Gap Between Orders\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Average Gap Between Orders",
                             "viz_type": "big_number"
                         }
@@ -179,7 +179,7 @@
                             "datasource_name": "customerai.Average Basket Size",
                             "datasource_type": "table",
                             "id": 97,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"48__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgbasketsize\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 509, \"is_dttm\": false, \"optionName\": \"_col_avgbasketsize\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgbasketsize)\", \"optionName\": \"metric_35629xpgdzc_arz5c6f9ex\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 97, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 97, \"datasource_name\": \"Average Basket Size\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"48__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgbasketsize\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 509, \"is_dttm\": false, \"optionName\": \"_col_avgbasketsize\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgbasketsize)\", \"optionName\": \"metric_35629xpgdzc_arz5c6f9ex\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 97, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 97, \"datasource_name\": \"Average Basket Size\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Average Basket Size",
                             "viz_type": "big_number"
                         }
@@ -190,7 +190,7 @@
                             "datasource_name": "customerai.Average Order Value",
                             "datasource_type": "table",
                             "id": 98,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"36__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgordervalue\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 511, \"is_dttm\": false, \"optionName\": \"_col_avgordervalue\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgordervalue)\", \"optionName\": \"metric_m9xvozb965q_8uekn2vashd\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 98, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 98, \"datasource_name\": \"Average Order Value\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"36__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgordervalue\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 511, \"is_dttm\": false, \"optionName\": \"_col_avgordervalue\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgordervalue)\", \"optionName\": \"metric_m9xvozb965q_8uekn2vashd\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 98, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 98, \"datasource_name\": \"Average Order Value\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Average Order Value",
                             "viz_type": "big_number"
                         }
@@ -201,7 +201,7 @@
                             "datasource_name": "customerai.Top Products",
                             "datasource_type": "table",
                             "id": 120,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"42__table\", \"granularity_sqla\": null, \"groupby\": [\"associationvalue\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Next Transaction)\": \"#265fe5\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Product)\", \"optionName\": \"metric_h1yn9vcw58f_kn0y4tbqi0h\", \"sqlExpression\": \"SUM(user_count)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 120, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Product\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 120, \"datasource_name\": \"Top Products\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"42__table\", \"granularity_sqla\": null, \"groupby\": [\"associationvalue\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Next Transaction)\": \"#265fe5\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Product)\", \"optionName\": \"metric_h1yn9vcw58f_kn0y4tbqi0h\", \"sqlExpression\": \"SUM(user_count)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 120, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Product\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 120, \"datasource_name\": \"Top Products\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Top Products",
                             "viz_type": "dist_bar"
                         }
@@ -212,7 +212,7 @@
                             "datasource_name": "customerai.Top Brands",
                             "datasource_type": "table",
                             "id": 121,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"47__table\", \"granularity_sqla\": null, \"groupby\": [\"associationvalue\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Next Transaction)\": \"#265fe5\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Brand)\", \"optionName\": \"metric_cjynmjfddcw_t29xvsfxrf\", \"sqlExpression\": \"SUM(user_count)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 121, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Brand\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 121, \"datasource_name\": \"Top Brands\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"47__table\", \"granularity_sqla\": null, \"groupby\": [\"associationvalue\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Next Transaction)\": \"#265fe5\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Brand)\", \"optionName\": \"metric_cjynmjfddcw_t29xvsfxrf\", \"sqlExpression\": \"SUM(user_count)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 121, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Brand\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 121, \"datasource_name\": \"Top Brands\", \"schema\": \"customerai\", \"database_name\": \"examples\"}",
                             "slice_name": "Top Brands",
                             "viz_type": "dist_bar"
                         }
@@ -307,7 +307,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 37, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select loaddate , highriskcnt   from customerai.aggregatedcustomerdata",
                 "table_name": "High Risk Customers",
                 "template_params": "{}"
@@ -397,7 +397,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 38, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select  addrcountry, userid as location from customerai.customer_attributes",
                 "table_name": "Top Locations",
                 "template_params": "{}"
@@ -487,7 +487,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 36, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select avgordervalue    , loaddate from customerai.aggregatedcustomerdata",
                 "table_name": "Average Order Value",
                 "template_params": "{}"
@@ -577,7 +577,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 49, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "SELECT prednexttranswindow, userid as transaction\r\nfrom customerai.customer_attributes ORDER BY prednexttranswindow ASC",
                 "table_name": "Next Transaction Window",
                 "template_params": "{}"
@@ -667,7 +667,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 34, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select singleordercnt, loaddate from customerai.aggregatedcustomerdata",
                 "table_name": "Single Order Customers",
                 "template_params": "{}"
@@ -757,7 +757,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 48, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select avgbasketsize   , loaddate from customerai.aggregatedcustomerdata",
                 "table_name": "Average Basket Size",
                 "template_params": "{}"
@@ -847,7 +847,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 43, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select loaddate , activecnt from customerai.aggregatedcustomerdata",
                 "table_name": "Active Customers",
                 "template_params": "{}"
@@ -937,7 +937,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 41, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select predinmarket, userid  from customerai.customer_attributes",
                 "table_name": "In Market Customers Breakdown",
                 "template_params": "{}"
@@ -1027,7 +1027,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 40, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select repeatordercnt , loaddate from customerai.aggregatedcustomerdata",
                 "table_name": "Repeat Order Customers",
                 "template_params": "{}"
@@ -1117,7 +1117,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 35, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select userid as gender, usergender from customerai.customer_attributes",
                 "table_name": "Gender Distribution",
                 "template_params": "{}"
@@ -1207,7 +1207,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 33, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select loaddate , lapsedcnt  from customerai.aggregatedcustomerdata",
                 "table_name": "Lapsed Customers",
                 "template_params": "{}"
@@ -1297,7 +1297,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 50, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "SELECT predengagement, userid as engagement\r\nfrom customerai.customer_attributes ORDER BY predengagement ASC",
                 "table_name": "Predictive Engagement",
                 "template_params": "{}"
@@ -1435,7 +1435,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 47, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select   associationvalue , count(*) as user_count , associationrank from customerai.customer_preferences   where associationtype  = 'Brand' and ispeakrowdelete is  null group by associationvalue, associationrank\nORDER by associationrank asc limit 10",
                 "table_name": "Top Brands",
                 "template_params": "{}"
@@ -1525,7 +1525,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 32, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select loaddate , inmarkethighcnt  from customerai.aggregatedcustomerdata",
                 "table_name": "In Market Customers",
                 "template_params": "{}"
@@ -1615,7 +1615,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 45, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select avgordergapcnt  , loaddate from customerai.aggregatedcustomerdata",
                 "table_name": "Average Gap Between Orders",
                 "template_params": "{}"
@@ -1705,7 +1705,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 46, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select loaddate, totalcustomercnt  from customerai.aggregatedcustomerdata",
                 "table_name": "Total Customer",
                 "template_params": "{}"
@@ -1795,7 +1795,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 44, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select loaddate , avgeltv from customerai.aggregatedcustomerdata",
                 "table_name": "Avg Predictive LTV",
                 "template_params": "{}"
@@ -1933,7 +1933,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 42, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select associationvalue,\n         count(*) as user_count,\n         associationrank\n  from customerai.customer_preferences\n  where associationtype = 'Product Recommendation'\n  group by associationvalue,\n           associationrank\n  ORDER by associationrank asc\n  limit 10",
                 "table_name": "Top Products",
                 "template_params": "{}"
@@ -2023,7 +2023,7 @@
                 ],
                 "offset": 0,
                 "params": "{\"remote_id\": 39, \"database_name\": \"examples\", \"import_time\": 1570639278}",
-                "schema": "pcv",
+                "schema": "customerai",
                 "sql": "select predchurnrisk , userid as atrisk from customerai.customer_attributes",
                 "table_name": "At Risk Customers Breakdown",
                 "template_params": "{}"
