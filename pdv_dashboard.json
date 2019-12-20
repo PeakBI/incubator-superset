@@ -2,10 +2,10 @@
     "dashboards": [
         {
             "__Dashboard__": {
-                "css": "",
+                "css": null,
                 "dashboard_title": "demandai",
                 "description": null,
-                "json_metadata": "{\"filter_immune_slices\": [20, 21, 27, 24, 25, 23, 26, 28, 33, 29, 31, 22, 30, 46, 47, 43, 44, 45], \"timed_refresh_immune_slices\": [], \"filter_immune_slice_fields\": {}, \"expanded_slices\": {}, \"refresh_frequency\": 0, \"default_filters\": \"{\\\"47\\\": {\\\"type\\\": \\\"postcode\\\"}}\", \"label_colors\": {\"SUM(totalforecastsales\": \"#0D9DDB\"}, \"remote_id\": 52, \"import_time\": 1576735544}",
+                "json_metadata": "{\"filter_immune_slices\": [105, 106, 107, 108, 109, 110, 111, 112, 112, 114, 115, 117, 118, 119, 120, 121, 122, 123], \"timed_refresh_immune_slices\": [], \"filter_immune_slice_fields\": {}, \"expanded_slices\": {}, \"refresh_frequency\": 0, \"default_filters\": \"{\\\"47\\\": {\\\"type\\\": \\\"postcode\\\"}}\", \"label_colors\": {\"SUM(totalforecastsales\": \"#0D9DDB\"}, \"remote_id\": 52, \"import_time\": 1576735544}",
                 "position_json": "{\"CHART--o7TJkWYOKE\": {\"children\": [], \"id\": \"CHART--o7TJkWYOKE\", \"meta\": {\"chartId\": 115, \"height\": 19, \"sliceName\": \"Overstocked SKU Count\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-UvyMSQ02i-\", \"TAB-GRdaBlb6mE\", \"ROW-Nd5sygY9q\"], \"type\": \"CHART\"}, \"CHART-5ob2dRqlU9\": {\"children\": [], \"id\": \"CHART-5ob2dRqlU9\", \"meta\": {\"chartId\": 119, \"height\": 14, \"sliceName\": \"Filter\", \"width\": 4}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-l37LuBXeJ8\", \"TAB--9XlLiyWwQ\", \"ROW-MLhI9qe49\"], \"type\": \"CHART\"}, \"CHART-6bxfRh_oyo\": {\"children\": [], \"id\": \"CHART-6bxfRh_oyo\", \"meta\": {\"chartId\": 108, \"height\": 19, \"sliceName\": \"High Demand SKU Count\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-mLjUGMs5aF\", \"TAB-ldKRhpW4Ud\", \"ROW-snKuUCMzd\"], \"type\": \"CHART\"}, \"CHART-FslhmZ8Wmn\": {\"children\": [], \"id\": \"CHART-FslhmZ8Wmn\", \"meta\": {\"chartId\": 114, \"height\": 19, \"sliceName\": \"Stock Value\", \"width\": 4}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS--qzCHfUQ4G\", \"TAB-WQ_6lLd-tx\", \"ROW-WhcwyJGOBC\", \"COLUMN-6AoZuG5M13\"], \"type\": \"CHART\"}, \"CHART-M72J642Shx\": {\"children\": [], \"id\": \"CHART-M72J642Shx\", \"meta\": {\"chartId\": 121, \"height\": 45, \"sliceName\": \"Brands\", \"width\": 6}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-l37LuBXeJ8\", \"TAB--9XlLiyWwQ\", \"ROW-w0CEQqOtG\"], \"type\": \"CHART\"}, \"CHART-OYtWPaS78_\": {\"children\": [], \"id\": \"CHART-OYtWPaS78_\", \"meta\": {\"chartId\": 109, \"height\": 19, \"sliceName\": \"High Demand SKU Sales\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-mLjUGMs5aF\", \"TAB-ldKRhpW4Ud\", \"ROW-snKuUCMzd\"], \"type\": \"CHART\"}, \"CHART-Po4IIDv2Tf\": {\"children\": [], \"id\": \"CHART-Po4IIDv2Tf\", \"meta\": {\"chartId\": 123, \"height\": 45, \"sliceName\": \"Categories\", \"width\": 6}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-l37LuBXeJ8\", \"TAB--9XlLiyWwQ\", \"ROW-w0CEQqOtG\"], \"type\": \"CHART\"}, \"CHART-XQkfPhdzSr\": {\"children\": [], \"id\": \"CHART-XQkfPhdzSr\", \"meta\": {\"chartId\": 122, \"height\": 19, \"sliceName\": \"Capital At Risk\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-UvyMSQ02i-\", \"TAB-GRdaBlb6mE\", \"ROW-Nd5sygY9q\"], \"type\": \"CHART\"}, \"CHART-YlTcz_-YMI\": {\"children\": [], \"id\": \"CHART-YlTcz_-YMI\", \"meta\": {\"chartId\": 105, \"height\": 20, \"sliceName\": \"Last Week Sales\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-MqX7q6Amlr\", \"TAB-6ZWu24G9_k\", \"ROW-NDKPnF4Au\"], \"type\": \"CHART\"}, \"CHART-YrMX-z4Yvj\": {\"children\": [], \"id\": \"CHART-YrMX-z4Yvj\", \"meta\": {\"chartId\": 112, \"height\": 19, \"sliceName\": \"Active SKU\", \"width\": 4}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS--qzCHfUQ4G\", \"TAB-WQ_6lLd-tx\", \"ROW-WhcwyJGOBC\", \"COLUMN-6AoZuG5M13\"], \"type\": \"CHART\"}, \"CHART-Z4rwUFqfSX\": {\"children\": [], \"id\": \"CHART-Z4rwUFqfSX\", \"meta\": {\"chartId\": 117, \"height\": 20, \"sliceName\": \"Current Week Sales Achieved\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-MqX7q6Amlr\", \"TAB-6ZWu24G9_k\", \"ROW-NDKPnF4Au\"], \"type\": \"CHART\"}, \"CHART-c1sL5RSAFL\": {\"children\": [], \"id\": \"CHART-c1sL5RSAFL\", \"meta\": {\"chartId\": 120, \"height\": 19, \"sliceName\": \"Sales At Risk\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-UvyMSQ02i-\", \"TAB-GRdaBlb6mE\", \"ROW-Nd5sygY9q\"], \"type\": \"CHART\"}, \"CHART-dVXh3aqrP7\": {\"children\": [], \"id\": \"CHART-dVXh3aqrP7\", \"meta\": {\"chartId\": 106, \"height\": 20, \"sliceName\": \"Predictive Current Week Sales\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-MqX7q6Amlr\", \"TAB-6ZWu24G9_k\", \"ROW-NDKPnF4Au\"], \"type\": \"CHART\"}, \"CHART-gS2fWB2m448\": {\"children\": [], \"id\": \"CHART-gS2fWB2m448\", \"meta\": {\"chartId\": 116, \"height\": 45, \"sliceName\": \"Locations\", \"width\": 12}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-l37LuBXeJ8\", \"TAB--9XlLiyWwQ\", \"ROW-JJW-NFxet\"], \"type\": \"CHART\"}, \"CHART-ocqjxQY5fH\": {\"children\": [], \"id\": \"CHART-ocqjxQY5fH\", \"meta\": {\"chartId\": 118, \"height\": 40, \"sliceName\": \"AI Predicted Segments\", \"width\": 9}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS--qzCHfUQ4G\", \"TAB-WQ_6lLd-tx\", \"ROW-WhcwyJGOBC\"], \"type\": \"CHART\"}, \"CHART-ok4GlXpLAq\": {\"children\": [], \"id\": \"CHART-ok4GlXpLAq\", \"meta\": {\"chartId\": 111, \"height\": 19, \"sliceName\": \"Low Demand SKU Count\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-mLjUGMs5aF\", \"TAB-ldKRhpW4Ud\", \"ROW-snKuUCMzd\"], \"type\": \"CHART\"}, \"CHART-rVzqs5THuD\": {\"children\": [], \"id\": \"CHART-rVzqs5THuD\", \"meta\": {\"chartId\": 113, \"height\": 19, \"sliceName\": \"Understocked SKU Count\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-UvyMSQ02i-\", \"TAB-GRdaBlb6mE\", \"ROW-Nd5sygY9q\"], \"type\": \"CHART\"}, \"CHART-w9-26QCOV_\": {\"children\": [], \"id\": \"CHART-w9-26QCOV_\", \"meta\": {\"chartId\": 110, \"height\": 20, \"sliceName\": \"Predictive Next Week Sales\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-MqX7q6Amlr\", \"TAB-6ZWu24G9_k\", \"ROW-NDKPnF4Au\"], \"type\": \"CHART\"}, \"CHART-zjIwWr8uQk\": {\"children\": [], \"id\": \"CHART-zjIwWr8uQk\", \"meta\": {\"chartId\": 107, \"height\": 19, \"sliceName\": \"Low Demand SKU Saless\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-mLjUGMs5aF\", \"TAB-ldKRhpW4Ud\", \"ROW-snKuUCMzd\"], \"type\": \"CHART\"}, \"COLUMN-6AoZuG5M13\": {\"children\": [\"CHART-YrMX-z4Yvj\", \"CHART-FslhmZ8Wmn\"], \"id\": \"COLUMN-6AoZuG5M13\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\", \"width\": 3}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS--qzCHfUQ4G\", \"TAB-WQ_6lLd-tx\", \"ROW-WhcwyJGOBC\"], \"type\": \"COLUMN\"}, \"DASHBOARD_VERSION_KEY\": \"v2\", \"GRID_ID\": {\"children\": [\"TABS-MqX7q6Amlr\", \"TABS--qzCHfUQ4G\", \"TABS-UvyMSQ02i-\", \"TABS-mLjUGMs5aF\", \"TABS-l37LuBXeJ8\"], \"id\": \"GRID_ID\", \"parents\": [\"ROOT_ID\"], \"type\": \"GRID\"}, \"HEADER_ID\": {\"id\": \"HEADER_ID\", \"meta\": {\"text\": \"demandai\"}, \"type\": \"HEADER\"}, \"ROOT_ID\": {\"children\": [\"GRID_ID\"], \"id\": \"ROOT_ID\", \"type\": \"ROOT\"}, \"ROW-JJW-NFxet\": {\"children\": [\"CHART-gS2fWB2m448\"], \"id\": \"ROW-JJW-NFxet\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-l37LuBXeJ8\", \"TAB--9XlLiyWwQ\"], \"type\": \"ROW\"}, \"ROW-MLhI9qe49\": {\"children\": [\"CHART-5ob2dRqlU9\"], \"id\": \"ROW-MLhI9qe49\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-l37LuBXeJ8\", \"TAB--9XlLiyWwQ\"], \"type\": \"ROW\"}, \"ROW-NDKPnF4Au\": {\"children\": [\"CHART-YlTcz_-YMI\", \"CHART-dVXh3aqrP7\", \"CHART-Z4rwUFqfSX\", \"CHART-w9-26QCOV_\"], \"id\": \"ROW-NDKPnF4Au\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-MqX7q6Amlr\", \"TAB-6ZWu24G9_k\"], \"type\": \"ROW\"}, \"ROW-Nd5sygY9q\": {\"children\": [\"CHART--o7TJkWYOKE\", \"CHART-XQkfPhdzSr\", \"CHART-rVzqs5THuD\", \"CHART-c1sL5RSAFL\"], \"id\": \"ROW-Nd5sygY9q\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-UvyMSQ02i-\", \"TAB-GRdaBlb6mE\"], \"type\": \"ROW\"}, \"ROW-WhcwyJGOBC\": {\"children\": [\"COLUMN-6AoZuG5M13\", \"CHART-ocqjxQY5fH\"], \"id\": \"ROW-WhcwyJGOBC\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS--qzCHfUQ4G\", \"TAB-WQ_6lLd-tx\"], \"type\": \"ROW\"}, \"ROW-snKuUCMzd\": {\"children\": [\"CHART-6bxfRh_oyo\", \"CHART-OYtWPaS78_\", \"CHART-ok4GlXpLAq\", \"CHART-zjIwWr8uQk\"], \"id\": \"ROW-snKuUCMzd\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-mLjUGMs5aF\", \"TAB-ldKRhpW4Ud\"], \"type\": \"ROW\"}, \"ROW-w0CEQqOtG\": {\"children\": [\"CHART-Po4IIDv2Tf\", \"CHART-M72J642Shx\"], \"id\": \"ROW-w0CEQqOtG\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-l37LuBXeJ8\", \"TAB--9XlLiyWwQ\"], \"type\": \"ROW\"}, \"TAB--9XlLiyWwQ\": {\"children\": [\"ROW-w0CEQqOtG\", \"ROW-MLhI9qe49\", \"ROW-JJW-NFxet\"], \"id\": \"TAB--9XlLiyWwQ\", \"meta\": {\"text\": \"Top Trends\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-l37LuBXeJ8\"], \"type\": \"TAB\"}, \"TAB-6ZWu24G9_k\": {\"children\": [\"ROW-NDKPnF4Au\"], \"id\": \"TAB-6ZWu24G9_k\", \"meta\": {\"text\": \"Business Highlights\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-MqX7q6Amlr\"], \"type\": \"TAB\"}, \"TAB-GRdaBlb6mE\": {\"children\": [\"ROW-Nd5sygY9q\"], \"id\": \"TAB-GRdaBlb6mE\", \"meta\": {\"text\": \"Stock Prediction (Next Week)\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-UvyMSQ02i-\"], \"type\": \"TAB\"}, \"TAB-WQ_6lLd-tx\": {\"children\": [\"ROW-WhcwyJGOBC\"], \"id\": \"TAB-WQ_6lLd-tx\", \"meta\": {\"text\": \"Product Classification\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS--qzCHfUQ4G\"], \"type\": \"TAB\"}, \"TAB-ldKRhpW4Ud\": {\"children\": [\"ROW-snKuUCMzd\"], \"id\": \"TAB-ldKRhpW4Ud\", \"meta\": {\"text\": \"Predictive Demand Variation (Next Week)\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"TABS-mLjUGMs5aF\"], \"type\": \"TAB\"}, \"TABS--qzCHfUQ4G\": {\"children\": [\"TAB-WQ_6lLd-tx\"], \"id\": \"TABS--qzCHfUQ4G\", \"meta\": {}, \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"type\": \"TABS\"}, \"TABS-MqX7q6Amlr\": {\"children\": [\"TAB-6ZWu24G9_k\"], \"id\": \"TABS-MqX7q6Amlr\", \"meta\": {}, \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"type\": \"TABS\"}, \"TABS-UvyMSQ02i-\": {\"children\": [\"TAB-GRdaBlb6mE\"], \"id\": \"TABS-UvyMSQ02i-\", \"meta\": {}, \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"type\": \"TABS\"}, \"TABS-l37LuBXeJ8\": {\"children\": [\"TAB--9XlLiyWwQ\"], \"id\": \"TABS-l37LuBXeJ8\", \"meta\": {}, \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"type\": \"TABS\"}, \"TABS-mLjUGMs5aF\": {\"children\": [\"TAB-ldKRhpW4Ud\"], \"id\": \"TABS-mLjUGMs5aF\", \"meta\": {}, \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"type\": \"TABS\"}}",
                 "slices": [
                     {
@@ -282,7 +282,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 33, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 33, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select count(distinct skuid) understocksku \r\nfrom demandai.vw_weekly_demand_staticweek\r\nwhere\r\nstaticweekno =1\r\nand currentstock < minstocklevel",
                 "table_name": "Understocked SKU Count",
@@ -348,7 +348,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 26, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 26, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select count(distinct skuid) from demandai.vw_demand_variation\r\n where \r\n percentavgchg < 10",
                 "table_name": "Low Demand SKU Count",
@@ -414,7 +414,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 21, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 21, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select sum(peakforecast*lastknownrrp) totalforecastamount\r\nfrom  demandai.vw_sku_forecast_with_lastrrp_staticweek\r\n where \r\n staticweekno = 0",
                 "table_name": "Predictive Current Week Sales",
@@ -528,7 +528,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 30, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 30, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select 'Revenue Profile' as profile,peakcategory1 as peak_category,sum(peakforecast * lastknownrrp) totalforecastsales\r\nfrom demandai.vw_sku_forecast_with_lastrrp_staticweek\r\nwhere staticweekno = 1 \r\ngroup by peakcategory1\r\nunion\r\nselect 'Demand Profile' as profile,peakcategory2 ,sum(peakforecast * lastknownrrp) \r\nfrom demandai.vw_sku_forecast_with_lastrrp_staticweek\r\nwhere staticweekno = 1 \r\ngroup by peakcategory2\r\nunion\r\nselect 'Demand Profile' as profile,peakcategory3 ,sum(peakforecast * lastknownrrp) \r\nfrom demandai.vw_sku_forecast_with_lastrrp_staticweek\r\nwhere staticweekno = 1 \r\ngroup by peakcategory3\r\nunion\r\nselect 'Demand Profile' as profile,peakcategory4 ,sum(peakforecast * lastknownrrp) \r\nfrom demandai.vw_sku_forecast_with_lastrrp_staticweek\r\nwhere staticweekno = 1 \r\ngroup by peakcategory4\r\nunion\r\nselect 'Demand Profile' as profile,peakcategory5 ,sum(peakforecast * lastknownrrp) \r\nfrom demandai.vw_sku_forecast_with_lastrrp_staticweek\r\nwhere staticweekno = 1 \r\ngroup by peakcategory5",
                 "table_name": "AI Predicted Segments",
@@ -594,7 +594,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 27, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 27, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select sum(forecastsalesamt) from demandai.vw_demand_variation\r\n where \r\n percentavgchg >=10",
                 "table_name": "Low Demand SKU Saless",
@@ -732,7 +732,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 20, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 20, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select staticweekno,weekstart,weekend,sum(wg1.demand * wg1.lastknownrrp) totalsalesamt\r\nfrom \r\ndemandai.vw_weekly_demand_staticweek wg1\r\nwhere \r\nstaticweekno between 1 and 4\r\ngroup by staticweekno,weekstart,weekend",
                 "table_name": "Last Week Sales",
@@ -798,7 +798,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 52, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 52, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "SELECT * FROM (VALUES ('postcode'),('city'),('state'),('county'),('country')) AS t (type)",
                 "table_name": "admin admin-Untitled Query-9_VPzZiD5",
@@ -960,7 +960,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 29, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 29, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select \r\ndemanddate,\r\n rollingweek,\r\n now()::Date - (7*rollingweek)::integer as rollingweekstart,\r\n now()::Date - (7*rollingweek)::integer + 6  as rollingweekend ,\r\n sum(currentstock * costofgoods )  sku_cost\r\n from demandai.vw_weekly_demand\r\n where rollingweek <=4 \r\n and demanddate= now()::Date - (7*rollingweek)::integer + 6\r\n group by rollingweek,demanddate\r\n order by demanddate desc",
                 "table_name": "Stock Value",
@@ -1122,7 +1122,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 35, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 35, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "with postcode_sales as (\r\nselect staticweekno,weekstart,sum(demand*lastknownrrp) totalsale,postcode\r\nfrom \r\ndemandai.vw_locwise_demandsales\r\nwhere \r\nstaticweekno = 1\r\nand postcode <> ''\r\ngroup by staticweekno,weekstart,postcode\r\n)\r\n,\r\ntop5loc as (\r\nselect staticweekno,weekstart,postcode,totalsale,rno from \r\n(select staticweekno,weekstart,postcode,totalsale, rank() over( order by totalsale desc) rno\r\nfrom  postcode_sales) as top5\r\nwhere top5.rno <= 5\r\n),\r\ncity_sales as (\r\nselect staticweekno,weekstart,sum(demand*lastknownrrp) totalsale,city\r\nfrom \r\ndemandai.vw_locwise_demandsales\r\nwhere \r\nstaticweekno = 1\r\nand city <> ''\r\ngroup by staticweekno,weekstart,city\r\n)\r\n,\r\ntop5loc_city as (\r\nselect staticweekno,weekstart,city,totalsale,rno from \r\n(select staticweekno,weekstart,city,totalsale, rank() over( order by totalsale desc) rno\r\nfrom  city_sales) as top5\r\nwhere top5.rno <= 5\r\n)\r\n,\r\nstate_sales as (\r\nselect staticweekno,weekstart,sum(demand*lastknownrrp) totalsale,state\r\nfrom \r\ndemandai.vw_locwise_demandsales\r\nwhere \r\nstaticweekno = 1\r\nand state <> ''\r\ngroup by staticweekno,weekstart,state\r\n)\r\n,\r\ntop5loc_state as (\r\nselect staticweekno,weekstart,state,totalsale,rno from \r\n(select staticweekno,weekstart,state,totalsale, rank() over( order by totalsale desc) rno\r\nfrom  state_sales) as top5\r\nwhere top5.rno <= 5\r\n)\r\n,\r\ncounty_sales as (\r\nselect staticweekno,weekstart,sum(demand*lastknownrrp) totalsale,county\r\nfrom \r\ndemandai.vw_locwise_demandsales\r\nwhere \r\nstaticweekno = 1\r\nand county <> ''\r\ngroup by staticweekno,weekstart,county\r\n)\r\n,\r\ntop5loc_county as (\r\nselect staticweekno,weekstart,county,totalsale,rno from \r\n(select staticweekno,weekstart,county,totalsale, rank() over( order by totalsale desc) rno\r\nfrom  county_sales) as top5\r\nwhere top5.rno <= 5\r\n)\r\n,\r\ncountry_sales as (\r\nselect staticweekno,weekstart,sum(demand*lastknownrrp) totalsale,country\r\nfrom \r\ndemandai.vw_locwise_demandsales\r\nwhere \r\nstaticweekno = 1\r\nand country <> ''\r\ngroup by staticweekno,weekstart,country\r\n)\r\n,\r\ntop5loc_country as (\r\nselect staticweekno,weekstart,country,totalsale,rno from \r\n(select staticweekno,weekstart,country,totalsale, rank() over( order by totalsale desc) rno\r\nfrom  country_sales) as top5\r\nwhere top5.rno <= 5\r\n)\r\nselect staticweekno,weekstart,country as location ,sum(demand*lastknownrrp),'country' as type\r\nfrom\r\ndemandai.vw_locwise_demandsales ld \r\nwhere \r\nld.country in (select country from top5loc_country)\r\ngroup by staticweekno,weekstart,country\r\nunion all\r\nselect staticweekno,weekstart,county,sum(demand*lastknownrrp),'county' as type\r\nfrom\r\ndemandai.vw_locwise_demandsales ld \r\nwhere \r\nld.county in (select county from top5loc_county)\r\ngroup by staticweekno,weekstart,county\r\nunion all\r\nselect staticweekno,weekstart,state,sum(demand*lastknownrrp),'state' as type\r\nfrom\r\ndemandai.vw_locwise_demandsales ld \r\nwhere \r\nld.state in (select state from top5loc_state)\r\ngroup by staticweekno,weekstart,state\r\nunion all\r\nselect staticweekno,weekstart,city,sum(demand*lastknownrrp),'city' as type\r\nfrom\r\ndemandai.vw_locwise_demandsales ld \r\nwhere \r\nld.city in (select city from top5loc_city)\r\ngroup by staticweekno,weekstart,city\r\nunion all\r\nselect staticweekno,weekstart,postcode,sum(demand*lastknownrrp),'postcode' as type\r\nfrom\r\ndemandai.vw_locwise_demandsales ld \r\nwhere \r\nld.postcode in (select postcode from top5loc)\r\ngroup by staticweekno,weekstart,postcode\r\nunion all\r\nselect lf.staticweekno,\r\nlf.weekend ,lf.country,sum(lf.peakforecast*lf.lastknownrrp) totalsale,'country' as type\r\nfrom \r\ndemandai.vw_locwise_forecastsales lf \r\nwhere \r\nlf.country <> ''\r\nand lf.country in (select country from top5loc_country)\r\ngroup by staticweekno,weekend,country\r\nunion all\r\nselect lf.staticweekno,\r\nlf.weekend ,lf.county,sum(lf.peakforecast*lf.lastknownrrp) totalsale,'county' as type\r\nfrom \r\ndemandai.vw_locwise_forecastsales lf \r\nwhere \r\nlf.county <> ''\r\nand lf.county in (select county from top5loc_county)\r\ngroup by staticweekno,weekend,county\r\nunion all\r\nselect lf.staticweekno,\r\nlf.weekend ,lf.state,sum(lf.peakforecast*lf.lastknownrrp) totalsale,'state' as type\r\nfrom \r\ndemandai.vw_locwise_forecastsales lf \r\nwhere \r\nlf.state <> ''\r\nand lf.state in (select state from top5loc_state)\r\ngroup by staticweekno,weekend,state\r\nunion all\r\nselect lf.staticweekno,\r\nlf.weekend ,lf.city,sum(lf.peakforecast*lf.lastknownrrp) totalsale,'city' as type\r\nfrom \r\ndemandai.vw_locwise_forecastsales lf \r\nwhere \r\nlf.city <> ''\r\nand lf.city in (select city from top5loc_city)\r\ngroup by staticweekno,weekend,city\r\nunion all\r\nselect lf.staticweekno,\r\nlf.weekend ,lf.postcode,sum(lf.peakforecast*lf.lastknownrrp) totalsale,'postcode' as type\r\nfrom \r\ndemandai.vw_locwise_forecastsales lf \r\nwhere \r\nlf.postcode <> ''\r\nand lf.postcode in (select postcode from top5loc)\r\ngroup by staticweekno,weekend,postcode",
                 "table_name": "Locations",
@@ -1284,7 +1284,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 28, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 28, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select \r\ndemanddate,\r\n rollingweek,\r\n now()::Date - (7*rollingweek)::integer as rollingweekstart,\r\n now()::Date - (7*rollingweek)::integer + 6  as rollingweekend ,\r\n count(distinct skuid)  total_sku\r\n from demandai.vw_weekly_demand\r\n where rollingweek <=4 \r\n and demanddate= now()::Date - (7*rollingweek)::integer + 6\r\n group by rollingweek,demanddate\r\n order by demanddate desc",
                 "table_name": "Active SKU",
@@ -1398,7 +1398,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 49, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 49, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "with top4categoryforecastsale as \r\n(\r\nselect category,sum(peakforecast * lastknownrrp) forecastsale ,weekend\r\nfrom \r\ndemandai.vw_sku_forecast_with_lastrrp_staticweek sf\r\nwhere \r\nsf.staticweekno between 0 and 1\r\nand category in (select categorywise from demandai.vw_lastweektop4category  )\r\ngroup by category,weekend\r\n)\r\nselect category,forecastsale,weekend from top4categoryforecastsale\r\nunion\r\nselect slm.skuvariant2 as categorywise,sum(sd.demand*sd.lastknownrrp) totalsales,weekstart\r\nFROM demandai.vw_weekly_demand_staticweek sd\r\n inner JOIN demandai.sku_loc_metadata slm ON slm.skuid::text = sd.skuid::text AND slm.locationid::text = sd.locationid::text\r\nwhere \r\nslm.skustatus = true \r\nand sd.staticweekno between 0 and 1 \r\nand slm.skuvariant2 in (select categorywise from demandai.vw_lastweektop4category)\r\ngroup by slm.skuvariant2,weekstart",
                 "table_name": "Trending Categories",
@@ -1488,7 +1488,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 23, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 23, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select weekstart,sum(peakforecast*lastknownrrp) totalforecastamount\r\nfrom  demandai.vw_sku_forecast_with_lastrrp_staticweek\r\n where \r\n staticweekno in (0,1)\r\n group by weekstart\r\n union\r\n select weekstart,sum(wg1.demand * wg1.lastknownrrp) totalsalesamt\r\nfrom \r\ndemandai.vw_weekly_demand_staticweek wg1\r\nwhere \r\nstaticweekno between 1 and 4\r\ngroup by weekstart\r\norder by weekstart",
                 "table_name": "Predictive Next Week Sales",
@@ -1602,7 +1602,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 48, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 48, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "with top4brandforecastsale as \r\n(\r\nselect brand,sum(peakforecast * lastknownrrp) forecastsale ,weekend\r\nfrom \r\ndemandai.vw_sku_forecast_with_lastrrp_staticweek sf\r\nwhere \r\nsf.staticweekno between 0 and 1\r\nand brand in (select brandwise from demandai.vw_lastweektop4brand  )\r\ngroup by brand,weekend\r\n)\r\nselect brand,forecastsale,weekend from top4brandforecastsale\r\nunion\r\nselect slm.skuvariant3 as brandwise,sum(sd.demand*sd.lastknownrrp) totalsales,weekstart\r\nFROM demandai.vw_weekly_demand_staticweek sd\r\n inner JOIN demandai.sku_loc_metadata slm ON slm.skuid::text = sd.skuid::text AND slm.locationid::text = sd.locationid::text\r\nwhere \r\nslm.skustatus = true \r\nand sd.staticweekno between 0 and 1 \r\nand slm.skuvariant3 in (select brandwise from demandai.vw_lastweektop4brand)\r\ngroup by slm.skuvariant3,weekstart",
                 "table_name": "Brands",
@@ -1668,7 +1668,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 25, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 25, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select sum(forecastsalesamt) from demandai.vw_demand_variation\r\n where \r\n percentavgchg >=10",
                 "table_name": "High Demand SKU Sales",
@@ -1758,7 +1758,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 50, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 50, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select weekstart,sum((currentstock - maxstocklevel)*lastknownrrp) as capitalatrisk\r\nfrom demandai.vw_weekly_demand_staticweek\r\nwhere\r\nstaticweekno =1\r\nand \r\ncurrentstock != maxstocklevel\r\ngroup by weekstart\r\nunion all\r\nselect weekstart,sum((currentstock - maxstocklevel)*lastknownrrp) as capitalatrisk\r\nfrom demandai.vw_weekly_demand_staticweek\r\nwhere\r\nstaticweekno =2 and \r\ncurrentstock > maxstocklevel\r\ngroup by weekstart",
                 "table_name": "Capital At Risk",
@@ -1824,7 +1824,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 31, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 31, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select count(distinct skuid) overstocksku \r\nfrom demandai.vw_weekly_demand_staticweek\r\nwhere\r\nstaticweekno =1\r\nand currentstock > maxstocklevel",
                 "table_name": "Overstocked SKU Count",
@@ -1890,7 +1890,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 24, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 24, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select count(distinct skuid) from demandai.vw_demand_variation\r\n where \r\n percentavgchg >=10",
                 "table_name": "High Demand SKU Count",
@@ -1956,7 +1956,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 22, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 22, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select coalesce(sum(demand * lastknownrrp), 0) currweeksales\r\n from  demandai.vw_weekly_demand_staticweek\r\n where \r\n staticweekno = 0",
                 "table_name": "Current Week Sales Achieved",
@@ -2046,7 +2046,7 @@
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 51, \"database_name\": \"demandai\", \"import_time\": 1576735544}",
+                "params": "{\"remote_id\": 51, \"database_name\": \"demandai\", \"import_time\": 1576837388}",
                 "schema": "demandai",
                 "sql": "select weekstart,sum((maxstocklevel - currentstock  )*lastknownrrp) as salesatrisk \r\nfrom demandai.vw_weekly_demand_staticweek\r\nwhere\r\nstaticweekno =1\r\nand \r\ncurrentstock < minstocklevel\r\ngroup by weekstart\r\nunion all\r\nselect weekstart,sum((maxstocklevel - currentstock)*lastknownrrp) as salesatrisk \r\nfrom demandai.vw_weekly_demand_staticweek\r\nwhere\r\nstaticweekno =2 and \r\ncurrentstock < minstocklevel\r\ngroup by weekstart",
                 "table_name": "Sales At Risk",
