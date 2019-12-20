@@ -2,9 +2,9 @@
     "dashboards": [
         {
             "__Dashboard__": {
-                "css": "",
+                "css": "body {\n    overflow-x: hidden;    \n}\n",
                 "dashboard_title": "Dashboard",
-                "description": "PCV Dashboard",
+                "description": "Customer AI Dashboard",
                 "json_metadata": "{\"filter_immune_slices\": [], \"timed_refresh_immune_slices\": [], \"filter_immune_slice_fields\": {}, \"expanded_slices\": {}, \"refresh_frequency\": 0, \"default_filters\": \"{}\", \"label_colors\": {\"COUNT(transaction)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(location)\": \"#7ed321\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(predinmarket)\": \"#417505\", \"No. of Customers\": \"#f5a623\", \"#Customers(In Market)\": \"#417505\", \"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(Next Transaction)\": \"#265fe5\", \"#Customers(Brand)\": \"#f5a623\", \"#Customers(Product)\": \"#f5a623\", \"#Customers(Gender)\": \"#b587ff\", \"#Customers(Location)\": \"#7ed321\"}, \"remote_id\": 53, \"import_time\": 1576735899}",
                 "position_json": "{\"CHART--L9wjSflF3\":{\"children\":[],\"id\":\"CHART--L9wjSflF3\",\"meta\":{\"chartId\":7,\"height\":38,\"sliceName\":\"In Market Customers\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-JWoC9_CZLC\",\"TAB-02MO99SDGZ\",\"ROW-qXQbo1lI-\"],\"type\":\"CHART\"},\"CHART-0X7-fXFKjA\":{\"children\":[],\"id\":\"CHART-0X7-fXFKjA\",\"meta\":{\"chartId\":17,\"height\":19,\"sliceName\":\"Average Order Value\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-6MVVbNFXTC\",\"TAB-MImdJnLy8Y\",\"ROW-DdFWy3Z97\"],\"type\":\"CHART\"},\"CHART-6GVukbje5r\":{\"children\":[],\"id\":\"CHART-6GVukbje5r\",\"meta\":{\"chartId\":11,\"height\":38,\"sliceName\":\"Gender Distribution\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-xa3pS1Zc9Z\",\"TAB--zBlT2IZIC\",\"ROW-3m-1w1V9f\"],\"type\":\"CHART\"},\"CHART-ARWsVeXdAb\":{\"children\":[],\"id\":\"CHART-ARWsVeXdAb\",\"meta\":{\"chartId\":14,\"height\":19,\"sliceName\":\"Repeat Order Customers\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-6MVVbNFXTC\",\"TAB-MImdJnLy8Y\",\"ROW-z5s3_miiy\"],\"type\":\"CHART\"},\"CHART-ByuhpmEHh_\":{\"children\":[],\"id\":\"CHART-ByuhpmEHh_\",\"meta\":{\"chartId\":10,\"height\":38,\"sliceName\":\"Predictive Engagement\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-JWoC9_CZLC\",\"TAB-02MO99SDGZ\",\"ROW-nifcQb2AX\"],\"type\":\"CHART\"},\"CHART-GhPZDJXJXx\":{\"children\":[],\"id\":\"CHART-GhPZDJXJXx\",\"meta\":{\"chartId\":1,\"height\":19,\"sliceName\":\"Total Customers\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-fuHPyFcoN\"],\"type\":\"CHART\"},\"CHART-UUAfJr3MZG\":{\"children\":[],\"id\":\"CHART-UUAfJr3MZG\",\"meta\":{\"chartId\":6,\"height\":19,\"sliceName\":\"High Risk Customers\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-NCwPsYF_Dj\"],\"type\":\"CHART\"},\"CHART-XKyDPUvktt\":{\"children\":[],\"id\":\"CHART-XKyDPUvktt\",\"meta\":{\"chartId\":12,\"height\":38,\"sliceName\":\"Top Locations\",\"width\":8},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-xa3pS1Zc9Z\",\"TAB--zBlT2IZIC\",\"ROW-3m-1w1V9f\"],\"type\":\"CHART\"},\"CHART-XdpUmDCKlZ\":{\"children\":[],\"id\":\"CHART-XdpUmDCKlZ\",\"meta\":{\"chartId\":13,\"height\":19,\"sliceName\":\"Single Order Customers\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-6MVVbNFXTC\",\"TAB-MImdJnLy8Y\",\"ROW-z5s3_miiy\"],\"type\":\"CHART\"},\"CHART-YGd3Nclid1\":{\"children\":[],\"id\":\"CHART-YGd3Nclid1\",\"meta\":{\"chartId\":5,\"height\":19,\"sliceName\":\"In Market Customers\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-NCwPsYF_Dj\"],\"type\":\"CHART\"},\"CHART-Yifrt0FNJw\":{\"children\":[],\"id\":\"CHART-Yifrt0FNJw\",\"meta\":{\"chartId\":9,\"height\":38,\"sliceName\":\"Next Transaction Window\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-JWoC9_CZLC\",\"TAB-02MO99SDGZ\",\"ROW-nifcQb2AX\"],\"type\":\"CHART\"},\"CHART-a9XcPL4X4U\":{\"children\":[],\"id\":\"CHART-a9XcPL4X4U\",\"meta\":{\"chartId\":4,\"height\":19,\"sliceName\":\"Predictive LTV (per customer)\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-NCwPsYF_Dj\"],\"type\":\"CHART\"},\"CHART-hlthp0pcLh\":{\"children\":[],\"id\":\"CHART-hlthp0pcLh\",\"meta\":{\"chartId\":3,\"height\":19,\"sliceName\":\"Lapsed Customers\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-fuHPyFcoN\"],\"type\":\"CHART\"},\"CHART-l7AidrXe1s\":{\"children\":[],\"id\":\"CHART-l7AidrXe1s\",\"meta\":{\"chartId\":8,\"height\":38,\"sliceName\":\"At Risk Customers\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-JWoC9_CZLC\",\"TAB-02MO99SDGZ\",\"ROW-qXQbo1lI-\"],\"type\":\"CHART\"},\"CHART-lyvJkvmjlG\":{\"children\":[],\"id\":\"CHART-lyvJkvmjlG\",\"meta\":{\"chartId\":15,\"height\":19,\"sliceName\":\"Average Gap Between Orders\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-6MVVbNFXTC\",\"TAB-MImdJnLy8Y\",\"ROW-z5s3_miiy\"],\"type\":\"CHART\"},\"CHART-rzw5oUnwiv\":{\"children\":[],\"id\":\"CHART-rzw5oUnwiv\",\"meta\":{\"chartId\":19,\"height\":49,\"sliceName\":\"Top Brands\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-Km79KtK7V1\",\"TAB-JLHaJMHPJ7\",\"ROW-PbJ0LvEo1\"],\"type\":\"CHART\"},\"CHART-sY6QRUZ3fh\":{\"children\":[],\"id\":\"CHART-sY6QRUZ3fh\",\"meta\":{\"chartId\":18,\"height\":49,\"sliceName\":\"Top Products\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-Km79KtK7V1\",\"TAB-JLHaJMHPJ7\",\"ROW-PbJ0LvEo1\"],\"type\":\"CHART\"},\"CHART-yJawfAGySf\":{\"children\":[],\"id\":\"CHART-yJawfAGySf\",\"meta\":{\"chartId\":2,\"height\":19,\"sliceName\":\"Active Customers\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-fuHPyFcoN\"],\"type\":\"CHART\"},\"CHART-yauk_GhpCs\":{\"children\":[],\"id\":\"CHART-yauk_GhpCs\",\"meta\":{\"chartId\":16,\"height\":19,\"sliceName\":\"Average Basket Size\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-6MVVbNFXTC\",\"TAB-MImdJnLy8Y\",\"ROW-DdFWy3Z97\"],\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[\"ROW-fuHPyFcoN\",\"ROW-NCwPsYF_Dj\",\"TABS-JWoC9_CZLC\",\"TABS-Km79KtK7V1\",\"TABS-xa3pS1Zc9Z\",\"TABS-6MVVbNFXTC\"],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"Dashboard\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"GRID_ID\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW-3m-1w1V9f\":{\"children\":[\"CHART-6GVukbje5r\",\"CHART-XKyDPUvktt\"],\"id\":\"ROW-3m-1w1V9f\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-xa3pS1Zc9Z\",\"TAB--zBlT2IZIC\"],\"type\":\"ROW\"},\"ROW-DdFWy3Z97\":{\"children\":[\"CHART-yauk_GhpCs\",\"CHART-0X7-fXFKjA\"],\"id\":\"ROW-DdFWy3Z97\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-6MVVbNFXTC\",\"TAB-MImdJnLy8Y\"],\"type\":\"ROW\"},\"ROW-NCwPsYF_Dj\":{\"children\":[\"CHART-a9XcPL4X4U\",\"CHART-YGd3Nclid1\",\"CHART-UUAfJr3MZG\"],\"id\":\"ROW-NCwPsYF_Dj\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-PbJ0LvEo1\":{\"children\":[\"CHART-rzw5oUnwiv\",\"CHART-sY6QRUZ3fh\"],\"id\":\"ROW-PbJ0LvEo1\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-Km79KtK7V1\",\"TAB-JLHaJMHPJ7\"],\"type\":\"ROW\"},\"ROW-fuHPyFcoN\":{\"children\":[\"CHART-GhPZDJXJXx\",\"CHART-yJawfAGySf\",\"CHART-hlthp0pcLh\"],\"id\":\"ROW-fuHPyFcoN\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-nifcQb2AX\":{\"children\":[\"CHART-Yifrt0FNJw\",\"CHART-ByuhpmEHh_\"],\"id\":\"ROW-nifcQb2AX\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-JWoC9_CZLC\",\"TAB-02MO99SDGZ\"],\"type\":\"ROW\"},\"ROW-qXQbo1lI-\":{\"children\":[\"CHART--L9wjSflF3\",\"CHART-l7AidrXe1s\"],\"id\":\"ROW-qXQbo1lI-\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-JWoC9_CZLC\",\"TAB-02MO99SDGZ\"],\"type\":\"ROW\"},\"ROW-z5s3_miiy\":{\"children\":[\"CHART-XdpUmDCKlZ\",\"CHART-ARWsVeXdAb\",\"CHART-lyvJkvmjlG\"],\"id\":\"ROW-z5s3_miiy\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-6MVVbNFXTC\",\"TAB-MImdJnLy8Y\"],\"type\":\"ROW\"},\"TAB--zBlT2IZIC\":{\"children\":[\"ROW-3m-1w1V9f\"],\"id\":\"TAB--zBlT2IZIC\",\"meta\":{\"text\":\"Demographic Distribution\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-xa3pS1Zc9Z\"],\"type\":\"TAB\"},\"TAB-02MO99SDGZ\":{\"children\":[\"ROW-qXQbo1lI-\",\"ROW-nifcQb2AX\"],\"id\":\"TAB-02MO99SDGZ\",\"meta\":{\"text\":\"Engagement breakdown by customers\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-JWoC9_CZLC\"],\"type\":\"TAB\"},\"TAB-JLHaJMHPJ7\":{\"children\":[\"ROW-PbJ0LvEo1\"],\"id\":\"TAB-JLHaJMHPJ7\",\"meta\":{\"text\":\"Preference Insight\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-Km79KtK7V1\"],\"type\":\"TAB\"},\"TAB-MImdJnLy8Y\":{\"children\":[\"ROW-z5s3_miiy\",\"ROW-DdFWy3Z97\"],\"id\":\"TAB-MImdJnLy8Y\",\"meta\":{\"text\":\"Purchase Insights\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-6MVVbNFXTC\"],\"type\":\"TAB\"},\"TABS-6MVVbNFXTC\":{\"children\":[\"TAB-MImdJnLy8Y\"],\"id\":\"TABS-6MVVbNFXTC\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-JWoC9_CZLC\":{\"children\":[\"TAB-02MO99SDGZ\"],\"id\":\"TABS-JWoC9_CZLC\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-Km79KtK7V1\":{\"children\":[\"TAB-JLHaJMHPJ7\"],\"id\":\"TABS-Km79KtK7V1\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-xa3pS1Zc9Z\":{\"children\":[\"TAB--zBlT2IZIC\"],\"id\":\"TABS-xa3pS1Zc9Z\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"}}",
                 "slices": [
@@ -231,546 +231,6 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-19T12:29:01"
-                            },
-                            "column_name": "avgbasketsize",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 11,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 6,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:29:01"
-                            },
-                            "column_name": "loaddate",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 12,
-                            "is_active": null,
-                            "is_dttm": true,
-                            "python_date_format": null,
-                            "table_id": 6,
-                            "type": "DATETIME",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 6,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 6,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 6, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select avgbasketsize   , loaddate from customerai.aggregatedcustomerdata",
-                "table_name": "Average Basket Size",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:32:51"
-                            },
-                            "column_name": "loaddate",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 21,
-                            "is_active": null,
-                            "is_dttm": true,
-                            "python_date_format": null,
-                            "table_id": 11,
-                            "type": "DATETIME",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:32:51"
-                            },
-                            "column_name": "lapsedcnt",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 22,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 11,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 11,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 11,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 11, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select loaddate , lapsedcnt  from customerai.aggregatedcustomerdata",
-                "table_name": "Lapsed Customers",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T11:52:45"
-                            },
-                            "column_name": "loaddate",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 33,
-                            "is_active": null,
-                            "is_dttm": true,
-                            "python_date_format": null,
-                            "table_id": 16,
-                            "type": "DATETIME",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T11:52:45"
-                            },
-                            "column_name": "totalcustomercnt",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 34,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 16,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 16,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 16,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 16, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select loaddate, totalcustomercnt  from customerai.aggregatedcustomerdata",
-                "table_name": "Total Customer",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:28:50"
-                            },
-                            "column_name": "avgordervalue",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:54"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 5,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 3,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:28:50"
-                            },
-                            "column_name": "loaddate",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:54"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 6,
-                            "is_active": null,
-                            "is_dttm": true,
-                            "python_date_format": null,
-                            "table_id": 3,
-                            "type": "DATETIME",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:54"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:54"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 3,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 3,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 3, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select avgordervalue    , loaddate from customerai.aggregatedcustomerdata",
-                "table_name": "Average Order Value",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:32:03"
-                            },
-                            "column_name": "predinmarket",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 15,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 8,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:32:03"
-                            },
-                            "column_name": "userid",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 16,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 8,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 8,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 8,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 8, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select predinmarket, userid  from customerai.customer_attributes",
-                "table_name": "In Market Customers Breakdown",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:33:05"
-                            },
-                            "column_name": "loaddate",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 13,
-                            "is_active": null,
-                            "is_dttm": true,
-                            "python_date_format": null,
-                            "table_id": 7,
-                            "type": "DATETIME",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:33:05"
-                            },
-                            "column_name": "activecnt",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 14,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 7,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 7,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 7,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 7, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select loaddate , activecnt from customerai.aggregatedcustomerdata",
-                "table_name": "Active Customers",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
                                 "__datetime__": "2019-12-19T12:31:27"
                             },
                             "column_name": "predengagement",
@@ -850,276 +310,6 @@
                 "schema": "pcv",
                 "sql": "SELECT predengagement, userid as engagement\r\nfrom customerai.customer_attributes ORDER BY predengagement ASC",
                 "table_name": "Predictive Engagement",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:32:39"
-                            },
-                            "column_name": "loaddate",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 35,
-                            "is_active": null,
-                            "is_dttm": true,
-                            "python_date_format": null,
-                            "table_id": 17,
-                            "type": "DATETIME",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:32:39"
-                            },
-                            "column_name": "avgeltv",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 36,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 17,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 17,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 17,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 17, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select loaddate , avgeltv from customerai.aggregatedcustomerdata",
-                "table_name": "Avg Predictive LTV",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:31:40"
-                            },
-                            "column_name": "prednexttranswindow",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 7,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 4,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:31:40"
-                            },
-                            "column_name": "userid",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 8,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 4,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 4,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 4,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 4, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "SELECT prednexttranswindow, userid as transaction\r\nfrom customerai.customer_attributes ORDER BY prednexttranswindow ASC",
-                "table_name": "Next Transaction Window",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:29:26"
-                            },
-                            "column_name": "repeatordercnt",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 17,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 9,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:29:26"
-                            },
-                            "column_name": "loaddate",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 18,
-                            "is_active": null,
-                            "is_dttm": true,
-                            "python_date_format": null,
-                            "table_id": 9,
-                            "type": "DATETIME",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 9,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 9,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 9, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select repeatordercnt , loaddate from customerai.aggregatedcustomerdata",
-                "table_name": "Repeat Order Customers",
                 "template_params": "{}"
             }
         },
@@ -1221,9 +411,9 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-19T12:28:35"
+                                "__datetime__": "2019-12-19T12:33:05"
                             },
-                            "column_name": "associationtype",
+                            "column_name": "loaddate",
                             "created_by_fk": 1,
                             "created_on": {
                                 "__datetime__": "2019-12-12T06:32:55"
@@ -1232,287 +422,11 @@
                             "expression": null,
                             "filterable": true,
                             "groupby": true,
-                            "id": 25,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 13,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:28:35"
-                            },
-                            "column_name": "associationrank",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 26,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 13,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:28:35"
-                            },
-                            "column_name": "associationvalue",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 27,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 13,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:28:35"
-                            },
-                            "column_name": "userstatus",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 28,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 13,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
                             "id": 13,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 13,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 13, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select   associationvalue , count(*) as user_count , associationrank from customerai.customer_preferences   where associationtype  = 'Brand' and ispeakrowdelete is  null group by associationvalue, associationrank\nORDER by associationrank asc limit 10",
-                "table_name": "Top Brands",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:25:59"
-                            },
-                            "column_name": "associationtype",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:56"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 37,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:25:59"
-                            },
-                            "column_name": "userid",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:56"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 38,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:25:59"
-                            },
-                            "column_name": "associationrank",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:56"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 40,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:25:59"
-                            },
-                            "column_name": "associationvalue",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:56"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 39,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:56"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 18,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 18,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 18, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select associationvalue,\n         count(*) as user_count,\n         associationrank\n  from customerai.customer_preferences\n  where associationtype = 'Product Recommendation'\n  group by associationvalue,\n           associationrank\n  ORDER by associationrank asc\n  limit 10",
-                "table_name": "Top Products",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:32:28"
-                            },
-                            "column_name": "loaddate",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 29,
                             "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
-                            "table_id": 14,
+                            "table_id": 7,
                             "type": "DATETIME",
                             "verbose_name": null
                         }
@@ -1521,9 +435,9 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-19T12:32:28"
+                                "__datetime__": "2019-12-19T12:33:05"
                             },
-                            "column_name": "inmarkethighcnt",
+                            "column_name": "activecnt",
                             "created_by_fk": 1,
                             "created_on": {
                                 "__datetime__": "2019-12-12T06:32:55"
@@ -1532,50 +446,50 @@
                             "expression": null,
                             "filterable": true,
                             "groupby": true,
-                            "id": 30,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 14,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
                             "id": 14,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 7,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 7,
                             "metric_name": "count",
                             "metric_type": null,
-                            "table_id": 14,
+                            "table_id": 7,
                             "verbose_name": null,
                             "warning_text": null
                         }
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 14, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "params": "{\"remote_id\": 7, \"database_name\": \"examples\", \"import_time\": 1576132374}",
                 "schema": "pcv",
-                "sql": "select loaddate , inmarkethighcnt  from customerai.aggregatedcustomerdata",
-                "table_name": "In Market Customers",
+                "sql": "select loaddate , activecnt from customerai.aggregatedcustomerdata",
+                "table_name": "Active Customers",
                 "template_params": "{}"
             }
         },
@@ -1587,9 +501,9 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-19T12:29:38"
+                                "__datetime__": "2019-12-19T12:29:26"
                             },
-                            "column_name": "singleordercnt",
+                            "column_name": "repeatordercnt",
                             "created_by_fk": 1,
                             "created_on": {
                                 "__datetime__": "2019-12-12T06:32:55"
@@ -1598,11 +512,11 @@
                             "expression": null,
                             "filterable": true,
                             "groupby": true,
-                            "id": 9,
+                            "id": 17,
                             "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
-                            "table_id": 5,
+                            "table_id": 9,
                             "type": "INT",
                             "verbose_name": null
                         }
@@ -1611,7 +525,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-19T12:29:38"
+                                "__datetime__": "2019-12-19T12:29:26"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -1622,11 +536,11 @@
                             "expression": null,
                             "filterable": true,
                             "groupby": true,
-                            "id": 10,
+                            "id": 18,
                             "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
-                            "table_id": 5,
+                            "table_id": 9,
                             "type": "DATETIME",
                             "verbose_name": null
                         }
@@ -1652,200 +566,20 @@
                             "d3format": null,
                             "description": null,
                             "expression": "count(*)",
-                            "id": 5,
+                            "id": 9,
                             "metric_name": "count",
                             "metric_type": null,
-                            "table_id": 5,
+                            "table_id": 9,
                             "verbose_name": null,
                             "warning_text": null
                         }
                     }
                 ],
                 "offset": 0,
-                "params": "{\"remote_id\": 5, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "params": "{\"remote_id\": 9, \"database_name\": \"examples\", \"import_time\": 1576132374}",
                 "schema": "pcv",
-                "sql": "select singleordercnt, loaddate from customerai.aggregatedcustomerdata",
-                "table_name": "Single Order Customers",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:31:53"
-                            },
-                            "column_name": "predchurnrisk",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:56"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 41,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 19,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:31:53"
-                            },
-                            "column_name": "userid",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:56"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 42,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 19,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:56"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:56"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 19,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 19,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 19, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select predchurnrisk , userid as atrisk from customerai.customer_attributes",
-                "table_name": "At Risk Customers Breakdown",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:31:11"
-                            },
-                            "column_name": "userid",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 19,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 10,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-19T12:31:11"
-                            },
-                            "column_name": "usergender",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 20,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 10,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-12T06:32:55"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 10,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 10,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 10, \"database_name\": \"examples\", \"import_time\": 1576132374}",
-                "schema": "pcv",
-                "sql": "select userid as gender, usergender from customerai.customer_attributes",
-                "table_name": "Gender Distribution",
+                "sql": "select repeatordercnt , loaddate from customerai.aggregatedcustomerdata",
+                "table_name": "Repeat Order Customers",
                 "template_params": "{}"
             }
         },
@@ -2026,6 +760,1272 @@
                 "schema": "pcv",
                 "sql": "select avgordergapcnt  , loaddate from customerai.aggregatedcustomerdata",
                 "table_name": "Average Gap Between Orders",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:32:03"
+                            },
+                            "column_name": "predinmarket",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 15,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 8,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:32:03"
+                            },
+                            "column_name": "userid",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 16,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 8,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 8,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 8,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 8, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select predinmarket, userid  from customerai.customer_attributes",
+                "table_name": "In Market Customers Breakdown",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:29:01"
+                            },
+                            "column_name": "avgbasketsize",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 11,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:29:01"
+                            },
+                            "column_name": "loaddate",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 12,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "DATETIME",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 6,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 6,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 6, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select avgbasketsize   , loaddate from customerai.aggregatedcustomerdata",
+                "table_name": "Average Basket Size",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:28:50"
+                            },
+                            "column_name": "avgordervalue",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:54"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 5,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 3,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:28:50"
+                            },
+                            "column_name": "loaddate",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:54"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 6,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 3,
+                            "type": "DATETIME",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:54"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:54"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 3,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 3,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 3, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select avgordervalue    , loaddate from customerai.aggregatedcustomerdata",
+                "table_name": "Average Order Value",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:32:39"
+                            },
+                            "column_name": "loaddate",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 35,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 17,
+                            "type": "DATETIME",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:32:39"
+                            },
+                            "column_name": "avgeltv",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 36,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 17,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 17,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 17,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 17, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select loaddate , avgeltv from customerai.aggregatedcustomerdata",
+                "table_name": "Avg Predictive LTV",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:31:11"
+                            },
+                            "column_name": "userid",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 19,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 10,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:31:11"
+                            },
+                            "column_name": "usergender",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 20,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 10,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 10,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 10,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 10, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select userid as gender, usergender from customerai.customer_attributes",
+                "table_name": "Gender Distribution",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T11:52:45"
+                            },
+                            "column_name": "loaddate",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 33,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 16,
+                            "type": "DATETIME",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T11:52:45"
+                            },
+                            "column_name": "totalcustomercnt",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 34,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 16,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 16,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 16,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 16, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select loaddate, totalcustomercnt  from customerai.aggregatedcustomerdata",
+                "table_name": "Total Customer",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:29:38"
+                            },
+                            "column_name": "singleordercnt",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 9,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 5,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:29:38"
+                            },
+                            "column_name": "loaddate",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 10,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 5,
+                            "type": "DATETIME",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 5,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 5,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 5, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select singleordercnt, loaddate from customerai.aggregatedcustomerdata",
+                "table_name": "Single Order Customers",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:32:28"
+                            },
+                            "column_name": "loaddate",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 29,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": "DATETIME",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:32:28"
+                            },
+                            "column_name": "inmarkethighcnt",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 30,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 14,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 14,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 14, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select loaddate , inmarkethighcnt  from customerai.aggregatedcustomerdata",
+                "table_name": "In Market Customers",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:32:51"
+                            },
+                            "column_name": "loaddate",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 21,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 11,
+                            "type": "DATETIME",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:32:51"
+                            },
+                            "column_name": "lapsedcnt",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 22,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 11,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 11,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 11,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 11, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select loaddate , lapsedcnt  from customerai.aggregatedcustomerdata",
+                "table_name": "Lapsed Customers",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:31:40"
+                            },
+                            "column_name": "prednexttranswindow",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 7,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 4,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:31:40"
+                            },
+                            "column_name": "userid",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 8,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 4,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 4,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 4,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 4, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "SELECT prednexttranswindow, userid as transaction\r\nfrom customerai.customer_attributes ORDER BY prednexttranswindow ASC",
+                "table_name": "Next Transaction Window",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:25:59"
+                            },
+                            "column_name": "associationtype",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:56"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 37,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 18,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:25:59"
+                            },
+                            "column_name": "userid",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:56"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 38,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 18,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:25:59"
+                            },
+                            "column_name": "associationrank",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:56"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 40,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 18,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:25:59"
+                            },
+                            "column_name": "associationvalue",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:56"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 39,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 18,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:56"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 18,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 18,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 18, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select associationvalue,\n         count(*) as user_count,\n         associationrank\n  from customerai.customer_preferences\n  where associationtype = 'Product Recommendation'\n  group by associationvalue,\n           associationrank\n  ORDER by associationrank asc\n  limit 10",
+                "table_name": "Top Products",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:28:35"
+                            },
+                            "column_name": "associationtype",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 25,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:28:35"
+                            },
+                            "column_name": "associationrank",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 26,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:28:35"
+                            },
+                            "column_name": "associationvalue",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 27,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:28:35"
+                            },
+                            "column_name": "userstatus",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 28,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:55"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 13,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 13,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 13, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select   associationvalue , count(*) as user_count , associationrank from customerai.customer_preferences   where associationtype  = 'Brand' and ispeakrowdelete is  null group by associationvalue, associationrank\nORDER by associationrank asc limit 10",
+                "table_name": "Top Brands",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:31:53"
+                            },
+                            "column_name": "predchurnrisk",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:56"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 41,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 19,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-19T12:31:53"
+                            },
+                            "column_name": "userid",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:56"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 42,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 19,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2019-12-12T06:32:56"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2019-12-12T06:32:56"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 19,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 19,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 19, \"database_name\": \"examples\", \"import_time\": 1576132374}",
+                "schema": "pcv",
+                "sql": "select predchurnrisk , userid as atrisk from customerai.customer_attributes",
+                "table_name": "At Risk Customers Breakdown",
                 "template_params": "{}"
             }
         }
