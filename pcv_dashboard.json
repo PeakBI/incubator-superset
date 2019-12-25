@@ -398,13 +398,8 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 1, \"database_name\": \"examples\", \"import_time\": 1576132374}",
                 "schema": "pcv",
-<<<<<<< HEAD
-                "sql": "select loaddate , highriskcnt   from customerai.aggregatedcustomerdata",
-                "table_name": "High Risk Customers",
-=======
-                "sql": "select  addrcountry, userid as location from pcv.customer_attributes where ispeakrowdelete is null",
+                "sql": "select  addrcountry, userid as location from customerai.customer_attributes where ispeakrowdelete is null",
                 "table_name": "Top Locations",
->>>>>>> 2ac6c04c4111b52b8080daedda20bb73d22a1c88
                 "template_params": "{}"
             }
         },
@@ -583,13 +578,8 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 9, \"database_name\": \"examples\", \"import_time\": 1576132374}",
                 "schema": "pcv",
-<<<<<<< HEAD
-                "sql": "select repeatordercnt , loaddate from customerai.aggregatedcustomerdata",
-                "table_name": "Repeat Order Customers",
-=======
-                "sql": "SELECT prednexttranswindow, userid as transaction\r\nfrom pcv.customer_attributes where ispeakrowdelete is null ORDER BY prednexttranswindow ASC",
+                "sql": "SELECT prednexttranswindow, userid as transaction\r\nfrom customerai.customer_attributes where ispeakrowdelete is null ORDER BY prednexttranswindow ASC",
                 "table_name": "Next Transaction Window",
->>>>>>> 2ac6c04c4111b52b8080daedda20bb73d22a1c88
                 "template_params": "{}"
             }
         },
@@ -948,13 +938,8 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 6, \"database_name\": \"examples\", \"import_time\": 1576132374}",
                 "schema": "pcv",
-<<<<<<< HEAD
-                "sql": "select avgbasketsize   , loaddate from customerai.aggregatedcustomerdata",
-                "table_name": "Average Basket Size",
-=======
-                "sql": "select predinmarket, userid  from pcv.customer_attributes where ispeakrowdelete is null",
+                "sql": "select predinmarket, userid  from customerai.customer_attributes where ispeakrowdelete is null",
                 "table_name": "In Market Customers Breakdown",
->>>>>>> 2ac6c04c4111b52b8080daedda20bb73d22a1c88
                 "template_params": "{}"
             }
         },
@@ -1133,13 +1118,8 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 17, \"database_name\": \"examples\", \"import_time\": 1576132374}",
                 "schema": "pcv",
-<<<<<<< HEAD
-                "sql": "select loaddate , avgeltv from customerai.aggregatedcustomerdata",
-                "table_name": "Avg Predictive LTV",
-=======
-                "sql": "select userid as gender, usergender from pcv.customer_attributes where ispeakrowdelete is null",
+                "sql": "select userid as gender, usergender from customerai.customer_attributes where ispeakrowdelete is null",
                 "table_name": "Gender Distribution",
->>>>>>> 2ac6c04c4111b52b8080daedda20bb73d22a1c88
                 "template_params": "{}"
             }
         },
@@ -1318,13 +1298,8 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 16, \"database_name\": \"examples\", \"import_time\": 1576132374}",
                 "schema": "pcv",
-<<<<<<< HEAD
-                "sql": "select loaddate, totalcustomercnt  from customerai.aggregatedcustomerdata",
-                "table_name": "Total Customer",
-=======
-                "sql": "SELECT predengagement, userid as engagement\r\nfrom pcv.customer_attributes where ispeakrowdelete is null ORDER BY predengagement ASC",
+                "sql": "SELECT predengagement, userid as engagement\r\nfrom customerai.customer_attributes where ispeakrowdelete is null ORDER BY predengagement ASC",
                 "table_name": "Predictive Engagement",
->>>>>>> 2ac6c04c4111b52b8080daedda20bb73d22a1c88
                 "template_params": "{}"
             }
         },
@@ -1959,13 +1934,8 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 13, \"database_name\": \"examples\", \"import_time\": 1576132374}",
                 "schema": "pcv",
-<<<<<<< HEAD
-                "sql": "select   associationvalue , count(*) as user_count , associationrank from customerai.customer_preferences   where associationtype  = 'Brand' and ispeakrowdelete is  null group by associationvalue, associationrank\nORDER by associationrank asc limit 10",
-                "table_name": "Top Brands",
-=======
-                "sql": "select associationvalue,\n         count(*) as user_count,\n         associationrank\n  from pcv.customer_preferences\n  where associationtype = 'Product Recommendation' and ispeakrowdelete is null\n  group by associationvalue,\n           associationrank\n  ORDER by associationrank asc\n  limit 10",
+                "sql": "select   associationvalue , count(*) as user_count , associationrank from customerai.customer_preferences   where associationtype  = 'Product Recommendation' and ispeakrowdelete is  null group by associationvalue, associationrank ORDER by associationrank asc limit 10",
                 "table_name": "Top Products",
->>>>>>> 2ac6c04c4111b52b8080daedda20bb73d22a1c88
                 "template_params": "{}"
             }
         },
