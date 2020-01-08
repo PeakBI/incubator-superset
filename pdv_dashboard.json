@@ -2,11 +2,11 @@
     "dashboards": [
         {
             "__Dashboard__": {
-                "css": "body {\r\n    overflow-x: hidden;    \r\n}\r\n\r\n.row {\r\n    margin-right: 0px;\r\n}\r\n\r\n.dashboard .chart-header {\r\n    margin-right: 20px;\r\n}",
+                "css": "body {\r\n    overflow-x: hidden;    \r\n}\r\n\r\n.row {\r\n    margin-right: 0px;\r\n}\r\n\r\n.grid-container{\r\n    margin-top:0px !important;   \r\n}",
                 "dashboard_title": "demandai",
                 "description": null,
-                "json_metadata": "{\"filter_immune_slices\": [20, 21, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44], \"timed_refresh_immune_slices\": [], \"filter_immune_slice_fields\": {}, \"expanded_slices\": {}, \"refresh_frequency\": 0, \"default_filters\": \"{\\\"28\\\": {\\\"type\\\": \\\"country\\\"}}\", \"label_colors\": {\"SUM(totalforecastsales\": \"#0D9DDB\"}, \"remote_id\": 2, \"import_time\": 1577340219}",
-                "position_json": "{\"CHART--o7TJkWYOKE\":{\"children\":[],\"id\":\"CHART--o7TJkWYOKE\",\"meta\":{\"chartId\":30,\"height\":19,\"sliceName\":\"Overstocked SKU Count\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\",\"ROW-Nd5sygY9q\"],\"type\":\"CHART\"},\"CHART-5ob2dRqlU9\":{\"children\":[],\"id\":\"CHART-5ob2dRqlU9\",\"meta\":{\"chartId\":34,\"height\":14,\"sliceName\":\"\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\",\"ROW-MLhI9qe49\"],\"type\":\"CHART\"},\"CHART-6bxfRh_oyo\":{\"children\":[],\"id\":\"CHART-6bxfRh_oyo\",\"meta\":{\"chartId\":23,\"height\":19,\"sliceName\":\"High Demand SKU Count\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\",\"ROW-snKuUCMzd\"],\"type\":\"CHART\"},\"CHART-86-FMSs4Y6\":{\"children\":[],\"id\":\"CHART-86-FMSs4Y6\",\"meta\":{\"chartId\":44,\"height\":21,\"sliceName\":\"Capital At Risk\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\",\"ROW-Nd5sygY9q\"],\"type\":\"CHART\"},\"CHART-I0fzNhzrFh\":{\"children\":[],\"id\":\"CHART-I0fzNhzrFh\",\"meta\":{\"chartId\":42,\"height\":24,\"sliceName\":\"Stock Value\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\",\"ROW-WhcwyJGOBC\",\"COLUMN-6AoZuG5M13\"],\"type\":\"CHART\"},\"CHART-IjFQ1nJ-kn\":{\"children\":[],\"id\":\"CHART-IjFQ1nJ-kn\",\"meta\":{\"chartId\":40,\"height\":20,\"sliceName\":\"Sales Predicted - Next Week\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\",\"ROW-NDKPnF4Au\"],\"type\":\"CHART\"},\"CHART-M72J642Shx\":{\"children\":[],\"id\":\"CHART-M72J642Shx\",\"meta\":{\"chartId\":36,\"height\":45,\"sliceName\":\"Brands\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\",\"ROW-w0CEQqOtG\"],\"type\":\"CHART\"},\"CHART-OYtWPaS78_\":{\"children\":[],\"id\":\"CHART-OYtWPaS78_\",\"meta\":{\"chartId\":24,\"height\":19,\"sliceName\":\"High Demand SKU Sales\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\",\"ROW-snKuUCMzd\"],\"type\":\"CHART\"},\"CHART-Po4IIDv2Tf\":{\"children\":[],\"id\":\"CHART-Po4IIDv2Tf\",\"meta\":{\"chartId\":38,\"height\":45,\"sliceName\":\"Categories\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\",\"ROW-w0CEQqOtG\"],\"type\":\"CHART\"},\"CHART-YlTcz_-YMI\":{\"children\":[],\"id\":\"CHART-YlTcz_-YMI\",\"meta\":{\"chartId\":20,\"height\":20,\"sliceName\":\"Sales - Last Week\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\",\"ROW-NDKPnF4Au\"],\"type\":\"CHART\"},\"CHART-Z4rwUFqfSX\":{\"children\":[],\"id\":\"CHART-Z4rwUFqfSX\",\"meta\":{\"chartId\":32,\"height\":20,\"sliceName\":\"Sales Achieved - Current Week\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\",\"ROW-NDKPnF4Au\"],\"type\":\"CHART\"},\"CHART-c1sL5RSAFL\":{\"children\":[],\"id\":\"CHART-c1sL5RSAFL\",\"meta\":{\"chartId\":35,\"height\":19,\"sliceName\":\"Sales At Risk\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\",\"ROW-Nd5sygY9q\"],\"type\":\"CHART\"},\"CHART-dVXh3aqrP7\":{\"children\":[],\"id\":\"CHART-dVXh3aqrP7\",\"meta\":{\"chartId\":21,\"height\":20,\"sliceName\":\"Sales Prediction - Current Week\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\",\"ROW-NDKPnF4Au\"],\"type\":\"CHART\"},\"CHART-gS2fWB2m448\":{\"children\":[],\"id\":\"CHART-gS2fWB2m448\",\"meta\":{\"chartId\":31,\"height\":45,\"sliceName\":\"Locations\",\"width\":12},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\",\"ROW-JJW-NFxet\"],\"type\":\"CHART\"},\"CHART-ocqjxQY5fH\":{\"children\":[],\"id\":\"CHART-ocqjxQY5fH\",\"meta\":{\"chartId\":33,\"height\":40,\"sliceName\":\"AI Predicted Segments\",\"width\":9},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\",\"ROW-WhcwyJGOBC\"],\"type\":\"CHART\"},\"CHART-ok4GlXpLAq\":{\"children\":[],\"id\":\"CHART-ok4GlXpLAq\",\"meta\":{\"chartId\":26,\"height\":19,\"sliceName\":\"Low Demand SKU Count\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\",\"ROW-snKuUCMzd\"],\"type\":\"CHART\"},\"CHART-rVzqs5THuD\":{\"children\":[],\"id\":\"CHART-rVzqs5THuD\",\"meta\":{\"chartId\":28,\"height\":19,\"sliceName\":\"Understocked SKU Count\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\",\"ROW-Nd5sygY9q\"],\"type\":\"CHART\"},\"CHART-up8vgEaoyr\":{\"children\":[],\"id\":\"CHART-up8vgEaoyr\",\"meta\":{\"chartId\":41,\"height\":23,\"sliceName\":\"Active SKU\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\",\"ROW-WhcwyJGOBC\",\"COLUMN-6AoZuG5M13\"],\"type\":\"CHART\"},\"CHART-zjIwWr8uQk\":{\"children\":[],\"id\":\"CHART-zjIwWr8uQk\",\"meta\":{\"chartId\":22,\"height\":19,\"sliceName\":\"Low Demand SKU Sales\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\",\"ROW-snKuUCMzd\"],\"type\":\"CHART\"},\"COLUMN-6AoZuG5M13\":{\"children\":[\"CHART-up8vgEaoyr\",\"CHART-I0fzNhzrFh\"],\"id\":\"COLUMN-6AoZuG5M13\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\",\"ROW-WhcwyJGOBC\"],\"type\":\"COLUMN\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[\"TABS-MqX7q6Amlr\",\"TABS--qzCHfUQ4G\",\"TABS-UvyMSQ02i-\",\"TABS-mLjUGMs5aF\",\"TABS-l37LuBXeJ8\"],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"demandai\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"GRID_ID\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW-JJW-NFxet\":{\"children\":[\"CHART-gS2fWB2m448\"],\"id\":\"ROW-JJW-NFxet\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\"],\"type\":\"ROW\"},\"ROW-MLhI9qe49\":{\"children\":[\"CHART-5ob2dRqlU9\"],\"id\":\"ROW-MLhI9qe49\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\"],\"type\":\"ROW\"},\"ROW-NDKPnF4Au\":{\"children\":[\"CHART-YlTcz_-YMI\",\"CHART-dVXh3aqrP7\",\"CHART-Z4rwUFqfSX\",\"CHART-IjFQ1nJ-kn\"],\"id\":\"ROW-NDKPnF4Au\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\"],\"type\":\"ROW\"},\"ROW-Nd5sygY9q\":{\"children\":[\"CHART--o7TJkWYOKE\",\"CHART-86-FMSs4Y6\",\"CHART-rVzqs5THuD\",\"CHART-c1sL5RSAFL\"],\"id\":\"ROW-Nd5sygY9q\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\"],\"type\":\"ROW\"},\"ROW-WhcwyJGOBC\":{\"children\":[\"COLUMN-6AoZuG5M13\",\"CHART-ocqjxQY5fH\"],\"id\":\"ROW-WhcwyJGOBC\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\"],\"type\":\"ROW\"},\"ROW-snKuUCMzd\":{\"children\":[\"CHART-6bxfRh_oyo\",\"CHART-OYtWPaS78_\",\"CHART-ok4GlXpLAq\",\"CHART-zjIwWr8uQk\"],\"id\":\"ROW-snKuUCMzd\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\"],\"type\":\"ROW\"},\"ROW-w0CEQqOtG\":{\"children\":[\"CHART-Po4IIDv2Tf\",\"CHART-M72J642Shx\"],\"id\":\"ROW-w0CEQqOtG\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\"],\"type\":\"ROW\"},\"TAB--9XlLiyWwQ\":{\"children\":[\"ROW-w0CEQqOtG\",\"ROW-MLhI9qe49\",\"ROW-JJW-NFxet\"],\"id\":\"TAB--9XlLiyWwQ\",\"meta\":{\"text\":\"Top Trends\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\"],\"type\":\"TAB\"},\"TAB-6ZWu24G9_k\":{\"children\":[\"ROW-NDKPnF4Au\"],\"id\":\"TAB-6ZWu24G9_k\",\"meta\":{\"text\":\"Business Highlights\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\"],\"type\":\"TAB\"},\"TAB-GRdaBlb6mE\":{\"children\":[\"ROW-Nd5sygY9q\"],\"id\":\"TAB-GRdaBlb6mE\",\"meta\":{\"text\":\"Stock Prediction (Next Week)\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\"],\"type\":\"TAB\"},\"TAB-WQ_6lLd-tx\":{\"children\":[\"ROW-WhcwyJGOBC\"],\"id\":\"TAB-WQ_6lLd-tx\",\"meta\":{\"text\":\"Product Classification\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\"],\"type\":\"TAB\"},\"TAB-ldKRhpW4Ud\":{\"children\":[\"ROW-snKuUCMzd\"],\"id\":\"TAB-ldKRhpW4Ud\",\"meta\":{\"text\":\"Predictive Demand Variation (Next Week)\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\"],\"type\":\"TAB\"},\"TABS--qzCHfUQ4G\":{\"children\":[\"TAB-WQ_6lLd-tx\"],\"id\":\"TABS--qzCHfUQ4G\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-MqX7q6Amlr\":{\"children\":[\"TAB-6ZWu24G9_k\"],\"id\":\"TABS-MqX7q6Amlr\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-UvyMSQ02i-\":{\"children\":[\"TAB-GRdaBlb6mE\"],\"id\":\"TABS-UvyMSQ02i-\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-l37LuBXeJ8\":{\"children\":[\"TAB--9XlLiyWwQ\"],\"id\":\"TABS-l37LuBXeJ8\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-mLjUGMs5aF\":{\"children\":[\"TAB-ldKRhpW4Ud\"],\"id\":\"TABS-mLjUGMs5aF\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"}}",
+                "json_metadata": "{\"filter_immune_slices\": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 44, 46, 48], \"timed_refresh_immune_slices\": [], \"filter_immune_slice_fields\": {}, \"expanded_slices\": {}, \"refresh_frequency\": 0, \"default_filters\": \"{\\\"34\\\": {\\\"type\\\": \\\"country\\\"}}\", \"label_colors\": {\"SUM(totalforecastsales\": \"#0D9DDB\"}, \"remote_id\": 2, \"import_time\": 1577340219}",
+                "position_json": "{\"CHART--o7TJkWYOKE\":{\"children\":[],\"id\":\"CHART--o7TJkWYOKE\",\"meta\":{\"chartId\":30,\"height\":19,\"sliceName\":\"Overstocked SKU Count\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\",\"ROW-Nd5sygY9q\"],\"type\":\"CHART\"},\"CHART-0YCU7upQr6\":{\"children\":[],\"id\":\"CHART-0YCU7upQr6\",\"meta\":{\"chartId\":48,\"height\":67,\"sliceName\":\"Categories\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\",\"ROW-w0CEQqOtG\"],\"type\":\"CHART\"},\"CHART-5ob2dRqlU9\":{\"children\":[],\"id\":\"CHART-5ob2dRqlU9\",\"meta\":{\"chartId\":34,\"height\":14,\"sliceName\":\"\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\",\"ROW-MLhI9qe49\"],\"type\":\"CHART\"},\"CHART-6bxfRh_oyo\":{\"children\":[],\"id\":\"CHART-6bxfRh_oyo\",\"meta\":{\"chartId\":23,\"height\":19,\"sliceName\":\"High Demand SKU Count\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\",\"ROW-snKuUCMzd\"],\"type\":\"CHART\"},\"CHART-86-FMSs4Y6\":{\"children\":[],\"id\":\"CHART-86-FMSs4Y6\",\"meta\":{\"chartId\":44,\"height\":21,\"sliceName\":\"Capital At Risk\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\",\"ROW-Nd5sygY9q\"],\"type\":\"CHART\"},\"CHART-I0fzNhzrFh\":{\"children\":[],\"id\":\"CHART-I0fzNhzrFh\",\"meta\":{\"chartId\":42,\"height\":24,\"sliceName\":\"Stock Value\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\",\"ROW-WhcwyJGOBC\",\"COLUMN-6AoZuG5M13\"],\"type\":\"CHART\"},\"CHART-IjFQ1nJ-kn\":{\"children\":[],\"id\":\"CHART-IjFQ1nJ-kn\",\"meta\":{\"chartId\":40,\"height\":20,\"sliceName\":\"Sales Predicted - Next Week\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\",\"ROW-NDKPnF4Au\"],\"type\":\"CHART\"},\"CHART-OYtWPaS78_\":{\"children\":[],\"id\":\"CHART-OYtWPaS78_\",\"meta\":{\"chartId\":24,\"height\":19,\"sliceName\":\"High Demand SKU Sales\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\",\"ROW-snKuUCMzd\"],\"type\":\"CHART\"},\"CHART-YlTcz_-YMI\":{\"children\":[],\"id\":\"CHART-YlTcz_-YMI\",\"meta\":{\"chartId\":20,\"height\":20,\"sliceName\":\"Sales - Last Week\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\",\"ROW-NDKPnF4Au\"],\"type\":\"CHART\"},\"CHART-Z4rwUFqfSX\":{\"children\":[],\"id\":\"CHART-Z4rwUFqfSX\",\"meta\":{\"chartId\":32,\"height\":20,\"sliceName\":\"Sales Achieved - Current Week\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\",\"ROW-NDKPnF4Au\"],\"type\":\"CHART\"},\"CHART-c1sL5RSAFL\":{\"children\":[],\"id\":\"CHART-c1sL5RSAFL\",\"meta\":{\"chartId\":35,\"height\":19,\"sliceName\":\"Sales At Risk\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\",\"ROW-Nd5sygY9q\"],\"type\":\"CHART\"},\"CHART-dVXh3aqrP7\":{\"children\":[],\"id\":\"CHART-dVXh3aqrP7\",\"meta\":{\"chartId\":21,\"height\":20,\"sliceName\":\"Sales Prediction - Current Week\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\",\"ROW-NDKPnF4Au\"],\"type\":\"CHART\"},\"CHART-gS2fWB2m448\":{\"children\":[],\"id\":\"CHART-gS2fWB2m448\",\"meta\":{\"chartId\":31,\"height\":45,\"sliceName\":\"Locations\",\"width\":12},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\",\"ROW-JJW-NFxet\"],\"type\":\"CHART\"},\"CHART-gmj0eAthiW\":{\"children\":[],\"id\":\"CHART-gmj0eAthiW\",\"meta\":{\"chartId\":46,\"height\":67,\"sliceName\":\"Brands\",\"width\":6},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\",\"ROW-w0CEQqOtG\"],\"type\":\"CHART\"},\"CHART-ocqjxQY5fH\":{\"children\":[],\"id\":\"CHART-ocqjxQY5fH\",\"meta\":{\"chartId\":33,\"height\":40,\"sliceName\":\"AI Predicted Segments\",\"width\":9},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\",\"ROW-WhcwyJGOBC\"],\"type\":\"CHART\"},\"CHART-ok4GlXpLAq\":{\"children\":[],\"id\":\"CHART-ok4GlXpLAq\",\"meta\":{\"chartId\":26,\"height\":19,\"sliceName\":\"Low Demand SKU Count\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\",\"ROW-snKuUCMzd\"],\"type\":\"CHART\"},\"CHART-rVzqs5THuD\":{\"children\":[],\"id\":\"CHART-rVzqs5THuD\",\"meta\":{\"chartId\":28,\"height\":19,\"sliceName\":\"Understocked SKU Count\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\",\"ROW-Nd5sygY9q\"],\"type\":\"CHART\"},\"CHART-up8vgEaoyr\":{\"children\":[],\"id\":\"CHART-up8vgEaoyr\",\"meta\":{\"chartId\":41,\"height\":23,\"sliceName\":\"Active SKU\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\",\"ROW-WhcwyJGOBC\",\"COLUMN-6AoZuG5M13\"],\"type\":\"CHART\"},\"CHART-zjIwWr8uQk\":{\"children\":[],\"id\":\"CHART-zjIwWr8uQk\",\"meta\":{\"chartId\":22,\"height\":19,\"sliceName\":\"Low Demand SKU Sales\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\",\"ROW-snKuUCMzd\"],\"type\":\"CHART\"},\"COLUMN-6AoZuG5M13\":{\"children\":[\"CHART-up8vgEaoyr\",\"CHART-I0fzNhzrFh\"],\"id\":\"COLUMN-6AoZuG5M13\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\",\"width\":3},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\",\"ROW-WhcwyJGOBC\"],\"type\":\"COLUMN\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[\"TABS-MqX7q6Amlr\",\"TABS--qzCHfUQ4G\",\"TABS-UvyMSQ02i-\",\"TABS-mLjUGMs5aF\",\"TABS-l37LuBXeJ8\"],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"demandai\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"GRID_ID\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW-JJW-NFxet\":{\"children\":[\"CHART-gS2fWB2m448\"],\"id\":\"ROW-JJW-NFxet\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\"],\"type\":\"ROW\"},\"ROW-MLhI9qe49\":{\"children\":[\"CHART-5ob2dRqlU9\"],\"id\":\"ROW-MLhI9qe49\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\"],\"type\":\"ROW\"},\"ROW-NDKPnF4Au\":{\"children\":[\"CHART-YlTcz_-YMI\",\"CHART-dVXh3aqrP7\",\"CHART-Z4rwUFqfSX\",\"CHART-IjFQ1nJ-kn\"],\"id\":\"ROW-NDKPnF4Au\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\",\"TAB-6ZWu24G9_k\"],\"type\":\"ROW\"},\"ROW-Nd5sygY9q\":{\"children\":[\"CHART--o7TJkWYOKE\",\"CHART-86-FMSs4Y6\",\"CHART-rVzqs5THuD\",\"CHART-c1sL5RSAFL\"],\"id\":\"ROW-Nd5sygY9q\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\",\"TAB-GRdaBlb6mE\"],\"type\":\"ROW\"},\"ROW-WhcwyJGOBC\":{\"children\":[\"COLUMN-6AoZuG5M13\",\"CHART-ocqjxQY5fH\"],\"id\":\"ROW-WhcwyJGOBC\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\",\"TAB-WQ_6lLd-tx\"],\"type\":\"ROW\"},\"ROW-snKuUCMzd\":{\"children\":[\"CHART-6bxfRh_oyo\",\"CHART-OYtWPaS78_\",\"CHART-ok4GlXpLAq\",\"CHART-zjIwWr8uQk\"],\"id\":\"ROW-snKuUCMzd\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\",\"TAB-ldKRhpW4Ud\"],\"type\":\"ROW\"},\"ROW-w0CEQqOtG\":{\"children\":[\"CHART-0YCU7upQr6\",\"CHART-gmj0eAthiW\"],\"id\":\"ROW-w0CEQqOtG\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\",\"TAB--9XlLiyWwQ\"],\"type\":\"ROW\"},\"TAB--9XlLiyWwQ\":{\"children\":[\"ROW-w0CEQqOtG\",\"ROW-MLhI9qe49\",\"ROW-JJW-NFxet\"],\"id\":\"TAB--9XlLiyWwQ\",\"meta\":{\"text\":\"Top Trends\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-l37LuBXeJ8\"],\"type\":\"TAB\"},\"TAB-6ZWu24G9_k\":{\"children\":[\"ROW-NDKPnF4Au\"],\"id\":\"TAB-6ZWu24G9_k\",\"meta\":{\"text\":\"Business Highlights\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-MqX7q6Amlr\"],\"type\":\"TAB\"},\"TAB-GRdaBlb6mE\":{\"children\":[\"ROW-Nd5sygY9q\"],\"id\":\"TAB-GRdaBlb6mE\",\"meta\":{\"text\":\"Stock Prediction (Next Week)\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-UvyMSQ02i-\"],\"type\":\"TAB\"},\"TAB-WQ_6lLd-tx\":{\"children\":[\"ROW-WhcwyJGOBC\"],\"id\":\"TAB-WQ_6lLd-tx\",\"meta\":{\"text\":\"Product Classification\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS--qzCHfUQ4G\"],\"type\":\"TAB\"},\"TAB-ldKRhpW4Ud\":{\"children\":[\"ROW-snKuUCMzd\"],\"id\":\"TAB-ldKRhpW4Ud\",\"meta\":{\"text\":\"Predictive Demand Variation (Next Week)\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"TABS-mLjUGMs5aF\"],\"type\":\"TAB\"},\"TABS--qzCHfUQ4G\":{\"children\":[\"TAB-WQ_6lLd-tx\"],\"id\":\"TABS--qzCHfUQ4G\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-MqX7q6Amlr\":{\"children\":[\"TAB-6ZWu24G9_k\"],\"id\":\"TABS-MqX7q6Amlr\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-UvyMSQ02i-\":{\"children\":[\"TAB-GRdaBlb6mE\"],\"id\":\"TABS-UvyMSQ02i-\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-l37LuBXeJ8\":{\"children\":[\"TAB--9XlLiyWwQ\"],\"id\":\"TABS-l37LuBXeJ8\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"},\"TABS-mLjUGMs5aF\":{\"children\":[\"TAB-ldKRhpW4Ud\"],\"id\":\"TABS-mLjUGMs5aF\",\"meta\":{},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"TABS\"}}",
                 "slices": [
                     {
                         "__Slice__": {
@@ -80,7 +80,7 @@
                             "datasource_name": "demandai.Locations",
                             "datasource_type": "table",
                             "id": 31,
-                            "params": "{\"adhoc_filters\": [], \"column_collection\": [{\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"ENzfWf03G\", \"label\": \"Sales - Last week\", \"showYAxis\": false, \"timeLag\": 3, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"0LRvPyMhr\", \"label\": \"Sales Prediction - Current Week\", \"showYAxis\": false, \"timeLag\": 1, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"g44OcxTMk\", \"label\": \"Sales Achieved - Current Week\", \"showYAxis\": false, \"timeLag\": 2, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"iSj_m8ztp\", \"label\": \"Sales Prediction - Next Week\", \"showYAxis\": false, \"timeLag\": 0, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"perc_change\", \"d3format\": \".0%\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"qNRFfJI1L\", \"label\": \"WoW Growth\", \"showYAxis\": false, \"timeLag\": 3, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}], \"datasource\": \"28__table\", \"granularity_sqla\": \"weekstart\", \"groupby\": [\"location\"], \"limit\": 5, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"sum(coalesce)\", \"optionName\": \"metric_33e2xrlew31_fymmotgeckh\", \"sqlExpression\": \"sum(coalesce)\"}], \"slice_id\": 31, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url\": \"\", \"url_params\": {}, \"viz_type\": \"time_table\", \"remote_id\": 31, \"datasource_name\": \"Locations\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
+                            "params": "{\"adhoc_filters\": [], \"column_collection\": [{\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"ENzfWf03G\", \"label\": \"Sales - Last week\", \"showYAxis\": false, \"timeLag\": 3, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"0LRvPyMhr\", \"label\": \"Sales Prediction - Current Week\", \"showYAxis\": false, \"timeLag\": 1, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"g44OcxTMk\", \"label\": \"Sales Achieved - Current Week\", \"showYAxis\": false, \"timeLag\": 2, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"iSj_m8ztp\", \"label\": \"Sales Prediction - Next Week\", \"showYAxis\": false, \"timeLag\": 0, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"perc_change\", \"d3format\": \".0%\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"qNRFfJI1L\", \"label\": \"WoW Growth\", \"showYAxis\": false, \"timeLag\": 1, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}], \"datasource\": \"28__table\", \"granularity_sqla\": \"weekstart\", \"groupby\": [\"location\"], \"limit\": 5, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"sum(coalesce)\", \"optionName\": \"metric_33e2xrlew31_fymmotgeckh\", \"sqlExpression\": \"sum(coalesce)\"}], \"slice_id\": 31, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url\": \"\", \"url_params\": {}, \"viz_type\": \"time_table\", \"remote_id\": 31, \"datasource_name\": \"Locations\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
                             "slice_name": "Locations",
                             "viz_type": "time_table"
                         }
@@ -99,28 +99,6 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "demandai.admin admin-Untitled Query-9_VPzZiD5",
-                            "datasource_type": "table",
-                            "id": 34,
-                            "params": "{\"adhoc_filters\": [], \"datasource\": \"26__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"type\", \"defaultValue\": \"postcode\", \"key\": \"_bgaIdhIm\", \"label\": \"Location Type\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 34, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 34, \"datasource_name\": \"admin admin-Untitled Query-9_VPzZiD5\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
-                            "slice_name": "",
-                            "viz_type": "filter_box"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "demandai.Brands",
-                            "datasource_type": "table",
-                            "id": 36,
-                            "params": "{\"adhoc_filters\": [], \"column_collection\": [{\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"slhrnS8kc\", \"label\": \"Sales - Last Week\", \"showYAxis\": false, \"timeLag\": 2, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"cmx1gLzc-\", \"label\": \"Sales Prediction - Current Week\", \"showYAxis\": false, \"timeLag\": 1, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"pNOy_bAcV\", \"label\": \"Sales Prediction - Next Week\", \"showYAxis\": false, \"timeLag\": 0, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"perc_change\", \"d3format\": \".0%\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"o-aw2LQN5\", \"label\": \"WoW Growth\", \"showYAxis\": false, \"timeLag\": 2, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"spark\", \"comparisonType\": \"\", \"d3format\": \"\", \"dateFormat\": \"%a %d-%b-%y\", \"height\": \"20px\", \"key\": \"UGFEXQQ9a\", \"label\": \"Trendline\", \"showYAxis\": false, \"timeLag\": \"\", \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"70px\", \"yAxisBounds\": [null, null]}], \"datasource\": \"32__table\", \"granularity_sqla\": \"weekend\", \"groupby\": [\"brand\"], \"metrics\": [{\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"forecastsale\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 206, \"is_dttm\": false, \"optionName\": \"_col_forecastsale\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(forecastsale)\", \"optionName\": \"metric_kdce7wpi94q_f66coczgrlu\", \"sqlExpression\": null}], \"slice_id\": 36, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url\": \"\", \"url_params\": {}, \"viz_type\": \"time_table\", \"remote_id\": 36, \"datasource_name\": \"Brands\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
-                            "slice_name": "Brands",
-                            "viz_type": "time_table"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
                             "datasource_name": "demandai.Current Week Sales Achieved",
                             "datasource_type": "table",
                             "id": 32,
@@ -132,34 +110,12 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "demandai.Sales At Risk",
+                            "datasource_name": "demandai.admin admin-Untitled Query-9_VPzZiD5",
                             "datasource_type": "table",
-                            "id": 35,
-                            "params": "{\"adhoc_filters\": [], \"datasource\": \"38__table\", \"granularity_sqla\": \"weekstart\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"salesatrisk\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 214, \"is_dttm\": false, \"optionName\": \"_col_salesatrisk\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(salesatrisk)\", \"optionName\": \"metric_7umj191i9b8_lsgjcc4tfs\", \"sqlExpression\": null}, \"slice_id\": 35, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"viz_type\": \"big_number_total\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 35, \"datasource_name\": \"Sales At Risk\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
-                            "slice_name": "Sales At Risk",
-                            "viz_type": "big_number_total"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "demandai.Untitled Query 3-nt_64lpCC",
-                            "datasource_type": "table",
-                            "id": 44,
-                            "params": "{\"adhoc_filters\": [], \"datasource\": \"46__table\", \"granularity_sqla\": null, \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"capitalatrisk\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 116, \"is_dttm\": false, \"optionName\": \"_col_capitalatrisk\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(capitalatrisk)\", \"optionName\": \"metric_7g06n51aecf_8mup1xenoll\", \"sqlExpression\": null}, \"slice_id\": 44, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"viz_type\": \"big_number_total\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 44, \"datasource_name\": \"Untitled Query 3-nt_64lpCC\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
-                            "slice_name": "Capital At Risk",
-                            "viz_type": "big_number_total"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "demandai.Trending Categories",
-                            "datasource_type": "table",
-                            "id": 38,
-                            "params": "{\"adhoc_filters\": [], \"column_collection\": [{\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"LJ7oCx-m7\", \"label\": \"Sales - Last Week\", \"showYAxis\": false, \"timeLag\": 4, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"KMGXBtb2J\", \"label\": \"Sales Prediction - Current Week\", \"showYAxis\": false, \"timeLag\": 1, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"3_wHA3tX_\", \"label\": \"Sales Prediction - Next Week\", \"showYAxis\": false, \"timeLag\": 0, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"perc_change\", \"d3format\": \".0%\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"0uDDzVF02\", \"label\": \"WoW Growth\", \"showYAxis\": false, \"timeLag\": 4, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"spark\", \"comparisonType\": \"\", \"d3format\": \"\", \"dateFormat\": \"%a %d-%b-%y\", \"height\": \"20px\", \"key\": \"JPigsFiiK\", \"label\": \"Trendline\", \"showYAxis\": false, \"timeLag\": \"\", \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"70px\", \"yAxisBounds\": [null, null]}], \"datasource\": \"30__table\", \"granularity_sqla\": \"weekend\", \"groupby\": [\"category\"], \"metrics\": [{\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"forecastsale\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 209, \"is_dttm\": false, \"optionName\": \"_col_forecastsale\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(forecastsale)\", \"optionName\": \"metric_or7x5dow9qk_xcfpun7y3m\", \"sqlExpression\": null}], \"slice_id\": 38, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url\": \"\", \"url_params\": {}, \"viz_type\": \"time_table\", \"remote_id\": 38, \"datasource_name\": \"Trending Categories\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
-                            "slice_name": "Categories",
-                            "viz_type": "time_table"
+                            "id": 34,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"26__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"type\", \"defaultValue\": \"\", \"key\": \"_bgaIdhIm\", \"label\": \"Location Type\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 34, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 34, \"datasource_name\": \"admin admin-Untitled Query-9_VPzZiD5\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
+                            "slice_name": "",
+                            "viz_type": "filter_box"
                         }
                     },
                     {
@@ -176,11 +132,11 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "demandai.Query demandai.Stock Value-37L6qB-FL",
+                            "datasource_name": "demandai.admin admin-Query demandai.Predictive Next Week Sales-cnXWMdYC8",
                             "datasource_type": "table",
-                            "id": 42,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 219, \"g\": 157, \"r\": 13}, \"datasource\": \"44__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(sum)\", \"optionName\": \"metric_jnbewydydz_3vrvkw4as02\", \"sqlExpression\": \"SUM(sum)\"}, \"show_trend_line\": true, \"slice_id\": 42, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 42, \"datasource_name\": \"Query demandai.Stock Value-37L6qB-FL\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
-                            "slice_name": "Stock Value",
+                            "id": 40,
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 229, \"g\": 95, \"r\": 38}, \"compare_lag\": 1, \"compare_suffix\": \"WoW\", \"datasource\": \"41__table\", \"granularity_sqla\": \"weekend\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"totalforecastamount\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 105, \"is_dttm\": false, \"optionName\": \"_col_totalforecastamount\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(totalforecastamount)\", \"optionName\": \"metric_x3a6fucvyl_omka08dtdci\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 40, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 40, \"datasource_name\": \"admin admin-Query demandai.Predictive Next Week Sales-cnXWMdYC8\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
+                            "slice_name": "Sales Predicted - Next Week",
                             "viz_type": "big_number"
                         }
                     },
@@ -198,23 +154,67 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "demandai.admin admin-Query demandai.Predictive Next Week Sales-cnXWMdYC8",
+                            "datasource_name": "demandai.Untitled Query 3-fLLzZj1gv",
                             "datasource_type": "table",
-                            "id": 40,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 229, \"g\": 95, \"r\": 38}, \"compare_lag\": 3, \"compare_suffix\": \"WoW\", \"datasource\": \"41__table\", \"granularity_sqla\": \"weekend\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"totalforecastamount\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 105, \"is_dttm\": false, \"optionName\": \"_col_totalforecastamount\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(totalforecastamount)\", \"optionName\": \"metric_x3a6fucvyl_omka08dtdci\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 40, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 40, \"datasource_name\": \"admin admin-Query demandai.Predictive Next Week Sales-cnXWMdYC8\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
-                            "slice_name": "Sales Predicted - Next Week",
+                            "id": 41,
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 219, \"g\": 157, \"r\": 13}, \"compare_lag\": 1, \"compare_suffix\": \"WoW\", \"datasource\": \"43__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"total_sku\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 110, \"is_dttm\": false, \"optionName\": \"_col_total_sku\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(total_sku)\", \"optionName\": \"metric_4nvrf964v7u_wap4r9hrzl\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 41, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 41, \"datasource_name\": \"Untitled Query 3-fLLzZj1gv\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
+                            "slice_name": "Active SKU",
                             "viz_type": "big_number"
                         }
                     },
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "demandai.Untitled Query 3-fLLzZj1gv",
+                            "datasource_name": "demandai.Query demandai.Stock Value-37L6qB-FL",
                             "datasource_type": "table",
-                            "id": 41,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 219, \"g\": 157, \"r\": 13}, \"datasource\": \"43__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"total_sku\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 110, \"is_dttm\": false, \"optionName\": \"_col_total_sku\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(total_sku)\", \"optionName\": \"metric_4nvrf964v7u_wap4r9hrzl\", \"sqlExpression\": null}, \"show_trend_line\": true, \"slice_id\": 41, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 41, \"datasource_name\": \"Untitled Query 3-fLLzZj1gv\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
-                            "slice_name": "Active SKU",
+                            "id": 42,
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 219, \"g\": 157, \"r\": 13}, \"compare_lag\": 1, \"compare_suffix\": \"WoW\", \"datasource\": \"44__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(sum)\", \"optionName\": \"metric_jnbewydydz_3vrvkw4as02\", \"sqlExpression\": \"SUM(sum)\"}, \"show_trend_line\": true, \"slice_id\": 42, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 42, \"datasource_name\": \"Query demandai.Stock Value-37L6qB-FL\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
+                            "slice_name": "Stock Value",
                             "viz_type": "big_number"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "demandai.admin admin-Untitled Query 3-AzFuVUIUF",
+                            "datasource_type": "table",
+                            "id": 46,
+                            "params": "{\"adhoc_filters\": [], \"column_collection\": [{\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"p-HkHVAel\", \"label\": \"Sales - Last Week \", \"showYAxis\": false, \"timeLag\": 2, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"50HDwV1-r\", \"label\": \"Sales Prediction - Current Week\", \"showYAxis\": false, \"timeLag\": 1, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"oU-ED2xaw\", \"label\": \"Sales Prediction - Next Week\", \"showYAxis\": false, \"timeLag\": 0, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"perc_change\", \"d3format\": \".0%\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"O8U3cykBY\", \"label\": \"WoW Growth\", \"showYAxis\": false, \"timeLag\": 1, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"spark\", \"comparisonType\": \"\", \"d3format\": \"\", \"dateFormat\": \"%a %d-%b-%y\", \"height\": \"\", \"key\": \"rOQMZ2R9j\", \"label\": \"Trendline\", \"showYAxis\": false, \"timeLag\": \"\", \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}], \"datasource\": \"48__table\", \"granularity_sqla\": \"weekend\", \"groupby\": [\"brand\"], \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(forecastsale)\", \"optionName\": \"metric_p6ti4tlcio_8yuamyt8yvc\", \"sqlExpression\": \"SUM(forecastsale)\"}], \"slice_id\": 46, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url\": \"\", \"url_params\": {}, \"viz_type\": \"time_table\", \"remote_id\": 46, \"datasource_name\": \"admin admin-Untitled Query 3-AzFuVUIUF\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
+                            "slice_name": "Brands",
+                            "viz_type": "time_table"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "demandai.Untitled Query 3-nt_64lpCC",
+                            "datasource_type": "table",
+                            "id": 44,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"46__table\", \"granularity_sqla\": null, \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"capitalatrisk\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 116, \"is_dttm\": false, \"optionName\": \"_col_capitalatrisk\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(capitalatrisk)\", \"optionName\": \"metric_7g06n51aecf_8mup1xenoll\", \"sqlExpression\": null}, \"slice_id\": 44, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"viz_type\": \"big_number_total\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 44, \"datasource_name\": \"Untitled Query 3-nt_64lpCC\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
+                            "slice_name": "Capital At Risk",
+                            "viz_type": "big_number_total"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "demandai.Sales At Risk",
+                            "datasource_type": "table",
+                            "id": 35,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"38__table\", \"granularity_sqla\": \"weekstart\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"salesatrisk\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 214, \"is_dttm\": false, \"optionName\": \"_col_salesatrisk\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(salesatrisk)\", \"optionName\": \"metric_7umj191i9b8_lsgjcc4tfs\", \"sqlExpression\": null}, \"slice_id\": 35, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"viz_type\": \"big_number_total\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 35, \"datasource_name\": \"Sales At Risk\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
+                            "slice_name": "Sales At Risk",
+                            "viz_type": "big_number_total"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "demandai.Untitled Query 3-6t3N_yy3V",
+                            "datasource_type": "table",
+                            "id": 48,
+                            "params": "{\"adhoc_filters\": [], \"column_collection\": [{\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"HZiUqshVj\", \"label\": \"Sales - Last Week\", \"showYAxis\": false, \"timeLag\": 2, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"i0vlR6SyT\", \"label\": \"Sales Prediction - Current Week\", \"showYAxis\": false, \"timeLag\": 1, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"value\", \"d3format\": \"\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"UKM2oJH9F\", \"label\": \"Sales Prediction - Next Week\", \"showYAxis\": false, \"timeLag\": 0, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"time\", \"comparisonType\": \"perc_change\", \"d3format\": \".0%\", \"dateFormat\": \"\", \"height\": \"\", \"key\": \"MJe5aLOWL\", \"label\": \"WoW Growth\", \"showYAxis\": false, \"timeLag\": 1, \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}, {\"bounds\": [null, null], \"colType\": \"spark\", \"comparisonType\": \"\", \"d3format\": \"\", \"dateFormat\": \"%a %d-%b-%y\", \"height\": \"\", \"key\": \"y2nW8zVHi\", \"label\": \"Trendline\", \"showYAxis\": false, \"timeLag\": \"\", \"timeRatio\": \"\", \"tooltip\": \"\", \"width\": \"\", \"yAxisBounds\": [null, null]}], \"datasource\": \"52__table\", \"granularity_sqla\": \"weekend\", \"groupby\": [\"category\"], \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(forecastsale)\", \"optionName\": \"metric_qas6pknjt5q_0sdo0g56jq8c\", \"sqlExpression\": \"SUM(forecastsale)\"}], \"slice_id\": 48, \"time_grain_sqla\": null, \"time_range\": \"100 years ago : \", \"url\": \"\", \"url_params\": {}, \"viz_type\": \"time_table\", \"remote_id\": 48, \"datasource_name\": \"Untitled Query 3-6t3N_yy3V\", \"schema\": \"demandai\", \"database_name\": \"examples\"}",
+                            "slice_name": "Categories",
+                            "viz_type": "time_table"
                         }
                     }
                 ],
@@ -765,120 +765,6 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-27T05:15:25"
-                            },
-                            "column_name": "brand",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 86,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 32,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-27T05:15:25"
-                            },
-                            "column_name": "forecastsale",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 87,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 32,
-                            "type": "OBJECT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-27T05:15:25"
-                            },
-                            "column_name": "weekend",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 88,
-                            "is_active": null,
-                            "is_dttm": true,
-                            "python_date_format": null,
-                            "table_id": 32,
-                            "type": "DATETIME",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 32,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 32,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 32, \"database_name\": \"examples\", \"import_time\": 1577340219}",
-                "schema": "demandai",
-                "sql": "with top4brandforecastsale as \n(\nselect brand,coalesce(sum(peakforecast * lastknownrrp),0) forecastsale ,weekend::date\nfrom \ndemandai.mvw_sku_forecast_with_lastrrp_staticweek sf\nwhere \nsf.staticweekno between 0 and 4\nand brand in (select brandwise from demandai.mvw_lastweektop4brand  )\ngroup by brand,weekend\n)\nselect brand,forecastsale,weekend from top4brandforecastsale\nunion\nselect slm.skuvariant3 as brandwise,coalesce(sum(sd.demand*sd.lastknownrrp),0) totalsales,weekstart\nFROM demandai.mvw_weekly_demand_staticweek sd\n inner JOIN demandai.sku_loc_metadata slm ON slm.skuid::text = sd.skuid::text AND slm.locationid::text = sd.locationid::text\nwhere \nslm.skustatus = true \nand sd.staticweekno between 0 and 1 \nand slm.skuvariant3 in (select brandwise from demandai.mvw_lastweektop4brand)\ngroup by slm.skuvariant3,weekstart",
-                "table_name": "Brands",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
                                 "__datetime__": "2019-12-27T05:01:25"
                             },
                             "column_name": "staticweekno",
@@ -1072,6 +958,144 @@
                 "schema": "demandai",
                 "sql": "select count(distinct skuid) understocksku \nfrom demandai.mvw_weekly_demand_staticweek\nwhere\ndemanddate = now()::Date-1\nand currentstock < minstocklevel",
                 "table_name": "Understocked SKU Count",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T05:50:03"
+                            },
+                            "column_name": "category",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T04:00:20"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 135,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 52,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T05:50:03"
+                            },
+                            "column_name": "forecastsale",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T04:00:20"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 136,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 52,
+                            "type": "OBJECT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T05:50:03"
+                            },
+                            "column_name": "weekend",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T04:00:20"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 137,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 52,
+                            "type": "DATETIME",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T05:50:03"
+                            },
+                            "column_name": "staticweekno",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T04:00:20"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 138,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 52,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T04:00:20"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T04:00:20"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 52,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 52,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 52, \"database_name\": \"examples\"}",
+                "schema": "demandai",
+                "sql": "with \ndatestatcategory as (\nselect \ndistinct  \n(\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) as staticweekno  ,\ndd.weekstart,\nto_date(right(dd.weekrange,'10'),'dd-mm-yyyy') AS weekend,ct.category\nfrom \n common.datedimension dd , (select categorywise as category from demandai.mvw_lastweektop4category ) as ct\n where \n  (\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) between -5 and 2\n  and ct.category <> ''\n)\nselect dtc.category,coalesce(sum(peakforecast * lastknownrrp),0) forecastsale,dtc.weekstart as weekend,dtc.staticweekno\nfrom \ndatestatcategory dtc \nleft join demandai.mvw_sku_forecast_with_lastrrp_staticweek sf on dtc.staticweekno = sf.staticweekno and dtc.weekstart = sf.weekstart  and dtc.category = sf.category\nwhere \ndtc.category in (select categorywise from demandai.mvw_lastweektop4category  )\nand dtc.staticweekno between 0 and 1\ngroup by dtc.staticweekno,dtc.weekstart,dtc.category\nunion all\nselect \ndtc.category,coalesce(sum(demand * lastknownrrp),0) totalsales,dtc.weekstart,dtc.staticweekno\nFROM \ndatestatcategory dtc \nleft join \ndemandai.mvw_weekly_demand_staticweek sf on dtc.staticweekno = -(sf.staticweekno) and dtc.weekstart = sf.weekstart and dtc.category = sf.category\nwhere \n dtc.staticweekno between -4 and -1\nand dtc.category in (select categorywise from demandai.mvw_lastweektop4category)\ngroup by dtc.staticweekno,dtc.weekstart,dtc.category",
+                "table_name": "Untitled Query 3-6t3N_yy3V",
                 "template_params": "{}"
             }
         },
@@ -1496,7 +1520,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 28, \"database_name\": \"examples\", \"import_time\": 1577340219}",
                 "schema": "demandai",
-                "sql": "with postcode_sales as (\nselect staticweekno,weekstart::date,coalesce(sum(demand*lastknownrrp),0) totalsale,postcode\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand postcode <> ''\ngroup by staticweekno,weekstart,postcode\n)\n,\ntop5loc as (\nselect staticweekno,weekstart,postcode,totalsale,rno from \n(select staticweekno,weekstart,postcode,totalsale, rank() over( order by totalsale desc) rno\nfrom  postcode_sales) as top5\nwhere top5.rno <= 5\n),\ncity_sales as (\nselect staticweekno,weekstart,coalesce(sum(demand*lastknownrrp),0) totalsale,city\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand city <> ''\ngroup by staticweekno,weekstart,city\n)\n,\ntop5loc_city as (\nselect staticweekno,weekstart,city,totalsale,rno from \n(select staticweekno,weekstart,city,totalsale, rank() over( order by totalsale desc) rno\nfrom  city_sales) as top5\nwhere top5.rno <= 5\n)\n,\nstate_sales as (\nselect staticweekno,weekstart,coalesce(sum(demand*lastknownrrp),0) totalsale,state\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand state <> ''\ngroup by staticweekno,weekstart,state\n)\n,\ntop5loc_state as (\nselect staticweekno,weekstart,state,totalsale,rno from \n(select staticweekno,weekstart,state,totalsale, rank() over( order by totalsale desc) rno\nfrom  state_sales) as top5\nwhere top5.rno <= 5\n)\n,\ncounty_sales as (\nselect staticweekno,weekstart,coalesce(sum(demand*lastknownrrp),0) totalsale,county\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand county <> ''\ngroup by staticweekno,weekstart,county\n)\n,\ntop5loc_county as (\nselect staticweekno,weekstart,county,totalsale,rno from \n(select staticweekno,weekstart,county,totalsale, rank() over( order by totalsale desc) rno\nfrom  county_sales) as top5\nwhere top5.rno <= 5\n)\n,\ncountry_sales as (\nselect staticweekno,weekstart,coalesce(sum(demand*lastknownrrp),0) totalsale,country\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand country <> ''\ngroup by staticweekno,weekstart,country\n)\n,\ntop5loc_country as (\nselect staticweekno,weekstart,country,totalsale,rno from \n(select staticweekno,weekstart,country,totalsale, rank() over( order by totalsale desc) rno\nfrom  country_sales) as top5\nwhere top5.rno <= 5\n)\n,\nlocdata as (\nselect staticweekno,weekstart,country as location ,coalesce(sum(demand*lastknownrrp),0),'country' as type\nfrom\ndemandai.mvw_locwise_demandsales ld \nwhere \nld.country in (select country from top5loc_country)\ngroup by staticweekno,weekstart,country\nunion all\nselect staticweekno,weekstart,county,coalesce(sum(demand*lastknownrrp),0),'county' as type\nfrom\ndemandai.mvw_locwise_demandsales ld \nwhere \nld.county in (select county from top5loc_county)\ngroup by staticweekno,weekstart,county\nunion all\nselect staticweekno,weekstart,state,coalesce(sum(demand*lastknownrrp),0),'state' as type\nfrom\ndemandai.mvw_locwise_demandsales ld \nwhere \nld.state in (select state from top5loc_state)\ngroup by staticweekno,weekstart,state\nunion all\nselect staticweekno,weekstart,city,coalesce(sum(demand*lastknownrrp),0),'city' as type\nfrom\ndemandai.mvw_locwise_demandsales ld \nwhere \nld.city in (select city from top5loc_city)\ngroup by staticweekno,weekstart,city\nunion all\nselect staticweekno,weekstart,postcode,coalesce(sum(demand*lastknownrrp),0),'postcode' as type\nfrom\ndemandai.mvw_locwise_demandsales ld \nwhere \nld.postcode in (select postcode from top5loc)\ngroup by staticweekno,weekstart,postcode\nunion all\nselect lf.staticweekno,\nlf.weekend ,lf.country,coalesce(sum(lf.peakforecast*lf.lastknownrrp),0) totalsale,'country' as type\nfrom \ndemandai.mvw_locwise_forecastsales lf \nwhere \nlf.country <> ''\nand lf.country in (select country from top5loc_country)\ngroup by staticweekno,weekend,country\nunion all\nselect lf.staticweekno,\nlf.weekend ,lf.county,coalesce(sum(lf.peakforecast*lf.lastknownrrp),0) totalsale,'county' as type\nfrom \ndemandai.mvw_locwise_forecastsales lf \nwhere \nlf.county <> ''\nand lf.county in (select county from top5loc_county)\ngroup by staticweekno,weekend,county\nunion all\nselect lf.staticweekno,\nlf.weekend ,lf.state,coalesce(sum(lf.peakforecast*lf.lastknownrrp),0) totalsale,'state' as type\nfrom \ndemandai.mvw_locwise_forecastsales lf \nwhere \nlf.state <> ''\nand lf.state in (select state from top5loc_state)\ngroup by staticweekno,weekend,state\nunion all\nselect lf.staticweekno,\nlf.weekend ,lf.city,coalesce(sum(lf.peakforecast*lf.lastknownrrp),0) totalsale,'city' as type\nfrom \ndemandai.mvw_locwise_forecastsales lf \nwhere \nlf.city <> ''\nand lf.city in (select city from top5loc_city)\ngroup by staticweekno,weekend,city\nunion all\nselect lf.staticweekno,\nlf.weekend ,lf.postcode,coalesce(sum(lf.peakforecast*lf.lastknownrrp),0) totalsale,'postcode' as type\nfrom \ndemandai.mvw_locwise_forecastsales lf \nwhere \nlf.postcode <> ''\nand lf.postcode in (select postcode from top5loc)\ngroup by staticweekno,weekend,postcode\n)\nselect *\nfrom locdata\n\n",
+                "sql": "with postcode_sales as (\nselect staticweekno,weekstart::date,coalesce(sum(demand*lastknownrrp),0) totalsale,postcode\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand postcode <> ''\ngroup by staticweekno,weekstart,postcode\n)\n,\ntop5loc as (\nselect staticweekno,weekstart,postcode,totalsale,rno from \n(select staticweekno,weekstart,postcode,totalsale, rank() over( order by totalsale desc) rno\nfrom  postcode_sales) as top5\nwhere top5.rno <= 5\n),\ncity_sales as (\nselect staticweekno,weekstart,coalesce(sum(demand*lastknownrrp),0) totalsale,city\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand city <> ''\ngroup by staticweekno,weekstart,city\n)\n,\ntop5loc_city as (\nselect staticweekno,weekstart,city,totalsale,rno from \n(select staticweekno,weekstart,city,totalsale, rank() over( order by totalsale desc) rno\nfrom  city_sales) as top5\nwhere top5.rno <= 5\n)\n,\nstate_sales as (\nselect staticweekno,weekstart,coalesce(sum(demand*lastknownrrp),0) totalsale,state\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand state <> ''\ngroup by staticweekno,weekstart,state\n)\n,\ntop5loc_state as (\nselect staticweekno,weekstart,state,totalsale,rno from \n(select staticweekno,weekstart,state,totalsale, rank() over( order by totalsale desc) rno\nfrom  state_sales) as top5\nwhere top5.rno <= 5\n)\n,\ncounty_sales as (\nselect staticweekno,weekstart,coalesce(sum(demand*lastknownrrp),0) totalsale,county\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand county <> ''\ngroup by staticweekno,weekstart,county\n)\n,\ntop5loc_county as (\nselect staticweekno,weekstart,county,totalsale,rno from \n(select staticweekno,weekstart,county,totalsale, rank() over( order by totalsale desc) rno\nfrom  county_sales) as top5\nwhere top5.rno <= 5\n)\n,\ncountry_sales as (\nselect staticweekno,weekstart,coalesce(sum(demand*lastknownrrp),0) totalsale,country\nfrom \ndemandai.mvw_locwise_demandsales\nwhere \nstaticweekno = 1\nand country <> ''\ngroup by staticweekno,weekstart,country\n)\n,\ntop5loc_country as (\nselect staticweekno,weekstart,country,totalsale,rno from \n(select staticweekno,weekstart,country,totalsale, rank() over( order by totalsale desc) rno\nfrom  country_sales) as top5\nwhere top5.rno <= 5\n)\n,\ndatestatpostcode as (\nselect \ndistinct  \n(\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) as staticweekno  ,\ndd.weekstart,\nto_date(right(dd.weekrange,'10'),'dd-mm-yyyy') AS weekend,ct.postcode\nfrom \n common.datedimension dd , (select postcode from top5loc) as ct\n where \n  (\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) between -5 and 2\nand ct.postcode <> ''\n  )\n,\ndatestatcity as (\nselect \ndistinct  \n(\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) as staticweekno  ,\ndd.weekstart,\nto_date(right(dd.weekrange,'10'),'dd-mm-yyyy') AS weekend,ct.city\nfrom \n common.datedimension dd , (select city from top5loc_city) as ct\n where \n  (\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) between -5 and 2\nand ct.city <> ''\n  )\n,\ndatestatcounty as (\nselect \ndistinct  \n(\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) as staticweekno  ,\ndd.weekstart,\nto_date(right(dd.weekrange,'10'),'dd-mm-yyyy') AS weekend,ct.county\nfrom \n common.datedimension dd , (select county from top5loc_county) as ct\n where \n  (\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) between -5 and 2\nand ct.county <> ''\n  )\n,\ndatestatstate as (\nselect \ndistinct  \n(\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) as staticweekno  ,\ndd.weekstart,\nto_date(right(dd.weekrange,'10'),'dd-mm-yyyy') AS weekend,ct.state\nfrom \n common.datedimension dd , (select state from top5loc_state) as ct\n where \n  (\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) between -5 and 2\nand ct.state <> ''\n  )\n,\ndatestatcountry as (\nselect \ndistinct  \n(\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) as staticweekno  ,\ndd.weekstart,\nto_date(right(dd.weekrange,'10'),'dd-mm-yyyy') AS weekend,ct.country\nfrom \n common.datedimension dd , (select country from top5loc_country) as ct\n where \n  (\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) between -5 and 2\n  and ct.country <> ''\n  )\n,\nlocdata as (\nselect dtc.staticweekno,dtc.weekstart,dtc.postcode as location,coalesce(sum(demand*lastknownrrp),0)  ,'postcode' as type\nfrom\ndatestatpostcode dtc \nleft join demandai.mvw_locwise_demandsales cd  on dtc.staticweekno = -(cd.staticweekno) and dtc.weekstart = cd.weekstart and dtc.postcode = cd.postcode\nwhere \ndtc.postcode in (select postcode from top5loc)\nand dtc.staticweekno between -4 and 0\ngroup by dtc.staticweekno,dtc.weekstart,dtc.postcode\nunion all\nselect dtc.staticweekno,dtc.weekstart,dtc.city as location,coalesce(sum(demand*lastknownrrp),0) salesamt ,'city' as type\nfrom\ndatestatcity dtc \nleft join demandai.mvw_locwise_demandsales cd  on dtc.staticweekno = -(cd.staticweekno) and dtc.weekstart = cd.weekstart and dtc.city = cd.city\nwhere \ndtc.city in (select city from top5loc_city)\nand dtc.staticweekno between -4 and 0\ngroup by dtc.staticweekno,dtc.weekstart,dtc.city\nunion all\nselect dtc.staticweekno,dtc.weekstart,dtc.state as location,coalesce(sum(demand*lastknownrrp),0) salesamt ,'state' as type\nfrom\ndatestatstate dtc \nleft join demandai.mvw_locwise_demandsales cd  on dtc.staticweekno = -(cd.staticweekno) and dtc.weekstart = cd.weekstart and dtc.state = cd.state\nwhere \ndtc.state in (select state from top5loc_state)\nand dtc.staticweekno between -4 and 0\ngroup by dtc.staticweekno,dtc.weekstart,dtc.state\nunion all\nselect dtc.staticweekno,dtc.weekstart,dtc.county as location,coalesce(sum(demand*lastknownrrp),0) salesamt ,'county' as type\nfrom\ndatestatcounty dtc \nleft join demandai.mvw_locwise_demandsales cd  on dtc.staticweekno = -(cd.staticweekno) and dtc.weekstart = cd.weekstart  and dtc.county = cd.county\nwhere \ndtc.county in (select county from top5loc_county)\nand dtc.staticweekno between -4 and 0\ngroup by dtc.staticweekno,dtc.weekstart,dtc.county\nunion all\nselect dtc.staticweekno,dtc.weekstart,dtc.country as location,coalesce(sum(demand*lastknownrrp),0) salesamt ,'country' as type\nfrom\ndatestatcountry dtc \nleft join demandai.mvw_locwise_demandsales cd  on dtc.staticweekno = -(cd.staticweekno) and dtc.weekstart = cd.weekstart and dtc.country = cd.country\nwhere \ndtc.country in (select country from top5loc_country)\nand dtc.staticweekno between -4 and 0\ngroup by dtc.staticweekno,dtc.weekstart,dtc.country\nunion all\nselect dtc.staticweekno,dtc.weekend,dtc.postcode as location,coalesce(sum(peakforecast*lastknownrrp),0) totalsale,'postcode' as type\nfrom \ndatestatpostcode dtc \nleft join demandai.mvw_locwise_forecastsales cd  on dtc.staticweekno = cd.staticweekno and dtc.weekstart = cd.weekstart  and dtc.postcode = cd.postcode\nwhere \ndtc.postcode <> ''\nand dtc.postcode in (select postcode from top5loc)\nand dtc.staticweekno between 0 and 1\ngroup by dtc.staticweekno,dtc.weekend,dtc.postcode\nunion all\nselect dtc.staticweekno,dtc.weekend,dtc.city as location,coalesce(sum(peakforecast*lastknownrrp),0) totalsale,'city' as type\nfrom \ndatestatcity dtc \nleft join demandai.mvw_locwise_forecastsales cd  on dtc.staticweekno = cd.staticweekno and dtc.weekstart = cd.weekstart  and dtc.city = cd.city\nwhere \ndtc.city <> ''\nand dtc.city in (select city from top5loc_city)\nand dtc.staticweekno between 0 and 1\ngroup by dtc.staticweekno,dtc.weekend,dtc.city\nunion all\nselect dtc.staticweekno,dtc.weekend,dtc.state as location,coalesce(sum(peakforecast*lastknownrrp),0) totalsale,'state' as type\nfrom \ndatestatstate dtc \nleft join demandai.mvw_locwise_forecastsales cd  on dtc.staticweekno = cd.staticweekno and dtc.weekstart = cd.weekstart  and dtc.state = cd.state\nwhere \ndtc.state <> ''\nand dtc.state in (select state from top5loc_state)\nand dtc.staticweekno between 0 and 1\ngroup by dtc.staticweekno,dtc.weekend,dtc.state\nunion all\nselect dtc.staticweekno,dtc.weekend,dtc.county as location,coalesce(sum(peakforecast*lastknownrrp),0) totalsale,'county' as type\nfrom \ndatestatcounty dtc \nleft join demandai.mvw_locwise_forecastsales cd  on dtc.staticweekno = cd.staticweekno and dtc.weekstart = cd.weekstart  and dtc.county = cd.county\nwhere \ndtc.county <> ''\nand dtc.county in (select county from top5loc_county)\nand dtc.staticweekno between 0 and 1\ngroup by dtc.staticweekno,dtc.weekend,dtc.county\nunion all\nselect dtc.staticweekno,dtc.weekend,dtc.country as location,coalesce(sum(peakforecast*lastknownrrp),0) totalsale,'country' as type\nfrom \ndatestatcountry dtc \nleft join demandai.mvw_locwise_forecastsales cd  on dtc.staticweekno = cd.staticweekno and dtc.weekstart = cd.weekstart  and dtc.country = cd.country\nwhere \ndtc.country <> ''\nand dtc.country in (select country from top5loc_country)\nand dtc.staticweekno between 0 and 1\ngroup by dtc.staticweekno,dtc.weekend,dtc.country\n)\nselect * from locdata",
                 "table_name": "Locations",
                 "template_params": "{}"
             }
@@ -1564,120 +1588,6 @@
                 "schema": "demandai",
                 "sql": "select count(distinct skuid) from demandai.mvw_demand_variation\n where \n percentavgchg <= (-10)",
                 "table_name": "Low Demand SKU Count",
-                "template_params": "{}"
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-27T05:15:05"
-                            },
-                            "column_name": "category",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 81,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 30,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-27T05:15:05"
-                            },
-                            "column_name": "forecastsale",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 82,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 30,
-                            "type": "OBJECT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-27T05:15:05"
-                            },
-                            "column_name": "weekend",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 83,
-                            "is_active": null,
-                            "is_dttm": true,
-                            "python_date_format": null,
-                            "table_id": 30,
-                            "type": "DATETIME",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2019-12-26T06:03:40"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "count(*)",
-                            "id": 30,
-                            "metric_name": "count",
-                            "metric_type": null,
-                            "table_id": 30,
-                            "verbose_name": null,
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 30, \"database_name\": \"examples\", \"import_time\": 1577340219}",
-                "schema": "demandai",
-                "sql": "with top4categoryforecastsale as\n     (select category,\n             coalesce(sum(peakforecast * lastknownrrp), 0) forecastsale,\n             weekend::date\n      from demandai.mvw_sku_forecast_with_lastrrp_staticweek sf\n      where sf.staticweekno between 0 and 1\n        and category in\n          (select categorywise\n           from demandai.mvw_lastweektop4category)\n      group by category,\n               weekend) select category,\n                               forecastsale,\n                               weekend\n   from top4categoryforecastsale\n   union select slm.skuvariant2 as categorywise,\n                coalesce(sum(sd.demand*sd.lastknownrrp), 0) totalsales,\n                weekstart\n   FROM demandai.mvw_weekly_demand_staticweek sd\n   inner JOIN demandai.sku_loc_metadata slm ON slm.skuid::text = sd.skuid::text\n   AND slm.locationid::text = sd.locationid::text\n   where slm.skustatus = true\n     and sd.staticweekno between 0 and 4\n     and slm.skuvariant2 in\n       (select categorywise\n        from demandai.mvw_lastweektop4category)\n   group by slm.skuvariant2,\n            weekstart",
-                "table_name": "Trending Categories",
                 "template_params": "{}"
             }
         },
@@ -1792,6 +1702,144 @@
                 "schema": "demandai",
                 "sql": "select 'Revenue Profile SKU Units' as profile,\n          peakcategory1 as peak_category,\n          coalesce(count(DISTINCT skuid), 0) totaluniqueskuid\n   from demandai.mvw_sku_forecast_with_lastrrp_staticweek\n   where staticweekno = 1\n   group by peakcategory1\n   union select 'Demand Profile SKU Units' as profile,\n                peakcategory2,\n                coalesce(count(DISTINCT skuid), 0) totaluniqueskuid\n   from demandai.mvw_sku_forecast_with_lastrrp_staticweek\n   where staticweekno = 1\n   group by peakcategory2\n   union select 'Demand Profile SKU Units' as profile,\n                peakcategory3,\n                coalesce(count(DISTINCT skuid), 0) totaluniqueskuid\n   from demandai.mvw_sku_forecast_with_lastrrp_staticweek\n   where staticweekno = 1\n   group by peakcategory3\n   union select 'Demand Profile SKU Units'  as profile,\n                peakcategory4,\n                coalesce(count(DISTINCT skuid), 0) totaluniqueskuid\n   from demandai.mvw_sku_forecast_with_lastrrp_staticweek\n   where staticweekno = 1\n   group by peakcategory4\n   union select 'Demand Profile SKU Units' as profile,\n                peakcategory5,\n                coalesce(count(DISTINCT skuid), 0) totaluniqueskuid\n   from demandai.mvw_sku_forecast_with_lastrrp_staticweek\n   where staticweekno = 1\n   group by peakcategory5",
                 "table_name": "AI Predicted Segments",
+                "template_params": "{}"
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T06:15:31"
+                            },
+                            "column_name": "brand",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T03:31:43"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 119,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 48,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T06:15:31"
+                            },
+                            "column_name": "forecastsale",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T03:31:43"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 120,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 48,
+                            "type": "OBJECT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T06:15:31"
+                            },
+                            "column_name": "weekend",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T03:31:43"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 121,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 48,
+                            "type": "DATETIME",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T06:15:31"
+                            },
+                            "column_name": "staticweekno",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T03:31:43"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 122,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 48,
+                            "type": "INT",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-08T03:31:43"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-08T03:31:43"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "id": 48,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 48,
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 48, \"database_name\": \"examples\"}",
+                "schema": "demandai",
+                "sql": "with \ndatestatbrand as (\nselect \ndistinct  \n(\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) as staticweekno  ,\ndd.weekstart,\nto_date(right(dd.weekrange,'10'),'dd-mm-yyyy') AS weekend,ct.brand \nfrom \n common.datedimension dd , (select brandwise as brand  from demandai.mvw_lastweektop4brand ) as ct\n where \n  (\"substring\"(dd.weekrange::text, 1, 4)::integer - (select \"substring\"(weekrange::text, 1, 4)::integer from common.datedimension where date = now()::Date)) between -5 and 2\n  and ct.brand <> ''\n)\nselect dtc.brand,coalesce(sum(peakforecast * lastknownrrp),0) forecastsale ,dtc.weekstart as weekend,dtc.staticweekno\nfrom \ndatestatbrand dtc \nleft join demandai.mvw_sku_forecast_with_lastrrp_staticweek sf on dtc.staticweekno = sf.staticweekno and dtc.weekstart = sf.weekstart  and dtc.brand = sf.brand\nwhere \ndtc.staticweekno between 0 and 1\nand dtc.brand in (select brandwise from demandai.mvw_lastweektop4brand  )\ngroup by dtc.staticweekno,dtc.weekstart,dtc.brand\nunion all\nselect dtc.brand as brandwise,coalesce(sum(demand*lastknownrrp),0) totalsales,dtc.weekstart,dtc.staticweekno\nFROM \ndatestatbrand dtc \nleft join \ndemandai.mvw_weekly_demand_staticweek sd  on dtc.staticweekno = -(sd.staticweekno) and dtc.weekstart = sd.weekstart and dtc.brand = sd.brand\nwhere \n dtc.staticweekno between -4 and -1\nand dtc.brand in (select brandwise from demandai.mvw_lastweektop4brand)\ngroup by dtc.brand,dtc.weekstart,dtc.staticweekno",
+                "table_name": "admin admin-Untitled Query 3-AzFuVUIUF",
                 "template_params": "{}"
             }
         },
