@@ -5,7 +5,7 @@
                 "css": "",
                 "dashboard_title": "demand_explorer",
                 "description": null,
-                "json_metadata": "{\"filter_immune_slices\": [], \"timed_refresh_immune_slices\": [], \"filter_immune_slice_fields\": {\"39\": [\"categories\", \"selectgroup\", \"skuid\"], \"40\": [\"categories\", \"skuid\"], \"45\": [\"skuid\"]}, \"expanded_slices\": {}, \"refresh_frequency\": 0, \"default_filters\": \"{}\", \"remote_id\": 34, \"import_time\": 1579586352}",
+                "json_metadata": "{\"filter_immune_slices\": [67], \"timed_refresh_immune_slices\": [], \"filter_immune_slice_fields\": {\"39\": [\"categories\", \"selectgroup\", \"skuid\"], \"40\": [\"categories\", \"skuid\"], \"45\": [\"skuid\"]}, \"expanded_slices\": {}, \"refresh_frequency\": 0, \"default_filters\": \"{}\", \"remote_id\": 34, \"import_time\": 1579586352}",
                 "position_json": "{\"CHART-2kJwQ0PPux\":{\"children\":[],\"id\":\"CHART-2kJwQ0PPux\",\"meta\":{\"chartId\":73,\"height\":65,\"sliceName\":\"Products\",\"width\":12},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-3C6eK8Zbe\"],\"type\":\"CHART\"},\"CHART-Ihh6GP52JE\":{\"children\":[],\"id\":\"CHART-Ihh6GP52JE\",\"meta\":{\"chartId\":67,\"height\":16,\"sliceName\":\"Select Store\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-G09YFDpg4\"],\"type\":\"CHART\"},\"CHART-M073SR8oVF\":{\"children\":[],\"id\":\"CHART-M073SR8oVF\",\"meta\":{\"chartId\":70,\"height\":53,\"sliceName\":\"Product Prediction\",\"width\":12},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-sSvADqc4M\"],\"type\":\"CHART\"},\"CHART-MIFVbUVrTD\":{\"children\":[],\"id\":\"CHART-MIFVbUVrTD\",\"meta\":{\"chartId\":68,\"height\":16,\"sliceName\":\"Select Group\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-G09YFDpg4\"],\"type\":\"CHART\"},\"CHART-cYijNG1Bv9\":{\"children\":[],\"id\":\"CHART-cYijNG1Bv9\",\"meta\":{\"chartId\":71,\"height\":16,\"sliceName\":\"Choose Products\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-yaV1K21Hb\"],\"type\":\"CHART\"},\"CHART-hL-P2n4pew\":{\"children\":[],\"id\":\"CHART-hL-P2n4pew\",\"meta\":{\"chartId\":72,\"height\":18,\"sliceName\":\"Product Prediction\",\"width\":12},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-txuO0oQvS\"],\"type\":\"CHART\"},\"CHART-m4KP4igTcE\":{\"children\":[],\"id\":\"CHART-m4KP4igTcE\",\"meta\":{\"chartId\":69,\"height\":16,\"sliceName\":\"Select category\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-G09YFDpg4\"],\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[\"ROW-G09YFDpg4\",\"ROW-3C6eK8Zbe\",\"ROW-yaV1K21Hb\",\"ROW-txuO0oQvS\",\"ROW-sSvADqc4M\"],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"demand_explorer\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"GRID_ID\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW-3C6eK8Zbe\":{\"children\":[\"CHART-2kJwQ0PPux\"],\"id\":\"ROW-3C6eK8Zbe\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-G09YFDpg4\":{\"children\":[\"CHART-Ihh6GP52JE\",\"CHART-MIFVbUVrTD\",\"CHART-m4KP4igTcE\"],\"id\":\"ROW-G09YFDpg4\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-sSvADqc4M\":{\"children\":[\"CHART-M073SR8oVF\"],\"id\":\"ROW-sSvADqc4M\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-txuO0oQvS\":{\"children\":[\"CHART-hL-P2n4pew\"],\"id\":\"ROW-txuO0oQvS\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-yaV1K21Hb\":{\"children\":[\"CHART-cYijNG1Bv9\"],\"id\":\"ROW-yaV1K21Hb\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"}}",
                 "slices": [
                     {
@@ -27,17 +27,6 @@
                             "id": 67,
                             "params": "{\"adhoc_filters\": [], \"datasource\": \"44__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"store\", \"key\": \"b7XRAxSYe\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 39, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"viz_type\": \"filter_box\", \"remote_id\": 67, \"datasource_name\": \"admin admin-Untitled Query-TaouwRi6q\", \"schema\": \"null\", \"database_name\": \"examples\", \"import_time\": 1579586352}",
                             "slice_name": "Select Store",
-                            "viz_type": "filter_box"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "null.admin admin-Untitled Query-g4_lvbOFY",
-                            "datasource_type": "table",
-                            "id": 71,
-                            "params": "{\"adhoc_filters\": [], \"datasource\": \"73__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"skuid\", \"key\": \"35JUngqRS\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 72, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 71, \"datasource_name\": \"admin admin-Untitled Query-g4_lvbOFY\", \"schema\": \"null\", \"database_name\": \"examples\", \"import_time\": 1579586352}",
-                            "slice_name": "Choose Products",
                             "viz_type": "filter_box"
                         }
                     },
@@ -83,6 +72,17 @@
                             "params": "{\"adhoc_filters\": [], \"align_pn\": false, \"all_columns\": [\"ProductName\", \"SKUID\", \"Category\", \"AISegmentRevenue\", \"AISegmentForecast\", \"SalesUnitLastWeek\", \"SalesAmountLastWeek\", \"CurrentStock\", \"SupplyUnit\", \"AIweekofSuppy\", \"AIpredicteddemand\", \"LowerCI\", \"UpperCI\", \"DemandVariation\", \"StockStatus\"], \"color_pn\": true, \"datasource\": \"71__table\", \"granularity_sqla\": \"demanddate\", \"groupby\": [], \"include_search\": true, \"include_time\": false, \"metrics\": [], \"order_by_cols\": [], \"order_desc\": true, \"page_length\": 10, \"percent_metrics\": [], \"row_limit\": 1000, \"slice_id\": 73, \"table_filter\": false, \"table_timestamp_format\": \"%Y-%m-%d %H:%M:%S\", \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"timeseries_limit_metric\": null, \"url_params\": {}, \"viz_type\": \"table\", \"remote_id\": 73, \"datasource_name\": \"admin admin-Untitled Query-jmTxdyWf4\", \"schema\": \"null\", \"database_name\": \"examples\"}",
                             "slice_name": "Products",
                             "viz_type": "table"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "null.admin admin-Untitled Query-g4_lvbOFY",
+                            "datasource_type": "table",
+                            "id": 71,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"72__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"skuid\", \"key\": \"35JUngqRS\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 71, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 71, \"datasource_name\": \"admin admin-Untitled Query-g4_lvbOFY\", \"schema\": \"null\", \"database_name\": \"examples\"}",
+                            "slice_name": "Choose Products",
+                            "viz_type": "filter_box"
                         }
                     }
                 ],
@@ -1347,7 +1347,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
+                                "__datetime__": "2020-01-21T09:35:08"
                             },
                             "column_name": "locationid",
                             "created_by_fk": 1,
@@ -1359,7 +1359,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 222,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 72,
@@ -1371,7 +1371,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
+                                "__datetime__": "2020-01-21T09:35:08"
                             },
                             "column_name": "skuid",
                             "created_by_fk": 1,
@@ -1383,7 +1383,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 223,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 72,
@@ -1395,7 +1395,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
+                                "__datetime__": "2020-01-21T09:35:08"
                             },
                             "column_name": "selectgroup",
                             "created_by_fk": 1,
@@ -1407,7 +1407,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 224,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 72,
@@ -1419,7 +1419,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
+                                "__datetime__": "2020-01-21T09:35:08"
                             },
                             "column_name": "categories",
                             "created_by_fk": 1,
@@ -1431,7 +1431,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 225,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 72,
@@ -1443,7 +1443,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
+                                "__datetime__": "2020-01-21T09:35:08"
                             },
                             "column_name": "store",
                             "created_by_fk": 1,
@@ -1455,7 +1455,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 226,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 72,
@@ -1496,7 +1496,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 72, \"database_name\": \"examples\", \"import_time\": 1579586352}",
                 "schema": "null",
-                "sql": "select locationid,skuid,SelectGroup,categories,store from demandai.vw_de_topproducts\nunion\nselect locationid,skuid,SelectGroup,categories,store from demandai.vw_de_locwisesku_seg_cate_brand\nwhere SelectGroup = {{ \"'\" + \"','\".join(filter_values('selectgroup')) + \"'\" }}\n  and categories= {{ \"'\" + \"','\".join(filter_values('categories')) + \"'\" }}\n  and store= {{ \"'\" + \"','\".join(filter_values('store')) + \"'\" }}\n",
+                "sql": "select locationid,skuid,SelectGroup,categories,store from demandai.vw_de_topproducts\nwhere\nSelectGroup = {{ \"'\" + \"','\".join(filter_values('selectgroup')) + \"'\" }}\n  and categories= {{ \"'\" + \"','\".join(filter_values('categories')) + \"'\" }}\n  and store= {{ \"'\" + \"','\".join(filter_values('store')) + \"'\" }}\nunion\nselect vd.locationid,vd.skuid,vd.SelectGroup,vd.categories,vd.store \nfrom demandai.vw_de_locwisesku_seg_cate_brand vd \ninner join demandai.sku_loc_demand sd on sd.skuid = vd.skuid and sd.locationid = vd.locationid\nwhere \nsd.demanddate::date = now()::date-1 \nand vd.SelectGroup = {{ \"'\" + \"','\".join(filter_values('selectgroup')) + \"'\" }}\n  and vd.categories= {{ \"'\" + \"','\".join(filter_values('categories')) + \"'\" }}\n  and vd.store= {{ \"'\" + \"','\".join(filter_values('store')) + \"'\" }}\n",
                 "table_name": "admin admin-Untitled Query-g4_lvbOFY",
                 "template_params": "{}"
             }
