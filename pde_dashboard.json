@@ -11,22 +11,11 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "Untitled Query-CFlXZMo7c",
+                            "datasource_name": "null.admin admin-Untitled Query-TaouwRi6q",
                             "datasource_type": "table",
-                            "id": 69,
-                            "params": "{\"adhoc_filters\": [], \"datasource\": \"68__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"categories\", \"key\": \"WGfkt1msj\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 69, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"viz_type\": \"filter_box\", \"remote_id\": 69, \"datasource_name\": \"Untitled Query-CFlXZMo7c\", \"schema\": null, \"database_name\": \"examples\"}",
-                            "slice_name": "Select category",
-                            "viz_type": "filter_box"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "null.admin admin-Untitled Query-QH8ILFTbf",
-                            "datasource_type": "table",
-                            "id": 68,
-                            "params": "{\"adhoc_filters\": [], \"datasource\": \"73__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"selectgroup\", \"key\": \"kbc2e6LUh\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 68, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"viz_type\": \"filter_box\", \"remote_id\": 68, \"datasource_name\": \"admin admin-Untitled Query-QH8ILFTbf\", \"schema\": \"null\", \"database_name\": \"examples\"}",
-                            "slice_name": "Select Group",
+                            "id": 67,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"69__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"store\", \"key\": \"b7XRAxSYe\", \"label\": \"Store\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 67, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 67, \"datasource_name\": \"admin admin-Untitled Query-TaouwRi6q\", \"schema\": \"null\", \"database_name\": \"examples\"}",
+                            "slice_name": "Select Store",
                             "viz_type": "filter_box"
                         }
                     },
@@ -39,28 +28,6 @@
                             "params": "{\"adhoc_filters\": [], \"align_pn\": false, \"all_columns\": [\"ProductName\", \"SKUID\", \"Category\", \"AISegmentRevenue\", \"AISegmentForecast\", \"SalesUnitLastWeek\", \"SalesAmountLastWeek\", \"CurrentStock\", \"SupplyUnit\", \"AIweekofSuppy\", \"AIpredicteddemand\", \"LowerCI\", \"UpperCI\", \"DemandVariation\", \"StockStatus\"], \"color_pn\": true, \"datasource\": \"71__table\", \"granularity_sqla\": \"demanddate\", \"groupby\": [], \"include_search\": true, \"include_time\": false, \"metrics\": [], \"order_by_cols\": [], \"order_desc\": true, \"page_length\": 10, \"percent_metrics\": [], \"row_limit\": 1000, \"slice_id\": 73, \"table_filter\": false, \"table_timestamp_format\": \"%Y-%m-%d %H:%M:%S\", \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"timeseries_limit_metric\": null, \"url_params\": {}, \"viz_type\": \"table\", \"remote_id\": 73, \"datasource_name\": \"admin admin-Untitled Query-jmTxdyWf4\", \"schema\": \"null\", \"database_name\": \"examples\"}",
                             "slice_name": "Products",
                             "viz_type": "table"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "null.admin admin-Untitled Query-g4_lvbOFY",
-                            "datasource_type": "table",
-                            "id": 71,
-                            "params": "{\"adhoc_filters\": [], \"datasource\": \"72__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"skuid\", \"key\": \"35JUngqRS\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 71, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 71, \"datasource_name\": \"admin admin-Untitled Query-g4_lvbOFY\", \"schema\": \"null\", \"database_name\": \"examples\"}",
-                            "slice_name": "Choose Products",
-                            "viz_type": "filter_box"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "null.admin admin-Untitled Query-TaouwRi6q",
-                            "datasource_type": "table",
-                            "id": 67,
-                            "params": "{\"adhoc_filters\": [], \"datasource\": \"69__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"store\", \"key\": \"b7XRAxSYe\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 67, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 67, \"datasource_name\": \"admin admin-Untitled Query-TaouwRi6q\", \"schema\": \"null\", \"database_name\": \"examples\"}",
-                            "slice_name": "Select Store",
-                            "viz_type": "filter_box"
                         }
                     },
                     {
@@ -83,6 +50,39 @@
                             "params": "{\"adhoc_filters\": [], \"annotation_layers\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"comparison_type\": \"values\", \"contribution\": false, \"datasource\": \"67__table\", \"granularity_sqla\": \"demanddate\", \"groupby\": [\"skuid\"], \"label_colors\": {}, \"left_margin\": \"auto\", \"line_interpolation\": \"linear\", \"metrics\": [{\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"totalsalesunit\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 166, \"is_dttm\": false, \"optionName\": \"_col_totalsalesunit\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(totalsalesunit)\", \"optionName\": \"metric_qv7q0dxs2pm_dtupn6qeiyr\", \"sqlExpression\": null}, {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"dailylowerci\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 168, \"is_dttm\": false, \"optionName\": \"_col_dailylowerci\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(dailylowerci)\", \"optionName\": \"metric_uanbpb8c0aq_tmjz325x4d\", \"sqlExpression\": null}, {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"dailyupperci\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 169, \"is_dttm\": false, \"optionName\": \"_col_dailyupperci\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(dailyupperci)\", \"optionName\": \"metric_62yt3tznsb9_2fkl6rr7wzm\", \"sqlExpression\": null}], \"order_desc\": true, \"resample_method\": null, \"resample_rule\": null, \"rich_tooltip\": true, \"rolling_type\": null, \"row_limit\": 50000, \"send_time_range\": false, \"show_brush\": \"auto\", \"show_legend\": false, \"show_markers\": false, \"slice_id\": 70, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"timeseries_limit_metric\": null, \"url_params\": {}, \"viz_type\": \"line\", \"x_axis_format\": \"smart_date\", \"x_axis_label\": \"\", \"x_axis_showminmax\": false, \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"y_axis_showminmax\": false, \"y_log_scale\": false, \"remote_id\": 70, \"datasource_name\": \"Untitled Query-65nX68nV4\", \"schema\": null, \"database_name\": \"examples\"}",
                             "slice_name": "Product Prediction",
                             "viz_type": "line"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "null.admin admin-Untitled Query-QH8ILFTbf",
+                            "datasource_type": "table",
+                            "id": 68,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"73__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"selectgroup\", \"key\": \"kbc2e6LUh\", \"label\": \"Group\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 68, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"viz_type\": \"filter_box\", \"remote_id\": 68, \"datasource_name\": \"admin admin-Untitled Query-QH8ILFTbf\", \"schema\": \"null\", \"database_name\": \"examples\"}",
+                            "slice_name": "Select Group",
+                            "viz_type": "filter_box"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "Untitled Query-CFlXZMo7c",
+                            "datasource_type": "table",
+                            "id": 69,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"68__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"categories\", \"key\": \"WGfkt1msj\", \"label\": \"Categories\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 69, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"viz_type\": \"filter_box\", \"remote_id\": 69, \"datasource_name\": \"Untitled Query-CFlXZMo7c\", \"schema\": null, \"database_name\": \"examples\"}",
+                            "slice_name": "Select Category",
+                            "viz_type": "filter_box"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "null.admin admin-Untitled Query-g4_lvbOFY",
+                            "datasource_type": "table",
+                            "id": 71,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"72__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"skuid\", \"key\": \"35JUngqRS\", \"label\": \"SKUID\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 71, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 71, \"datasource_name\": \"admin admin-Untitled Query-g4_lvbOFY\", \"schema\": \"null\", \"database_name\": \"examples\"}",
+                            "slice_name": "Choose Product",
+                            "viz_type": "filter_box"
                         }
                     }
                 ],
