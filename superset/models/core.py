@@ -573,6 +573,7 @@ class Dashboard(Model, AuditMixinNullable, ImportMixin):
         new_filter_immune_slices = []
         new_timed_refresh_immune_slices = []
         new_expanded_slices = {}
+        new_filter_immune_slice_fields = {}
         i_params_dict = dashboard_to_import.params_dict
         remote_id_slice_map = {
             slc.params_dict["remote_id"]: slc
