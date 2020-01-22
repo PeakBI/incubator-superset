@@ -239,30 +239,6 @@
                             "changed_on": {
                                 "__datetime__": "2020-01-22T05:28:26"
                             },
-                            "column_name": "postcode",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:12"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 184,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "STRING",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T05:28:26"
-                            },
                             "column_name": "CurrentStock",
                             "created_by_fk": 1,
                             "created_on": {
@@ -278,198 +254,6 @@
                             "python_date_format": null,
                             "table_id": 70,
                             "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T05:28:26"
-                            },
-                            "column_name": "Lastweeksales",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:12"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 186,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T05:28:26"
-                            },
-                            "column_name": "Currentweekforecastsales",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:12"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 187,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T05:28:26"
-                            },
-                            "column_name": "Currentweeksalesachieved",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 188,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "OBJECT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T05:28:26"
-                            },
-                            "column_name": "ResupplyUnit",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 189,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "OBJECT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T05:28:26"
-                            },
-                            "column_name": "Forecasednextweek1",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 190,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T05:28:26"
-                            },
-                            "column_name": "Forecasednextweek2",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 191,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "OBJECT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T05:28:26"
-                            },
-                            "column_name": "Forecasednextweek3",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 192,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "OBJECT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T05:28:26"
-                            },
-                            "column_name": "Resupplydate",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 193,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "OBJECT",
                             "verbose_name": null
                         }
                     },
@@ -663,6 +447,222 @@
                             "table_id": 70,
                             "type": "STRING",
                             "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:26:40"
+                            },
+                            "column_name": "postcode",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:12"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 184,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "STRING",
+                            "verbose_name": "Postcode"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:26:40"
+                            },
+                            "column_name": "Lastweeksales",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:12"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 186,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "INT",
+                            "verbose_name": "LastWeekSales"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:26:40"
+                            },
+                            "column_name": "Currentweekforecastsales",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:12"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 187,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "INT",
+                            "verbose_name": "CurrentWeekForecastSales"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:26:40"
+                            },
+                            "column_name": "Currentweeksalesachieved",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:13"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 188,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "OBJECT",
+                            "verbose_name": "CurrentWeekSalesAchieved"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:26:40"
+                            },
+                            "column_name": "ResupplyUnit",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:13"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 189,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "OBJECT",
+                            "verbose_name": "ReSupplyUnit"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:26:40"
+                            },
+                            "column_name": "Forecasednextweek1",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:13"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 190,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "INT",
+                            "verbose_name": "ForecastNextWeek1"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:26:40"
+                            },
+                            "column_name": "Forecasednextweek2",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:13"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 191,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "OBJECT",
+                            "verbose_name": "ForecastNextWeek2"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:26:40"
+                            },
+                            "column_name": "Forecasednextweek3",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:13"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 192,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "OBJECT",
+                            "verbose_name": "ForecastNextWeek3"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:26:40"
+                            },
+                            "column_name": "Resupplydate",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:13"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 193,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "OBJECT",
+                            "verbose_name": "ReSupplyDate"
                         }
                     }
                 ],
@@ -1043,54 +1043,6 @@
                             "changed_on": {
                                 "__datetime__": "2020-01-21T09:19:54"
                             },
-                            "column_name": "AIweekofSuppy",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 211,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 71,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-21T09:19:54"
-                            },
-                            "column_name": "AIpredicteddemand",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:13"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 212,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 71,
-                            "type": "INT",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-21T09:19:54"
-                            },
                             "column_name": "LowerCI",
                             "created_by_fk": 1,
                             "created_on": {
@@ -1299,6 +1251,54 @@
                             "table_id": 71,
                             "type": "STRING",
                             "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:21:57"
+                            },
+                            "column_name": "AIweekofSuppy",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:13"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 211,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 71,
+                            "type": "INT",
+                            "verbose_name": "AIWeekofSupply"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-22T07:22:33"
+                            },
+                            "column_name": "AIpredicteddemand",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:13"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 212,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 71,
+                            "type": "INT",
+                            "verbose_name": "AIPredictedDemand"
                         }
                     }
                 ],
