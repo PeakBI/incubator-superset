@@ -222,7 +222,8 @@ class FilterBox extends React.Component {
 
     // Add created options to filtersChoices, even though it doesn't exist,
     // or these options will exist in query sql but invisible to end user.
-    Object.keys(selectedValues)
+    //Demand Explorer reqirement we do not this feature
+    /* Object.keys(selectedValues)
       .filter(key => selectedValues.hasOwnProperty(key) && (key in filtersChoices))
       .forEach((key) => {
         const choices = filtersChoices[key] || [];
@@ -240,7 +241,7 @@ class FilterBox extends React.Component {
               metric: 0,
             });
           });
-      });
+      }); */
     const { key, label } = filterConfig;
     const data = this.props.filtersChoices[key];
     const max = Math.max(...data.map(d => d.metric));
