@@ -44,17 +44,6 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "Untitled Query-65nX68nV4",
-                            "datasource_type": "table",
-                            "id": 70,
-                            "params": "{\"adhoc_filters\": [], \"annotation_layers\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"comparison_type\": \"values\", \"contribution\": false, \"datasource\": \"67__table\", \"granularity_sqla\": \"demanddate\", \"groupby\": [\"skuid\"], \"label_colors\": {}, \"left_margin\": \"auto\", \"line_interpolation\": \"linear\", \"metrics\": [{\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"totalsalesunit\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 166, \"is_dttm\": false, \"optionName\": \"_col_totalsalesunit\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(totalsalesunit)\", \"optionName\": \"metric_qv7q0dxs2pm_dtupn6qeiyr\", \"sqlExpression\": null}, {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"dailylowerci\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 168, \"is_dttm\": false, \"optionName\": \"_col_dailylowerci\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(dailylowerci)\", \"optionName\": \"metric_uanbpb8c0aq_tmjz325x4d\", \"sqlExpression\": null}, {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"dailyupperci\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 169, \"is_dttm\": false, \"optionName\": \"_col_dailyupperci\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(dailyupperci)\", \"optionName\": \"metric_62yt3tznsb9_2fkl6rr7wzm\", \"sqlExpression\": null}], \"order_desc\": true, \"resample_method\": null, \"resample_rule\": null, \"rich_tooltip\": true, \"rolling_type\": null, \"row_limit\": 50000, \"send_time_range\": false, \"show_brush\": \"auto\", \"show_legend\": false, \"show_markers\": false, \"slice_id\": 70, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"timeseries_limit_metric\": null, \"url_params\": {}, \"viz_type\": \"line\", \"x_axis_format\": \"smart_date\", \"x_axis_label\": \"\", \"x_axis_showminmax\": false, \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"y_axis_showminmax\": false, \"y_log_scale\": false, \"remote_id\": 70, \"datasource_name\": \"Untitled Query-65nX68nV4\", \"schema\": null, \"database_name\": \"examples\"}",
-                            "slice_name": "Product Prediction",
-                            "viz_type": "line"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
                             "datasource_name": "null.admin admin-Untitled Query-QH8ILFTbf",
                             "datasource_type": "table",
                             "id": 68,
@@ -72,6 +61,17 @@
                             "params": "{\"adhoc_filters\": [], \"datasource\": \"68__table\", \"date_filter\": false, \"filter_configs\": [{\"asc\": true, \"clearable\": false, \"column\": \"categories\", \"key\": \"WGfkt1msj\", \"label\": \"Categories\", \"multiple\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"show_druid_time_granularity\": false, \"show_druid_time_origin\": false, \"show_sqla_time_column\": false, \"show_sqla_time_granularity\": false, \"slice_id\": 69, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"viz_type\": \"filter_box\", \"remote_id\": 69, \"datasource_name\": \"Untitled Query-CFlXZMo7c\", \"schema\": null, \"database_name\": \"examples\"}",
                             "slice_name": "Select Category",
                             "viz_type": "filter_box"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "Untitled Query-65nX68nV4",
+                            "datasource_type": "table",
+                            "id": 70,
+                            "params": "{\"adhoc_filters\": [], \"annotation_layers\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"comparison_type\": \"values\", \"contribution\": false, \"datasource\": \"67__table\", \"granularity_sqla\": \"demanddate\", \"groupby\": [\"skuid\"], \"label_colors\": {}, \"left_margin\": \"auto\", \"line_interpolation\": \"linear\", \"metrics\": [{\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"totalsalesunit\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 166, \"is_dttm\": false, \"optionName\": \"_col_totalsalesunit\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"Total Sales Unit\", \"optionName\": \"metric_qv7q0dxs2pm_dtupn6qeiyr\", \"sqlExpression\": null}, {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"dailylowerci\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 168, \"is_dttm\": false, \"optionName\": \"_col_dailylowerci\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"Daily Lower CI\", \"optionName\": \"metric_uanbpb8c0aq_tmjz325x4d\", \"sqlExpression\": null}, {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"dailyupperci\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 169, \"is_dttm\": false, \"optionName\": \"_col_dailyupperci\", \"python_date_format\": null, \"type\": \"OBJECT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"Daily Upper CI\", \"optionName\": \"metric_62yt3tznsb9_2fkl6rr7wzm\", \"sqlExpression\": null}], \"order_desc\": true, \"resample_method\": null, \"resample_rule\": null, \"rich_tooltip\": true, \"rolling_type\": null, \"row_limit\": 50000, \"send_time_range\": false, \"show_brush\": \"auto\", \"show_legend\": false, \"show_markers\": false, \"slice_id\": 70, \"time_grain_sqla\": \"P1D\", \"time_range\": \"100 years ago : \", \"timeseries_limit_metric\": null, \"url_params\": {}, \"viz_type\": \"line\", \"x_axis_format\": \"smart_date\", \"x_axis_label\": \"\", \"x_axis_showminmax\": false, \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"y_axis_showminmax\": false, \"y_log_scale\": false, \"remote_id\": 70, \"datasource_name\": \"Untitled Query-65nX68nV4\", \"schema\": null, \"database_name\": \"examples\"}",
+                            "slice_name": "Product Prediction",
+                            "viz_type": "line"
                         }
                     },
                     {
@@ -455,30 +455,6 @@
                             "changed_on": {
                                 "__datetime__": "2020-01-22T07:26:40"
                             },
-                            "column_name": "postcode",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2020-01-21T05:59:12"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 184,
-                            "is_active": null,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 70,
-                            "type": "STRING",
-                            "verbose_name": "Postcode"
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2020-01-22T07:26:40"
-                            },
                             "column_name": "Lastweeksales",
                             "created_by_fk": 1,
                             "created_on": {
@@ -663,6 +639,30 @@
                             "table_id": 70,
                             "type": "OBJECT",
                             "verbose_name": "ReSupplyDate"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-01-23T12:44:53"
+                            },
+                            "column_name": "postcode",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-01-21T05:59:12"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 184,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 70,
+                            "type": "STRING",
+                            "verbose_name": "Store Name"
                         }
                     }
                 ],
