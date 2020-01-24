@@ -139,6 +139,8 @@ class SupersetSecurityManager(SecurityManager):
 
     GAMMA_ACCESSIBLE_PERMS = {"all_datasource_access"}
 
+    PEAK_USER_PERM = {"all_datasource_access"} | ALPHA_ONLY_VIEW_MENUS
+
     def get_schema_perm(
         self, database: Union["Database", str], schema: Optional[str] = None
     ) -> Optional[str]:
@@ -578,6 +580,7 @@ class SupersetSecurityManager(SecurityManager):
         self.set_role("Gamma", self._is_gamma_pvm)
         self.set_role("granter", self._is_granter_pvm)
         self.set_role("sql_lab", self._is_sql_lab_pvm)
+        self.set_role("Peakuser", self._is_peak_user_pvm)
 
         if conf.get("PUBLIC_ROLE_LIKE_GAMMA", False):
             self.set_role("Public", self._is_gamma_pvm)
@@ -742,6 +745,24 @@ class SupersetSecurityManager(SecurityManager):
         """
 
         return pvm.permission.name in {"can_override_role_permissions", "can_approve"}
+
+    def _is_peak_user_pvm(self, pvm: PermissionModelView) -> bool:
+        """
+        Return True user have menu access of sql lab
+        """
+
+        return (
+               pvm.view_menu.name
+               in {"SQL Lab", "SQL Editor", "Query Search", "Saved Queries"}
+               or pvm.permission.name
+               in {
+                   "can_sql_json",
+                   "can_csv",
+                   "can_search_queries",
+                   "can_sqllab_viz",
+                   "can_sqllab",
+               }
+            )
 
     def set_perm(
         self, mapper: Mapper, connection: Connection, target: "BaseDatasource"

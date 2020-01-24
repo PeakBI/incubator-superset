@@ -41,7 +41,7 @@ export default class Welcome extends React.PureComponent {
   }
   render() {
     const { roles } = this.props.user;
-    const isGammaUser = Object.keys(roles).filter((role) => role === "Gamma").length > 0 ? true : false;
+    const isGammaUser = Object.keys(roles).filter(role => role === 'Gamma').length > 0;
     return (
       <div className="container welcome">
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">

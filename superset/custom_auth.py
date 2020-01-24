@@ -39,12 +39,17 @@ class CustomAuthDBView(AuthDBView):
                     }))['context']
                 if not auth_response['tenant'] == environ['TENANT']:
                     raise Exception('Tenant mismatch in token')
-                if auth_response['role'] in ['tenantManager', 'tenantAdmin']:
+                if auth_response['role'] == 'tenantManager':
                     user = 'admin'
+                elif auth_response['role'] == 'tenantAdmin':
+                    user = 'peakuser'
                 else:
                     privileges = loads(auth_response['privileges'])
                     if not has_resource_access(privileges):
                         raise Exception('Insufficient Resource Permissions')
+                    else:
+                        user = 'peakuser'
+                         # check for write user and read user
                 user = self.appbuilder.sm.find_user(user)
                 login_user(user, remember=False,
                            duration=timedelta(
