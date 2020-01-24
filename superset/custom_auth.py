@@ -39,7 +39,8 @@ class CustomAuthDBView(AuthDBView):
                     }))['context']
                 if not auth_response['tenant'] == environ['TENANT']:
                     raise Exception('Tenant mismatch in token')
-                if auth_response['role'] == 'tenantManager':
+                # keep tenantManagerRole and tenantAdmin role in secret manager or anytwhere that we don't have change dashboard
+                if auth_response['role'] == 'tenantManager': 
                     user = 'admin'
                 elif auth_response['role'] == 'tenantAdmin':
                     user = 'peakuser'
