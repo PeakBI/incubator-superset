@@ -101,6 +101,13 @@ class FilterBox extends React.Component {
     this.onOpenDateFilterControl = this.onFilterMenuOpen.bind(props.chartId, TIME_RANGE);
   }
 
+  //reset the filter if other filter change in same dashboard also propogate change to filter indicators
+  //Filterbox will get reset if Filterbox is not immune
+  UNSAFE_componentWillReceiveProps(nextProps) {
+      this.changeFilter(Object.keys(nextProps.filtersChoices)[0], "");
+      this.setState({ selectedValues: {} });
+  }  
+
   onFilterMenuOpen(chartId, column) {
     this.props.onFilterMenuOpen(chartId, column);
   }
