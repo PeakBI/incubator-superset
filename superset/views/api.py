@@ -21,14 +21,20 @@ from flask_appbuilder.security.decorators import has_access_api
 import simplejson as json
 
 from superset import appbuilder, db, event_logger, security_manager
+from superset.custom_auth import CustomAuthDBView
 from superset.common.query_context import QueryContext
 from superset.legacy import update_time_range
 import superset.models.core as models
-from superset.utils import core as utils
+from superset.utils import core as utils, s3_utils, dashboard_import_export
 from .base import api, BaseSupersetView, handle_api_exception
+from os import environ
+from superset import app
+import asyncio
+import logging
 
 
 class Api(BaseSupersetView):
+
     @event_logger.log_this
     @api
     @handle_api_exception
@@ -68,5 +74,30 @@ class Api(BaseSupersetView):
 
         return json.dumps(form_data)
 
+    @CustomAuthDBView.login_api
+    @api
+    @event_logger.log_this
+    @handle_api_exception
+    @expose("/v1/dashboard_import/", methods=["POST"])
+    def import_dashboard(self):
+        """
+         It checks if there is any dashboard of that slug name in the common bucket of s3. If yes, it pulls that file.
+
+        """
+        print(request.get_json())
+        slug = request.get_json()["slug"]
+        if slug:
+            #get file from common bucket
+            file_name = slug+".json"
+            s3_utils.get_file_data(environ['COMMON_CONFIG_DATA_BUCKET'], app.config["DASHBOARD_OBJECT_PATH"] + slug + ".json", file_name)
+            try:
+              with open(file_name, 'r') as data_stream:
+              #call import dashboard function
+                dashboard_import_export.import_dashboards(db.session, data_stream)
+            except Exception as e:
+                logging.error("Error when importing dashboard from file %s", f)
+                logging.error(e)
+            return "success"
+        return "provide slug to import the dashboard"
 
 appbuilder.add_view_no_menu(Api)

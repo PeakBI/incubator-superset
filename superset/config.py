@@ -95,6 +95,8 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 # ---------------------------------------------------------
 
 TENANT = os.environ['TENANT']
+COMMON_CONFIG_DATA_BUCKET = os.environ['COMMON_CONFIG_DATA_BUCKET']
+DASHBOARD_OBJECT_PATH = 'solutions/dashboards/'
 # Your App secret key
 SECRET_KEY = "\2\1thisis{}secretkey\1\2\e\y\y\h".format(TENANT)  # noqa
 
@@ -120,7 +122,7 @@ SQLALCHEMY_DATABASE_URI = os.environ['SQLALCHEMY_DATABASE_URI']
 QUERY_SEARCH_LIMIT = 1000
 
 # Flask-WTF flag for CSRF
-WTF_CSRF_ENABLED = True
+WTF_CSRF_ENABLED = False
 
 # Add endpoints that need to be exempt from CSRF protection
 WTF_CSRF_EXEMPT_LIST = ["superset.views.core.log"]

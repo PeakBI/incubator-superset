@@ -42,7 +42,7 @@ flask fab create-user \
   --email $GUEST_EMAIL \
   --password $GUEST_PASSWORD
 
-  # Load PCV datasources and dashboards at build time
-superset import_dashboards -p pcv_dashboard.json -u admin
-superset import_dashboards -p pdv_dashboard.json -u admin
-superset import_dashboards -p pde_dashboard.json -u admin
+#   # Load PCV datasources and dashboards at build time
+# superset import_dashboards -p pcv_dashboard.json -u admin
+# superset import_dashboards -p pdv_dashboard.json -u admin
+# superset import_dashboards -p pde_dashboard.json -u admin
