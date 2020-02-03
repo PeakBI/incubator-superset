@@ -44,17 +44,6 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "customerai.In Market Customers Breakdown",
-                            "datasource_type": "table",
-                            "id": 4,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"41__table\", \"granularity_sqla\": null, \"groupby\": [\"predinmarket\"], \"label_colors\": {\"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"predinmarket\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 477, \"is_dttm\": false, \"optionName\": \"_col_predinmarket\", \"python_date_format\": null, \"type\": \"STRING\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(In Market)\", \"optionName\": \"metric_2o3dxwl6jed_m7twgj1j2ek\", \"sqlExpression\": null}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": 10000, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 88, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 4, \"datasource_name\": \"In Market Customers Breakdown\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
-                            "slice_name": "In Market Customers",
-                            "viz_type": "dist_bar"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
                             "datasource_name": "pcv.High Risk Customers",
                             "datasource_type": "table",
                             "id": 5,
@@ -66,33 +55,11 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "customerai.At Risk Customers Breakdown",
+                            "datasource_name": "pcv.In Market Customers Breakdown",
                             "datasource_type": "table",
-                            "id": 6,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"39__table\", \"granularity_sqla\": null, \"groupby\": [\"predchurnrisk\"], \"label_colors\": {\"#Customers(In Market)\": \"#417505\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(At Risk)\", \"optionName\": \"metric_clapdl1o6gp_3ggp4twhr1x\", \"sqlExpression\": \"COUNT(atrisk)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 89, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 6, \"datasource_name\": \"At Risk Customers Breakdown\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
-                            "slice_name": "At Risk Customers",
-                            "viz_type": "dist_bar"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "customerai.Next Transaction Window",
-                            "datasource_type": "table",
-                            "id": 7,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"49__table\", \"granularity_sqla\": null, \"groupby\": [\"prednexttranswindow\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(In Market)\": \"#417505\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Next Transaction)\", \"optionName\": \"metric_bejh7q9ndpp_jb4lsjwfv6\", \"sqlExpression\": \"COUNT(transaction)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": 10, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 90, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Time Cap\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 7, \"datasource_name\": \"Next Transaction Window\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
-                            "slice_name": "Next Transaction Window",
-                            "viz_type": "dist_bar"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "customerai.Predictive Engagement",
-                            "datasource_type": "table",
-                            "id": 8,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"50__table\", \"granularity_sqla\": null, \"groupby\": [\"predengagement\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(In Market)\": \"#417505\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"engagement\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 484, \"is_dttm\": false, \"optionName\": \"_col_engagement\", \"python_date_format\": null, \"type\": \"STRING\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Engagement)\", \"optionName\": \"metric_8ivr5jbpkss_xdyf5bshoe8\", \"sqlExpression\": null}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 91, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 8, \"datasource_name\": \"Predictive Engagement\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
-                            "slice_name": "Predictive Engagement",
+                            "id": 4,
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"10__table\", \"granularity_sqla\": null, \"groupby\": [\"predinmarket\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Brand)\": \"#f5a623\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(Gender)\": \"#b587ff\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Location)\": \"#7ed321\", \"#Customers(Next Transaction)\": \"#265fe5\", \"#Customers(Product)\": \"#f5a623\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"predinmarket\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 477, \"is_dttm\": false, \"optionName\": \"_col_predinmarket\", \"python_date_format\": null, \"type\": \"STRING\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(In Market)\", \"optionName\": \"metric_2o3dxwl6jed_m7twgj1j2ek\", \"sqlExpression\": null}], \"order_bars\": true, \"reduce_x_ticks\": false, \"row_limit\": 10000, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 4, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 4, \"datasource_name\": \"In Market Customers Breakdown\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "slice_name": "In Market Customers",
                             "viz_type": "dist_bar"
                         }
                     },
@@ -121,34 +88,12 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "customerai.Single Order Customers",
+                            "datasource_name": "pcv.Next Transaction Window",
                             "datasource_type": "table",
-                            "id": 11,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"34__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"singleordercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 503, \"is_dttm\": false, \"optionName\": \"_col_singleordercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(singleordercnt)\", \"optionName\": \"metric_4tffl8tv6e_csgr4vfz5zl\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 94, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 11, \"datasource_name\": \"Single Order Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
-                            "slice_name": "Single Order Customers",
-                            "viz_type": "big_number"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "customerai.Average Gap Between Orders",
-                            "datasource_type": "table",
-                            "id": 12,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"45__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgordergapcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 507, \"is_dttm\": false, \"optionName\": \"_col_avgordergapcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(avgordergapcnt)\", \"optionName\": \"metric_nlirbqzmzsk_bty9qlc8e3g\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 96, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 12, \"datasource_name\": \"Average Gap Between Orders\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
-                            "slice_name": "Average Gap Between Orders",
-                            "viz_type": "big_number"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "customerai.Average Order Value",
-                            "datasource_type": "table",
-                            "id": 13,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"36__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgordervalue\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 511, \"is_dttm\": false, \"optionName\": \"_col_avgordervalue\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgordervalue)\", \"optionName\": \"metric_m9xvozb965q_8uekn2vashd\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 98, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 13, \"datasource_name\": \"Average Order Value\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
-                            "slice_name": "Average Order Value",
-                            "viz_type": "big_number"
+                            "id": 7,
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"1__table\", \"granularity_sqla\": null, \"groupby\": [\"prednexttranswindow\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Brand)\": \"#f5a623\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(Gender)\": \"#b587ff\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Location)\": \"#7ed321\", \"#Customers(Next Transaction)\": \"#265fe5\", \"#Customers(Product)\": \"#f5a623\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Next Transaction)\", \"optionName\": \"metric_bejh7q9ndpp_jb4lsjwfv6\", \"sqlExpression\": \"COUNT(transaction)\"}], \"order_bars\": true, \"reduce_x_ticks\": false, \"row_limit\": 10, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 7, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Time Cap\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 7, \"datasource_name\": \"Next Transaction Window\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "slice_name": "Next Transaction Window",
+                            "viz_type": "dist_bar"
                         }
                     },
                     {
@@ -165,10 +110,32 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
+                            "datasource_name": "pcv.Top Brands",
+                            "datasource_type": "table",
+                            "id": 17,
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"13__table\", \"granularity_sqla\": null, \"groupby\": [\"associationvalue\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Brand)\": \"#f5a623\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(Gender)\": \"#b587ff\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Location)\": \"#7ed321\", \"#Customers(Next Transaction)\": \"#265fe5\", \"#Customers(Product)\": \"#f5a623\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Brand)\", \"optionName\": \"metric_cjynmjfddcw_t29xvsfxrf\", \"sqlExpression\": \"SUM(user_count)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 76, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Brand\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 17, \"datasource_name\": \"Top Brands\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
+                            "slice_name": "Top Brands",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pcv.Average Gap Between Orders",
+                            "datasource_type": "table",
+                            "id": 12,
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"11__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgordergapcnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 507, \"is_dttm\": false, \"optionName\": \"_col_avgordergapcnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"SUM(avgordergapcnt)\", \"optionName\": \"metric_nlirbqzmzsk_bty9qlc8e3g\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 12, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 12, \"datasource_name\": \"Average Gap Between Orders\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "slice_name": "Average Gap Between Orders",
+                            "viz_type": "big_number"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
                             "datasource_name": "pcv.Average Basket Size",
                             "datasource_type": "table",
                             "id": 15,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"6__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgbasketsize\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 509, \"is_dttm\": false, \"optionName\": \"_col_avgbasketsize\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgbasketsize)\", \"optionName\": \"metric_35629xpgdzc_arz5c6f9ex\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 73, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 15, \"datasource_name\": \"Average Basket Size\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"9__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgbasketsize\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 509, \"is_dttm\": false, \"optionName\": \"_col_avgbasketsize\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgbasketsize)\", \"optionName\": \"metric_35629xpgdzc_arz5c6f9ex\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 15, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 15, \"datasource_name\": \"Average Basket Size\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
                             "slice_name": "Average Basket Size",
                             "viz_type": "big_number"
                         }
@@ -176,23 +143,12 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "pcv.Avg Predictive LTV",
+                            "datasource_name": "pcv.Average Order Value",
                             "datasource_type": "table",
-                            "id": 16,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"17__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgeltv\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 472, \"is_dttm\": false, \"optionName\": \"_col_avgeltv\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgeltv)\", \"optionName\": \"metric_arqcptjmb7j_j0yi8fjwba\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 61, \"start_y_axis_at_zero\": false, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 16, \"datasource_name\": \"Avg Predictive LTV\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
-                            "slice_name": "Predictive LTV (per customer)",
+                            "id": 13,
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"8__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgordervalue\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 511, \"is_dttm\": false, \"optionName\": \"_col_avgordervalue\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgordervalue)\", \"optionName\": \"metric_m9xvozb965q_8uekn2vashd\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 13, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 13, \"datasource_name\": \"Average Order Value\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "slice_name": "Average Order Value",
                             "viz_type": "big_number"
-                        }
-                    },
-                    {
-                        "__Slice__": {
-                            "cache_timeout": null,
-                            "datasource_name": "pcv.Top Brands",
-                            "datasource_type": "table",
-                            "id": 17,
-                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"13__table\", \"granularity_sqla\": null, \"groupby\": [\"associationvalue\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Brand)\": \"#f5a623\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(Gender)\": \"#b587ff\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Location)\": \"#7ed321\", \"#Customers(Next Transaction)\": \"#265fe5\", \"#Customers(Product)\": \"#f5a623\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Brand)\", \"optionName\": \"metric_cjynmjfddcw_t29xvsfxrf\", \"sqlExpression\": \"SUM(user_count)\"}], \"order_bars\": false, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 76, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Brand\", \"x_ticks_layout\": \"staggered\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 17, \"datasource_name\": \"Top Brands\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
-                            "slice_name": "Top Brands",
-                            "viz_type": "dist_bar"
                         }
                     },
                     {
@@ -212,9 +168,53 @@
                             "datasource_name": "pcv.Repeat Order Customers",
                             "datasource_type": "table",
                             "id": 19,
-                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"9__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"repeatordercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 505, \"is_dttm\": false, \"optionName\": \"_col_repeatordercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(repeatordercnt)\", \"optionName\": \"metric_iiab6h8ah58_offmowzpndq\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 71, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 19, \"datasource_name\": \"Repeat Order Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\", \"import_time\": 1577340210}",
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"13__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"repeatordercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 505, \"is_dttm\": false, \"optionName\": \"_col_repeatordercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(repeatordercnt)\", \"optionName\": \"metric_iiab6h8ah58_offmowzpndq\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 19, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 19, \"datasource_name\": \"Repeat Order Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
                             "slice_name": "Repeat Order Customers",
                             "viz_type": "big_number"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pcv.Avg Predictive LTV",
+                            "datasource_type": "table",
+                            "id": 16,
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"7__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"avgeltv\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 472, \"is_dttm\": false, \"optionName\": \"_col_avgeltv\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(avgeltv)\", \"optionName\": \"metric_arqcptjmb7j_j0yi8fjwba\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 16, \"start_y_axis_at_zero\": false, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 16, \"datasource_name\": \"Avg Predictive LTV\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "slice_name": "Predictive LTV (per customer)",
+                            "viz_type": "big_number"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pcv.Single Order Customers",
+                            "datasource_type": "table",
+                            "id": 11,
+                            "params": "{\"adhoc_filters\": [], \"color_picker\": {\"a\": 1, \"b\": 135, \"g\": 122, \"r\": 0}, \"compare_lag\": 7, \"datasource\": \"4__table\", \"granularity_sqla\": \"loaddate\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"singleordercnt\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 503, \"is_dttm\": false, \"optionName\": \"_col_singleordercnt\", \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"SUM(singleordercnt)\", \"optionName\": \"metric_4tffl8tv6e_csgr4vfz5zl\", \"sqlExpression\": null}, \"show_trend_line\": false, \"slice_id\": 11, \"start_y_axis_at_zero\": true, \"subheader_font_size\": 0.3, \"time_grain_sqla\": null, \"time_range\": \"No filter\", \"url_params\": {}, \"viz_type\": \"big_number\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 11, \"datasource_name\": \"Single Order Customers\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "slice_name": "Single Order Customers",
+                            "viz_type": "big_number"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pcv.Predictive Engagement",
+                            "datasource_type": "table",
+                            "id": 8,
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"16__table\", \"granularity_sqla\": null, \"groupby\": [\"predengagement\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Brand)\": \"#f5a623\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(Gender)\": \"#b587ff\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Location)\": \"#7ed321\", \"#Customers(Next Transaction)\": \"#265fe5\", \"#Customers(Product)\": \"#f5a623\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"engagement\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 484, \"is_dttm\": false, \"optionName\": \"_col_engagement\", \"python_date_format\": null, \"type\": \"STRING\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(Engagement)\", \"optionName\": \"metric_8ivr5jbpkss_xdyf5bshoe8\", \"sqlExpression\": null}], \"order_bars\": true, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 8, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 8, \"datasource_name\": \"Predictive Engagement\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "slice_name": "Predictive Engagement",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pcv.At Risk Customers Breakdown",
+                            "datasource_type": "table",
+                            "id": 6,
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"17__table\", \"granularity_sqla\": null, \"groupby\": [\"predchurnrisk\"], \"label_colors\": {\"#Customers(At Risk)\": \"#d0021b\", \"#Customers(Brand)\": \"#f5a623\", \"#Customers(Engagement)\": \"#265fe5\", \"#Customers(Gender)\": \"#b587ff\", \"#Customers(In Market)\": \"#417505\", \"#Customers(Location)\": \"#7ed321\", \"#Customers(Next Transaction)\": \"#265fe5\", \"#Customers(Product)\": \"#f5a623\", \"COUNT(atrisk)\": \"#d0021b\", \"COUNT(engagement)\": \"#265fe5\", \"COUNT(gender)\": \"#b587ff\", \"COUNT(location)\": \"#7ed321\", \"COUNT(predinmarket)\": \"#417505\", \"COUNT(transaction)\": \"#265fe5\", \"No. of Customers\": \"#f5a623\"}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"fromFormData\": true, \"hasCustomLabel\": true, \"label\": \"#Customers(At Risk)\", \"optionName\": \"metric_clapdl1o6gp_3ggp4twhr1x\", \"sqlExpression\": \"COUNT(atrisk)\"}], \"order_bars\": true, \"reduce_x_ticks\": false, \"row_limit\": null, \"show_bar_value\": false, \"show_controls\": false, \"show_legend\": false, \"slice_id\": 6, \"time_grain_sqla\": null, \"time_range\": \"Last week\", \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_axis_label\": \"Propensity\", \"x_ticks_layout\": \"flat\", \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"remote_id\": 6, \"datasource_name\": \"At Risk Customers Breakdown\", \"schema\": \"pcv\", \"database_name\": \"examples\"}",
+                            "slice_name": "At Risk Customers",
+                            "viz_type": "dist_bar"
                         }
                     }
                 ],
@@ -321,7 +321,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:57:56"
                             },
                             "column_name": "avgordergapcnt",
                             "created_by_fk": 1,
@@ -333,7 +333,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 27,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 11,
@@ -345,7 +345,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:57:56"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -357,7 +357,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 28,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
                             "table_id": 11,
@@ -398,7 +398,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 11, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "select avgordergapcnt  , loaddate from customerai.aggregatedcustomerdata",
+                "sql": "select COALESCE(avgordergapcnt,0) avgordergapcnt  , loaddate from customerai.aggregatedcustomerdata\nwhere loaddate = (select max(loaddate) from customerai.aggregatedcustomerdata)  ",
                 "table_name": "Average Gap Between Orders",
                 "template_params": "{}"
             }
@@ -411,7 +411,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:57:04"
                             },
                             "column_name": "singleordercnt",
                             "created_by_fk": 1,
@@ -423,7 +423,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 9,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 4,
@@ -435,7 +435,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:57:04"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -447,7 +447,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 10,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
                             "table_id": 4,
@@ -488,7 +488,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 4, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "select singleordercnt, loaddate from customerai.aggregatedcustomerdata",
+                "sql": "select singleordercnt, loaddate from customerai.aggregatedcustomerdata \nwhere loaddate = (select max(loaddate) from customerai.aggregatedcustomerdata)\n",
                 "table_name": "Single Order Customers",
                 "template_params": "{}"
             }
@@ -639,7 +639,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:21:39"
                             },
                             "column_name": "predchurnrisk",
                             "created_by_fk": 1,
@@ -651,7 +651,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 43,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 17,
@@ -663,7 +663,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:21:39"
                             },
                             "column_name": "userid",
                             "created_by_fk": 1,
@@ -675,7 +675,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 44,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 17,
@@ -716,7 +716,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 17, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "select predchurnrisk , userid as atrisk from customerai.customer_attributes where ispeakrowdelete is null",
+                "sql": "SELECT Case predchurnrisk\n        when 'Very High' then '    Very High'\n        when 'High' Then '   High'\n        When 'Medium' Then '  Medium'\n        When 'Low' Then ' Low'\nend as predchurnrisk, userid as atrisk\nfrom customerai.customer_attributes where ispeakrowdelete is null ORDER BY predchurnrisk ASC",
                 "table_name": "At Risk Customers Breakdown",
                 "template_params": "{}"
             }
@@ -729,7 +729,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:27:13"
                             },
                             "column_name": "avgbasketsize",
                             "created_by_fk": 1,
@@ -741,7 +741,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 23,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 10,
@@ -753,7 +753,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:27:13"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -765,7 +765,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 24,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
                             "table_id": 10,
@@ -777,7 +777,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:27:13"
                             },
                             "column_name": "predinmarket",
                             "created_by_fk": 1,
@@ -789,7 +789,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 25,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 10,
@@ -801,7 +801,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:27:13"
                             },
                             "column_name": "userid",
                             "created_by_fk": 1,
@@ -813,7 +813,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 26,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 10,
@@ -854,7 +854,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 10, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "select predinmarket, userid  from customerai.customer_attributes where ispeakrowdelete is null",
+                "sql": "SELECT Case predinmarket\n        when 'Very High' then '    Very High'\n        when 'High' Then '   High'\n        When 'Medium' Then '  Medium'\n        When 'Low' Then ' Low'\nend as predinmarket, userid as userid\nfrom customerai.customer_attributes where ispeakrowdelete is null ORDER BY predinmarket ASC",
                 "table_name": "In Market Customers Breakdown",
                 "template_params": "{}"
             }
@@ -1347,7 +1347,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-31T05:12:14"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -1359,7 +1359,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 17,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
                             "table_id": 7,
@@ -1371,7 +1371,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-31T05:12:14"
                             },
                             "column_name": "avgeltv",
                             "created_by_fk": 1,
@@ -1383,7 +1383,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 18,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 7,
@@ -1424,7 +1424,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 7, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "select loaddate , avgeltv from customerai.aggregatedcustomerdata",
+                "sql": "select loaddate , COALESCE(avgeltv,0) avgeltv from customerai.aggregatedcustomerdata",
                 "table_name": "Avg Predictive LTV",
                 "template_params": "{}"
             }
@@ -1575,7 +1575,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:53:02"
                             },
                             "column_name": "repeatordercnt",
                             "created_by_fk": 1,
@@ -1587,7 +1587,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 33,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 13,
@@ -1599,7 +1599,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:53:02"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -1611,7 +1611,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 34,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
                             "table_id": 13,
@@ -1652,7 +1652,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 13, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "select repeatordercnt , loaddate from customerai.aggregatedcustomerdata",
+                "sql": "select repeatordercnt , loaddate from customerai.aggregatedcustomerdata\nwhere loaddate =(select max(loaddate) from customerai.aggregatedcustomerdata)",
                 "table_name": "Repeat Order Customers",
                 "template_params": "{}"
             }
@@ -1755,7 +1755,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:59:53"
                             },
                             "column_name": "avgordervalue",
                             "created_by_fk": 1,
@@ -1767,7 +1767,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 19,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 8,
@@ -1779,7 +1779,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:59:53"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -1791,7 +1791,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 20,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
                             "table_id": 8,
@@ -1832,7 +1832,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 8, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "select avgordervalue    , loaddate from customerai.aggregatedcustomerdata",
+                "sql": "select COALESCE(avgordervalue,0) avgordervalue    , loaddate from customerai.aggregatedcustomerdata\n where loaddate = (select max(loaddate) from customerai.aggregatedcustomerdata)  ",
                 "table_name": "Average Order Value",
                 "template_params": "{}"
             }
@@ -1845,7 +1845,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:30"
+                                "__datetime__": "2020-01-30T21:36:22"
                             },
                             "column_name": "repeatordercnt",
                             "created_by_fk": 1,
@@ -1857,7 +1857,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 1,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 1,
@@ -1869,7 +1869,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:30"
+                                "__datetime__": "2020-01-30T21:36:22"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -1881,7 +1881,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 2,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
                             "table_id": 1,
@@ -1893,7 +1893,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:36:22"
                             },
                             "column_name": "prednexttranswindow",
                             "created_by_fk": 1,
@@ -1905,7 +1905,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 3,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 1,
@@ -1917,7 +1917,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:36:22"
                             },
                             "column_name": "userid",
                             "created_by_fk": 1,
@@ -1929,7 +1929,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 4,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 1,
@@ -1970,7 +1970,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 1, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "SELECT prednexttranswindow, userid as transaction\r\nfrom customerai.customer_attributes ORDER BY prednexttranswindow ASC",
+                "sql": "SELECT Case prednexttranswindow\nwhen '1-15days' Then '    1-15days'\n              When '16-30days' Then '   16-30days'\n              When '>90days' Then '  >90days'\n\t      When 'Not in Market' Then ' Not in Market'\nend as prednexttranswindow, userid as transaction\nfrom customerai.customer_attributes where ispeakrowdelete is null ORDER BY prednexttranswindow ASC",
                 "table_name": "Next Transaction Window",
                 "template_params": "{}"
             }
@@ -2073,7 +2073,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:08:45"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -2085,7 +2085,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 39,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
                             "table_id": 16,
@@ -2097,7 +2097,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:08:45"
                             },
                             "column_name": "totalcustomercnt",
                             "created_by_fk": 1,
@@ -2109,7 +2109,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 40,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 16,
@@ -2121,7 +2121,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:08:45"
                             },
                             "column_name": "predengagement",
                             "created_by_fk": 1,
@@ -2133,7 +2133,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 41,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 16,
@@ -2145,7 +2145,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T21:08:45"
                             },
                             "column_name": "engagement",
                             "created_by_fk": 1,
@@ -2157,7 +2157,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 42,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 16,
@@ -2198,7 +2198,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 16, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "SELECT predengagement, userid as engagement\r\nfrom customerai.customer_attributes where ispeakrowdelete is null ORDER BY predengagement ASC",
+                "sql": "SELECT Case predengagement\n        when 'Very High' then '    Very High'\n        when 'High' Then '   High'\n        When 'Medium' Then '  Medium'\n        When 'Low' Then ' Low'\nend as predengagement, userid as engagement\nfrom customerai.customer_attributes where ispeakrowdelete is null ORDER BY predengagement ASC",
                 "table_name": "Predictive Engagement",
                 "template_params": "{}"
             }
@@ -2211,7 +2211,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:59:01"
                             },
                             "column_name": "avgbasketsize",
                             "created_by_fk": 1,
@@ -2223,7 +2223,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 21,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": false,
                             "python_date_format": null,
                             "table_id": 9,
@@ -2235,7 +2235,7 @@
                         "__TableColumn__": {
                             "changed_by_fk": 1,
                             "changed_on": {
-                                "__datetime__": "2019-12-26T06:03:31"
+                                "__datetime__": "2020-01-30T20:59:01"
                             },
                             "column_name": "loaddate",
                             "created_by_fk": 1,
@@ -2247,7 +2247,7 @@
                             "filterable": true,
                             "groupby": true,
                             "id": 22,
-                            "is_active": true,
+                            "is_active": null,
                             "is_dttm": true,
                             "python_date_format": null,
                             "table_id": 9,
@@ -2288,7 +2288,7 @@
                 "offset": 0,
                 "params": "{\"remote_id\": 9, \"database_name\": \"examples\", \"import_time\": 1577340210}",
                 "schema": "pcv",
-                "sql": "select avgbasketsize   , loaddate from customerai.aggregatedcustomerdata",
+                "sql": "select COALESCE(avgbasketsize,0)  avgbasketsize , loaddate from customerai.aggregatedcustomerdata\n where loaddate = (select max(loaddate) from customerai.aggregatedcustomerdata)  ",
                 "table_name": "Average Basket Size",
                 "template_params": "{}"
             }
