@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 # pylint: disable=R
-from flask import request
+from flask import request, make_response, jsonify
 from flask_appbuilder import expose
 from flask_appbuilder.security.decorators import has_access_api
 import simplejson as json
@@ -84,7 +84,7 @@ class Api(BaseSupersetView):
          It checks if there is any dashboard of that slug name in the common bucket of s3. If yes, it pulls that file.
 
         """
-        print(request.get_json())
+        logging.info(request.get_json())
         slug = request.get_json()["slug"]
         if slug:
             #get file from common bucket
@@ -95,9 +95,37 @@ class Api(BaseSupersetView):
               #call import dashboard function
                 dashboard_import_export.import_dashboards(db.session, data_stream)
             except Exception as e:
+                response = make_response(
+                jsonify(
+                    {
+                        'message': 'Error when importing dashboard from file',
+                    }
+                    ),
+                    500
+                )
+                response.headers['Content-Type'] = "application/json"
                 logging.error("Error when importing dashboard from file %s", f)
                 logging.error(e)
-            return "success"
-        return "provide slug to import the dashboard"
+                return response
+            response = make_response(
+                jsonify(
+                    {
+                        'message': 'Success',
+                    }
+                ),
+                200
+            )
+            response.headers['Content-Type'] = "application/json"
+            return response
+        response = make_response(
+        jsonify(
+            {
+                'message': "provide slug to import the dashboard",
+            }
+            ),
+            401
+        )
+        response.headers['Content-Type'] = "application/json"
+        return response
 
 appbuilder.add_view_no_menu(Api)

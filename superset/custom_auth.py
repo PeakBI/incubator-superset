@@ -34,7 +34,6 @@ class CustomAuthDBView(AuthDBView):
       def wraps(self, *args, **kwargs):
         user='guest'
         try:
-          print(request)
           if request.args.get('authToken') is not None:
             token = 'Bearer {}'.format(request.args.get('authToken'))
             auth_response = loads(call(
@@ -46,7 +45,6 @@ class CustomAuthDBView(AuthDBView):
             if not auth_response['tenant'] == environ['TENANT']:
                 raise Exception('Tenant mismatch in token')
             if auth_response['role'] in ['tenantManager', 'tenantAdmin']:
-                print('get admin user')
                 user = 'admin'
             else:
                 privileges = loads(auth_response['privileges'])
@@ -73,7 +71,7 @@ class CustomAuthDBView(AuthDBView):
                 401
             )
             response.headers['Content-Type'] = "application/json"
-            return "Access Denied"
+            return response
       return functools.update_wrapper(wraps, f)
 
 
