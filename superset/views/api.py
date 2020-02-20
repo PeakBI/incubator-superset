@@ -84,7 +84,6 @@ class Api(BaseSupersetView):
          It checks if there is any dashboard of that slug name in the common bucket of s3. If yes, it pulls that file.
 
         """
-        logging.info(request.get_json())
         slug = request.get_json()["slug"]
         if slug:
             #get file from common bucket
@@ -106,25 +105,16 @@ class Api(BaseSupersetView):
                 response.headers['Content-Type'] = "application/json"
                 logging.error("Error when importing dashboard from file %s", f)
                 logging.error(e)
-                return response
-            response = make_response(
+                raise Exception('Error when importing dashboard from file')
+            return "success"
+        response = make_response(
                 jsonify(
                     {
-                        'message': 'Success',
+                        'message': 'Provide slug for import dahsboard',
                     }
                 ),
-                200
+                401
             )
-            response.headers['Content-Type'] = "application/json"
-            return response
-        response = make_response(
-        jsonify(
-            {
-                'message': "provide slug to import the dashboard",
-            }
-            ),
-            401
-        )
         response.headers['Content-Type'] = "application/json"
         return response
 
