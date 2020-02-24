@@ -106,7 +106,16 @@ class Api(BaseSupersetView):
                 logging.error("Error when importing dashboard from file %s", f)
                 logging.error(e)
                 return response
-            return "success"
+            response = make_response(
+                jsonify(
+                    {
+                        'success': 'true',
+                    }
+                    ),
+                    200
+                )
+            response.headers['Content-Type'] = "application/json"
+            return response
         response = make_response(
                 jsonify(
                     {
