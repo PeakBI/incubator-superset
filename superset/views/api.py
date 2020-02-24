@@ -105,7 +105,7 @@ class Api(BaseSupersetView):
                 response.headers['Content-Type'] = "application/json"
                 logging.error("Error when importing dashboard from file %s", f)
                 logging.error(e)
-                raise Exception('Error when importing dashboard from file')
+                return response
             return "success"
         response = make_response(
                 jsonify(
