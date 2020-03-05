@@ -13,10 +13,10 @@ import functools
 
 def has_resource_access(privileges):
     for config in privileges['level']['tenant']['tenants']:
-        if config['tenant'] == environ['TENANT']:
-            for resource in config['resources']:
-                if ('appId' in resource) and (resource['appId'] in ['customerAi', 'demandAi']):
-                    return True
+      if config['tenant'] == environ['TENANT']:
+          for resource in config['resources']:
+            if (resource['name'] == 'SOLUTION MANAGER') and (resource['action'] == 'write'):
+              return True
     return False
 
 
@@ -73,7 +73,6 @@ class CustomAuthDBView(AuthDBView):
             response.headers['Content-Type'] = "application/json"
             return response
       return functools.update_wrapper(wraps, f)
-
 
     @expose('/login/', methods=['GET', 'POST'])
     def login(self):
