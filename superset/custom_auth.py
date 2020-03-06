@@ -24,6 +24,7 @@ def has_resource_access(privileges):
 
 class CustomAuthDBView(AuthDBView):
 
+
     def login_api(f):
       """
       Use this decorator to enable granular security permissions to your API methods.
@@ -52,6 +53,7 @@ class CustomAuthDBView(AuthDBView):
                 privileges = loads(auth_response['privileges'])
                 if not has_resource_access(privileges):
                     raise Exception('Insufficient Resource Permissions')
+                user = 'admin'
             user = self.appbuilder.sm.find_user(user)
             login_user(user, remember=False,
                         duration=timedelta(
@@ -100,6 +102,7 @@ class CustomAuthDBView(AuthDBView):
                     privileges = loads(auth_response['privileges'])
                     if not has_resource_access(privileges):
                         raise Exception('Insufficient Resource Permissions')
+                    user = 'admin'
                 user = self.appbuilder.sm.find_user(user)
                 login_user(user, remember=False,
                            duration=timedelta(
