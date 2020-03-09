@@ -53,7 +53,6 @@ class CustomAuthDBView(AuthDBView):
                 privileges = loads(auth_response['privileges'])
                 if not has_resource_access(privileges):
                     raise Exception('Insufficient Resource Permissions')
-                user = 'admin'
             user = self.appbuilder.sm.find_user(user)
             login_user(user, remember=False,
                         duration=timedelta(
@@ -102,7 +101,6 @@ class CustomAuthDBView(AuthDBView):
                     privileges = loads(auth_response['privileges'])
                     if not has_resource_access(privileges):
                         raise Exception('Insufficient Resource Permissions')
-                    user = 'admin'
                 user = self.appbuilder.sm.find_user(user)
                 login_user(user, remember=False,
                            duration=timedelta(
