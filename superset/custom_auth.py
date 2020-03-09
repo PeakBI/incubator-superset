@@ -24,6 +24,7 @@ def has_resource_access(privileges):
 
 class CustomAuthDBView(AuthDBView):
 
+
     def login_api(f):
       """
       Use this decorator to enable granular security permissions to your API methods.

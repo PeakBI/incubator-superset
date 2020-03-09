@@ -26,7 +26,7 @@ from superset.common.query_context import QueryContext
 from superset.legacy import update_time_range
 import superset.models.core as models
 from superset.utils import core as utils, s3_utils, dashboard_import_export
-from .base import api, BaseSupersetView, handle_api_exception
+from .base import api, BaseSupersetView, handle_api_exception, json_error_response, json_success
 from os import environ
 from superset import app
 import asyncio
@@ -85,6 +85,7 @@ class Api(BaseSupersetView):
 
         """
         slug = request.get_json()["slug"]
+        isPublished = request.get_json()["isPublished"]
         if slug:
             #get file from common bucket
             file_name = slug+".json"
@@ -92,39 +93,24 @@ class Api(BaseSupersetView):
             try:
               with open(file_name, 'r') as data_stream:
               #call import dashboard function
-                dashboard_import_export.import_dashboards(db.session, data_stream)
+                dashboard_ids = dashboard_import_export.import_dashboards(db.session, data_stream)
+                if isPublished:
+                  if dashboard_ids and len(dashboard_ids) > 0:
+                    for dashboard_id in dashboard_ids:
+                      session = db.session()
+                      Dashboard = models.Dashboard
+                      dash = (session.query(Dashboard).filter(Dashboard.id == dashboard_id).one_or_none())
+                      dash.published = True
+                      session.commit()
+                return json_success(json.dumps({"dashboard_imported": True}))
             except Exception as e:
-                response = make_response(
-                jsonify(
-                    {
-                        'message': 'Error when importing dashboard from file',
-                    }
-                    ),
-                    500
-                )
-                response.headers['Content-Type'] = "application/json"
-                logging.error("Error when importing dashboard from file %s", f)
+                logging.error("Error when importing dashboard from file %s", file_name)
                 logging.error(e)
-                return response
-            response = make_response(
-                jsonify(
-                    {
-                        'success': 'true',
-                    }
-                    ),
-                    200
+                return json_error_response(
+                    "ERROR: cannot import from {0} file".format(file_name), status=500
                 )
-            response.headers['Content-Type'] = "application/json"
-            return response
-        response = make_response(
-                jsonify(
-                    {
-                        'message': 'Provide slug for import dahsboard',
-                    }
-                ),
-                401
-            )
-        response.headers['Content-Type'] = "application/json"
-        return response
+        return json_error_response(
+              "ERROR: cannot find slug name", status=404
+          )
 
 appbuilder.add_view_no_menu(Api)
