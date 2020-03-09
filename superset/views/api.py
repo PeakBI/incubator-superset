@@ -104,6 +104,8 @@ class Api(BaseSupersetView):
                       session.commit()
                 return json_success(json.dumps({"dashboard_imported": True}))
             except Exception as e:
+                logging.error("Error when importing dashboard from file %s", file_name)
+                logging.error(e)
                 return json_error_response(
                     "ERROR: cannot import from {0} file".format(file_name), status=500
                 )
