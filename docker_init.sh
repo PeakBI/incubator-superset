@@ -35,7 +35,7 @@ superset db upgrade
 superset init
 
 flask fab create-user \
-  --role Gamma \
+  --role peak_user \
   --username guest \
   --firstname guest \
   --lastname guest \
