@@ -74,6 +74,8 @@ PermissionModelView.list_widget = SupersetSecurityListWidget
 class SupersetSecurityManager(SecurityManager):
     READ_ONLY_MODEL_VIEWS = {"DatabaseAsync", "DatabaseView", "DruidClusterModelView"}
 
+
+
     USER_MODEL_VIEWS = {
         "UserDBModelView",
         "UserLDAPModelView",
@@ -81,6 +83,17 @@ class SupersetSecurityManager(SecurityManager):
         "UserOIDModelView",
         "UserRemoteUserModelView",
     }
+
+    GAMMA_MINUS_PEAK_USER_VIEW_MENUS = {
+        "AccessRequestsModelView",
+        "Manage",
+        "Queries",
+        "Refresh Druid Metadata",
+        "ResetPasswordView",
+        "RoleModelView",
+        "Security",
+        "Sources",
+    }| USER_MODEL_VIEWS
 
     GAMMA_READ_ONLY_MODEL_VIEWS = {
         "SqlMetricInlineView",
@@ -578,6 +591,7 @@ class SupersetSecurityManager(SecurityManager):
         self.set_role("Gamma", self._is_gamma_pvm)
         self.set_role("granter", self._is_granter_pvm)
         self.set_role("sql_lab", self._is_sql_lab_pvm)
+        self.set_role("peak_user", self._is_peak_user_pvm)
 
         if conf.get("PUBLIC_ROLE_LIKE_GAMMA", False):
             self.set_role("Public", self._is_gamma_pvm)
@@ -645,6 +659,26 @@ class SupersetSecurityManager(SecurityManager):
             pvm.view_menu.name in self.ALPHA_ONLY_VIEW_MENUS
             or pvm.permission.name in self.ALPHA_ONLY_PERMISSIONS
         )
+
+    def _is_in_gamma_minus_peak_user(self, pvm: PermissionModelView) -> bool:
+        """
+        Return True if the FAB permission/view is accessible to only Alpha users,
+        False otherwise.
+
+        :param pvm: The FAB permission/view
+        :returns: Whether the FAB object is accessible to only Alpha users
+        """
+
+        if (
+            pvm.view_menu.name in self.GAMMA_READ_ONLY_MODEL_VIEWS
+            and pvm.permission.name not in self.READ_ONLY_PERMISSION
+        ):
+            return True
+        return (
+            pvm.view_menu.name in self.GAMMA_MINUS_PEAK_USER_VIEW_MENUS
+            or pvm.permission.name in self.ALPHA_ONLY_PERMISSIONS
+        )
+
 
     def _is_accessible_to_all(self, pvm: PermissionModelView) -> bool:
         """
@@ -731,6 +765,18 @@ class SupersetSecurityManager(SecurityManager):
                 and pvm.permission.name == "can_list"
             )
         )
+    def _is_peak_user_pvm(self, pvm: PermissionModelView) -> bool:
+        """
+        Return True if the FAB permission/view is Peak user related, False
+        otherwise.
+
+        :param pvm: The FAB permission/view
+        :returns: Whether the FAB object is Peak user related
+        """
+        return not (
+             self._is_in_gamma_minus_peak_user(pvm)
+             or self._is_accessible_to_all(pvm)
+        ) or self._is_accessible_to_gamma(pvm)
 
     def _is_granter_pvm(self, pvm: PermissionModelView) -> bool:
         """
