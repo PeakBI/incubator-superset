@@ -74,8 +74,6 @@ PermissionModelView.list_widget = SupersetSecurityListWidget
 class SupersetSecurityManager(SecurityManager):
     READ_ONLY_MODEL_VIEWS = {"DatabaseAsync", "DatabaseView", "DruidClusterModelView"}
 
-
-
     USER_MODEL_VIEWS = {
         "UserDBModelView",
         "UserLDAPModelView",
