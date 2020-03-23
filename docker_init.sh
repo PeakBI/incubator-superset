@@ -35,12 +35,20 @@ superset db upgrade
 superset init
 
 flask fab create-user \
-  --role peak_user \
+  --role Gamma \
   --username guest \
   --firstname guest \
   --lastname guest \
   --email $GUEST_EMAIL \
   --password $GUEST_PASSWORD
+
+flask fab create-user \
+  --role peak_user \
+  --username peakuser \
+  --firstname peakuser \
+  --lastname peakuser \
+  --email $PEAK_USER_EMAIL \
+  --password $PEAK_USER_PASSWORD
 
 superset set_database_uri \
   --database_name RedshiftDB \
