@@ -21,6 +21,14 @@ def has_resource_access(privileges):
               return True
     return False
 
+def has_solution_write_access(privileges):
+    for config in privileges['level']['tenant']['tenants']:
+      if config['tenant'] == environ['TENANT']:
+          for resource in config['resources']:
+            if (resource['name'] == 'SOLUTION MANAGER') and (resource['action'] == 'write'):
+              return True
+    return False
+
 
 class CustomAuthDBView(AuthDBView):
 
@@ -35,7 +43,7 @@ class CustomAuthDBView(AuthDBView):
       this will return a message and HTTP 401 is case of unauthorized access.
       """
       def wraps(self, *args, **kwargs):
-        user='guest'
+        role='Gamma'
         try:
           if request.args.get('authToken') is not None:
             token = 'Bearer {}'.format(request.args.get('authToken'))
@@ -48,12 +56,24 @@ class CustomAuthDBView(AuthDBView):
             if not auth_response['tenant'] == environ['TENANT']:
                 raise Exception('Tenant mismatch in token')
             if auth_response['role'] in ['tenantManager', 'tenantAdmin']:
-                user = 'admin'
+                role = 'Admin'
             else:
                 privileges = loads(auth_response['privileges'])
-                if not has_resource_access(privileges):
+                if has_solution_write_access(privileges):
+                    role = 'peak_user'
+                elif not has_resource_access(privileges):
                     raise Exception('Insufficient Resource Permissions')
-            user = self.appbuilder.sm.find_user(user)
+            user = self.appbuilder.sm.find_user(auth_response['email'].split('@')[0])
+            if not user:
+                self.appbuilder.sm.add_user(
+                    auth_response['email'].split('@')[0],
+                    auth_response['firstName'],
+                    auth_response['lastName'],
+                    auth_response['email'],
+                    self.appbuilder.sm.find_role(role),
+                    password="general",
+                )
+                user = self.appbuilder.sm.find_user(auth_response['email'].split('@')[0])
             login_user(user, remember=False,
                         duration=timedelta(
                         auth_response['exp'] - int(
@@ -80,7 +100,7 @@ class CustomAuthDBView(AuthDBView):
     @expose('/login/', methods=['GET', 'POST'])
     def login(self):
         redirect_url = self.appbuilder.get_url_for_index
-        user = 'guest'
+        role = 'Gamma'
         try:
             if request.args.get('redirect') is not None:
                 redirect_url = request.args.get('redirect')
@@ -96,16 +116,28 @@ class CustomAuthDBView(AuthDBView):
                 if not auth_response['tenant'] == environ['TENANT']:
                     raise Exception('Tenant mismatch in token')
                 if auth_response['role'] in ['tenantManager', 'tenantAdmin']:
-                    user = 'admin'
+                    role = 'Admin'
                 else:
                     privileges = loads(auth_response['privileges'])
-                    if not has_resource_access(privileges):
+                    if has_solution_write_access(privileges):
+                        role = 'peak_user'
+                    elif not has_resource_access(privileges):
                         raise Exception('Insufficient Resource Permissions')
-                user = self.appbuilder.sm.find_user(user)
+                user = self.appbuilder.sm.find_user(auth_response['email'].split('@')[0])
+                if not user:
+                    self.appbuilder.sm.add_user(
+                        auth_response['email'].split('@')[0],
+                        auth_response['firstName'],
+                        auth_response['lastName'],
+                        auth_response['email'],
+                        self.appbuilder.sm.find_role(role),
+                        password="general",
+                    )
+                    user = self.appbuilder.sm.find_user(auth_response['email'].split('@')[0])
                 login_user(user, remember=False,
-                           duration=timedelta(
-                            auth_response['exp'] - int(
-                                datetime.now().timestamp())))
+                        duration=timedelta(
+                        auth_response['exp'] - int(
+                            datetime.now().timestamp())))
                 return redirect(redirect_url)
             elif g.user is not None and g.user.is_authenticated:
                 return redirect(redirect_url)
