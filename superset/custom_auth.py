@@ -27,14 +27,6 @@ def has_solution_write_access(privileges):
               return True
     return False
 
-def has_solution_write_access(privileges):
-    for config in privileges['level']['tenant']['tenants']:
-      if config['tenant'] == environ['TENANT']:
-          for resource in config['resources']:
-            if (resource['name'] == 'SOLUTION MANAGER') and (resource['action'] == 'write'):
-              return True
-    return False
-
 
 class CustomAuthDBView(AuthDBView):
 
