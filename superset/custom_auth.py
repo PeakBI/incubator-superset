@@ -76,7 +76,8 @@ class CustomAuthDBView(AuthDBView):
                 jsonify(
                     {
                         'message': 'Access Denied',
-                        'severity': 'danger'
+                        'severity': 'danger',
+                        'error': e
                     }
                 ),
                 401
