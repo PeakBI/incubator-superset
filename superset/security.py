@@ -150,6 +150,8 @@ class SupersetSecurityManager(SecurityManager):
 
     GAMMA_ACCESSIBLE_PERMS = {"all_datasource_access"}
 
+    PEAK_USER_ACCESSIBLE_PERMS = {"all_database_access"}
+
     def get_schema_perm(
         self, database: Union["Database", str], schema: Optional[str] = None
     ) -> Optional[str]:
@@ -699,6 +701,16 @@ class SupersetSecurityManager(SecurityManager):
         """
         return pvm.permission.name in self.GAMMA_ACCESSIBLE_PERMS
 
+    def _is_accessible_to_peak_user(self, pvm: PermissionModelView) -> bool:
+        """
+        Return True if the FAB permission/view is accessible to gamma users, False
+        otherwise.
+
+        :param pvm: The FAB permission/view
+        :returns: Whether the FAB object is accessible to gamma users
+        """
+        return pvm.permission.name in self.PEAK_USER_ACCESSIBLE_PERMS
+
     def _is_admin_pvm(self, pvm: PermissionModelView) -> bool:
         """
         Return True if the FAB permission/view is Admin user related, False
@@ -774,7 +786,7 @@ class SupersetSecurityManager(SecurityManager):
         return not (
              self._is_in_gamma_minus_peak_user(pvm)
              or self._is_accessible_to_all(pvm)
-        ) or self._is_accessible_to_gamma(pvm)
+        ) or self._is_accessible_to_gamma(pvm) or self._is_accessible_to_peak_user(pvm)
 
     def _is_granter_pvm(self, pvm: PermissionModelView) -> bool:
         """
