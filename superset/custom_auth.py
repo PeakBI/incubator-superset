@@ -9,6 +9,7 @@ from ais_service_discovery import call
 from json import loads
 from os import environ
 import functools
+import logging
 
 
 def has_resource_access(privileges):
@@ -45,12 +46,18 @@ class CustomAuthDBView(AuthDBView):
         try:
           if request.args.get('authToken') is not None:
             token = 'Bearer {}'.format(request.args.get('authToken'))
-            auth_response = loads(call(
+            auth_response={}
+            for x in range(5):
+              try:
+                auth_response = loads(call(
                 'ais-{}'.format(environ['STAGE']),
                 'authentication',
                 'auth', {
                     'authorizationToken': token
                 }))['context']
+                break
+              except ConnectionResetError:
+                logging.info('Connection Error, Retrying...')
             if not auth_response['tenant'] == environ['TENANT']:
                 raise Exception('Tenant mismatch in token')
             if auth_response['role'] in ['tenantManager', 'tenantAdmin']:
@@ -96,12 +103,18 @@ class CustomAuthDBView(AuthDBView):
 
             if request.args.get('authToken') is not None:
                 token = 'Bearer {}'.format(request.args.get('authToken'))
-                auth_response = loads(call(
+                auth_response = {}
+                for x in range(5):
+                  try:
+                    auth_response = loads(call(
                     'ais-{}'.format(environ['STAGE']),
                     'authentication',
                     'auth', {
                         'authorizationToken': token
                     }))['context']
+                    break
+                  except ConnectionResetError as e:
+                      logging.info('Connection Error, Retrying...')
                 if not auth_response['tenant'] == environ['TENANT']:
                     raise Exception('Tenant mismatch in token')
                 if auth_response['role'] in ['tenantManager', 'tenantAdmin']:
