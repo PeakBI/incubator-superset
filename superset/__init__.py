@@ -163,6 +163,9 @@ if app.config.get("UPLOAD_FOLDER"):
     except OSError:
         pass
 
+if app.config.get('CUSTOM_HAS_ACCESS_API'):
+    has_custom_access_api = app.config.get('CUSTOM_HAS_ACCESS_API')
+
 for middleware in app.config.get("ADDITIONAL_MIDDLEWARE"):
     app.wsgi_app = middleware(app.wsgi_app)
 

@@ -20,7 +20,7 @@ from flask_appbuilder import expose
 from flask_appbuilder.security.decorators import has_access_api
 import simplejson as json
 
-from superset import appbuilder, db, event_logger, security_manager
+from superset import appbuilder, db, event_logger, security_manager, has_custom_access_api
 from superset.custom_auth import CustomAuthDBView
 from superset.common.query_context import QueryContext
 from superset.legacy import update_time_range
@@ -74,10 +74,10 @@ class Api(BaseSupersetView):
 
         return json.dumps(form_data)
 
-    @CustomAuthDBView.login_api
-    @api
     @event_logger.log_this
+    @api
     @handle_api_exception
+    @has_custom_access_api
     @expose("/v1/dashboard_import/", methods=["POST"])
     def import_dashboard(self):
         """

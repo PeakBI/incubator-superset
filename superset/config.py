@@ -37,7 +37,9 @@ from superset.stats_logger import DummyStatsLogger
 from superset.utils.logging_configurator import DefaultLoggingConfigurator
 from werkzeug.contrib.cache import RedisCache
 from .custom_auth import CustomSecurityManager
-
+import functools
+from flask import g, request
+from superset import authorizer
 # Realtime stats logger, a StatsD implementation exists
 STATS_LOGGER = DummyStatsLogger()
 
@@ -596,6 +598,30 @@ SQL_QUERY_MUTATOR = None
 # When not using gunicorn, (nginx for instance), you may want to disable
 # using flask-compress
 ENABLE_FLASK_COMPRESS = True
+
+def CUSTOM_HAS_ACCESS_API(f):
+      """
+      Use this decorator to enable granular security permissions to your API methods.
+      Permissions will be associated to a role, and roles are associated to users.
+
+      By default the permission's name is the methods name.
+
+      this will return a message and HTTP 401 is case of unauthorized access.
+      """
+      def wraps(self, *args, **kwargs):
+        try:
+          if request.args.get('authToken') is not None:
+            token = 'Bearer {}'.format(request.args.get('authToken'))
+            from superset import security_manager
+            authorizer.authorize(token, security_manager)
+            return f(self, *args, **kwargs)
+          elif g.user is not None and g.user.is_authenticated:
+              return f(self, *args, **kwargs)
+          else:
+              raise Exception('Login is valid only through "authToken"')
+        except Exception as e:
+            raise e
+      return functools.update_wrapper(wraps, f)
 
 # Enable / disable scheduled email reports
 ENABLE_SCHEDULED_EMAIL_REPORTS = False
