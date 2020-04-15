@@ -49,7 +49,7 @@ def authorize(token, sm):
             raise Exception('Insufficient Resource Permissions')
     user = sm.find_user(auth_response['email'].split('@')[0])
     if not user:
-        self.appbuilder.sm.add_user(
+        sm.add_user(
             auth_response['email'].split('@')[0],
             auth_response['firstName'],
             auth_response['lastName'],
