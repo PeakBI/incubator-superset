@@ -47,9 +47,19 @@ def authorize(token, sm):
             user = 'peakuser'
         elif not has_resource_access(privileges):
             raise Exception('Insufficient Resource Permissions')
-    user = sm.find_user(user)
+    user = sm.find_user(auth_response['email'].split('@')[0])
+    if not user:
+        self.appbuilder.sm.add_user(
+            auth_response['email'].split('@')[0],
+            auth_response['firstName'],
+            auth_response['lastName'],
+            auth_response['email'],
+            sm.find_role(role),
+            password="general",
+        )
+        user = sm.find_user(auth_response['email'].split('@')[0])
     login_user(user, remember=False,
-                duration=timedelta(
-                auth_response['exp'] - int(
-                    datetime.now().timestamp())))
+            duration=timedelta(
+            auth_response['exp'] - int(
+                datetime.now().timestamp())))
 
