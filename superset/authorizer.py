@@ -25,7 +25,7 @@ def has_solution_write_access(privileges):
 def authorize(token, sm):
     auth_response={}
     MAX_RETRY = 5
-    user='guest'
+    role='Gamma'
     for x in range(MAX_RETRY):
       try:
         auth_response = loads(call(
@@ -40,11 +40,11 @@ def authorize(token, sm):
     if not auth_response['tenant'] == environ['TENANT']:
         raise Exception('Tenant mismatch in token')
     if auth_response['role'] in ['tenantManager', 'tenantAdmin']:
-        user = 'admin'
+        role = 'Admin'
     else:
         privileges = loads(auth_response['privileges'])
         if has_solution_write_access(privileges):
-            user = 'peakuser'
+            role = 'peak_user'
         elif not has_resource_access(privileges):
             raise Exception('Insufficient Resource Permissions')
     user = sm.find_user(auth_response['email'].split('@')[0])
