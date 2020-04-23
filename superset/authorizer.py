@@ -64,6 +64,7 @@ def authorize(token, sm):
                 datetime.now().timestamp())))
 
 def authorizeApiToken(apiToken):
+    auth_response={}
     user='guest'
     try:
       auth_response = loads(call(
