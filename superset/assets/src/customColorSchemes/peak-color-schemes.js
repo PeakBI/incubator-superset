@@ -1,10 +1,8 @@
 /**
  * Peak Branded Custom Color Schemes
  *
- * There are 10 colors used in each color scheme.
- * Each color scheme start with a different color and
- * followed by matching or contrast color to be used
- * in different types of graphs or charts.
+ * There are 10 colors used in each color scheme. Each color scheme start with a different color and
+ * followed by matching or contrast color. So that users gets an option to use each brand color.
  */
 import { CategoricalScheme } from '@superset-ui/color';
 

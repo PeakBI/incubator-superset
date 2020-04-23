@@ -28,7 +28,7 @@ import peakColorSchemes from '../customColorSchemes/peak-color-schemes';
 export default function setupColors() {
   // Register color schemes
   const categoricalSchemeRegistry = getCategoricalSchemeRegistry();
-  [airbnb, categoricalD3, google, lyft, peakColorSchemes,].forEach((group) => {
+  [airbnb, categoricalD3, google, lyft, peakColorSchemes].forEach((group) => {
     group.forEach((scheme) => {
       categoricalSchemeRegistry.registerValue(scheme.id, scheme);
     });
