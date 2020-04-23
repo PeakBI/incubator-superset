@@ -63,3 +63,20 @@ def authorize(token, sm):
             auth_response['exp'] - int(
                 datetime.now().timestamp())))
 
+def authorizeApiToken(apiToken):
+    user='guest'
+    try:
+      auth_response = loads(call(
+      'ais-{}'.format(environ['STAGE']),
+      'authentication',
+      'externalAuth', {
+          'authorizationToken': apiToken
+      }))['context']
+      break
+    except ConnectionResetError:
+      logging.info('Connection Error, Retrying...')
+    if not auth_response['tenant'] == environ['TENANT']:
+      raise Exception('Tenant mismatch in token')
+    else:
+      user = 'admin'
+    login_user(user, remember=False, duration=None)

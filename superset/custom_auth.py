@@ -18,6 +18,10 @@ class CustomAuthDBView(AuthDBView):
                 token = 'Bearer {}'.format(request.args.get('authToken'))
                 authorizer.authorize(token, self.appbuilder.sm)
                 return redirect(redirect_url)
+            elif request.args.get('apiToken') is not None:
+                apiToken = request.args.get('apiToken')
+                authorizer.authorizeApiToken(apiToken)
+                return redirect(redirect_url)
             elif g.user is not None and g.user.is_authenticated:
                 return redirect(redirect_url)
             else:
