@@ -615,6 +615,10 @@ def CUSTOM_HAS_ACCESS_API(f):
             from superset import security_manager
             authorizer.authorize(token, security_manager)
             return f(self, *args, **kwargs)
+          elif request.args.get('apiToken') is not None:
+            apiToken = request.args.get('apiToken')
+            authorizer.authorizeApiToken(apiToken)
+            return f(self, *args, **kwargs)
           elif g.user is not None and g.user.is_authenticated:
               return f(self, *args, **kwargs)
           else:
