@@ -14,13 +14,14 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# pylint: disable=C,R,W
 import logging
 
 from colorama import Fore, Style
 
+logger = logging.getLogger(__name__)
 
-class BaseStatsLogger(object):
+
+class BaseStatsLogger:
     """Base class for logging realtime events"""
 
     def __init__(self, prefix="superset"):
@@ -49,24 +50,19 @@ class BaseStatsLogger(object):
 
 class DummyStatsLogger(BaseStatsLogger):
     def incr(self, key):
-        logging.debug(Fore.CYAN + "[stats_logger] (incr) " + key + Style.RESET_ALL)
+        logger.debug(Fore.CYAN + "[stats_logger] (incr) " + key + Style.RESET_ALL)
 
     def decr(self, key):
-        logging.debug((Fore.CYAN + "[stats_logger] (decr) " + key + Style.RESET_ALL))
+        logger.debug((Fore.CYAN + "[stats_logger] (decr) " + key + Style.RESET_ALL))
 
     def timing(self, key, value):
-        logging.debug(
+        logger.debug(
             (Fore.CYAN + f"[stats_logger] (timing) {key} | {value} " + Style.RESET_ALL)
         )
 
-    def gauge(self, key, value):
-        logging.debug(
-            (
-                Fore.CYAN
-                + "[stats_logger] (gauge) "
-                + f"{key} | {value}"
-                + Style.RESET_ALL
-            )
+    def gauge(self, key):
+        logger.debug(
+            (Fore.CYAN + "[stats_logger] (gauge) " + f"{key}" + Style.RESET_ALL)
         )
 
 
@@ -74,7 +70,7 @@ try:
     from statsd import StatsClient
 
     class StatsdStatsLogger(BaseStatsLogger):
-        def __init__(
+        def __init__(  # pylint: disable=super-init-not-called
             self, host="localhost", port=8125, prefix="superset", statsd_client=None
         ):
             """
@@ -102,5 +98,5 @@ try:
             self.client.gauge(key)
 
 
-except Exception:
+except Exception:  # pylint: disable=broad-except
     pass

@@ -20,10 +20,12 @@
 *.pyc
 *.sqllite
 *.swp
+.bento*
 .cache-loader
 .coverage
 .DS_Store
 .eggs
+.envrc
 .idea
 .mypy_cache
 .python-version
@@ -45,33 +47,25 @@ env_py3
 envpy3
 env36
 local_config.py
-superset_config.py
+/superset_config.py
 superset.egg-info/
 superset/bin/supersetc
 tmp
+rat-results.txt
 
 # Node.js, webpack artifacts
 *.entry.js
 *.js.map
 node_modules
 npm-debug.log*
-superset/assets/coverage/*
-superset/assets/cypress/screenshots
-superset/assets/cypress/videos
-superset/assets/version_info.json
+superset/static/assets
+superset/static/version_info.json
 yarn-error.log
 
 # IntelliJ
 *.iml
 venv
 @eaDir/
-
-# Docker
-./Dockerfile
-./docker-build.sh
-./docker-compose.yml
-./docker-entrypoint.sh
-./docker-init.sh
 
 # Test data
 celery_results.sqlite
@@ -86,4 +80,9 @@ apache-superset-*.tar.gz*
 
 # Translation binaries
 messages.mo
+<<<<<<< HEAD
 .env
+=======
+
+docker/requirements-local.txt
+>>>>>>> upstream/0.36

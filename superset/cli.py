@@ -15,37 +15,56 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# pylint: disable=C,R,W
-from datetime import datetime
 import logging
+from datetime import datetime
 from subprocess import Popen
 from sys import stdout
 
 import click
+import yaml
 from colorama import Fore, Style
 from flask import g
+from flask.cli import FlaskGroup, with_appcontext
 from flask_appbuilder import Model
 from pathlib2 import Path
-import yaml
 
-from superset import app, appbuilder, db, examples, security_manager
-from superset.common.tags import add_favorites, add_owners, add_types
-from superset.utils import core as utils, dashboard_import_export, dict_import_export
+from superset import app, appbuilder, security_manager
+from superset.app import create_app
+from superset.extensions import celery_app, db
+from superset.utils import core as utils
 
-config = app.config
-celery_app = utils.get_celery_app(config)
-
-
-def create_app(script_info=None):
-    return app
+logger = logging.getLogger(__name__)
 
 
-@app.shell_context_processor
-def make_shell_context():
-    return dict(app=app, db=db)
+def normalize_token(token_name: str) -> str:
+    """
+    As of click>=7, underscores in function names are replaced by dashes.
+    To avoid the need to rename all cli functions, e.g. load_examples to
+    load-examples, this function is used to convert dashes back to
+    underscores.
+
+    :param token_name: token name possibly containing dashes
+    :return: token name where dashes are replaced with underscores
+    """
+    return token_name.replace("_", "-")
 
 
-@app.cli.command()
+@click.group(
+    cls=FlaskGroup,
+    create_app=create_app,
+    context_settings={"token_normalize_func": normalize_token},
+)
+@with_appcontext
+def superset():
+    """This is a management script for the Superset application."""
+
+    @app.shell_context_processor
+    def make_shell_context():  # pylint: disable=unused-variable
+        return dict(app=app, db=db)
+
+
+@superset.command()
+@with_appcontext
 def init():
     """Inits the Superset application"""
     utils.get_example_database()
@@ -53,7 +72,8 @@ def init():
     security_manager.sync_role_definitions()
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 @click.option("--verbose", "-v", is_flag=True, help="Show extra information")
 def version(verbose):
     """Prints the current version number"""
@@ -62,7 +82,7 @@ def version(verbose):
         Fore.YELLOW
         + "Superset "
         + Fore.CYAN
-        + "{version}".format(version=config.get("VERSION_STRING"))
+        + "{version}".format(version=app.config["VERSION_STRING"])
     )
     print(Fore.BLUE + "-=" * 15)
     if verbose:
@@ -76,6 +96,8 @@ def load_examples_run(load_test_data, only_metadata=False, force=False):
     else:
         examples_db = utils.get_example_database()
         print(f"Loading examples metadata and related data into {examples_db}")
+
+    from superset import examples
 
     examples.load_css_templates()
 
@@ -129,7 +151,8 @@ def load_examples_run(load_test_data, only_metadata=False, force=False):
     examples.load_tabbed_dashboard(only_metadata)
 
 
-@app.cli.command()
+@with_appcontext
+@superset.command()
 @click.option("--load-test-data", "-t", is_flag=True, help="Load additional test data")
 @click.option(
     "--only-metadata", "-m", is_flag=True, help="Only load metadata, skip actual data"
@@ -142,7 +165,8 @@ def load_examples(load_test_data, only_metadata=False, force=False):
     load_examples_run(load_test_data, only_metadata, force)
 
 
-@app.cli.command()
+@with_appcontext
+@superset.command()
 @click.option("--database_name", "-d", help="Database name to change")
 @click.option("--uri", "-u", help="Database URI to change")
 def set_database_uri(database_name, uri):
@@ -150,7 +174,8 @@ def set_database_uri(database_name, uri):
     utils.get_or_create_db(database_name, uri)
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 @click.option(
     "--datasource",
     "-d",
@@ -172,19 +197,20 @@ def refresh_druid(datasource, merge):
     for cluster in session.query(DruidCluster).all():
         try:
             cluster.refresh_datasources(datasource_name=datasource, merge_flag=merge)
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-except
             print("Error while processing cluster '{}'\n{}".format(cluster, str(e)))
-            logging.exception(e)
+            logger.exception(e)
         cluster.metadata_last_refreshed = datetime.now()
         print("Refreshed metadata from cluster " "[" + cluster.cluster_name + "]")
     session.commit()
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 @click.option(
     "--path",
     "-p",
-    help="Path to a single JSON file or path containing multiple JSON files"
+    help="Path to a single JSON file or path containing multiple JSON "
     "files to import (*.json)",
 )
 @click.option(
@@ -202,27 +228,30 @@ def refresh_druid(datasource, merge):
 )
 def import_dashboards(path, recursive, username):
     """Import dashboards from JSON"""
-    p = Path(path)
+    from superset.utils import dashboard_import_export
+
+    path_object = Path(path)
     files = []
-    if p.is_file():
-        files.append(p)
-    elif p.exists() and not recursive:
-        files.extend(p.glob("*.json"))
-    elif p.exists() and recursive:
-        files.extend(p.rglob("*.json"))
+    if path_object.is_file():
+        files.append(path_object)
+    elif path_object.exists() and not recursive:
+        files.extend(path_object.glob("*.json"))
+    elif path_object.exists() and recursive:
+        files.extend(path_object.rglob("*.json"))
     if username is not None:
         g.user = security_manager.find_user(username=username)
-    for f in files:
-        logging.info("Importing dashboard from file %s", f)
+    for file_ in files:
+        logger.info("Importing dashboard from file %s", file_)
         try:
-            with f.open() as data_stream:
+            with file_.open() as data_stream:
                 dashboard_import_export.import_dashboards(db.session, data_stream)
-        except Exception as e:
-            logging.error("Error when importing dashboard from file %s", f)
-            logging.error(e)
+        except Exception as e:  # pylint: disable=broad-except
+            logger.error("Error when importing dashboard from file %s", file_)
+            logger.error(e)
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 @click.option(
     "--dashboard-file", "-f", default=None, help="Specify the the file to export to"
 )
@@ -231,16 +260,19 @@ def import_dashboards(path, recursive, username):
 )
 def export_dashboards(print_stdout, dashboard_file):
     """Export dashboards to JSON"""
+    from superset.utils import dashboard_import_export
+
     data = dashboard_import_export.export_dashboards(db.session)
     if print_stdout or not dashboard_file:
         print(data)
     if dashboard_file:
-        logging.info("Exporting dashboards to %s", dashboard_file)
+        logger.info("Exporting dashboards to %s", dashboard_file)
         with open(dashboard_file, "w") as data_stream:
             data_stream.write(data)
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 @click.option(
     "--path",
     "-p",
@@ -265,30 +297,33 @@ def export_dashboards(print_stdout, dashboard_file):
 )
 def import_datasources(path, sync, recursive):
     """Import datasources from YAML"""
+    from superset.utils import dict_import_export
+
     sync_array = sync.split(",")
-    p = Path(path)
+    path_object = Path(path)
     files = []
-    if p.is_file():
-        files.append(p)
-    elif p.exists() and not recursive:
-        files.extend(p.glob("*.yaml"))
-        files.extend(p.glob("*.yml"))
-    elif p.exists() and recursive:
-        files.extend(p.rglob("*.yaml"))
-        files.extend(p.rglob("*.yml"))
-    for f in files:
-        logging.info("Importing datasources from file %s", f)
+    if path_object.is_file():
+        files.append(path_object)
+    elif path_object.exists() and not recursive:
+        files.extend(path_object.glob("*.yaml"))
+        files.extend(path_object.glob("*.yml"))
+    elif path_object.exists() and recursive:
+        files.extend(path_object.rglob("*.yaml"))
+        files.extend(path_object.rglob("*.yml"))
+    for file_ in files:
+        logger.info("Importing datasources from file %s", file_)
         try:
-            with f.open() as data_stream:
+            with file_.open() as data_stream:
                 dict_import_export.import_from_dict(
                     db.session, yaml.safe_load(data_stream), sync=sync_array
                 )
-        except Exception as e:
-            logging.error("Error when importing datasources from file %s", f)
-            logging.error(e)
+        except Exception as e:  # pylint: disable=broad-except
+            logger.error("Error when importing datasources from file %s", file_)
+            logger.error(e)
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 @click.option(
     "--datasource-file", "-f", default=None, help="Specify the the file to export to"
 )
@@ -313,6 +348,8 @@ def export_datasources(
     print_stdout, datasource_file, back_references, include_defaults
 ):
     """Export datasources to YAML"""
+    from superset.utils import dict_import_export
+
     data = dict_import_export.export_to_dict(
         session=db.session,
         recursive=True,
@@ -322,12 +359,13 @@ def export_datasources(
     if print_stdout or not datasource_file:
         yaml.safe_dump(data, stdout, default_flow_style=False)
     if datasource_file:
-        logging.info("Exporting datasources to %s", datasource_file)
+        logger.info("Exporting datasources to %s", datasource_file)
         with open(datasource_file, "w") as data_stream:
             yaml.safe_dump(data, data_stream, default_flow_style=False)
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 @click.option(
     "--back-references",
     "-b",
@@ -337,11 +375,14 @@ def export_datasources(
 )
 def export_datasource_schema(back_references):
     """Export datasource YAML schema to stdout"""
+    from superset.utils import dict_import_export
+
     data = dict_import_export.export_schema_to_dict(back_references=back_references)
     yaml.safe_dump(data, stdout, default_flow_style=False)
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 def update_datasources_cache():
     """Refresh sqllab datasources cache"""
     from superset.models.core import Database
@@ -356,32 +397,34 @@ def update_datasources_cache():
                 database.get_all_view_names_in_database(
                     force=True, cache=True, cache_timeout=24 * 60 * 60
                 )
-            except Exception as e:
+            except Exception as e:  # pylint: disable=broad-except
                 print("{}".format(str(e)))
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 @click.option(
     "--workers", "-w", type=int, help="Number of celery server workers to fire up"
 )
 def worker(workers):
     """Starts a Superset worker for async SQL query execution."""
-    logging.info(
+    logger.info(
         "The 'superset worker' command is deprecated. Please use the 'celery "
         "worker' command instead."
     )
     if workers:
         celery_app.conf.update(CELERYD_CONCURRENCY=workers)
-    elif config.get("SUPERSET_CELERY_WORKERS"):
+    elif app.config["SUPERSET_CELERY_WORKERS"]:
         celery_app.conf.update(
-            CELERYD_CONCURRENCY=config.get("SUPERSET_CELERY_WORKERS")
+            CELERYD_CONCURRENCY=app.config["SUPERSET_CELERY_WORKERS"]
         )
 
-    worker = celery_app.Worker(optimization="fair")
-    worker.start()
+    local_worker = celery_app.Worker(optimization="fair")
+    local_worker.start()
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 @click.option(
     "-p", "--port", default="5555", help="Port on which to start the Flower process"
 )
@@ -393,14 +436,14 @@ def flower(port, address):
 
     Celery Flower is a UI to monitor the Celery operation on a given
     broker"""
-    BROKER_URL = celery_app.conf.BROKER_URL
+    broker_url = celery_app.conf.BROKER_URL
     cmd = (
         "celery flower "
-        f"--broker={BROKER_URL} "
+        f"--broker={broker_url} "
         f"--port={port} "
         f"--address={address} "
     )
-    logging.info(
+    logger.info(
         "The 'superset flower' command is deprecated. Please use the 'celery "
         "flower' command instead."
     )
@@ -411,7 +454,8 @@ def flower(port, address):
     Popen(cmd, shell=True).wait()
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 def load_test_users():
     """
     Loads admin, alpha, and gamma user for testing purposes
@@ -428,7 +472,7 @@ def load_test_users_run():
 
     Syncs permissions for those users/roles
     """
-    if config.get("TESTING"):
+    if app.config["TESTING"]:
 
         sm = security_manager
 
@@ -465,11 +509,15 @@ def load_test_users_run():
         sm.get_session.commit()
 
 
-@app.cli.command()
+@superset.command()
+@with_appcontext
 def sync_tags():
     """Rebuilds special tags (owner, type, favorited by)."""
     # pylint: disable=no-member
     metadata = Model.metadata
+
+    from superset.common.tags import add_favorites, add_owners, add_types
+
     add_types(db.engine, metadata)
     add_owners(db.engine, metadata)
     add_favorites(db.engine, metadata)

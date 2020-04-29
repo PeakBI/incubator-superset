@@ -14,17 +14,24 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
+# isort:skip_file
 """Unit tests for Sql Lab"""
-from datetime import datetime, timedelta
 import json
+from datetime import datetime, timedelta
+from random import random
+from unittest import mock
 
 import prison
 
-from superset import db, security_manager
-from superset.dataframe import SupersetDataFrame
+import tests.test_app
+from superset import config, db, security_manager
+from superset.connectors.sqla.models import SqlaTable
+from superset.dataframe import df_to_records
 from superset.db_engine_specs import BaseEngineSpec
 from superset.models.sql_lab import Query
+from superset.result_set import SupersetResultSet
 from superset.utils.core import datetime_to_epoch, get_example_database
+
 from .base_tests import SupersetTestCase
 
 QUERY_1 = "SELECT * FROM birth_names LIMIT 1"
@@ -60,6 +67,39 @@ class SqlLabTests(SupersetTestCase):
 
         data = self.run_sql("SELECT * FROM unexistant_table", "2")
         self.assertLess(0, len(data["error"]))
+
+    @mock.patch(
+        "superset.views.core.get_cta_schema_name",
+        lambda d, u, s, sql: f"{u.username}_database",
+    )
+    def test_sql_json_cta_dynamic_db(self):
+        main_db = get_example_database()
+        if main_db.backend == "sqlite":
+            # sqlite doesn't support database creation
+            return
+
+        old_allow_ctas = main_db.allow_ctas
+        main_db.allow_ctas = True  # enable cta
+
+        self.login("admin")
+        self.run_sql(
+            "SELECT * FROM birth_names",
+            "1",
+            database_name="examples",
+            tmp_table_name="test_target",
+            select_as_cta=True,
+        )
+
+        # assertions
+        data = db.session.execute("SELECT * FROM admin_database.test_target").fetchall()
+        self.assertEqual(
+            75691, len(data)
+        )  # SQL_MAX_ROW not applied due to the SQLLAB_CTAS_NO_LIMIT set to True
+
+        # cleanup
+        db.session.execute("DROP TABLE admin_database.test_target")
+        main_db.allow_ctas = old_allow_ctas
+        db.session.commit()
 
     def test_multi_sql(self):
         self.login("admin")
@@ -112,19 +152,19 @@ class SqlLabTests(SupersetTestCase):
         # Not logged in, should error out
         resp = self.client.get("/superset/queries/0")
         # Redirects to the login page
-        self.assertEquals(403, resp.status_code)
+        self.assertEqual(403, resp.status_code)
 
         # Admin sees queries
         self.login("admin")
         data = self.get_json_resp("/superset/queries/0")
-        self.assertEquals(2, len(data))
+        self.assertEqual(2, len(data))
 
         # Run 2 more queries
         self.run_sql("SELECT * FROM birth_names LIMIT 1", client_id="client_id_4")
         self.run_sql("SELECT * FROM birth_names LIMIT 2", client_id="client_id_5")
         self.login("admin")
         data = self.get_json_resp("/superset/queries/0")
-        self.assertEquals(4, len(data))
+        self.assertEqual(4, len(data))
 
         now = datetime.now() + timedelta(days=1)
         query = (
@@ -138,12 +178,12 @@ class SqlLabTests(SupersetTestCase):
         data = self.get_json_resp(
             "/superset/queries/{}".format(int(datetime_to_epoch(now)) - 1000)
         )
-        self.assertEquals(1, len(data))
+        self.assertEqual(1, len(data))
 
         self.logout()
         resp = self.client.get("/superset/queries/0")
         # Redirects to the login page
-        self.assertEquals(403, resp.status_code)
+        self.assertEqual(403, resp.status_code)
 
     def test_search_query_on_db_id(self):
         self.run_some_queries()
@@ -154,13 +194,13 @@ class SqlLabTests(SupersetTestCase):
         data = self.get_json_resp(
             f"/superset/search_queries?database_id={examples_dbid}"
         )
-        self.assertEquals(3, len(data))
+        self.assertEqual(3, len(data))
         db_ids = [k["dbId"] for k in data]
-        self.assertEquals([examples_dbid for i in range(3)], db_ids)
+        self.assertEqual([examples_dbid for i in range(3)], db_ids)
 
         resp = self.get_resp("/superset/search_queries?database_id=-1")
         data = json.loads(resp)
-        self.assertEquals(0, len(data))
+        self.assertEqual(0, len(data))
 
     def test_search_query_on_user(self):
         self.run_some_queries()
@@ -169,15 +209,15 @@ class SqlLabTests(SupersetTestCase):
         # Test search queries on user Id
         user_id = security_manager.find_user("admin").id
         data = self.get_json_resp("/superset/search_queries?user_id={}".format(user_id))
-        self.assertEquals(2, len(data))
+        self.assertEqual(2, len(data))
         user_ids = {k["userId"] for k in data}
-        self.assertEquals(set([user_id]), user_ids)
+        self.assertEqual(set([user_id]), user_ids)
 
         user_id = security_manager.find_user("gamma_sqllab").id
         resp = self.get_resp("/superset/search_queries?user_id={}".format(user_id))
         data = json.loads(resp)
-        self.assertEquals(1, len(data))
-        self.assertEquals(data[0]["userId"], user_id)
+        self.assertEqual(1, len(data))
+        self.assertEqual(data[0]["userId"], user_id)
 
     def test_search_query_on_status(self):
         self.run_some_queries()
@@ -185,21 +225,21 @@ class SqlLabTests(SupersetTestCase):
         # Test search queries on status
         resp = self.get_resp("/superset/search_queries?status=success")
         data = json.loads(resp)
-        self.assertEquals(2, len(data))
+        self.assertEqual(2, len(data))
         states = [k["state"] for k in data]
-        self.assertEquals(["success", "success"], states)
+        self.assertEqual(["success", "success"], states)
 
         resp = self.get_resp("/superset/search_queries?status=failed")
         data = json.loads(resp)
-        self.assertEquals(1, len(data))
-        self.assertEquals(data[0]["state"], "failed")
+        self.assertEqual(1, len(data))
+        self.assertEqual(data[0]["state"], "failed")
 
     def test_search_query_on_text(self):
         self.run_some_queries()
         self.login("admin")
         url = "/superset/search_queries?search_text=birth"
         data = self.get_json_resp(url)
-        self.assertEquals(2, len(data))
+        self.assertEqual(2, len(data))
         self.assertIn("birth", data[0]["sql"])
 
     def test_search_query_on_time(self):
@@ -217,43 +257,22 @@ class SqlLabTests(SupersetTestCase):
         params = [from_time, to_time]
         resp = self.get_resp("/superset/search_queries?" + "&".join(params))
         data = json.loads(resp)
-        self.assertEquals(2, len(data))
+        self.assertEqual(2, len(data))
 
-    def test_search_query_with_owner_only_perms(self) -> None:
+    def test_search_query_only_owned(self) -> None:
         """
-        Test a search query with can_only_access_owned_queries perm added to
-        Admin and make sure only Admin queries show up.
+        Test a search query with a user that does not have can_access_all_queries.
         """
-        session = db.session
-
-        # Add can_only_access_owned_queries perm to Admin user
-        owned_queries_view = security_manager.find_permission_view_menu(
-            "can_only_access_owned_queries", "can_only_access_owned_queries"
-        )
-        security_manager.add_permission_role(
-            security_manager.find_role("Admin"), owned_queries_view
-        )
-        session.commit()
-
-        # Test search_queries for Admin user
+        # Test search_queries for Alpha user
         self.run_some_queries()
-        self.login("admin")
+        self.login("gamma_sqllab")
 
-        user_id = security_manager.find_user("admin").id
+        user_id = security_manager.find_user("gamma_sqllab").id
         data = self.get_json_resp("/superset/search_queries")
-        self.assertEquals(2, len(data))
+
+        self.assertEqual(1, len(data))
         user_ids = {k["userId"] for k in data}
-        self.assertEquals(set([user_id]), user_ids)
-
-        # Remove can_only_access_owned_queries from Admin
-        owned_queries_view = security_manager.find_permission_view_menu(
-            "can_only_access_owned_queries", "can_only_access_owned_queries"
-        )
-        security_manager.del_permission_role(
-            security_manager.find_role("Admin"), owned_queries_view
-        )
-
-        session.commit()
+        self.assertEqual(set([user_id]), user_ids)
 
     def test_alias_duplicate(self):
         self.run_sql(
@@ -263,50 +282,40 @@ class SqlLabTests(SupersetTestCase):
             raise_on_error=True,
         )
 
-    def test_df_conversion_no_dict(self):
+    def test_ps_conversion_no_dict(self):
         cols = [["string_col", "string"], ["int_col", "int"], ["float_col", "float"]]
         data = [["a", 4, 4.0]]
-        cdf = SupersetDataFrame(data, cols, BaseEngineSpec)
+        results = SupersetResultSet(data, cols, BaseEngineSpec)
 
-        self.assertEquals(len(data), cdf.size)
-        self.assertEquals(len(cols), len(cdf.columns))
+        self.assertEqual(len(data), results.size)
+        self.assertEqual(len(cols), len(results.columns))
 
-    def test_df_conversion_tuple(self):
+    def test_pa_conversion_tuple(self):
         cols = ["string_col", "int_col", "list_col", "float_col"]
         data = [("Text", 111, [123], 1.0)]
-        cdf = SupersetDataFrame(data, cols, BaseEngineSpec)
+        results = SupersetResultSet(data, cols, BaseEngineSpec)
 
-        self.assertEquals(len(data), cdf.size)
-        self.assertEquals(len(cols), len(cdf.columns))
+        self.assertEqual(len(data), results.size)
+        self.assertEqual(len(cols), len(results.columns))
 
-    def test_df_conversion_dict(self):
+    def test_pa_conversion_dict(self):
         cols = ["string_col", "dict_col", "int_col"]
         data = [["a", {"c1": 1, "c2": 2, "c3": 3}, 4]]
-        cdf = SupersetDataFrame(data, cols, BaseEngineSpec)
+        results = SupersetResultSet(data, cols, BaseEngineSpec)
 
-        self.assertEquals(len(data), cdf.size)
-        self.assertEquals(len(cols), len(cdf.columns))
+        self.assertEqual(len(data), results.size)
+        self.assertEqual(len(cols), len(results.columns))
 
     def test_sqllab_viz(self):
+        self.login("admin")
         examples_dbid = get_example_database().id
         payload = {
             "chartType": "dist_bar",
-            "datasourceName": "test_viz_flow_table",
+            "datasourceName": f"test_viz_flow_table_{random()}",
             "schema": "superset",
             "columns": [
-                {
-                    "is_date": False,
-                    "type": "STRING",
-                    "name": "viz_type",
-                    "is_dim": True,
-                },
-                {
-                    "is_date": False,
-                    "type": "OBJECT",
-                    "name": "ccount",
-                    "is_dim": True,
-                    "agg": "sum",
-                },
+                {"is_date": False, "type": "STRING", "name": f"viz_type_{random()}"},
+                {"is_date": False, "type": "OBJECT", "name": f"ccount_{random()}"},
             ],
             "sql": """\
                 SELECT *
@@ -318,6 +327,11 @@ class SqlLabTests(SupersetTestCase):
         resp = self.get_json_resp("/superset/sqllab_viz/", data=data)
         self.assertIn("table_id", resp)
 
+        # ensure owner is set correctly
+        table_id = resp["table_id"]
+        table = db.session.query(SqlaTable).filter_by(id=table_id).one()
+        self.assertEqual([owner.username for owner in table.owners], ["admin"])
+
     def test_sql_limit(self):
         self.login("admin")
         test_limit = 1
@@ -326,19 +340,19 @@ class SqlLabTests(SupersetTestCase):
         data = self.run_sql(
             "SELECT * FROM birth_names", client_id="sql_limit_2", query_limit=test_limit
         )
-        self.assertEquals(len(data["data"]), test_limit)
+        self.assertEqual(len(data["data"]), test_limit)
         data = self.run_sql(
             "SELECT * FROM birth_names LIMIT {}".format(test_limit),
             client_id="sql_limit_3",
             query_limit=test_limit + 1,
         )
-        self.assertEquals(len(data["data"]), test_limit)
+        self.assertEqual(len(data["data"]), test_limit)
         data = self.run_sql(
             "SELECT * FROM birth_names LIMIT {}".format(test_limit + 1),
             client_id="sql_limit_4",
             query_limit=test_limit,
         )
-        self.assertEquals(len(data["data"]), test_limit)
+        self.assertEqual(len(data["data"]), test_limit)
 
     def test_queryview_filter(self) -> None:
         """
@@ -352,27 +366,50 @@ class SqlLabTests(SupersetTestCase):
         data = self.get_json_resp(url)
         admin = security_manager.find_user("admin")
         gamma_sqllab = security_manager.find_user("gamma_sqllab")
-        self.assertEquals(3, len(data["result"]))
+        self.assertEqual(3, len(data["result"]))
         user_queries = [result.get("username") for result in data["result"]]
         assert admin.username in user_queries
         assert gamma_sqllab.username in user_queries
 
-    def test_queryview_filter_owner_only(self) -> None:
+    def test_queryview_can_access_all_queries(self) -> None:
         """
-        Test queryview api with can_only_access_owned_queries perm added to
-        Admin and make sure only Admin queries show up.
+        Test queryview api with can_access_all_queries perm added to
+        gamma and make sure all queries show up.
         """
         session = db.session
 
-        # Add can_only_access_owned_queries perm to Admin user
-        owned_queries_view = security_manager.find_permission_view_menu(
-            "can_only_access_owned_queries", "can_only_access_owned_queries"
+        # Add all_query_access perm to Gamma user
+        all_queries_view = security_manager.find_permission_view_menu(
+            "all_query_access", "all_query_access"
         )
+
         security_manager.add_permission_role(
-            security_manager.find_role("Admin"), owned_queries_view
+            security_manager.find_role("gamma_sqllab"), all_queries_view
         )
         session.commit()
 
+        # Test search_queries for Admin user
+        self.run_some_queries()
+        self.login("gamma_sqllab")
+        url = "/queryview/api/read"
+        data = self.get_json_resp(url)
+        self.assertEqual(3, len(data["result"]))
+
+        # Remove all_query_access from gamma sqllab
+        all_queries_view = security_manager.find_permission_view_menu(
+            "all_query_access", "all_query_access"
+        )
+        security_manager.del_permission_role(
+            security_manager.find_role("gamma_sqllab"), all_queries_view
+        )
+
+        session.commit()
+
+    def test_queryview_admin_can_access_all_queries(self) -> None:
+        """
+        Test queryview api with all_query_access perm added to
+        Admin and make sure only Admin queries show up. This is the default
+        """
         # Test search_queries for Admin user
         self.run_some_queries()
         self.login("admin")
@@ -380,21 +417,7 @@ class SqlLabTests(SupersetTestCase):
         url = "/queryview/api/read"
         data = self.get_json_resp(url)
         admin = security_manager.find_user("admin")
-        self.assertEquals(2, len(data["result"]))
-        all_admin_user_queries = all(
-            [result.get("username") == admin.username for result in data["result"]]
-        )
-        assert all_admin_user_queries is True
-
-        # Remove can_only_access_owned_queries from Admin
-        owned_queries_view = security_manager.find_permission_view_menu(
-            "can_only_access_owned_queries", "can_only_access_owned_queries"
-        )
-        security_manager.del_permission_role(
-            security_manager.find_role("Admin"), owned_queries_view
-        )
-
-        session.commit()
+        self.assertEqual(3, len(data["result"]))
 
     def test_api_database(self):
         self.login("admin")
@@ -408,8 +431,9 @@ class SqlLabTests(SupersetTestCase):
             "page": 0,
             "page_size": -1,
         }
-        url = "api/v1/database/?{}={}".format("q", prison.dumps(arguments))
-        self.assertEquals(
+        url = f"api/v1/database/?q={prison.dumps(arguments)}"
+        self.assertEqual(
             {"examples", "fake_db_100"},
             {r.get("database_name") for r in self.get_json_resp(url)["result"]},
         )
+        self.delete_fake_db()
