@@ -31,7 +31,7 @@ def has_solution_write_access(privileges):
 class CustomAuthDBView(AuthDBView):
 
 
-    def login_api(self, f):
+    def login_api(f):
       """
       Use this decorator to enable granular security permissions to your API methods.
       Permissions will be associated to a role, and roles are associated to users.
