@@ -15,7 +15,6 @@
 # limitations under the License.
 #
 
-<<<<<<< HEAD:docker_init.sh
 # Create an admin user
 export FLASK_APP=superset:app
 export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
@@ -52,15 +51,3 @@ flask fab create-user \
 superset set_database_uri \
   --database_name RedshiftDB \
   --uri $REDSHIFT_DATABASE_URI
-=======
-#
-# This is an example "local" configuration file. In order to set/override config
-# options that ONLY apply to your local environment, simply copy/rename this file
-# to docker/pythonpath/superset_config_docker.py
-# It ends up being imported by docker/superset_config.py which is loaded by
-# superset/config.py
-#
-
-SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://pguser:pgpwd@some.host/superset"
-SQLALCHEMY_ECHO = True
->>>>>>> upstream/0.36:docker/pythonpath_dev/superset_config_local.example
