@@ -610,6 +610,7 @@ def CUSTOM_HAS_ACCESS_API(f):
       """
       def wraps(self, *args, **kwargs):
         try:
+          print('h1')
           if request.args.get('authToken') is not None:
             token = 'Bearer {}'.format(request.args.get('authToken'))
             from superset import security_manager

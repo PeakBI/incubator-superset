@@ -12,6 +12,7 @@ class CustomAuthDBView(AuthDBView):
     def login(self):
         redirect_url = self.appbuilder.get_url_for_index
         try:
+            print('h2')
             if request.args.get('redirect') is not None:
                 redirect_url = request.args.get('redirect')
             if request.args.get('authToken') is not None:
