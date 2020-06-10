@@ -46,7 +46,7 @@ def use_ip_auth(f):
             return f(self, *args, **kwargs)
         except Exception:
             response = make_response(
-                jsonify({ 'message': 'Not Found', }),
+                jsonify({'message': 'Not Found', }),
                 404
             )
             response.headers['Content-Type'] = "application/json"
