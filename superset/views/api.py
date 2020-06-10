@@ -24,7 +24,7 @@ from flask_appbuilder.security.decorators import has_access_api
 import simplejson as json
 
 from superset import appbuilder, db, event_logger, security_manager
-from superset.custom_auth import CustomAuthDBView
+from superset.custom_auth import use_ip_auth
 from superset.common.query_context import QueryContext
 from superset.legacy import update_time_range
 import superset.models.core as models
@@ -74,7 +74,7 @@ class Api(BaseSupersetView):
 
         return json.dumps(form_data)
 
-    @CustomAuthDBView.login_api
+    @use_ip_auth
     @api
     @event_logger.log_this
     @handle_api_exception
