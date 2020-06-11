@@ -133,7 +133,7 @@ class DummyStrategy(Strategy):
     def get_urls(self):
         session = db.create_scoped_session()
         charts = session.query(Slice).all()
-
+        logger.info("Dummy Strategy")
         return [get_url(chart) for chart in charts]
 
 
@@ -259,7 +259,7 @@ def cache_warmup(strategy_name, *args, **kwargs):
     This task periodically hits charts to warm up the cache.
 
     """
-    logger.info("Loading strategy")
+    logger.info("Loading strategy", strategy_name)
     class_ = None
     for class_ in strategies:
         if class_.name == strategy_name:
