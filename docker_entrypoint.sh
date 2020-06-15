@@ -23,7 +23,6 @@ if [ "$#" -ne 0 ]; then
 elif [ "$SUPERSET_ENV" = "development" ]; then
     celery worker --app=superset.sql_lab:celery_app --pool=gevent -Ofair -E &
     celery beat --app=superset.tasks.celery_app:app &
-
     # needed by superset runserver
     (cd superset/assets/ && npm ci)
     (cd superset/assets/ && npm run dev) &
