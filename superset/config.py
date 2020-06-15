@@ -79,6 +79,7 @@ FILTER_SELECT_ROW_LIMIT = 10000
 SUPERSET_WORKERS = 2  # deprecated
 SUPERSET_CELERY_WORKERS = 32  # deprecated
 
+SUPERSET_WEBSERVER_PROTOCOL = "http"
 SUPERSET_WEBSERVER_ADDRESS = "0.0.0.0"
 SUPERSET_WEBSERVER_PORT = 8088
 
@@ -104,7 +105,7 @@ REDIS_ENDPOINT = os.environ['REDIS_ENDPOINT']
 # SQLALCHEMY_ENGINE_OPTIONS = json.loads(os.environ['SQLALCHEMY_ENGINE_OPTIONS'])
 
 # The SQLAlchemy connection string.
-SQLALCHEMY_DATABASE_URI = os.environ['SQLALCHEMY_DATABASE_URI']
+SQLALCHEMY_DATABASE_URI =
 # SQLALCHEMY_DATABASE_URI="sqlite:///" + os.path.join(DATA_DIR, "superset.db")
 # SQLALCHEMY_DATABASE_URI='mysql://myapp@localhost/myapp'
 # SQLALCHEMY_DATABASE_URI='postgresql://root:password@localhost/myapp'
@@ -270,7 +271,7 @@ IMG_UPLOAD_URL = "/static/uploads/"
 # Setup image size default is (300, 200, True)
 # IMG_SIZE = (300, 200, True)
 
-CACHE_DEFAULT_TIMEOUT = 60 * 60 * 2
+CACHE_DEFAULT_TIMEOUT = 60 * 30
 CACHE_CONFIG = {
     'CACHE_TYPE': 'redis',
     'CACHE_DEFAULT_TIMEOUT': CACHE_DEFAULT_TIMEOUT,

@@ -76,8 +76,10 @@ def get_form_data(chart_id, dashboard=None):
 def get_url(chart):
     """Return external URL for warming up a given chart/table cache."""
     with app.test_request_context():
-        baseurl = "{SUPERSET_WEBSERVER_ADDRESS}:{SUPERSET_WEBSERVER_PORT}".format(
-            **app.config
+        baseurl = (
+            "{SUPERSET_WEBSERVER_PROTOCOL}://"
+            "{SUPERSET_WEBSERVER_ADDRESS}:"
+            "{SUPERSET_WEBSERVER_PORT}".format(**app.config)
         )
         return f"{baseurl}{chart.url}"
 
@@ -287,5 +289,5 @@ def cache_warmup(strategy_name, *args, **kwargs):
         except URLError:
             logger.exception("Error warming up cache!")
             results["errors"].append(url)
-
+    logger.info("Cache Warmed")
     return results
