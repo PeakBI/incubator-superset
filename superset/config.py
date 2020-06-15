@@ -105,7 +105,7 @@ REDIS_ENDPOINT = os.environ['REDIS_ENDPOINT']
 # SQLALCHEMY_ENGINE_OPTIONS = json.loads(os.environ['SQLALCHEMY_ENGINE_OPTIONS'])
 
 # The SQLAlchemy connection string.
-SQLALCHEMY_DATABASE_URI =
+SQLALCHEMY_DATABASE_URI = os.environ['SQLALCHEMY_DATABASE_URI']
 # SQLALCHEMY_DATABASE_URI="sqlite:///" + os.path.join(DATA_DIR, "superset.db")
 # SQLALCHEMY_DATABASE_URI='mysql://myapp@localhost/myapp'
 # SQLALCHEMY_DATABASE_URI='postgresql://root:password@localhost/myapp'
