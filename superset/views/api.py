@@ -86,7 +86,7 @@ class Api(BaseSupersetView):
         """
         slug = request.get_json()["slug"]
         isPublished = request.get_json()["isPublished"]
-        g.user = security_manager.find_user(username=admin)
+        g.user = security_manager.find_user(username="admin")
         if slug:
             #get file from common bucket
             file_name = slug+".json"
