@@ -271,7 +271,7 @@ IMG_UPLOAD_URL = "/static/uploads/"
 # Setup image size default is (300, 200, True)
 # IMG_SIZE = (300, 200, True)
 
-CACHE_DEFAULT_TIMEOUT = 60 * 30
+CACHE_DEFAULT_TIMEOUT = 60 * 57
 CACHE_CONFIG = {
     'CACHE_TYPE': 'redis',
     'CACHE_DEFAULT_TIMEOUT': CACHE_DEFAULT_TIMEOUT,
@@ -433,7 +433,7 @@ class CeleryConfig(object):
     CELERYBEAT_SCHEDULE = {
         'cache-warmup-hourly': {
             'task': 'cache-warmup',
-            'schedule': crontab(minute='*/5'),  # hourly
+            'schedule': crontab(minute=1, hour='*'),  # hourly
             'kwargs': {
                 'strategy_name': 'dummy',
             },
@@ -527,6 +527,7 @@ SMTP_PASSWORD = "superset"
 SMTP_MAIL_FROM = "superset@superset.com"
 
 if not CACHE_DEFAULT_TIMEOUT:
+    print('===============Cache Timeout=======================')
     CACHE_DEFAULT_TIMEOUT = CACHE_CONFIG.get("CACHE_DEFAULT_TIMEOUT")
 
 # Whether to bump the logging level to ERROR on the flask_appbuilder package
