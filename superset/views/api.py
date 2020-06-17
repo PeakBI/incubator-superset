@@ -18,7 +18,7 @@
 
 import logging
 from os import environ
-from flask import request
+from flask import request, g
 from flask_appbuilder import expose
 from flask_appbuilder.security.decorators import has_access_api
 import simplejson as json
@@ -86,6 +86,7 @@ class Api(BaseSupersetView):
         """
         slug = request.get_json()["slug"]
         isPublished = request.get_json()["isPublished"]
+        g.user = security_manager.find_user(username=admin)
         if slug:
             #get file from common bucket
             file_name = slug+".json"
@@ -97,11 +98,11 @@ class Api(BaseSupersetView):
                 if isPublished:
                   if dashboard_ids and len(dashboard_ids) > 0:
                     for dashboard_id in dashboard_ids:
-                      session = db.session()
                       Dashboard = models.Dashboard
-                      dash = (session.query(Dashboard).filter(Dashboard.id == dashboard_id).one_or_none())
+                      dash = (db.session.query(Dashboard).filter(Dashboard.id == dashboard_id).one_or_none())
                       dash.published = True
-                      session.commit()
+                      db.session.commit()
+                      
                 return json_success(json.dumps({"dashboard_imported": True}))
             except Exception as e:
                 logging.error("Error when importing dashboard from file %s", file_name)
