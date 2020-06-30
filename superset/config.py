@@ -668,7 +668,7 @@ TALISMAN_CONFIG = {
 
 # URI to database storing the example data, points to
 # SQLALCHEMY_DATABASE_URI by default if set to `None`
-SQLALCHEMY_EXAMPLES_URI = None
+SQLALCHEMY_EXAMPLES_URI = os.environ[ALL_SCHEMA_READER_DATABASE_URI]
 
 if CONFIG_PATH_ENV_VAR in os.environ:
     # Explicitly import config module that is not necessarily in pythonpath; useful
