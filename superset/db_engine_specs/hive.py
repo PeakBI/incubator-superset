@@ -14,30 +14,36 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# pylint: disable=C,R,W
-from datetime import datetime
 import logging
 import os
 import re
 import time
-from typing import Any, Dict, List, Optional, Tuple
+from datetime import datetime
+from typing import Any, Dict, List, Optional, Tuple, TYPE_CHECKING
 from urllib import parse
 
+import pandas as pd
 from sqlalchemy import Column
-from sqlalchemy.engine import create_engine
 from sqlalchemy.engine.base import Engine
 from sqlalchemy.engine.reflection import Inspector
-from sqlalchemy.engine.url import make_url
+from sqlalchemy.engine.url import make_url, URL
+from sqlalchemy.orm import Session
 from sqlalchemy.sql.expression import ColumnClause, Select
-from werkzeug.utils import secure_filename
+from wtforms.form import Form
 
-from superset import app, conf
+from superset import app, cache, conf
 from superset.db_engine_specs.base import BaseEngineSpec
 from superset.db_engine_specs.presto import PrestoEngineSpec
+from superset.models.sql_lab import Query
 from superset.utils import core as utils
+
+if TYPE_CHECKING:
+    # prevent circular imports
+    from superset.models.core import Database  # pylint: disable=unused-import
 
 QueryStatus = utils.QueryStatus
 config = app.config
+logger = logging.getLogger(__name__)
 
 tracking_url_trans = conf.get("TRACKING_URL_TRANSFORMER")
 hive_poll_interval = conf.get("HIVE_POLL_INTERVAL")
@@ -65,7 +71,7 @@ class HiveEngineSpec(PrestoEngineSpec):
     )
 
     @classmethod
-    def patch(cls):
+    def patch(cls) -> None:
         from pyhive import hive  # pylint: disable=no-name-in-module
         from superset.db_engines import hive as patched_hive
         from TCLIService import (
@@ -81,12 +87,12 @@ class HiveEngineSpec(PrestoEngineSpec):
 
     @classmethod
     def get_all_datasource_names(
-        cls, db, datasource_type: str
+        cls, database: "Database", datasource_type: str
     ) -> List[utils.DatasourceName]:
-        return BaseEngineSpec.get_all_datasource_names(db, datasource_type)
+        return BaseEngineSpec.get_all_datasource_names(database, datasource_type)
 
     @classmethod
-    def fetch_data(cls, cursor, limit: int) -> List[Tuple]:
+    def fetch_data(cls, cursor: Any, limit: int) -> List[Tuple]:
         import pyhive
         from TCLIService import ttypes
 
@@ -99,10 +105,12 @@ class HiveEngineSpec(PrestoEngineSpec):
             return []
 
     @classmethod
-    def create_table_from_csv(cls, form, table):
+    def create_table_from_csv(  # pylint: disable=too-many-locals
+        cls, form: Form, database: "Database"
+    ) -> None:
         """Uploads a csv file and creates a superset datasource in Hive."""
 
-        def convert_to_hive_type(col_type):
+        def convert_to_hive_type(col_type: str) -> str:
             """maps tableschema's types to hive types"""
             tableschema_to_hive_types = {
                 "boolean": "BOOLEAN",
@@ -115,7 +123,7 @@ class HiveEngineSpec(PrestoEngineSpec):
         bucket_path = config["CSV_TO_HIVE_UPLOAD_S3_BUCKET"]
 
         if not bucket_path:
-            logging.info("No upload bucket specified")
+            logger.info("No upload bucket specified")
             raise Exception(
                 "No upload bucket specified. You can specify one in the config file."
             )
@@ -123,16 +131,16 @@ class HiveEngineSpec(PrestoEngineSpec):
         table_name = form.name.data
         schema_name = form.schema.data
 
-        if config.get("UPLOADED_CSV_HIVE_NAMESPACE"):
+        if config["UPLOADED_CSV_HIVE_NAMESPACE"]:
             if "." in table_name or schema_name:
                 raise Exception(
                     "You can't specify a namespace. "
                     "All tables will be uploaded to the `{}` namespace".format(
-                        config.get("HIVE_NAMESPACE")
+                        config["HIVE_NAMESPACE"]
                     )
                 )
             full_table_name = "{}.{}".format(
-                config.get("UPLOADED_CSV_HIVE_NAMESPACE"), table_name
+                config["UPLOADED_CSV_HIVE_NAMESPACE"], table_name
             )
         else:
             if "." in table_name and schema_name:
@@ -146,14 +154,12 @@ class HiveEngineSpec(PrestoEngineSpec):
             )
 
         filename = form.csv_file.data.filename
-
         upload_prefix = config["CSV_TO_HIVE_UPLOAD_DIRECTORY"]
-        upload_path = config["UPLOAD_FOLDER"] + secure_filename(filename)
 
         # Optional dependency
         from tableschema import Table  # pylint: disable=import-error
 
-        hive_table_schema = Table(upload_path).infer()
+        hive_table_schema = Table(filename).infer()
         column_name_and_type = []
         for column_info in hive_table_schema["fields"]:
             column_name_and_type.append(
@@ -169,33 +175,35 @@ class HiveEngineSpec(PrestoEngineSpec):
         s3 = boto3.client("s3")
         location = os.path.join("s3a://", bucket_path, upload_prefix, table_name)
         s3.upload_file(
-            upload_path, bucket_path, os.path.join(upload_prefix, table_name, filename)
+            filename,
+            bucket_path,
+            os.path.join(upload_prefix, table_name, os.path.basename(filename)),
         )
         sql = f"""CREATE TABLE {full_table_name} ( {schema_definition} )
             ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS
             TEXTFILE LOCATION '{location}'
             tblproperties ('skip.header.line.count'='1')"""
-        logging.info(form.con.data)
-        engine = create_engine(form.con.data.sqlalchemy_uri_decrypted)
+        engine = cls.get_engine(database)
         engine.execute(sql)
 
     @classmethod
-    def convert_dttm(cls, target_type: str, dttm: datetime) -> str:
+    def convert_dttm(cls, target_type: str, dttm: datetime) -> Optional[str]:
         tt = target_type.upper()
         if tt == "DATE":
-            return "CAST('{}' AS DATE)".format(dttm.isoformat()[:10])
+            return f"CAST('{dttm.date().isoformat()}' AS DATE)"
         elif tt == "TIMESTAMP":
-            return "CAST('{}' AS TIMESTAMP)".format(dttm.strftime("%Y-%m-%d %H:%M:%S"))
-        return "'{}'".format(dttm.strftime("%Y-%m-%d %H:%M:%S"))
+            return f"""CAST('{dttm.isoformat(sep=" ", timespec="microseconds")}' AS TIMESTAMP)"""  # pylint: disable=line-too-long
+        return None
 
     @classmethod
-    def adjust_database_uri(cls, uri, selected_schema=None):
+    def adjust_database_uri(
+        cls, uri: URL, selected_schema: Optional[str] = None
+    ) -> None:
         if selected_schema:
             uri.database = parse.quote(selected_schema, safe="")
-        return uri
 
     @classmethod
-    def _extract_error_message(cls, e):
+    def _extract_error_message(cls, e: Exception) -> str:
         msg = str(e)
         match = re.search(r'errorMessage="(.*?)(?<!\\)"', msg)
         if match:
@@ -203,10 +211,10 @@ class HiveEngineSpec(PrestoEngineSpec):
         return msg
 
     @classmethod
-    def progress(cls, log_lines):
+    def progress(cls, log_lines: List[str]) -> int:
         total_jobs = 1  # assuming there's at least 1 job
         current_job = 1
-        stages = {}
+        stages: Dict[int, float] = {}
         for line in log_lines:
             match = cls.jobs_stats_r.match(line)
             if match:
@@ -222,8 +230,8 @@ class HiveEngineSpec(PrestoEngineSpec):
                 map_progress = int(match.groupdict()["map_progress"])
                 reduce_progress = int(match.groupdict()["reduce_progress"])
                 stages[stage_number] = (map_progress + reduce_progress) / 2
-        logging.info(
-            "Progress detail: {}, "
+        logger.info(
+            "Progress detail: {}, "  # pylint: disable=logging-format-interpolation
             "current job {}, "
             "total jobs: {}".format(stages, current_job, total_jobs)
         )
@@ -234,14 +242,17 @@ class HiveEngineSpec(PrestoEngineSpec):
         return int(progress)
 
     @classmethod
-    def get_tracking_url(cls, log_lines):
+    def get_tracking_url(cls, log_lines: List[str]) -> Optional[str]:
         lkp = "Tracking URL = "
         for line in log_lines:
             if lkp in line:
                 return line.split(lkp)[1]
+        return None
 
     @classmethod
-    def handle_cursor(cls, cursor, query, session):
+    def handle_cursor(  # pylint: disable=too-many-locals
+        cls, cursor: Any, query: Query, session: Session
+    ) -> None:
         """Updates progress information"""
         from pyhive import hive  # pylint: disable=no-name-in-module
 
@@ -264,7 +275,7 @@ class HiveEngineSpec(PrestoEngineSpec):
             if log:
                 log_lines = log.splitlines()
                 progress = cls.progress(log_lines)
-                logging.info(f"Query {query_id}: Progress total: {progress}")
+                logger.info(f"Query {query_id}: Progress total: {progress}")
                 needs_commit = False
                 if progress > query.progress:
                     query.progress = progress
@@ -273,22 +284,22 @@ class HiveEngineSpec(PrestoEngineSpec):
                     tracking_url = cls.get_tracking_url(log_lines)
                     if tracking_url:
                         job_id = tracking_url.split("/")[-2]
-                        logging.info(
+                        logger.info(
                             f"Query {query_id}: Found the tracking url: {tracking_url}"
                         )
                         tracking_url = tracking_url_trans(tracking_url)
-                        logging.info(
+                        logger.info(
                             f"Query {query_id}: Transformation applied: {tracking_url}"
                         )
                         query.tracking_url = tracking_url
-                        logging.info(f"Query {query_id}: Job id: {job_id}")
+                        logger.info(f"Query {query_id}: Job id: {job_id}")
                         needs_commit = True
                 if job_id and len(log_lines) > last_log_line:
                     # Wait for job id before logging things out
                     # this allows for prefixing all log lines and becoming
                     # searchable in something like Kibana
                     for l in log_lines[last_log_line:]:
-                        logging.info(f"Query {query_id}: [{job_id}] {l}")
+                        logger.info(f"Query {query_id}: [{job_id}] {l}")
                     last_log_line = len(log_lines)
                 if needs_commit:
                     session.commit()
@@ -302,57 +313,66 @@ class HiveEngineSpec(PrestoEngineSpec):
         return inspector.get_columns(table_name, schema)
 
     @classmethod
-    def where_latest_partition(
+    def where_latest_partition(  # pylint: disable=too-many-arguments
         cls,
         table_name: str,
         schema: Optional[str],
-        database,
-        qry: Select,
+        database: "Database",
+        query: Select,
         columns: Optional[List] = None,
     ) -> Optional[Select]:
         try:
             col_names, values = cls.latest_partition(
                 table_name, schema, database, show_first=True
             )
-        except Exception:
+        except Exception:  # pylint: disable=broad-except
             # table is not partitioned
             return None
         if values is not None and columns is not None:
             for col_name, value in zip(col_names, values):
-                for c in columns:
-                    if c.get("name") == col_name:
-                        qry = qry.where(Column(col_name) == value)
+                for clm in columns:
+                    if clm.get("name") == col_name:
+                        query = query.where(Column(col_name) == value)
 
-            return qry
+            return query
         return None
 
     @classmethod
     def _get_fields(cls, cols: List[dict]) -> List[ColumnClause]:
-        return BaseEngineSpec._get_fields(cols)
+        return BaseEngineSpec._get_fields(cols)  # pylint: disable=protected-access
 
     @classmethod
-    def latest_sub_partition(cls, table_name, schema, database, **kwargs):
+    def latest_sub_partition(
+        cls, table_name: str, schema: Optional[str], database: "Database", **kwargs: Any
+    ) -> str:
         # TODO(bogdan): implement`
         pass
 
     @classmethod
-    def _latest_partition_from_df(cls, df) -> Optional[List[str]]:
+    def _latest_partition_from_df(cls, df: pd.DataFrame) -> Optional[List[str]]:
         """Hive partitions look like ds={partition name}"""
         if not df.empty:
             return [df.ix[:, 0].max().split("=")[1]]
         return None
 
     @classmethod
-    def _partition_query(cls, table_name, limit=0, order_by=None, filters=None):
+    def _partition_query(  # pylint: disable=too-many-arguments
+        cls,
+        table_name: str,
+        database: "Database",
+        limit: int = 0,
+        order_by: Optional[List[Tuple[str, bool]]] = None,
+        filters: Optional[Dict[Any, Any]] = None,
+    ) -> str:
         return f"SHOW PARTITIONS {table_name}"
 
     @classmethod
-    def select_star(
+    def select_star(  # pylint: disable=too-many-arguments
         cls,
-        database,
+        database: "Database",
         table_name: str,
         engine: Engine,
-        schema: str = None,
+        schema: Optional[str] = None,
         limit: int = 100,
         show_cols: bool = False,
         indent: bool = True,
@@ -374,7 +394,9 @@ class HiveEngineSpec(PrestoEngineSpec):
         )
 
     @classmethod
-    def modify_url_for_impersonation(cls, url, impersonate_user: bool, username: str):
+    def modify_url_for_impersonation(
+        cls, url: URL, impersonate_user: bool, username: Optional[str]
+    ) -> None:
         """
         Modify the SQL Alchemy URL object with the user to impersonate if applicable.
         :param url: SQLAlchemy URL object
@@ -387,7 +409,7 @@ class HiveEngineSpec(PrestoEngineSpec):
 
     @classmethod
     def get_configuration_for_impersonation(
-        cls, uri: str, impersonate_user: bool, username: str
+        cls, uri: str, impersonate_user: bool, username: Optional[str]
     ) -> Dict[str, str]:
         """
         Return a configuration dictionary that can be merged with other configs
@@ -413,6 +435,20 @@ class HiveEngineSpec(PrestoEngineSpec):
         return configuration
 
     @staticmethod
-    def execute(cursor, query: str, async_: bool = False):
+    def execute(  # type: ignore
+        cursor, query: str, async_: bool = False
+    ):  # pylint: disable=arguments-differ
         kwargs = {"async": async_}
         cursor.execute(query, **kwargs)
+
+    @classmethod
+    @cache.memoize()
+    def get_function_names(cls, database: "Database") -> List[str]:
+        """
+        Get a list of function names that are able to be called on the database.
+        Used for SQL Lab autocomplete.
+
+        :param database: The database to get functions for
+        :return: A list of function names useable in the database
+        """
+        return database.get_df("SHOW FUNCTIONS")["tab_name"].tolist()

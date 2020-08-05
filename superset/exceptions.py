@@ -14,14 +14,24 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# pylint: disable=C,R,W
+from typing import Optional
+
+from flask_babel import gettext as _
 
 
 class SupersetException(Exception):
     status = 500
+    message = ""
 
-    def __init__(self, msg):
-        super(SupersetException, self).__init__(msg)
+    def __init__(self, message: str = "", exception: Optional[Exception] = None):
+        if message:
+            self.message = message
+        self._exception = exception
+        super().__init__(self.message)
+
+    @property
+    def exception(self):
+        return self._exception
 
 
 class SupersetTimeoutException(SupersetException):
@@ -50,6 +60,10 @@ class SupersetTemplateException(SupersetException):
 
 class SpatialException(SupersetException):
     pass
+
+
+class CertificateException(SupersetException):
+    message = _("Invalid certificate")
 
 
 class DatabaseNotFound(SupersetException):

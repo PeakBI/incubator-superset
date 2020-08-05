@@ -14,20 +14,19 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# pylint: disable=C,R,W
 from datetime import datetime
+from typing import Optional
 
-from superset.db_engine_specs.base import LimitMethod
-from superset.db_engine_specs.postgres import PostgresBaseEngineSpec
+from superset.db_engine_specs.base import BaseEngineSpec, LimitMethod
 
 
-class OracleEngineSpec(PostgresBaseEngineSpec):
+class OracleEngineSpec(BaseEngineSpec):
     engine = "oracle"
     limit_method = LimitMethod.WRAP_SQL
     force_column_alias_quotes = True
     max_column_name_length = 30
 
-    _time_grain_functions = {
+    _time_grain_expressions = {
         None: "{col}",
         "PT1S": "CAST({col} as DATE)",
         "PT1M": "TRUNC(CAST({col} as DATE), 'MI')",
@@ -40,7 +39,20 @@ class OracleEngineSpec(PostgresBaseEngineSpec):
     }
 
     @classmethod
-    def convert_dttm(cls, target_type: str, dttm: datetime) -> str:
-        return ("""TO_TIMESTAMP('{}', 'YYYY-MM-DD"T"HH24:MI:SS.ff6')""").format(
-            dttm.isoformat()
-        )
+    def convert_dttm(cls, target_type: str, dttm: datetime) -> Optional[str]:
+        tt = target_type.upper()
+        if tt == "DATE":
+            return f"TO_DATE('{dttm.date().isoformat()}', 'YYYY-MM-DD')"
+        if tt == "DATETIME":
+            return f"""TO_DATE('{dttm.isoformat(timespec="seconds")}', 'YYYY-MM-DD"T"HH24:MI:SS')"""  # pylint: disable=line-too-long
+        if tt == "TIMESTAMP":
+            return f"""TO_TIMESTAMP('{dttm.isoformat(timespec="microseconds")}', 'YYYY-MM-DD"T"HH24:MI:SS.ff6')"""  # pylint: disable=line-too-long
+        return None
+
+    @classmethod
+    def epoch_to_dttm(cls) -> str:
+        return "TO_DATE('1970-01-01','YYYY-MM-DD')+(1/24/60/60)*{col}"
+
+    @classmethod
+    def epoch_ms_to_dttm(cls) -> str:
+        return "TO_DATE('1970-01-01','YYYY-MM-DD')+(1/24/60/60/1000)*{col}"

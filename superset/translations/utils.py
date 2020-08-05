@@ -14,12 +14,12 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# pylint: disable=C,R,W
 import json
 import os
+from typing import Any, Dict
 
 # Global caching for JSON language packs
-ALL_LANGUAGE_PACKS = {"en": {}}
+ALL_LANGUAGE_PACKS: Dict[str, Dict[Any, Any]] = {"en": {}}
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -36,10 +36,10 @@ def get_language_pack(locale):
     if not pack:
         filename = DIR + "/{}/LC_MESSAGES/messages.json".format(locale)
         try:
-            with open(filename) as f:
+            with open(filename, encoding="utf8") as f:
                 pack = json.load(f)
                 ALL_LANGUAGE_PACKS[locale] = pack
-        except Exception:
+        except Exception:  # pylint: disable=broad-except
             # Assuming english, client side falls back on english
             pass
     return pack

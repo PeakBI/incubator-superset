@@ -14,9 +14,9 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# flake8: noqa
 from copy import copy
-from superset.config import *
+
+from superset.config import *  # type: ignore
 
 AUTH_USER_REGISTRATION_ROLE = "alpha"
 SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(DATA_DIR, "unittests.db")
@@ -26,11 +26,11 @@ SUPERSET_WEBSERVER_PORT = 8081
 # Allowing SQLALCHEMY_DATABASE_URI to be defined as an env var for
 # continuous integration
 if "SUPERSET__SQLALCHEMY_DATABASE_URI" in os.environ:
-    SQLALCHEMY_DATABASE_URI = os.environ.get("SUPERSET__SQLALCHEMY_DATABASE_URI")
+    SQLALCHEMY_DATABASE_URI = os.environ["SUPERSET__SQLALCHEMY_DATABASE_URI"]
 
-SQL_SELECT_AS_CTA = True
 SQL_MAX_ROW = 666
-FEATURE_FLAGS = {"foo": "bar"}
+SQLLAB_CTAS_NO_LIMIT = True  # SQL_MAX_ROW will not take affect for the CTA queries
+FEATURE_FLAGS = {"foo": "bar", "KV_STORE": True, "SHARE_QUERIES_VIA_KV_STORE": True}
 
 
 def GET_FEATURE_FLAGS_FUNC(ff):
@@ -40,7 +40,6 @@ def GET_FEATURE_FLAGS_FUNC(ff):
 
 
 TESTING = True
-SECRET_KEY = "thisismyscretkey"
 WTF_CSRF_ENABLED = False
 PUBLIC_ROLE_LIKE_GAMMA = True
 AUTH_ROLE_PUBLIC = "Public"
