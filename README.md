@@ -16,7 +16,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-Superset	
+Superset
 =========
 [![Build Status](https://travis-ci.org/apache/incubator-superset.svg?branch=master)](https://travis-ci.org/apache/incubator-superset)
 [![PyPI version](https://badge.fury.io/py/apache-superset.svg)](https://badge.fury.io/py/apache-superset)
@@ -138,7 +138,6 @@ SQL toolkit that is compatible with most databases. A list of
 supported databases can be found
 [here](https://superset.incubator.apache.org/#databases).
 
-<<<<<<< HEAD
 Apache Druid (Incubating)!
 ------
 
@@ -157,11 +156,9 @@ latency (real-time) data ingestion, flexible data exploration,
 and fast data aggregation. Existing Druid deployments have scaled to
 trillions of events and petabytes of data. Druid is best used to
 power analytic dashboards and applications.*
-=======
 
 Installation & Configuration
 ----------------------------
->>>>>>> upstream/0.36
 
 [See in the documentation](https://superset.incubator.apache.org/installation.html)
 

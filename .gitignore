@@ -80,9 +80,6 @@ apache-superset-*.tar.gz*
 
 # Translation binaries
 messages.mo
-<<<<<<< HEAD
 .env
-=======
 
 docker/requirements-local.txt
->>>>>>> upstream/0.36
