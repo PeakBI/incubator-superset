@@ -16,63 +16,70 @@
 # under the License.
 # pylint: disable=C,R,W
 """Utility functions used across Superset"""
-from datetime import date, datetime, time, timedelta
 import decimal
-from email.mime.application import MIMEApplication
-from email.mime.image import MIMEImage
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.utils import formatdate
 import errno
 import functools
+import hashlib
 import json
 import logging
 import os
 import signal
 import smtplib
-from time import struct_time
+import tempfile
 import traceback
-from typing import List, NamedTuple, Optional, Tuple, Union
-from urllib.parse import unquote_plus
 import uuid
 import zlib
+from datetime import date, datetime, time, timedelta
+from email.mime.application import MIMEApplication
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.utils import formatdate
+from enum import Enum
+from time import struct_time
+from typing import Any, Dict, Iterator, List, NamedTuple, Optional, Set, Tuple, Union
+from urllib.parse import unquote_plus
 
 import bleach
-import celery
+import markdown as md
+import numpy as np
+import pandas as pd
+import parsedatetime
+import sqlalchemy as sa
+from cryptography import x509
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.backends.openssl.x509 import _Certificate
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from flask import current_app, flash, Flask, g, Markup, render_template
+from flask_appbuilder import SQLA
 from flask_appbuilder.security.sqla.models import User
-from flask_babel import gettext as __
-from flask_babel import lazy_gettext as _
-from flask_caching import Cache
-import markdown as md
-import numpy
-import pandas as pd
-import parsedatetime
-
-try:
-    from pydruid.utils.having import Having
-except ImportError:
-    pass
-import sqlalchemy as sa
+from flask_babel import gettext as __, lazy_gettext as _
 from sqlalchemy import event, exc, select, Text
 from sqlalchemy.dialects.mysql import MEDIUMTEXT
 from sqlalchemy.sql.type_api import Variant
 from sqlalchemy.types import TEXT, TypeDecorator
 
-from superset.exceptions import SupersetException, SupersetTimeoutException
+from superset.exceptions import (
+    CertificateException,
+    SupersetException,
+    SupersetTimeoutException,
+)
 from superset.utils.dates import datetime_to_epoch, EPOCH
+
+try:
+    from pydruid.utils.having import Having
+except ImportError:
+    pass
 
 
 logging.getLogger("MARKDOWN").setLevel(logging.INFO)
+logger = logging.getLogger(__name__)
 
 DTTM_ALIAS = "__timestamp"
 ADHOC_METRIC_EXPRESSION_TYPES = {"SIMPLE": "SIMPLE", "SQL": "SQL"}
 
 JS_MAX_INTEGER = 9007199254740991  # Largest int Java Script can handle 2^53-1
-
-sources = {"chart": 0, "dashboard": 1, "sql_lab": 2}
 
 try:
     # Having might not have been imported.
@@ -100,12 +107,12 @@ def flasher(msg, severity=None):
         flash(msg, severity)
     except RuntimeError:
         if severity == "danger":
-            logging.error(msg)
+            logger.error(msg)
         else:
-            logging.info(msg)
+            logger.info(msg)
 
 
-class _memoized:  # noqa
+class _memoized:
     """Decorator that caches a function's return value each time it is called
 
     If called later with the same arguments, the cached value is returned, and
@@ -243,37 +250,13 @@ def parse_human_datetime(s):
                 parsed_dttm = parsed_dttm.replace(hour=0, minute=0, second=0)
             dttm = dttm_from_timetuple(parsed_dttm.utctimetuple())
         except Exception as e:
-            logging.exception(e)
+            logger.exception(e)
             raise ValueError("Couldn't parse date string [{}]".format(s))
     return dttm
 
 
 def dttm_from_timetuple(d: struct_time) -> datetime:
     return datetime(d.tm_year, d.tm_mon, d.tm_mday, d.tm_hour, d.tm_min, d.tm_sec)
-
-
-def decode_dashboards(o):
-    """
-    Function to be passed into json.loads obj_hook parameter
-    Recreates the dashboard object from a json representation.
-    """
-    import superset.models.core as models
-    from superset.connectors.sqla.models import SqlaTable, SqlMetric, TableColumn
-
-    if "__Dashboard__" in o:
-        return models.Dashboard(**o["__Dashboard__"])
-    elif "__Slice__" in o:
-        return models.Slice(**o["__Slice__"])
-    elif "__TableColumn__" in o:
-        return TableColumn(**o["__TableColumn__"])
-    elif "__SqlaTable__" in o:
-        return SqlaTable(**o["__SqlaTable__"])
-    elif "__SqlMetric__" in o:
-        return SqlMetric(**o["__SqlMetric__"])
-    elif "__datetime__" in o:
-        return datetime.strptime(o["__datetime__"], "%Y-%m-%dT%H:%M:%S")
-    else:
-        return o
 
 
 class DashboardEncoder(json.JSONEncoder):
@@ -292,7 +275,7 @@ class DashboardEncoder(json.JSONEncoder):
             return json.JSONEncoder(sort_keys=True).default(self, o)
 
 
-def parse_human_timedelta(s: str) -> timedelta:
+def parse_human_timedelta(s: Optional[str]) -> timedelta:
     """
     Returns ``datetime.datetime`` from natural language time deltas
 
@@ -349,13 +332,32 @@ def datetime_f(dttm):
     return "<nobr>{}</nobr>".format(dttm)
 
 
+def format_timedelta(td: timedelta) -> str:
+    """
+    Ensures negative time deltas are easily interpreted by humans
+
+    >>> td = timedelta(0) - timedelta(days=1, hours=5,minutes=6)
+    >>> str(td)
+    '-2 days, 18:54:00'
+    >>> format_timedelta(td)
+    '-1 day, 5:06:00'
+    """
+    if td < timedelta(0):
+        return "-" + str(abs(td))
+    else:
+        # Change this to format positive time deltas the way you want
+        return str(td)
+
+
 def base_json_conv(obj):
     if isinstance(obj, memoryview):
         obj = obj.tobytes()
-    if isinstance(obj, numpy.int64):
+    if isinstance(obj, np.int64):
         return int(obj)
-    elif isinstance(obj, numpy.bool_):
+    elif isinstance(obj, np.bool_):
         return bool(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
     elif isinstance(obj, set):
         return list(obj)
     elif isinstance(obj, decimal.Decimal):
@@ -363,7 +365,7 @@ def base_json_conv(obj):
     elif isinstance(obj, uuid.UUID):
         return str(obj)
     elif isinstance(obj, timedelta):
-        return str(obj)
+        return format_timedelta(obj)
     elif isinstance(obj, bytes):
         try:
             return obj.decode("utf-8")
@@ -419,7 +421,7 @@ def json_dumps_w_dates(payload):
     return json.dumps(payload, default=json_int_dttm_ser)
 
 
-def error_msg_from_exception(e):
+def error_msg_from_exception(e: Exception) -> str:
     """Translate exception into error message
 
     Database have different ways to handle exception. This function attempts
@@ -435,10 +437,10 @@ def error_msg_from_exception(e):
     """
     msg = ""
     if hasattr(e, "message"):
-        if isinstance(e.message, dict):
-            msg = e.message.get("message")
-        elif e.message:
-            msg = e.message
+        if isinstance(e.message, dict):  # type: ignore
+            msg = e.message.get("message")  # type: ignore
+        elif e.message:  # type: ignore
+            msg = e.message  # type: ignore
     return msg or str(e)
 
 
@@ -494,7 +496,9 @@ def readfile(file_path: str) -> Optional[str]:
     return content
 
 
-def generic_find_constraint_name(table, columns, referenced, db):
+def generic_find_constraint_name(
+    table: str, columns: Set[str], referenced: str, db: SQLA
+):
     """Utility to find a constraint name in alembic migrations"""
     t = sa.Table(table, db.metadata, autoload=True, autoload_with=db.engine)
 
@@ -503,7 +507,9 @@ def generic_find_constraint_name(table, columns, referenced, db):
             return fk.name
 
 
-def generic_find_fk_constraint_name(table, columns, referenced, insp):
+def generic_find_fk_constraint_name(
+    table: str, columns: Set[str], referenced: str, insp
+):
     """Utility to find a foreign-key constraint name in alembic migrations"""
     for fk in insp.get_foreign_keys(table):
         if (
@@ -541,11 +547,12 @@ def get_datasource_full_name(database_name, datasource_name, schema=None):
     return "[{}].[{}].[{}]".format(database_name, schema, datasource_name)
 
 
-def validate_json(obj):
+def validate_json(obj: Union[bytes, bytearray, str]) -> None:
     if obj:
         try:
             json.loads(obj)
-        except Exception:
+        except Exception as e:
+            logger.error(f"JSON is not valid {e}")
             raise SupersetException("JSON is not valid")
 
 
@@ -569,7 +576,7 @@ class timeout:
         self.error_message = error_message
 
     def handle_timeout(self, signum, frame):
-        logging.error("Process timed out")
+        logger.error("Process timed out")
         raise SupersetTimeoutException(self.error_message)
 
     def __enter__(self):
@@ -577,15 +584,15 @@ class timeout:
             signal.signal(signal.SIGALRM, self.handle_timeout)
             signal.alarm(self.seconds)
         except ValueError as e:
-            logging.warning("timeout can't be used in the current context")
-            logging.exception(e)
+            logger.warning("timeout can't be used in the current context")
+            logger.exception(e)
 
     def __exit__(self, type, value, traceback):
         try:
             signal.alarm(0)
         except ValueError as e:
-            logging.warning("timeout can't be used in the current context")
-            logging.exception(e)
+            logger.warning("timeout can't be used in the current context")
+            logger.exception(e)
 
 
 def pessimistic_connection_handling(some_engine):
@@ -628,20 +635,20 @@ def pessimistic_connection_handling(some_engine):
 class QueryStatus:
     """Enum-type class for query statuses"""
 
-    STOPPED = "stopped"
-    FAILED = "failed"
-    PENDING = "pending"
-    RUNNING = "running"
-    SCHEDULED = "scheduled"
-    SUCCESS = "success"
-    TIMED_OUT = "timed_out"
+    STOPPED: str = "stopped"
+    FAILED: str = "failed"
+    PENDING: str = "pending"
+    RUNNING: str = "running"
+    SCHEDULED: str = "scheduled"
+    SUCCESS: str = "success"
+    TIMED_OUT: str = "timed_out"
 
 
 def notify_user_about_perm_udate(granter, user, role, datasource, tpl_name, config):
     msg = render_template(
         tpl_name, granter=granter, user=user, role=role, datasource=datasource
     )
-    logging.info(msg)
+    logger.info(msg)
     subject = __(
         "[Superset] Access to the datasource %(name)s was granted",
         name=datasource.full_name,
@@ -652,7 +659,7 @@ def notify_user_about_perm_udate(granter, user, role, datasource, tpl_name, conf
         msg,
         config,
         bcc=granter.email,
-        dryrun=not config.get("EMAIL_NOTIFICATIONS"),
+        dryrun=not config["EMAIL_NOTIFICATIONS"],
     )
 
 
@@ -674,7 +681,7 @@ def send_email_smtp(
     send_email_smtp(
         'test@example.com', 'foo', '<b>Foo</b> bar',['/dev/null'], dryrun=True)
     """
-    smtp_mail_from = config.get("SMTP_MAIL_FROM")
+    smtp_mail_from = config["SMTP_MAIL_FROM"]
     to = get_email_address_list(to)
 
     msg = MIMEMultipart(mime_subtype)
@@ -730,12 +737,12 @@ def send_email_smtp(
 
 
 def send_MIME_email(e_from, e_to, mime_msg, config, dryrun=False):
-    SMTP_HOST = config.get("SMTP_HOST")
-    SMTP_PORT = config.get("SMTP_PORT")
-    SMTP_USER = config.get("SMTP_USER")
-    SMTP_PASSWORD = config.get("SMTP_PASSWORD")
-    SMTP_STARTTLS = config.get("SMTP_STARTTLS")
-    SMTP_SSL = config.get("SMTP_SSL")
+    SMTP_HOST = config["SMTP_HOST"]
+    SMTP_PORT = config["SMTP_PORT"]
+    SMTP_USER = config["SMTP_USER"]
+    SMTP_PASSWORD = config["SMTP_PASSWORD"]
+    SMTP_STARTTLS = config["SMTP_STARTTLS"]
+    SMTP_SSL = config["SMTP_SSL"]
 
     if not dryrun:
         s = (
@@ -747,12 +754,12 @@ def send_MIME_email(e_from, e_to, mime_msg, config, dryrun=False):
             s.starttls()
         if SMTP_USER and SMTP_PASSWORD:
             s.login(SMTP_USER, SMTP_PASSWORD)
-        logging.info("Sent an email to " + str(e_to))
+        logger.info("Sent an email to " + str(e_to))
         s.sendmail(e_from, e_to, mime_msg.as_string())
         s.quit()
     else:
-        logging.info("Dryrun enabled, email notification content is below:")
-        logging.info(mime_msg.as_string())
+        logger.info("Dryrun enabled, email notification content is below:")
+        logger.info(mime_msg.as_string())
 
 
 def get_email_address_list(address_string: str) -> List[str]:
@@ -772,20 +779,6 @@ def get_email_address_list(address_string: str) -> List[str]:
 def choicify(values):
     """Takes an iterable and makes an iterable of tuples with it"""
     return [(v, v) for v in values]
-
-
-def setup_cache(app: Flask, cache_config) -> Optional[Cache]:
-    """Setup the flask-cache on a flask app"""
-    if cache_config:
-        if isinstance(cache_config, dict):
-            if cache_config.get("CACHE_TYPE") != "null":
-                return Cache(app, config=cache_config)
-        else:
-            # Accepts a custom cache initialization function,
-            # returning an object compatible with Flask-Caching API
-            return cache_config(app)
-
-    return None
 
 
 def zlib_compress(data):
@@ -815,24 +808,12 @@ def zlib_decompress(blob: bytes, decode: Optional[bool] = True) -> Union[bytes, 
     return decompressed.decode("utf-8") if decode else decompressed
 
 
-_celery_app = None
-
-
-def get_celery_app(config):
-    global _celery_app
-    if _celery_app:
-        return _celery_app
-    _celery_app = celery.Celery()
-    _celery_app.config_from_object(config.get("CELERY_CONFIG"))
-    _celery_app.set_default()
-    return _celery_app
-
-
 def to_adhoc(filt, expressionType="SIMPLE", clause="where"):
     result = {
         "clause": clause.upper(),
         "expressionType": expressionType,
         "filterOptionName": str(uuid.uuid4()),
+        "isExtra": True if filt.get("isExtra") is True else False,
     }
 
     if expressionType == "SIMPLE":
@@ -888,6 +869,7 @@ def merge_extra_filters(form_data: dict):
                 existing_filters[get_filter_key(existing)] = existing["comparator"]
 
         for filtr in form_data["extra_filters"]:
+            filtr["isExtra"] = True
             # Pull out time filters/options and merge into form data
             if date_options.get(filtr["col"]):
                 if filtr.get("val"):
@@ -916,8 +898,16 @@ def merge_extra_filters(form_data: dict):
         del form_data["extra_filters"]
 
 
-def merge_request_params(form_data: dict, params: dict):
-    url_params = {}
+def merge_request_params(form_data: Dict[str, Any], params: Dict[str, Any]) -> None:
+    """
+    Merge request parameters to the key `url_params` in form_data. Only updates
+    or appends parameters to `form_data` that are defined in `params; pre-existing
+    parameters not defined in params are left unchanged.
+
+    :param form_data: object to be updated
+    :param params: request parameters received via query string
+    """
+    url_params = form_data.get("url_params", {})
     for key, value in params.items():
         if key in ("form_data", "r"):
             continue
@@ -943,8 +933,9 @@ def get_or_create_db(database_name, sqlalchemy_uri, *args, **kwargs):
     database = (
         db.session.query(models.Database).filter_by(database_name=database_name).first()
     )
+
     if not database:
-        logging.info(f"Creating database reference for {database_name}")
+        logger.info(f"Creating database reference for {database_name}")
         database = models.Database(database_name=database_name, *args, **kwargs)
         db.session.add(database)
 
@@ -961,7 +952,7 @@ def get_example_database():
 
 
 def is_adhoc_metric(metric) -> bool:
-    return (
+    return bool(
         isinstance(metric, dict)
         and (
             (
@@ -1031,23 +1022,23 @@ def get_since_until(
     relative_end = parse_human_datetime(relative_end if relative_end else "today")
     common_time_frames = {
         "Last day": (
-            relative_start - relativedelta(days=1),  # noqa: T400
+            relative_start - relativedelta(days=1),  # type: ignore
             relative_end,
         ),
         "Last week": (
-            relative_start - relativedelta(weeks=1),  # noqa: T400
+            relative_start - relativedelta(weeks=1),  # type: ignore
             relative_end,
         ),
         "Last month": (
-            relative_start - relativedelta(months=1),  # noqa: T400
+            relative_start - relativedelta(months=1),  # type: ignore
             relative_end,
         ),
         "Last quarter": (
-            relative_start - relativedelta(months=3),  # noqa: T400
+            relative_start - relativedelta(months=3),  # type: ignore
             relative_end,
         ),
         "Last year": (
-            relative_start - relativedelta(years=1),  # noqa: T400
+            relative_start - relativedelta(years=1),  # type: ignore
             relative_end,
         ),
     }
@@ -1066,13 +1057,15 @@ def get_since_until(
         else:
             rel, num, grain = time_range.split()
             if rel == "Last":
-                since = relative_start - relativedelta(  # noqa: T400
+                since = relative_start - relativedelta(  # type: ignore
                     **{grain: int(num)}
                 )
                 until = relative_end
             else:  # rel == 'Next'
                 since = relative_start
-                until = relative_end + relativedelta(**{grain: int(num)})  # noqa: T400
+                until = relative_end + relativedelta(  # type: ignore
+                    **{grain: int(num)}
+                )
     else:
         since = since or ""
         if since:
@@ -1082,13 +1075,13 @@ def get_since_until(
 
     if time_shift:
         time_delta = parse_past_timedelta(time_shift)
-        since = since if since is None else (since - time_delta)  # noqa: T400
-        until = until if until is None else (until - time_delta)  # noqa: T400
+        since = since if since is None else (since - time_delta)  # type: ignore
+        until = until if until is None else (until - time_delta)  # type: ignore
 
     if since and until and since > until:
         raise ValueError(_("From date cannot be larger than to date"))
 
-    return since, until  # noqa: T400
+    return since, until  # type: ignore
 
 
 def add_ago_to_since(since: str) -> str:
@@ -1178,6 +1171,46 @@ def get_username() -> Optional[str]:
         return None
 
 
+def parse_ssl_cert(certificate: str) -> _Certificate:
+    """
+    Parses the contents of a certificate and returns a valid certificate object
+    if valid.
+
+    :param certificate: Contents of certificate file
+    :return: Valid certificate instance
+    :raises CertificateException: If certificate is not valid/unparseable
+    """
+    try:
+        return x509.load_pem_x509_certificate(
+            certificate.encode("utf-8"), default_backend()
+        )
+    except ValueError as e:
+        raise CertificateException("Invalid certificate")
+
+
+def create_ssl_cert_file(certificate: str) -> str:
+    """
+    This creates a certificate file that can be used to validate HTTPS
+    sessions. A certificate is only written to disk once; on subsequent calls,
+    only the path of the existing certificate is returned.
+
+    :param certificate: The contents of the certificate
+    :return: The path to the certificate file
+    :raises CertificateException: If certificate is not valid/unparseable
+    """
+    filename = f"{hashlib.md5(certificate.encode('utf-8')).hexdigest()}.crt"
+    cert_dir = current_app.config["SSL_CERT_PATH"]
+    path = cert_dir if cert_dir else tempfile.gettempdir()
+    path = os.path.join(path, filename)
+    if not os.path.exists(path):
+        # Validate certificate prior to persisting to temporary directory
+        parse_ssl_cert(certificate)
+        cert_file = open(path, "w")
+        cert_file.write(certificate)
+        cert_file.close()
+    return path
+
+
 def MediumText() -> Variant:
     return Text().with_variant(MEDIUMTEXT(), "mysql")
 
@@ -1192,5 +1225,94 @@ class DatasourceName(NamedTuple):
 
 
 def get_stacktrace():
-    if current_app.config.get("SHOW_STACKTRACE"):
+    if current_app.config["SHOW_STACKTRACE"]:
         return traceback.format_exc()
+
+
+def split(
+    s: str, delimiter: str = " ", quote: str = '"', escaped_quote: str = r"\""
+) -> Iterator[str]:
+    """
+    A split function that is aware of quotes and parentheses.
+
+    :param s: string to split
+    :param delimiter: string defining where to split, usually a comma or space
+    :param quote: string, either a single or a double quote
+    :param escaped_quote: string representing an escaped quote
+    :return: list of strings
+    """
+    parens = 0
+    quotes = False
+    i = 0
+    for j, c in enumerate(s):
+        complete = parens == 0 and not quotes
+        if complete and c == delimiter:
+            yield s[i:j]
+            i = j + len(delimiter)
+        elif c == "(":
+            parens += 1
+        elif c == ")":
+            parens -= 1
+        elif c == quote:
+            if quotes and s[j - len(escaped_quote) + 1 : j + 1] != escaped_quote:
+                quotes = False
+            elif not quotes:
+                quotes = True
+    yield s[i:]
+
+
+def get_iterable(x: Any) -> List:
+    """
+    Get an iterable (list) representation of the object.
+
+    :param x: The object
+    :returns: An iterable representation
+    """
+
+    return x if isinstance(x, list) else [x]
+
+
+class TimeRangeEndpoint(str, Enum):
+    """
+    The time range endpoint types which represent inclusive, exclusive, or unknown.
+
+    Unknown represents endpoints which are ill-defined as though the interval may be
+    [start, end] the filter may behave like (start, end] due to mixed data types and
+    lexicographical ordering.
+
+    :see: https://github.com/apache/incubator-superset/issues/6360
+    """
+
+    EXCLUSIVE = "exclusive"
+    INCLUSIVE = "inclusive"
+    UNKNOWN = "unknown"
+
+
+class ReservedUrlParameters(str, Enum):
+    """
+    Reserved URL parameters that are used internally by Superset. These will not be
+    passed to chart queries, as they control the behavior of the UI.
+    """
+
+    STANDALONE = "standalone"
+    EDIT_MODE = "edit"
+
+
+class QuerySource(Enum):
+    """
+    The source of a SQL query.
+    """
+
+    CHART = 0
+    DASHBOARD = 1
+    SQL_LAB = 2
+
+
+class DbColumnType(Enum):
+    """
+    Generic database column type
+    """
+
+    NUMERIC = 0
+    STRING = 1
+    TEMPORAL = 2

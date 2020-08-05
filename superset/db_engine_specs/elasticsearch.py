@@ -14,21 +14,20 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# pylint: disable=C,R,W
 from datetime import datetime
-from typing import Dict
+from typing import Dict, Optional
 
 from superset.db_engine_specs.base import BaseEngineSpec
 
 
-class ElasticSearchEngineSpec(BaseEngineSpec):
+class ElasticSearchEngineSpec(BaseEngineSpec):  # pylint: disable=abstract-method
     engine = "elasticsearch"
     time_groupby_inline = True
     time_secondary_columns = True
     allows_joins = False
     allows_subqueries = True
 
-    _time_grain_functions = {
+    _time_grain_expressions = {
         None: "{col}",
         "PT1S": "HISTOGRAM({col}, INTERVAL 1 SECOND)",
         "PT1M": "HISTOGRAM({col}, INTERVAL 1 MINUTE)",
@@ -41,7 +40,7 @@ class ElasticSearchEngineSpec(BaseEngineSpec):
     type_code_map: Dict[int, str] = {}  # loaded from get_datatype only if needed
 
     @classmethod
-    def convert_dttm(cls, target_type: str, dttm: datetime) -> str:
-        if target_type.upper() in ("DATETIME", "DATE"):
-            return f"'{dttm.isoformat()}'"
-        return f"'{dttm.strftime('%Y-%m-%d %H:%M:%S')}'"
+    def convert_dttm(cls, target_type: str, dttm: datetime) -> Optional[str]:
+        if target_type.upper() == "DATETIME":
+            return f"""CAST('{dttm.isoformat(timespec="seconds")}' AS DATETIME)"""
+        return None

@@ -1,5 +1,12 @@
-version: '3'
+version: '3.7'
 services:
+  redis:
+    image: redis:3.2
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis:/data
   superset:
     container_name: ais-service-superset
     build:

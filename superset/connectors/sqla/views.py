@@ -17,6 +17,7 @@
 # pylint: disable=C,R,W
 """Views used by the SqlAlchemy connector"""
 import logging
+import re
 
 from flask import flash, Markup, redirect
 from flask_appbuilder import CompactCRUDMixin, expose
@@ -24,12 +25,13 @@ from flask_appbuilder.actions import action
 from flask_appbuilder.fieldwidgets import Select2Widget
 from flask_appbuilder.models.sqla.interface import SQLAInterface
 from flask_appbuilder.security.decorators import has_access
-from flask_babel import gettext as __
-from flask_babel import lazy_gettext as _
+from flask_babel import gettext as __, lazy_gettext as _
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
+from wtforms.validators import Regexp
 
-from superset import appbuilder, db, security_manager
+from superset import app, appbuilder, db, security_manager
 from superset.connectors.base.views import DatasourceModelView
+from superset.constants import RouteMethod
 from superset.utils import core as utils
 from superset.views.base import (
     DatasourceFilter,
@@ -39,13 +41,16 @@ from superset.views.base import (
     SupersetModelView,
     YamlExportMixin,
 )
+
 from . import models
 
 logger = logging.getLogger(__name__)
 
 
-class TableColumnInlineView(CompactCRUDMixin, SupersetModelView):  # noqa
+class TableColumnInlineView(CompactCRUDMixin, SupersetModelView):
     datamodel = SQLAInterface(models.TableColumn)
+    # TODO TODO, review need for this on related_views
+    include_route_methods = RouteMethod.RELATED_VIEW_SET | RouteMethod.API_SET
 
     list_title = _("Columns")
     show_title = _("Show Column")
@@ -99,12 +104,20 @@ class TableColumnInlineView(CompactCRUDMixin, SupersetModelView):  # noqa
         ),
         "python_date_format": utils.markdown(
             Markup(
-                "The pattern of timestamp format, use "
+                "The pattern of timestamp format. For strings use "
                 '<a href="https://docs.python.org/2/library/'
                 'datetime.html#strftime-strptime-behavior">'
-                "python datetime string pattern</a> "
-                "expression. If time is stored in epoch "
-                "format, put `epoch_s` or `epoch_ms`."
+                "python datetime string pattern</a> expression which needs to "
+                'adhere to the <a href="https://en.wikipedia.org/wiki/ISO_8601">'
+                "ISO 8601</a> standard to ensure that the lexicographical ordering "
+                "coincides with the chronological ordering. If the timestamp "
+                "format does not adhere to the ISO 8601 standard you will need to "
+                "define an expression and type for transforming the string into a "
+                "date or timestamp. Note currently time zones are not supported. "
+                "If time is stored in epoch format, put `epoch_s` or `epoch_ms`."
+                "If no pattern is specified we fall back to using the optional "
+                "defaults on a per database/column name level via the extra parameter."
+                ""
             ),
             True,
         ),
@@ -121,6 +134,24 @@ class TableColumnInlineView(CompactCRUDMixin, SupersetModelView):  # noqa
         "python_date_format": _("Datetime Format"),
         "type": _("Type"),
     }
+    validators_columns = {
+        "python_date_format": [
+            # Restrict viable values to epoch_s, epoch_ms, or a strftime format
+            # which adhere's to the ISO 8601 format (without time zone).
+            Regexp(
+                re.compile(
+                    r"""
+                    ^(
+                        epoch_s|epoch_ms|
+                        (?P<date>%Y(-%m(-%d)?)?)([\sT](?P<time>%H(:%M(:%S(\.%f)?)?)?))?
+                    )$
+                    """,
+                    re.VERBOSE,
+                ),
+                message=_("Invalid date/timestamp format"),
+            )
+        ]
+    }
 
     add_form_extra_fields = {
         "table": QuerySelectField(
@@ -134,11 +165,9 @@ class TableColumnInlineView(CompactCRUDMixin, SupersetModelView):  # noqa
     edit_form_extra_fields = add_form_extra_fields
 
 
-appbuilder.add_view_no_menu(TableColumnInlineView)
-
-
-class SqlMetricInlineView(CompactCRUDMixin, SupersetModelView):  # noqa
+class SqlMetricInlineView(CompactCRUDMixin, SupersetModelView):
     datamodel = SQLAInterface(models.SqlMetric)
+    include_route_methods = RouteMethod.RELATED_VIEW_SET | RouteMethod.API_SET
 
     list_title = _("Metrics")
     show_title = _("Show Metric")
@@ -196,11 +225,41 @@ class SqlMetricInlineView(CompactCRUDMixin, SupersetModelView):  # noqa
     edit_form_extra_fields = add_form_extra_fields
 
 
-appbuilder.add_view_no_menu(SqlMetricInlineView)
+class RowLevelSecurityFiltersModelView(SupersetModelView, DeleteMixin):
+    datamodel = SQLAInterface(models.RowLevelSecurityFilter)
+
+    list_title = _("Row level security filter")
+    show_title = _("Show Row level security filter")
+    add_title = _("Add Row level security filter")
+    edit_title = _("Edit Row level security filter")
+
+    list_columns = ["table.table_name", "roles", "clause", "creator", "modified"]
+    order_columns = ["table.table_name", "clause", "modified"]
+    edit_columns = ["table", "roles", "clause"]
+    show_columns = edit_columns
+    search_columns = ("table", "roles", "clause")
+    add_columns = edit_columns
+    base_order = ("changed_on", "desc")
+    description_columns = {
+        "table": _("This is the table this filter will be applied to."),
+        "roles": _("These are the roles this filter will be applied to."),
+        "clause": _(
+            "This is the condition that will be added to the WHERE clause. "
+            "For example, to only return rows for a particular client, you might put in: client_id = 9"
+        ),
+    }
+    label_columns = {
+        "table": _("Table"),
+        "roles": _("Roles"),
+        "clause": _("Clause"),
+        "creator": _("Creator"),
+        "modified": _("Modified"),
+    }
 
 
-class TableModelView(DatasourceModelView, DeleteMixin, YamlExportMixin):  # noqa
+class TableModelView(DatasourceModelView, DeleteMixin, YamlExportMixin):
     datamodel = SQLAInterface(models.SqlaTable)
+    include_route_methods = RouteMethod.CRUD_SET
 
     list_title = _("Tables")
     show_title = _("Show Table")
@@ -228,7 +287,11 @@ class TableModelView(DatasourceModelView, DeleteMixin, YamlExportMixin):  # noqa
     ]
     base_filters = [["id", DatasourceFilter, lambda: []]]
     show_columns = edit_columns + ["perm", "slices"]
-    related_views = [TableColumnInlineView, SqlMetricInlineView]
+    related_views = [
+        TableColumnInlineView,
+        SqlMetricInlineView,
+        RowLevelSecurityFiltersModelView,
+    ]
     base_order = ("changed_on", "desc")
     search_columns = ("database", "schema", "table_name", "owners", "is_sqllab_view")
     description_columns = {
@@ -303,7 +366,6 @@ class TableModelView(DatasourceModelView, DeleteMixin, YamlExportMixin):  # noqa
         "template_params": _("Template parameters"),
         "modified": _("Modified"),
     }
-
     edit_form_extra_fields = {
         "database": QuerySelectField(
             "Database",
@@ -400,16 +462,10 @@ class TableModelView(DatasourceModelView, DeleteMixin, YamlExportMixin):  # noqa
 
         return redirect("/tablemodelview/list/")
 
+    @expose("/list/")
+    @has_access
+    def list(self):
+        if not app.config["ENABLE_REACT_CRUD_VIEWS"]:
+            return super().list()
 
-appbuilder.add_view_no_menu(TableModelView)
-appbuilder.add_link(
-    "Tables",
-    label=__("Tables"),
-    href="/tablemodelview/list/?_flt_1_is_sqllab_view=y",
-    icon="fa-table",
-    category="Sources",
-    category_label=__("Sources"),
-    category_icon="fa-table",
-)
-
-appbuilder.add_separator("Sources")
+        return super().render_app_template()

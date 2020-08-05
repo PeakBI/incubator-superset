@@ -18,6 +18,7 @@
 
 import json
 import logging
+from typing import Any, Dict, Optional
 from urllib import request
 from urllib.error import URLError
 
@@ -25,11 +26,13 @@ from celery.utils.log import get_task_logger
 from sqlalchemy import and_, func
 
 from superset import app, db
-from superset.models.core import Dashboard, Log, Slice
+from superset.extensions import celery_app
+from superset.models.core import Log
+from superset.models.dashboard import Dashboard
+from superset.models.slice import Slice
 from superset.models.tags import Tag, TaggedObject
-from superset.tasks.celery_app import app as celery_app
 from superset.utils.core import parse_human_datetime
-
+from superset.views.utils import build_extra_filters
 
 logger = get_task_logger(__name__)
 logger.setLevel(logging.INFO)
@@ -49,37 +52,35 @@ def get_form_data(chart_id, dashboard=None):
         return form_data
 
     json_metadata = json.loads(dashboard.json_metadata)
-
-    # do not apply filters if chart is immune to them
-    if chart_id in json_metadata.get("filter_immune_slices", []):
-        return form_data
-
     default_filters = json.loads(json_metadata.get("default_filters", "null"))
     if not default_filters:
         return form_data
 
-    # are some of the fields in the chart immune to filters?
-    filter_immune_slice_fields = json_metadata.get("filter_immune_slice_fields", {})
-    immune_fields = filter_immune_slice_fields.get(str(chart_id), [])
-
-    extra_filters = []
-    for filters in default_filters.values():
-        for col, val in filters.items():
-            if col not in immune_fields:
-                extra_filters.append({"col": col, "op": "in", "val": val})
+    filter_scopes = json_metadata.get("filter_scopes", {})
+    layout = json.loads(dashboard.position_json or "{}")
+    if (
+        isinstance(layout, dict)
+        and isinstance(filter_scopes, dict)
+        and isinstance(default_filters, dict)
+    ):
+        extra_filters = build_extra_filters(
+            layout, filter_scopes, default_filters, chart_id
+        )
     if extra_filters:
         form_data["extra_filters"] = extra_filters
 
     return form_data
 
 
-def get_url(chart):
+def get_url(chart, extra_filters: Optional[Dict[str, Any]] = None):
     """Return external URL for warming up a given chart/table cache."""
     with app.test_request_context():
-        baseurl = "{SUPERSET_WEBSERVER_ADDRESS}:{SUPERSET_WEBSERVER_PORT}".format(
-            **app.config
+        baseurl = (
+            "{SUPERSET_WEBSERVER_PROTOCOL}://"
+            "{SUPERSET_WEBSERVER_ADDRESS}:"
+            "{SUPERSET_WEBSERVER_PORT}".format(**app.config)
         )
-        return f"{baseurl}{chart.url}"
+        return f"{baseurl}{chart.get_explore_url(overrides=extra_filters)}"
 
 
 class Strategy:
@@ -178,7 +179,8 @@ class TopNDashboardsStrategy(Strategy):
         dashboards = session.query(Dashboard).filter(Dashboard.id.in_(dash_ids)).all()
         for dashboard in dashboards:
             for chart in dashboard.slices:
-                urls.append(get_url(chart))
+                form_data_with_filters = get_form_data(chart.id, dashboard)
+                urls.append(get_url(chart, form_data_with_filters))
 
         return urls
 

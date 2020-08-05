@@ -16,12 +16,12 @@
 # under the License.
 # pylint: disable=R
 
+import simplejson as json
 import logging
 from os import environ
 from flask import request, g
 from flask_appbuilder import expose
 from flask_appbuilder.security.decorators import has_access_api
-import simplejson as json
 
 from superset import appbuilder, db, event_logger, security_manager
 from superset.custom_auth import use_ip_auth
@@ -31,6 +31,7 @@ import superset.models.core as models
 from superset.utils import core as utils, s3_utils, dashboard_import_export
 from superset import app
 from .base import api, BaseSupersetView, handle_api_exception, json_error_response, json_success
+
 
 
 class Api(BaseSupersetView):
@@ -47,7 +48,7 @@ class Api(BaseSupersetView):
         params: query_context: json_blob
         """
         query_context = QueryContext(**json.loads(request.form.get("query_context")))
-        security_manager.assert_datasource_permission(query_context.datasource)
+        security_manager.assert_query_context_permission(query_context)
         payload_json = query_context.get_payload()
         return json.dumps(
             payload_json, default=utils.json_int_dttm_ser, ignore_nan=True
@@ -82,7 +83,6 @@ class Api(BaseSupersetView):
     def import_dashboard(self):
         """
          It checks if there is any dashboard of that slug name in the common bucket of s3. If yes, it pulls that file.
-
         """
         slug = request.get_json()["slug"]
         isPublished = request.get_json()["isPublished"]
@@ -102,7 +102,7 @@ class Api(BaseSupersetView):
                       dash = (db.session.query(Dashboard).filter(Dashboard.id == dashboard_id).one_or_none())
                       dash.published = True
                       db.session.commit()
-                      
+
                 return json_success(json.dumps({"dashboard_imported": True}))
             except Exception as e:
                 logging.error("Error when importing dashboard from file %s", file_name)

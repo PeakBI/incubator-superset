@@ -14,9 +14,9 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
+import logging
 from datetime import datetime, timedelta
 from functools import wraps
-import logging
 
 from contextlib2 import contextmanager
 from flask import request
@@ -24,11 +24,11 @@ from flask import request
 from superset import app, cache
 from superset.utils.dates import now_as_float
 
-
 # If a user sets `max_age` to 0, for long the browser should cache the
 # resource? Flask-Caching will cache forever, but for the HTTP header we need
 # to specify a "far future" date.
 FAR_FUTURE = 365 * 24 * 60 * 60  # 1 year in seconds
+logger = logging.getLogger(__name__)
 
 
 @contextmanager
@@ -82,7 +82,7 @@ def etag_cache(max_age, check_perms=bool):
                 except Exception:  # pylint: disable=broad-except
                     if app.debug:
                         raise
-                    logging.exception("Exception possibly due to cache backend.")
+                    logger.exception("Exception possibly due to cache backend.")
 
             # if no response was cached, compute it using the wrapped function
             if response is None:
@@ -104,7 +104,7 @@ def etag_cache(max_age, check_perms=bool):
                     except Exception:  # pylint: disable=broad-except
                         if app.debug:
                             raise
-                    logging.exception("Exception possibly due to cache backend.")
+                    logger.exception("Exception possibly due to cache backend.")
 
             return response.make_conditional(request)
 
