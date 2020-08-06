@@ -84,7 +84,6 @@ class SupersetSecurityManager(SecurityManager):
 
     GAMMA_MINUS_PEAK_USER_VIEW_MENUS = {
         "AccessRequestsModelView",
-        "Manage",
         "Queries",
         "Refresh Druid Metadata",
         "ResetPasswordView",
