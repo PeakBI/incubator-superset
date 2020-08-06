@@ -957,7 +957,6 @@ def get_example_database():
     from superset import conf
 
     db_uri = conf.get("SQLALCHEMY_EXAMPLES_URI") or conf.get("SQLALCHEMY_DATABASE_URI")
-    logging.info(f"DB URI {db_uri}")
     return get_or_create_db("solutions", db_uri)
 
 

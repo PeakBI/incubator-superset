@@ -90,7 +90,14 @@ class SupersetSecurityManager(SecurityManager):
         "RoleModelView",
         "Security",
         "Sources",
-    }| USER_MODEL_VIEWS
+    } | USER_MODEL_VIEWS
+
+    PEAK_USER_VIEW_MENUS = {
+        "Dashboards",
+        "Charts",
+        "Manage",
+        "SQL Lab",
+    }
 
     GAMMA_READ_ONLY_MODEL_VIEWS = {
         "SqlMetricInlineView",
@@ -708,7 +715,10 @@ class SupersetSecurityManager(SecurityManager):
         :param pvm: The FAB permission/view
         :returns: Whether the FAB object is accessible to gamma users
         """
-        return pvm.permission.name in self.PEAK_USER_ACCESSIBLE_PERMS
+        return (
+            pvm.permission.name in self.PEAK_USER_ACCESSIBLE_PERMS
+            or pvm.view_menu.name in self.PEAK_USER_VIEW_MENUS
+        )
 
     def _is_admin_pvm(self, pvm: PermissionModelView) -> bool:
         """
