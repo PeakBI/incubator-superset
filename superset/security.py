@@ -86,18 +86,15 @@ class SupersetSecurityManager(SecurityManager):
         "AccessRequestsModelView",
         "Queries",
         "Refresh Druid Metadata",
+        "Tables",
+        "Upload a CSV",
+        "Druid Clusters",
+        "Druid Datasources",
+        "Scan New Datasources",
         "ResetPasswordView",
         "RoleModelView",
         "Security",
-        "Sources",
     } | USER_MODEL_VIEWS
-
-    PEAK_USER_VIEW_MENUS = {
-        "Dashboards",
-        "Charts",
-        "Manage",
-        "SQL Lab",
-    }
 
     GAMMA_READ_ONLY_MODEL_VIEWS = {
         "SqlMetricInlineView",
@@ -156,7 +153,12 @@ class SupersetSecurityManager(SecurityManager):
 
     GAMMA_ACCESSIBLE_PERMS = {"all_datasource_access"}
 
-    PEAK_USER_ACCESSIBLE_PERMS = {"all_database_access"}
+    PEAK_USER_ACCESSIBLE_PERMS = {
+      "all_database_access",
+      "all_datasource_access",
+      "can_add",
+      "can_edit",
+     }
 
     def get_schema_perm(
         self, database: Union["Database", str], schema: Optional[str] = None
@@ -717,7 +719,6 @@ class SupersetSecurityManager(SecurityManager):
         """
         return (
             pvm.permission.name in self.PEAK_USER_ACCESSIBLE_PERMS
-            or pvm.view_menu.name in self.PEAK_USER_VIEW_MENUS
         )
 
     def _is_admin_pvm(self, pvm: PermissionModelView) -> bool:
