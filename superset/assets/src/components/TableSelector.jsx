@@ -43,6 +43,7 @@ const propTypes = {
   onChange: PropTypes.func,
   clearable: PropTypes.bool,
   handleError: PropTypes.func.isRequired,
+  user: PropTypes.object,
 };
 
 const defaultProps = {
@@ -56,6 +57,7 @@ const defaultProps = {
   tableNameSticky: true,
   sqlLabMode: true,
   clearable: true,
+  user: null,
 };
 
 export default class TableSelector extends React.PureComponent {
@@ -164,7 +166,14 @@ export default class TableSelector extends React.PureComponent {
 
       return SupersetClient.get({ endpoint })
         .then(({ json }) => {
-          const schemaOptions = json.schemas.map(s => ({ value: s, label: s, title: s }));
+          const role = (this.props.user || {}).role_name;
+          const filterschema = [
+           'aws_commons', 'aws_s3', 'common', 'customerai',
+           'demandai', 'information_schema', 'public'];
+
+          const schemaOptions = json.schemas
+          .filter(s => ((role !== 'Admin' && !filterschema.includes(s)) || true))
+          .map(s => ({ value: s, label: s, title: s }));
           this.setState({ schemaOptions, schemaLoading: false });
           this.props.onSchemasLoad(schemaOptions);
         })

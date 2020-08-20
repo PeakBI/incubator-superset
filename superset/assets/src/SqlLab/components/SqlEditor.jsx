@@ -72,6 +72,7 @@ const propTypes = {
   maxRow: PropTypes.number.isRequired,
   saveQueryWarning: PropTypes.string,
   scheduleQueryWarning: PropTypes.string,
+  user: PropTypes.object,
 };
 
 const defaultProps = {
@@ -79,6 +80,7 @@ const defaultProps = {
   latestQuery: null,
   hideLeftBar: false,
   scheduleQueryWarning: null,
+  user: null,
 };
 
 class SqlEditor extends React.PureComponent {
@@ -463,6 +465,7 @@ class SqlEditor extends React.PureComponent {
         >
           <div className="schemaPane">
             <SqlEditorLeftBar
+              user={this.props.user}
               database={this.props.database}
               queryEditor={this.props.queryEditor}
               tables={this.props.tables}

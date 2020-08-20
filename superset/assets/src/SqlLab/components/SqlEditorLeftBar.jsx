@@ -30,6 +30,7 @@ const propTypes = {
   actions: PropTypes.object,
   database: PropTypes.object,
   offline: PropTypes.bool,
+  user: PropTypes.object,
 };
 
 const defaultProps = {
@@ -37,6 +38,7 @@ const defaultProps = {
   height: 500,
   offline: false,
   tables: [],
+  user: null,
 };
 
 export default class SqlEditorLeftBar extends React.PureComponent {
@@ -104,6 +106,7 @@ export default class SqlEditorLeftBar extends React.PureComponent {
     return (
       <div className="SqlEditorLeftBar">
         <TableSelector
+          user={this.props.user}
           dbId={qe.dbId}
           schema={qe.schema}
           onDbChange={this.onDbChange}

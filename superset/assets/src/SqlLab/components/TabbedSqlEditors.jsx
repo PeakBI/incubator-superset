@@ -30,6 +30,7 @@ import { areArraysShallowEqual } from '../../reduxUtils';
 import TabStatusIcon from './TabStatusIcon';
 
 const propTypes = {
+  user: PropTypes.object,
   actions: PropTypes.object.isRequired,
   defaultDbId: PropTypes.number,
   defaultQueryLimit: PropTypes.number.isRequired,
@@ -44,6 +45,7 @@ const propTypes = {
   scheduleQueryWarning: PropTypes.string,
 };
 const defaultProps = {
+  user: null,
   queryEditors: [],
   offline: false,
   saveQueryWarning: null,
@@ -241,6 +243,7 @@ class TabbedSqlEditors extends React.PureComponent {
         <Tab key={qe.id} title={tabTitle} eventKey={qe.id}>
           {isSelected && (
             <SqlEditor
+              user={this.props.user}
               tables={this.props.tables.filter(xt => xt.queryEditorId === qe.id)}
               queryEditor={qe}
               editorQueries={this.state.queriesArray}

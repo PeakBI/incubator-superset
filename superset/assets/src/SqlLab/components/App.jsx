@@ -105,7 +105,7 @@ class App extends React.PureComponent {
       content = (
         <React.Fragment>
           <QueryAutoRefresh />
-          <TabbedSqlEditors />
+          <TabbedSqlEditors user={this.props.user} />
         </React.Fragment>
       );
     }
@@ -119,6 +119,7 @@ class App extends React.PureComponent {
 }
 
 App.propTypes = {
+  user: PropTypes.object,
   actions: PropTypes.object,
   localStorageUsageInKilobytes: PropTypes.number.isRequired,
 };

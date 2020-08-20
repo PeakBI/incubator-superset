@@ -1565,8 +1565,8 @@ class Superset(BaseSupersetView):
                 {
                     "value": vn.table,
                     "schema": vn.schema,
-                    "label": f"[view] {get_datasource_label(vn)}",
-                    "title": f"[view] {get_datasource_label(vn)}",
+                    "label": get_datasource_label(vn),
+                    "title": get_datasource_label(vn),
                 }
                 for vn in views[:max_views]
             ]
@@ -2925,7 +2925,11 @@ class Superset(BaseSupersetView):
     @expose("/sqllab")
     def sqllab(self):
         """SQL Editor"""
+        if not g.user or not g.user.get_id():
+            return redirect(appbuilder.get_url_for_login)
+
         d = {
+            "user": bootstrap_user_data(g.user),
             "defaultDbId": config.get("SQLLAB_DEFAULT_DBID"),
             "common": self.common_bootstrap_payload(),
         }
