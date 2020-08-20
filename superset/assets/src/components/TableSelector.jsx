@@ -172,7 +172,7 @@ export default class TableSelector extends React.PureComponent {
            'demandai', 'information_schema', 'public'];
 
           const schemaOptions = json.schemas
-          .filter(s => ((role !== 'Admin' && !filterschema.includes(s)) || true))
+          .filter(s => ((role !== 'Admin' && !filterschema.includes(s)) || role === 'Admin'))
           .map(s => ({ value: s, label: s, title: s }));
           this.setState({ schemaOptions, schemaLoading: false });
           this.props.onSchemasLoad(schemaOptions);
