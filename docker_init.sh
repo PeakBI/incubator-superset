@@ -51,7 +51,7 @@ flask fab create-user \
   --password $PEAK_USER_PASSWORD
 
   flask fab create-user \
-    --role peak_user \
+    --role peak_admin \
     --username peakadmin \
     --firstname peak \
     --lastname admin \
