@@ -45,10 +45,18 @@ flask fab create-user \
 flask fab create-user \
   --role peak_user \
   --username peakuser \
-  --firstname peakuser \
-  --lastname peakuser \
+  --firstname peak \
+  --lastname user \
   --email $PEAK_USER_EMAIL \
   --password $PEAK_USER_PASSWORD
+
+  flask fab create-user \
+    --role peak_user \
+    --username peakadmin \
+    --firstname peak \
+    --lastname admin \
+    --email $PEAK_ADMIN_EMAIL \
+    --password $PEAK_ADMIN_PASSWORD
 
 superset set_database_uri \
   --database_name RedshiftDB \

@@ -140,7 +140,7 @@ def is_owner(obj, user):
       return True
     else:
       user_roles = [role.name.lower() for role in list(get_user_roles())]
-      if "admin" in user_roles or "peak_user" in user_roles:
+      if "admin" in user_roles or "peak_user" in user_roles or "peak_admin" in user_roles:
         return True
     return False
 

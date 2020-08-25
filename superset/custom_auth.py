@@ -78,7 +78,7 @@ class CustomAuthDBView(AuthDBView):
                 if (auth_response['role'] == 'tenantManager'):
                     user = 'admin'
                 elif (auth_response['role'] == 'tenantAdmin'):
-                    user = 'peakuser'
+                    user = 'peakadmin'
                 else:
                     privileges = loads(auth_response['privileges'])
                     if has_solution_write_access(privileges):
