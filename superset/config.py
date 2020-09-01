@@ -270,7 +270,7 @@ IMG_UPLOAD_URL = "/static/uploads/"
 # Setup image size default is (300, 200, True)
 # IMG_SIZE = (300, 200, True)
 
-CACHE_DEFAULT_TIMEOUT = 60 * 3
+CACHE_DEFAULT_TIMEOUT = 60 * 60 * 5
 CACHE_CONFIG = {
     'CACHE_TYPE': 'redis',
     'CACHE_DEFAULT_TIMEOUT': CACHE_DEFAULT_TIMEOUT,
@@ -432,7 +432,7 @@ class CeleryConfig(object):
     CELERYBEAT_SCHEDULE = {
         'cache-warmup-hourly': {
             'task': 'cache-warmup',
-            'schedule': crontab(minute="*/2"),  # every 2 minutes
+            'schedule': crontab(hour='*/6'),  # every 6 hour
             'kwargs': {
                 'strategy_name': 'dummy',
             },
