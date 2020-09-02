@@ -84,7 +84,6 @@ class SupersetSecurityManager(SecurityManager):
 
     GAMMA_MINUS_PEAK_USER_VIEW_MENUS = {
         "AccessRequestsModelView",
-        "Queries",
         "Refresh Druid Metadata",
         "Upload a CSV",
         "Druid Clusters",
@@ -98,7 +97,6 @@ class SupersetSecurityManager(SecurityManager):
 
     GAMMA_MINUS_PEAK_ADMIN_VIEW_MENUS = {
         "AccessRequestsModelView",
-        "Queries",
         "Refresh Druid Metadata",
         "Upload a CSV",
         "Druid Clusters",
