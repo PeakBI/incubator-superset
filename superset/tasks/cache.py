@@ -47,7 +47,7 @@ def get_form_data(chart_id, dashboard=None):
 
     """
     form_data = {"slice_id": chart_id}
-    
+
     if dashboard is None or not dashboard.json_metadata:
         return form_data
 
@@ -136,7 +136,7 @@ class DummyStrategy(Strategy):
     def get_urls(self):
         session = db.create_scoped_session()
         charts = session.query(Slice).all()
-        
+
         return [get_url(chart) for chart in charts]
 
 
@@ -305,10 +305,11 @@ def cache_warmup(strategy_name, *args, **kwargs):
     opener.addheaders.append(("Cookie", "session={}".format(cookies[0])))
     for url in strategy.get_urls():
         try:
-            logger.info(str(opener.open(url)))
+            opener.open(url)
             results["success"].append(url)
         except URLError:
             logger.exception("Error warming up cache!")
-            results["errors"].append(url) 
+            results["errors"].append(url)
 
+    logger.info("Successfully cache warmup for all urls")
     return results
