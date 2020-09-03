@@ -23,8 +23,8 @@ export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
 
 flask fab create-admin \
   --username admin \
-  --firstname admin \
-  --lastname admin \
+  --firstname Peak \
+  --lastname SuperUser \
   --email $ADMIN_EMAIL \
   --password $ADMIN_PASSWORD
 
@@ -37,24 +37,24 @@ superset init
 flask fab create-user \
   --role Gamma \
   --username guest \
-  --firstname guest \
-  --lastname guest \
+  --firstname Peak \
+  --lastname Guest \
   --email $GUEST_EMAIL \
   --password $GUEST_PASSWORD
 
 flask fab create-user \
   --role peak_user \
   --username peakuser \
-  --firstname peak \
-  --lastname user \
+  --firstname Peak \
+  --lastname User \
   --email $PEAK_USER_EMAIL \
   --password $PEAK_USER_PASSWORD
 
   flask fab create-user \
     --role peak_admin \
     --username peakadmin \
-    --firstname peak \
-    --lastname admin \
+    --firstname Peak \
+    --lastname Admin \
     --email $PEAK_ADMIN_EMAIL \
     --password $PEAK_ADMIN_PASSWORD
 
