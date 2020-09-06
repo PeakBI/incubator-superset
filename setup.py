@@ -107,7 +107,6 @@ setup(
         "sqlalchemy-utils>=0.33.2",
         "sqlparse>=0.3.0,<0.4",
         "wtforms-json",
-        "gevent",
     ],
     extras_require={
         "bigquery": ["pybigquery>=0.4.10", "pandas_gbq>=0.10.0"],
