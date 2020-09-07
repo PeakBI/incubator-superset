@@ -1063,6 +1063,7 @@ class Superset(BaseSupersetView):
             return self.get_samples(viz_obj)
 
         payload = viz_obj.get_payload()
+        print("Payload for dashboard", payload)
         return data_payload_response(*viz_obj.payload_json_and_has_error(payload))
 
     @event_logger.log_this
