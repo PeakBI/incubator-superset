@@ -94,6 +94,7 @@ CUSTOM_SECURITY_MANAGER = CustomSecurityManager
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 # ---------------------------------------------------------
 
+STAGE = os.environ['STAGE']
 TENANT = os.environ['TENANT']
 COMMON_CONFIG_DATA_BUCKET = os.environ['COMMON_CONFIG_DATA_BUCKET']
 DASHBOARD_OBJECT_PATH = 'solutions/dashboards/'
@@ -429,6 +430,7 @@ class CeleryConfig(object):
     CELERY_IMPORTS = ('superset.sql_lab', 'superset.tasks')
     CELERY_RESULT_BACKEND = 'redis://{}/0'.format(REDIS_ENDPOINT)
     CELERY_ANNOTATIONS = {'tasks.add': {'rate_limit': '10/s'}}
+    CELERY_DEFAULT_QUEUE = '{}-{}'.format(STAGE, TENANT)
     CELERYBEAT_SCHEDULE = {
         'cache-warmup-hourly': {
             'task': 'cache-warmup',

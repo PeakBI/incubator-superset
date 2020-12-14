@@ -18,6 +18,7 @@
 from contextlib import closing
 from datetime import datetime
 import logging
+import os
 from sys import getsizeof
 from typing import Optional, Tuple, Union
 import uuid
@@ -54,6 +55,11 @@ stats_logger = config.get("STATS_LOGGER")
 SQLLAB_TIMEOUT = config.get("SQLLAB_ASYNC_TIME_LIMIT_SEC", 600)
 SQLLAB_HARD_TIMEOUT = SQLLAB_TIMEOUT + 60
 log_query = config.get("QUERY_LOGGER")
+
+# Celery Queue variables
+TENANT = os.environ['TENANT']
+STAGE = os.environ['STAGE']
+CELERY_QUEUE = '{}-{}'.format(STAGE, TENANT)
 
 
 class SqlLabException(Exception):
@@ -137,6 +143,7 @@ def session_scope(nullpool):
 @celery_app.task(
     name="sql_lab.get_sql_results",
     bind=True,
+    queue=CELERY_QUEUE,
     time_limit=SQLLAB_HARD_TIMEOUT,
     soft_time_limit=SQLLAB_TIMEOUT,
 )
