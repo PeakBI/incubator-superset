@@ -41,15 +41,14 @@ def use_ip_auth(f):
                 'ais-{}'.format(environ['STAGE']),
                 'authentication',
                 'ipAuth', {
-                    'clientIp': client_ip
+                    'clientIp': client_ip,
                 }))
             return f(self, *args, **kwargs)
         except Exception as e:
             logging.info(e)
             response = make_response(
                 jsonify({
-                  'message': 'Not Found',
-                  'error': e,
+                  'message': 'Authentication Failed',
                  }),
                 404
             )
