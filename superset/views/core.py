@@ -2855,11 +2855,14 @@ class Superset(BaseSupersetView):
         logging.info("Triggering async: {}".format(async_))
         # Async request.
         if async_:
+            sql_editor_id = request.form.get("sql_editor_id")
             logging.info(f"Query {query_id}: Running query on a Celery worker")
             # Ignore the celery future object and the request may time out.
             try:
                 sql_lab.get_sql_results.delay(
                     query_id,
+                    client_id,
+                    sql_editor_id,
                     rendered_query,
                     return_results=False,
                     store_results=not query.select_as_cta,

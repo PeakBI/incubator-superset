@@ -22,6 +22,8 @@ import os
 from sys import getsizeof
 from typing import Optional, Tuple, Union
 import uuid
+from ais_service_discovery import call
+from json import loads
 
 import backoff
 from celery.exceptions import SoftTimeLimitExceeded
@@ -151,6 +153,8 @@ def get_sql_results(
     ctask,
     query_id,
     rendered_query,
+    sql_editor_id=None,
+    client_id=None,
     return_results=True,
     store_results=False,
     user_name=None,
@@ -167,6 +171,8 @@ def get_sql_results(
                 return_results,
                 store_results,
                 user_name,
+                client_id,
+                sql_editor_id,
                 session=session,
                 start_time=start_time,
             )
@@ -299,6 +305,8 @@ def execute_sql_statements(
     ctask,
     query_id,
     rendered_query,
+    sql_editor_id=None,
+    client_id=None,
     return_results=True,
     store_results=False,
     user_name=None,
@@ -392,6 +400,7 @@ def execute_sql_statements(
     )
     payload["query"]["state"] = QueryStatus.SUCCESS
 
+    # async query will run
     if store_results:
         key = str(uuid.uuid4())
         logging.info(
@@ -416,8 +425,27 @@ def execute_sql_statements(
             results_backend.set(key, compressed, cache_timeout)
         query.results_key = key
 
+        logging.info(
+         f"calling service disovery function for history id: {client_id}"
+        )
+        loads(call(
+            'ais-{}'.format(STAGE),
+            'sql-editor',
+            'superset-async-response',
+            {
+              'resultKey': key,
+              'queryHistoryId': client_id,
+              'sqlEditorId': sql_editor_id,
+              'status': True
+              },
+            {'InvocationType': 'Event'}))
+        logging.info(
+          f"service disovery function called successfully for history id: {client_id}"
+        )
+
     query.status = QueryStatus.SUCCESS
     session.commit()
 
+    # sync query will run
     if return_results:
         return payload
