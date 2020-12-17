@@ -185,7 +185,6 @@ def get_sql_results(
                 'superset-async-response',
                 {
                   'status': 'failed',
-                  'resultKey': key,
                   'queryId': query_id,
                   },
                 {'InvocationType': 'Event'}))
