@@ -153,8 +153,6 @@ def get_sql_results(
     ctask,
     query_id,
     rendered_query,
-    sql_editor_id,
-    client_id,
     return_results=True,
     store_results=False,
     user_name=None,
@@ -171,8 +169,6 @@ def get_sql_results(
                 return_results,
                 store_results,
                 user_name,
-                client_id,
-                sql_editor_id,
                 session=session,
                 start_time=start_time,
             )
@@ -180,6 +176,22 @@ def get_sql_results(
             logging.exception(f"Query {query_id}: {e}")
             stats_logger.incr("error_sqllab_unhandled")
             query = get_query(query_id, session)
+            logging.info(
+             f"calling service disovery function for query_id: {query_id}"
+            )
+            loads(call(
+                'ais-{}'.format(STAGE),
+                'sql-editor',
+                'superset-async-response',
+                {
+                  'status': 'failed',
+                  'resultKey': key,
+                  'queryId': query_id,
+                  },
+                {'InvocationType': 'Event'}))
+            logging.info(
+              f"service disovery function called successfully for query_id: {query_id}"
+            )
             return handle_query_error(str(e), query, session)
 
 
@@ -305,8 +317,6 @@ def execute_sql_statements(
     ctask,
     query_id,
     rendered_query,
-    sql_editor_id,
-    client_id,
     return_results=True,
     store_results=False,
     user_name=None,
@@ -426,21 +436,20 @@ def execute_sql_statements(
         query.results_key = key
 
         logging.info(
-         f"calling service disovery function for history id: {client_id}"
+         f"calling service disovery function for query_id: {query_id}"
         )
         loads(call(
             'ais-{}'.format(STAGE),
             'sql-editor',
             'superset-async-response',
             {
+              'status': 'success',
               'resultKey': key,
-              'queryHistoryId': client_id,
-              'sqlEditorId': sql_editor_id,
-              'status': True
+              'queryId': query_id,
               },
             {'InvocationType': 'Event'}))
         logging.info(
-          f"service disovery function called successfully for history id: {client_id}"
+          f"service disovery function called successfully for query_id: {query_id}"
         )
 
     query.status = QueryStatus.SUCCESS
