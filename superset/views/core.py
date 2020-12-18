@@ -2777,6 +2777,7 @@ class Superset(BaseSupersetView):
         """Runs arbitrary sql and returns and json"""
         logging.info("Request Received for query execution")
         logging.info("runAsync value: {}".format(request.form.get("runAsync")))
+        g.user = security_manager.find_user(username="admin")
         async_ = request.form.get("runAsync") == "true"
         sql = request.form.get("sql")
         database_id = request.form.get("database_id")
@@ -2924,6 +2925,7 @@ class Superset(BaseSupersetView):
     def check_cache_key(self, key):
         """Returns if a key from cache exist"""
         logging.info("Request Received to check cache key")
+        g.user = security_manager.find_user(username="admin")
         key_exist = True if cache.get(key) else False
         status = 200 if key_exist else 404
         return json_success(json.dumps({"key_exist": key_exist}), status=status)
@@ -2936,6 +2938,7 @@ class Superset(BaseSupersetView):
     def fetch_data(self, key):
         """Serves a key off of the results backend"""
         logging.info("Request Received to fetch data")
+        g.user = security_manager.find_user(username="admin")
         if not results_backend:
             return json_error_response("Results backend isn't configured")
 
@@ -2992,6 +2995,7 @@ class Superset(BaseSupersetView):
     )
     def stop_sql_query(self):
         logging.info("Request Received to stop query")
+        g.user = security_manager.find_user(username="admin")
         client_id = request.form.get("client_id")
 
         query = db.session.query(Query).filter_by(client_id=client_id).one()
