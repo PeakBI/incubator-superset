@@ -186,6 +186,7 @@ def get_sql_results(
                 {
                   'status': 'failed',
                   'queryId': query_id,
+                  'tenant': TENANT,
                   },
                 {'InvocationType': 'Event'}))
             logging.info(
@@ -445,6 +446,7 @@ def execute_sql_statements(
               'status': 'success',
               'resultKey': key,
               'queryId': query_id,
+              'tenant': TENANT,
               },
             {'InvocationType': 'Event'}))
         logging.info(
