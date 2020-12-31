@@ -22,6 +22,8 @@ import os
 from sys import getsizeof
 from typing import Optional, Tuple, Union
 import uuid
+from ais_service_discovery import call
+from json import loads
 
 import backoff
 from celery.exceptions import SoftTimeLimitExceeded
@@ -174,6 +176,22 @@ def get_sql_results(
             logging.exception(f"Query {query_id}: {e}")
             stats_logger.incr("error_sqllab_unhandled")
             query = get_query(query_id, session)
+            logging.info(
+             f"calling service disovery function for query_id: {query_id}"
+            )
+            loads(call(
+                'ais-{}'.format(STAGE),
+                'sql-editor',
+                'superset-async-response',
+                {
+                  'status': 'failed',
+                  'queryId': query_id,
+                  'tenant': TENANT,
+                  },
+                {'InvocationType': 'Event'}))
+            logging.info(
+              f"service disovery function called successfully for query_id: {query_id}"
+            )
             return handle_query_error(str(e), query, session)
 
 
@@ -392,6 +410,7 @@ def execute_sql_statements(
     )
     payload["query"]["state"] = QueryStatus.SUCCESS
 
+    # async query will run
     if store_results:
         key = str(uuid.uuid4())
         logging.info(
@@ -416,8 +435,27 @@ def execute_sql_statements(
             results_backend.set(key, compressed, cache_timeout)
         query.results_key = key
 
+        logging.info(
+         f"calling service disovery function for query_id: {query_id}"
+        )
+        loads(call(
+            'ais-{}'.format(STAGE),
+            'sql-editor',
+            'superset-async-response',
+            {
+              'status': 'success',
+              'resultKey': key,
+              'queryId': query_id,
+              'tenant': TENANT,
+              },
+            {'InvocationType': 'Event'}))
+        logging.info(
+          f"service disovery function called successfully for query_id: {query_id}"
+        )
+
     query.status = QueryStatus.SUCCESS
     session.commit()
 
+    # sync query will run
     if return_results:
         return payload
