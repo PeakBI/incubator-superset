@@ -437,15 +437,18 @@ class CeleryConfig(object):
     CELERY_IMPORTS = ('superset.sql_lab', 'superset.tasks')
     CELERY_RESULT_BACKEND = 'redis://{}/0'.format(REDIS_ENDPOINT)
     CELERY_ANNOTATIONS = {'tasks.add': {'rate_limit': '10/s'}}
-    CELERY_DEFAULT_QUEUE = '{}-{}'.format(STAGE, TENANT)
+    CELERYD_PREFETCH_MULTIPLIER = 1
+    CELERYD_CONCURRENCY=10
+    CELERY_ACKS_LATE = 1
+    CELERY_DEFAULT_QUEUE = '{}--{}'.format(STAGE, TENANT)
     CELERYBEAT_SCHEDULE = {
-        'cache-warmup-hourly': {
-            'task': 'cache-warmup',
-            'schedule': crontab(hour='*/6'),  # every 6 hour
-            'kwargs': {
-                'strategy_name': 'dummy',
-            },
-        },
+        # 'cache-warmup-hourly': {
+        #     'task': 'cache-warmup',
+        #     'schedule': crontab(hour='*/6'),  # every 6 hour
+        #     'kwargs': {
+        #         'strategy_name': 'dummy',
+        #     },
+        # },
     }
 
 

@@ -59,7 +59,7 @@ PAGE_RENDER_WAIT = 30
 # Celery Queue variables
 TENANT = os.environ['TENANT']
 STAGE = os.environ['STAGE']
-CELERY_QUEUE = '{}-{}'.format(STAGE, TENANT)
+CELERY_QUEUE = '{}--{}'.format(STAGE, TENANT)
 
 
 EmailContent = namedtuple("EmailContent", ["body", "data", "images"])

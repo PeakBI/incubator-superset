@@ -61,7 +61,7 @@ log_query = config.get("QUERY_LOGGER")
 # Celery Queue variables
 TENANT = os.environ['TENANT']
 STAGE = os.environ['STAGE']
-CELERY_QUEUE = '{}-{}'.format(STAGE, TENANT)
+CELERY_QUEUE = '{}--{}'.format(STAGE, TENANT)
 
 
 class SqlLabException(Exception):
@@ -248,16 +248,26 @@ def execute_sql_statement(sql_statement, query, user_name, session, cursor):
         with stats_timing("sqllab.query.time_executing_query", stats_logger):
             logging.info(f"Query {query_id}: Running query: \n{sql}")
             db_engine_spec.execute(cursor, sql, async_=True)
+            session.commit()
             logging.info(f"Query {query_id}: Handling cursor")
             db_engine_spec.handle_cursor(cursor, query, session)
-
+            session.commit()
         with stats_timing("sqllab.query.time_fetching_results", stats_logger):
             logging.debug(
                 "Query {}: Fetching data for query object: {}".format(
                     query_id, query.to_dict()
                 )
             )
-            data = db_engine_spec.fetch_data(cursor, query.limit)
+            descr = cursor.description
+            # logging.info("Hello I am printing cursor: {}".format(result))
+            if cursor.description != None:
+                data = db_engine_spec.fetch_data(cursor, query.limit)
+            else:
+                data = None
+            db_engine_spec.execute(cursor, "commit;")
+            db_engine_spec.handle_cursor(cursor, query, session)
+
+            session.commit()
 
     except SoftTimeLimitExceeded as e:
         logging.exception(f"Query {query_id}: {e}")
@@ -271,7 +281,7 @@ def execute_sql_statement(sql_statement, query, user_name, session, cursor):
 
     logging.debug(f"Query {query_id}: Fetching cursor description")
     cursor_description = cursor.description
-    return SupersetDataFrame(data, cursor_description, db_engine_spec)
+    return SupersetDataFrame(data, descr, db_engine_spec)
 
 
 def _serialize_payload(
@@ -409,7 +419,7 @@ def execute_sql_statements(
         }
     )
     payload["query"]["state"] = QueryStatus.SUCCESS
-
+   
     # async query will run
     if store_results:
         key = str(uuid.uuid4())
@@ -434,7 +444,7 @@ def execute_sql_statements(
             logging.debug(f"*** compressed payload size: {getsizeof(compressed)}")
             results_backend.set(key, compressed, cache_timeout)
         query.results_key = key
-
+        
         logging.info(
          f"calling service disovery function for query_id: {query_id}"
         )
