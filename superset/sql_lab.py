@@ -173,6 +173,7 @@ def get_sql_results(
                 start_time=start_time,
             )
         except Exception as e:
+            msg = str(e)
             logging.exception(f"Query {query_id}: {e}")
             stats_logger.incr("error_sqllab_unhandled")
             query = get_query(query_id, session)
@@ -184,6 +185,7 @@ def get_sql_results(
                 'sql-editor',
                 'superset-async-response',
                 {
+                  'error': msg,
                   'status': 'failed',
                   'queryId': query_id,
                   'tenant': TENANT,
@@ -388,6 +390,24 @@ def execute_sql_statements(
                     if statement_count > 1:
                         msg = f"[Statement {i+1} out of {statement_count}] " + msg
                     payload = handle_query_error(msg, query, session, payload)
+
+                    logging.info(
+                     f"calling service disovery function for query_id: {query_id}"
+                    )
+                    loads(call(
+                        'ais-{}'.format(STAGE),
+                        'sql-editor',
+                        'superset-async-response',
+                        {
+                          'error': msg,
+                          'status': 'failed',
+                          'queryId': query_id,
+                          'tenant': TENANT,
+                          },
+                        {'InvocationType': 'Event'}))
+                    logging.info(
+                      f"service disovery function called successfully for query_id: {query_id}"
+                    )
                     return payload
 
     # Success, updating the query entry in database
