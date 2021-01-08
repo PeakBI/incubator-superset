@@ -61,7 +61,7 @@ log_query = config.get("QUERY_LOGGER")
 # Celery Queue variables
 TENANT = os.environ['TENANT']
 STAGE = os.environ['STAGE']
-CELERY_QUEUE = '{}--{}'.format(STAGE, TENANT)
+CELERY_QUEUE = '{}-{}'.format(STAGE, TENANT)
 
 
 class SqlLabException(Exception):

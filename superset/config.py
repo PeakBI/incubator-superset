@@ -440,15 +440,15 @@ class CeleryConfig(object):
     CELERYD_PREFETCH_MULTIPLIER = 1
     CELERYD_CONCURRENCY=10
     CELERY_ACKS_LATE = 1
-    CELERY_DEFAULT_QUEUE = '{}--{}'.format(STAGE, TENANT)
+    CELERY_DEFAULT_QUEUE = '{}-{}'.format(STAGE, TENANT)
     CELERYBEAT_SCHEDULE = {
-        # 'cache-warmup-hourly': {
-        #     'task': 'cache-warmup',
-        #     'schedule': crontab(hour='*/6'),  # every 6 hour
-        #     'kwargs': {
-        #         'strategy_name': 'dummy',
-        #     },
-        # },
+        'cache-warmup-hourly': {
+            'task': 'cache-warmup',
+            'schedule': crontab(hour='*/6'),  # every 6 hour
+            'kwargs': {
+                'strategy_name': 'dummy',
+            },
+        },
     }
 
 
