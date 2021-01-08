@@ -42,7 +42,6 @@ def use_ip_auth(f):
                 'authentication',
                 'ipAuth', {
                     'clientIp': client_ip,
-                    'allowedIPs': ['127.0.0.1'],
                 }))
             return f(self, *args, **kwargs)
         except Exception as e:

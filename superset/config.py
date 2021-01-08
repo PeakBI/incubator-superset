@@ -132,8 +132,7 @@ WTF_CSRF_EXEMPT_LIST = [
                      "superset.views.core.run_query",
                      "superset.views.core.check_cache_key",
                      "superset.views.core.fetch_data",
-                     "superset.views.core.stop_sql_query",
-                     "superset.views.core.validate_sql_query"
+                     "superset.views.core.stop_sql_query"
                      ]
 
 # Whether to run the web server in debug mode or not
@@ -258,11 +257,11 @@ DEFAULT_FEATURE_FLAGS = {
 # GET_FEATURE_FLAGS_FUNC can be used to implement progressive rollouts,
 # role-based features, or a full on A/B testing framework.
 #
-def GET_FEATURE_FLAGS_FUNC(feature_flags_dict):
-    print(feature_flags_dict)
-    feature_flags_dict['SQL_VALIDATORS_BY_ENGINE'] = True
-    return feature_flags_dict
-# GET_FEATURE_FLAGS_FUNC = None
+# def GET_FEATURE_FLAGS_FUNC(feature_flags_dict):
+#     print(feature_flags_dict)
+#     feature_flags_dict['SQL_VALIDATORS_BY_ENGINE'] = True
+#     return feature_flags_dict
+GET_FEATURE_FLAGS_FUNC = None
 
 
 # ---------------------------------------------------
@@ -439,9 +438,9 @@ class CeleryConfig(object):
     CELERY_RESULT_BACKEND = 'redis://{}/0'.format(REDIS_ENDPOINT)
     CELERY_ANNOTATIONS = {'tasks.add': {'rate_limit': '10/s'}}
     CELERYD_PREFETCH_MULTIPLIER = 1
-    CELERYD_CONCURRENCY=10
+    CELERYD_CONCURRENCY = 10
     CELERY_ACKS_LATE = 1
-    CELERY_DEFAULT_QUEUE = 'my-test'
+    CELERY_DEFAULT_QUEUE = '{}-{}'.format(STAGE, TENANT)
     CELERYBEAT_SCHEDULE = {
         'cache-warmup-hourly': {
             'task': 'cache-warmup',
