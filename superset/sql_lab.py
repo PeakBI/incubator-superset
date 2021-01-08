@@ -146,6 +146,7 @@ def session_scope(nullpool):
     name="sql_lab.get_sql_results",
     bind=True,
     queue=CELERY_QUEUE,
+    priority=9,
     time_limit=SQLLAB_HARD_TIMEOUT,
     soft_time_limit=SQLLAB_TIMEOUT,
 )
@@ -439,7 +440,7 @@ def execute_sql_statements(
         }
     )
     payload["query"]["state"] = QueryStatus.SUCCESS
-   
+
     # async query will run
     if store_results:
         key = str(uuid.uuid4())
@@ -464,7 +465,7 @@ def execute_sql_statements(
             logging.debug(f"*** compressed payload size: {getsizeof(compressed)}")
             results_backend.set(key, compressed, cache_timeout)
         query.results_key = key
-        
+
         logging.info(
          f"calling service disovery function for query_id: {query_id}"
         )
