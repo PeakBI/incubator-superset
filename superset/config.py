@@ -257,9 +257,9 @@ DEFAULT_FEATURE_FLAGS = {
 # GET_FEATURE_FLAGS_FUNC can be used to implement progressive rollouts,
 # role-based features, or a full on A/B testing framework.
 #
+# from flask import g, request
 # def GET_FEATURE_FLAGS_FUNC(feature_flags_dict):
-#     print(feature_flags_dict)
-#     feature_flags_dict['SQL_VALIDATORS_BY_ENGINE'] = True
+#     feature_flags_dict['some_feature'] = g.user and g.user.id == 5
 #     return feature_flags_dict
 GET_FEATURE_FLAGS_FUNC = None
 
