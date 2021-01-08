@@ -41,7 +41,7 @@ logger.setLevel(logging.INFO)
 # Celery Queue variables
 TENANT = os.environ['TENANT']
 STAGE = os.environ['STAGE']
-CELERY_QUEUE = '{}--{}'.format(STAGE, TENANT)
+CELERY_QUEUE = '{}-{}'.format(STAGE, TENANT)
 
 
 def get_form_data(chart_id, dashboard=None):
@@ -279,10 +279,10 @@ def get_auth_cookies():
     return cookies
 
 
-# @celery_app.task(
-#  name="cache-warmup",
-#  queue=CELERY_QUEUE,
-# )
+@celery_app.task(
+ name="cache-warmup",
+ queue=CELERY_QUEUE,
+)
 def cache_warmup(strategy_name, *args, **kwargs):
     """
     Warm up cache.
