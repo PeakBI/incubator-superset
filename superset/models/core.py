@@ -800,14 +800,10 @@ class Database(Model, AuditMixinNullable, ImportMixin):
 
     @property
     def data(self):
-        allowDML = False
-        if (self.database_name == 'RedshiftDB'):
-            allowDML = True
         return {
             "id": self.id,
             "name": self.database_name,
             "backend": self.backend,
-            "allow_dml": allowDML,
             "allow_multi_schema_metadata_fetch": self.allow_multi_schema_metadata_fetch,
             "allows_subquery": self.allows_subquery,
         }
