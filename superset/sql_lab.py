@@ -227,9 +227,10 @@ def execute_sql_statement(sql_statement, query, user_name, session, cursor):
         sql = parsed_query.as_create_table(query.tmp_table_name)
         query.select_as_cta_used = True
     if parsed_query.is_select():
-        if SQL_MAX_ROWS and (not query.limit or query.limit > SQL_MAX_ROWS):
+        if SQL_MAX_ROWS and (query.limit > SQL_MAX_ROWS):
             query.limit = SQL_MAX_ROWS
         if query.limit:
+            logging.info("Query Limit to run async query: {}".format(query.limit))
             sql = database.apply_limit_to_sql(sql, query.limit)
 
     # Hook to allow environment-specific mutation (usually comments) to the SQL
@@ -238,6 +239,7 @@ def execute_sql_statement(sql_statement, query, user_name, session, cursor):
         sql = SQL_QUERY_MUTATOR(sql, user_name, security_manager, database)
 
     try:
+        logging.info("Parsed SQL: {}".format(sql))
         if log_query:
             log_query(
                 query.database.sqlalchemy_uri,
