@@ -2865,7 +2865,7 @@ class Superset(BaseSupersetView):
             logging.info(f"Query {query_id}: Running query on a Celery worker")
             # Ignore the celery future object and the request may time out.
             try:
-                sql_lab.get_sql_result.delay(
+                sql_lab.get_sql_results.delay(
                     query_id,
                     rendered_query,
                     return_results=False,
