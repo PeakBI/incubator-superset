@@ -39,13 +39,11 @@ def use_ip_auth(f):
     def wraps(self, *args, **kwargs):
         client_ip = request.headers['x-forwarded-for'] if request.headers.get('x-forwarded-for') else request.remote_addr
         try:
-            logging.info(client_ip)
             loads(call(
                 'ais-{}'.format(environ['STAGE']),
                 'authentication',
                 'ipAuth', {
-                    'clientIp': client_ip,
-                    'allowedIPs': ['127.0.0.1']
+                    'clientIp': client_ip
                 }))
             return f(self, *args, **kwargs)
         except Exception as e:
