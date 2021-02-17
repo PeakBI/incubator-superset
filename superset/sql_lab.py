@@ -267,7 +267,7 @@ def execute_sql_statement(sql_statement, query, user_name, session, cursor):
             descr = cursor.description
 
             if not query.limit:
-                logging.info("Set maximum limit to store data in redis {}:".format(SQL_MAX_ROWS))
+                logging.info("Set maximum limit to fetch data for redis {}:".format(SQL_MAX_ROWS))
                 query.limit = SQL_MAX_ROWS
                 db_engine_spec.limit_method = "fetch_many"
 
