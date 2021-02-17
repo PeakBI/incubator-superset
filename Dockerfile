@@ -1,4 +1,4 @@
-FROM python:3.6-jessie
+FROM public.ecr.aws/bitnami/python:3.6-prod
 
 RUN useradd --user-group --create-home --no-log-init --shell /bin/bash superset
 
