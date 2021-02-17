@@ -1,4 +1,4 @@
-FROM public.ecr.aws/bitnami/python:3.6-prod
+FROM python:3.6-jessie
 
 RUN useradd --user-group --create-home --no-log-init --shell /bin/bash superset
 
@@ -67,8 +67,7 @@ WORKDIR /home/superset
 
 COPY . /home/superset
 
-RUN rm -rf /opt/bitnami/python/lib/python3.6/site-packages/setuptools* \
-  pip install setuptools && pip install --upgrade setuptools pip \
+RUN pip install --upgrade setuptools pip \
   && pip install -r requirements.txt -r requirements-dev.txt  \
   && pip install -e . \
   && pip install eventlet \
