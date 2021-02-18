@@ -440,6 +440,7 @@ class CeleryConfig(object):
     CELERYD_PREFETCH_MULTIPLIER = 1
     CELERYD_CONCURRENCY = 10
     CELERY_ACKS_LATE = 1
+    CELERY_TASK_RESULT_EXPIRES = 8 * 60 * 60    # 8 hour
     CELERY_DEFAULT_QUEUE = '{}-{}'.format(STAGE, TENANT)
     CELERYBEAT_SCHEDULE = {
         'cache-warmup-hourly': {
