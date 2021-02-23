@@ -253,10 +253,8 @@ def execute_sql_statement(sql_statement, query, user_name, session, cursor):
         with stats_timing("sqllab.query.time_executing_query", stats_logger):
             logging.info(f"Query {query_id}: Running query: \n{sql}")
             db_engine_spec.execute(cursor, sql, async_=True)
-            session.commit()
             logging.info(f"Query {query_id}: Handling cursor")
             db_engine_spec.handle_cursor(cursor, query, session)
-            session.commit()
         with stats_timing("sqllab.query.time_fetching_results", stats_logger):
             logging.debug(
                 "Query {}: Fetching data for query object: {}".format(
