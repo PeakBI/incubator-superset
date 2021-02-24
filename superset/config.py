@@ -435,9 +435,9 @@ WARNING_MSG = None
 class CeleryConfig(object):
     BROKER_URL = 'redis://{}/0'.format(REDIS_ENDPOINT)
     CELERY_IMPORTS = ('superset.sql_lab', 'superset.tasks')
-    # CELERY_RESULT_BACKEND = 'redis://{}/0'.format(REDIS_ENDPOINT)
+    CELERY_RESULT_BACKEND = 'redis://{}/0'.format(REDIS_ENDPOINT)
     CELERY_ANNOTATIONS = {'tasks.add': {'rate_limit': '10/s'}}
-    CELERYD_PREFETCH_MULTIPLIER = 0
+    CELERYD_PREFETCH_MULTIPLIER = 1
     CELERYD_CONCURRENCY = 10
     CELERY_ACKS_LATE = True
     CELERYD_POOL_RESTARTS = True
