@@ -28,7 +28,7 @@ elif [ "$SUPERSET_ENV" = "development" ]; then
     (cd superset/assets/ && npm run dev) &
     FLASK_ENV=development FLASK_APP=superset:app flask run -p 8088 --with-threads --reload --debugger --host=0.0.0.0
 elif [ "$SUPERSET_ENV" = "production" ]; then
-    celery worker -A superset.tasks.celery_app:app -l INFO -P eventlet -c 100 -Q "$STAGE-$TENANT" -n "$TENANT@%h" -Ofair --without-heartbeat --without-gossip --without-mingle & sleep 10 &&
+    supervisord -nc supervisord.conf & sleep 10 &&
     celery beat --app=superset.tasks.celery_app:app &
     exec gunicorn --bind  0.0.0.0:8088 \
         --workers ${NO_OF_WORKERS:-$DEFAULT_NO_OF_WORKERS} \
