@@ -21,7 +21,7 @@ DEFAULT_NO_OF_WORKERS=$((2 * $(getconf _NPROCESSORS_ONLN) + 1))
 if [ "$#" -ne 0 ]; then
     exec "$@"
 elif [ "$SUPERSET_ENV" = "development" ]; then
-    celery worker -A superset.tasks.celery_app:app -l INFO -P eventlet -c 100 -Q "$STAGE-$TENANT" -n "$TENANT@%h" -Ofair & sleep 10 &&
+    supervisord -nc supervisord.conf & sleep 10 &&
     celery beat --app=superset.tasks.celery_app:app &
     # needed by superset runserver
     (cd superset/assets/ && npm ci)
