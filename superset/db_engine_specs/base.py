@@ -122,6 +122,7 @@ class BaseEngineSpec:
     allows_column_aliases = True
     force_column_alias_quotes = False
     arraysize = 0
+    itersize = 0
     max_column_name_length = 0
     try_remove_schema_from_table_name = True
 
@@ -681,6 +682,8 @@ class BaseEngineSpec:
         """
         if cls.arraysize:
             cursor.arraysize = cls.arraysize
+        if cls.itersize:
+            cursor.itersize = cls.itersize
         cursor.execute(query)
 
     @classmethod
