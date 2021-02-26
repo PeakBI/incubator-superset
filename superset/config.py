@@ -441,6 +441,7 @@ class CeleryConfig(object):
     CELERYD_CONCURRENCY = 10
     CELERY_ACKS_LATE = True
     CELERYD_POOL_RESTARTS = True
+    CELERY_IGNORE_RESULT = True
     CELERY_DEFAULT_QUEUE = '{}-{}'.format(STAGE, TENANT)
     CELERYBEAT_SCHEDULE = {
         'cache-warmup-hourly': {
