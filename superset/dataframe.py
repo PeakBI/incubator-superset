@@ -80,22 +80,51 @@ class SupersetDataFrame(object):
     }
 
     def __init__(self, data, cursor_description, db_engine_spec):
+        data = data or []
+        pa_data = []
+        deduped_cursor_desc = []
         column_names = []
         if cursor_description:
-            column_names = [col[0] for col in cursor_description]
+            # get deduped list of column names
+            column_names = dedup([col[0] for col in cursor_description])
 
-        self.column_names = dedup(column_names)
+            # fix cursor descriptor with the deduped names
+            deduped_cursor_desc = [
+                tuple([column_name, *list(description)[1:]])
+                for column_name, description in zip(column_names, cursor_description)
+            ]
 
-        data = data or []
-        self.df = pd.DataFrame(list(data), columns=self.column_names).infer_objects()
+        # put data in a 2D array so we can efficiently access each column;
+        array = np.array(data, dtype="object")
+        if array.size > 0:
+            pa_data = [pa.array(array[:, i]) for i, column in enumerate(column_names)]
 
+        # workaround for bug converting `psycopg2.tz.FixedOffsetTimezone` tzinfo values.
+        # related: https://issues.apache.org/jira/browse/ARROW-5248
+        if pa_data:
+            for i, column in enumerate(column_names):
+                if pa.types.is_temporal(pa_data[i].type):
+                    sample = self.first_nonempty(array[:, i])
+                    if sample and isinstance(sample, datetime.datetime):
+                        try:
+                            if sample.tzinfo:
+                                tz = sample.tzinfo
+                                series = pd.Series(array[:, i], dtype="datetime64[ns]")
+                                series = pd.to_datetime(series).dt.tz_localize(tz)
+                                pa_data[i] = pa.Array.from_pandas(
+                                    series, type=pa.timestamp("ns", tz=tz)
+                                )
+                        except Exception as e:
+                            logging.exception(e)
+
+        self.table = pa.Table.from_arrays(pa_data, names=column_names)
         self._type_dict = {}
         try:
             # The driver may not be passing a cursor.description
             self._type_dict = {
-                col: db_engine_spec.get_datatype(cursor_description[i][1])
-                for i, col in enumerate(self.column_names)
-                if cursor_description
+                col: db_engine_spec.get_datatype(deduped_cursor_desc[i][1])
+                for i, col in enumerate(column_names)
+                if deduped_cursor_desc
             }
         except Exception as e:
             logging.exception(e)
