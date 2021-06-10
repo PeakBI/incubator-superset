@@ -75,7 +75,7 @@ class CustomAuthDBView(AuthDBView):
                 auth_response = loads(call(
                     'ais-{}'.format(environ['STAGE']),
                     'authentication',
-                    'auth', {
+                    'ais-service-authentication-latest-auth'.format(environ['STAGE']), {
                         'authorizationToken': token
                     }))['context']
                 if not auth_response['tenant'] == environ['TENANT']:
