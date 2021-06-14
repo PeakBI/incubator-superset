@@ -42,7 +42,7 @@ def use_ip_auth(f):
             loads(call(
                 'ais-{}'.format(environ['STAGE']),
                 'authentication',
-                'ipAuth', {
+                'ais-service-authentication-{}-ip-auth'.format(environ['STAGE']), {
                     'clientIp': client_ip
                 }))
             return f(self, *args, **kwargs)

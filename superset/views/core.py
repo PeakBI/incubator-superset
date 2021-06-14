@@ -2886,7 +2886,7 @@ class Superset(BaseSupersetView):
                 loads(call(
                     'ais-{}'.format(STAGE),
                     'sql-editor',
-                    'superset-async-response',
+                    'ais-service-sql-editor-{}-superset-async-response'.format(STAGE),
                     {
                       'error': msg,
                       'status': 'failed',

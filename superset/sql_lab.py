@@ -184,7 +184,7 @@ def get_sql_results(
             loads(call(
                 'ais-{}'.format(STAGE),
                 'sql-editor',
-                'superset-async-response',
+                'ais-service-sql-editor-{}-superset-async-response'.format(STAGE),
                 {
                   'error': msg,
                   'status': 'failed',
@@ -407,7 +407,7 @@ def execute_sql_statements(
                     loads(call(
                         'ais-{}'.format(STAGE),
                         'sql-editor',
-                        'superset-async-response',
+                        'ais-service-sql-editor-{}-superset-async-response'.format(STAGE),
                         {
                           'error': msg,
                           'status': 'failed',
@@ -482,7 +482,7 @@ def execute_sql_statements(
         loads(call(
             'ais-{}'.format(STAGE),
             'sql-editor',
-            'superset-async-response',
+            'ais-service-sql-editor-{}-superset-async-response'.format(STAGE),
             {
               'status': 'success',
               'resultKey': key,
