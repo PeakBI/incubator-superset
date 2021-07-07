@@ -39,6 +39,11 @@ setupApp();
 
 const appContainer = document.getElementById('app');
 const bootstrapData = JSON.parse(appContainer.getAttribute('data-bootstrap'));
+const user = { ...(bootstrapData.user
+             && bootstrapData.user.roles
+             && Object.keys(bootstrapData.user.roles).length
+             && { role_name: Object.keys(bootstrapData.user.roles)[0] }) };
+
 initFeatureFlags(bootstrapData.common.feature_flags);
 const initialState = getInitialState(bootstrapData);
 const sqlLabPersistStateConfig = {
@@ -96,7 +101,7 @@ if (sqlLabMenu) {
 
 const Application = () => (
   <Provider store={store}>
-    <App />
+    <App user={user} />
   </Provider>
 );
 
