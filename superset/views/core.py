@@ -52,6 +52,7 @@ import pyarrow as pa
 import simplejson as json
 from sqlalchemy import and_, or_, select
 from werkzeug.routing import BaseConverter
+import time
 
 from superset import (
     app,
@@ -2883,10 +2884,11 @@ class Superset(BaseSupersetView):
                 logging.info(
                  f"calling service disovery function for query_id: {query_id}"
                 )
+                time.sleep(0.01)
                 loads(call(
                     'ais-{}'.format(STAGE),
                     'sql-editor',
-                    'superset-async-response',
+                    'ais-service-sql-editor-{}-superset-async-response'.format(STAGE),
                     {
                       'error': msg,
                       'status': 'failed',

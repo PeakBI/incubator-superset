@@ -8,6 +8,7 @@ from flask_appbuilder.security.views import AuthDBView
 from flask_appbuilder.security.views import expose
 from flask_login import login_user
 from ais_service_discovery import call
+import time
 
 from superset.security import SupersetSecurityManager
 
@@ -39,10 +40,11 @@ def use_ip_auth(f):
     def wraps(self, *args, **kwargs):
         client_ip = request.headers['x-forwarded-for'] if request.headers.get('x-forwarded-for') else request.remote_addr
         try:
+            time.sleep(0.01)
             loads(call(
                 'ais-{}'.format(environ['STAGE']),
                 'authentication',
-                'ipAuth', {
+                'ais-service-authentication-{}-ip-auth'.format(environ['STAGE']), {
                     'clientIp': client_ip
                 }))
             return f(self, *args, **kwargs)
@@ -67,6 +69,7 @@ class CustomAuthDBView(AuthDBView):
         redirect_url = self.appbuilder.get_url_for_index
         user = 'guest'
         try:
+            time.sleep(0.01)
             if request.args.get('redirect') is not None:
                 redirect_url = request.args.get('redirect')
 
@@ -75,7 +78,7 @@ class CustomAuthDBView(AuthDBView):
                 auth_response = loads(call(
                     'ais-{}'.format(environ['STAGE']),
                     'authentication',
-                    'auth', {
+                    'ais-service-authentication-{}-auth'.format(environ['STAGE']), {
                         'authorizationToken': token
                     }))['context']
                 if not auth_response['tenant'] == environ['TENANT']:

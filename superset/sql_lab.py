@@ -24,6 +24,7 @@ from typing import Optional, Tuple, Union
 import uuid
 from ais_service_discovery import call
 from json import loads
+import time
 
 import backoff
 from celery.exceptions import SoftTimeLimitExceeded
@@ -181,10 +182,11 @@ def get_sql_results(
             logging.info(
              f"calling service disovery function for query_id: {query_id}"
             )
+            time.sleep(0.01)
             loads(call(
                 'ais-{}'.format(STAGE),
                 'sql-editor',
-                'superset-async-response',
+                'ais-service-sql-editor-{}-superset-async-response'.format(STAGE),
                 {
                   'error': msg,
                   'status': 'failed',
@@ -404,10 +406,11 @@ def execute_sql_statements(
                     logging.info(
                      f"calling service disovery function for query_id: {query_id}"
                     )
+                    time.sleep(0.01)
                     loads(call(
                         'ais-{}'.format(STAGE),
                         'sql-editor',
-                        'superset-async-response',
+                        'ais-service-sql-editor-{}-superset-async-response'.format(STAGE),
                         {
                           'error': msg,
                           'status': 'failed',
@@ -479,10 +482,11 @@ def execute_sql_statements(
         logging.info(
          f"calling service disovery function for query_id: {query_id}"
         )
+        time.sleep(0.01)
         loads(call(
             'ais-{}'.format(STAGE),
             'sql-editor',
-            'superset-async-response',
+            'ais-service-sql-editor-{}-superset-async-response'.format(STAGE),
             {
               'status': 'success',
               'resultKey': key,
